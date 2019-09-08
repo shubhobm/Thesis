@@ -1,0 +1,162 @@
+\section{The general framework}
+\label{Section:FrameOfModels}
+
+\subsection{The frame of models}
+In any statistical model, each parameter has an assigned role. A parameter may be a constant related to the scientific process, tuning constant related to a computational procedure or a prediction algorithm, or may perform some other function. Examples of the former in Example~\ref{Example:Tree} are the regression slope
+parameters $\beta_{1}$ and $\beta_{2}$, which quantify how the volume of wood in a tree changes with its height or girth. An example of the latter in the same context can be the parameter $\lambda$, or a tolerance or iteration limits of an iterative model fitting procedure. Parameters can have  similar roles in many models, for example, the regression coefficients $\beta_{1}$ and $\beta_{2}$  in Example~\ref{Example:Tree} are used in all the listed models in that example. We use these general facts to describe {\it frame of models} that we use in this paper. 
+
+In this chapter, we consider a context where the union of all parameters from all candidate models forms a countable set. Naturally, problems where the number of parameters are finite, as in a majority of statistical applications, are included in our framework. We exclude all constants that are invariant across candidate models from this count, or any unknown quantity that is not estimated in any model and 
+is not used subsequently. The parameters across all models are laid out in any arbitrary but fixed fashion
+indexed by the set of integers $\{ 1, 2, \ldots   \}$. For example, in \ref{Example:Tree} we may consider  $ p_n  = n + 4$ as the maximum number of parameters in the system, and denote the $ p_n $-dimensional vector of parameters  with the generic notation
+%
+$$
+\bftheta_{n} = \bigl( \lambda, \beta_{0}, \beta_{1}, \beta_{2}, \sigma_{1}^{2}, \ldots, \sigma_{n}^{2}
+\bigr) =
+\bigl( \theta_{n,1} , \theta_{n,2} ,  \ldots, 
+\theta_{n,p_n} \bigr)
+\text{ notationally.}
+$$
+%
+
+We now associate a candidate model $\cM_n$, either from a scientific discovery process or a hypothesis 
+testing process, with two quantities:
+
+\vspace{1em}
+\noindent\textbf{(a)} The set $\cS_{n} = \{ j_{1}, \ldots, j_{ p_{s n}}\} \subseteq \{1, 2, \ldots  \}$ 
+of indices where the parameter values are unknown and estimated from the data; and
+
+\noindent\textbf{(b)} An ordered vector of  known constants $\bfc_{n} = (c_{nj}: j \notin \cS_{n})$ for  parameters not indexed by $\cS_{n}$.
+
+\vspace{1em}
+\noindent For any $n$ the sets $\cS_{n}$ are finite, thus each model may include only a finite number of unknown real-valued constants.
+
+The generic parameter vector corresponding to this model, say $\bftheta (\cM_n) \in \bfTheta_{m n} \subseteq \bfTheta_n  = \bigtimes_j \bfTheta_{n,j}$, will thus have the structure
+%
+\begin{align*}
+\theta_{m n j} = \left\{ \begin{array}{ll}
+\text{ Unknown } \theta_{m n j} & \text{ for } 
+			j \in \cS_{n}; \\
+\text{ Known } c_{nj} & \text{ for } j \notin \cS_{n}.
+\end{array}
+\right.
+\end{align*}
+%
+Each $\theta_{m n j} \subseteq \BR$, thus all parameters are real-valued. It may be noted that in most cases, simple re-parametrization can be used to define models in a way such that the known constants in $\bfc_n$ are all zero.
+
+We assume that at stage $n$ there is have a {\it preferred model}, which we denote by $\cM_{*n}$: and is identified by the set of indices $\cS_{*n} \subseteq \{1, 2, \ldots \}$ having $p_{*n}$ elements, and known constants $\bfc_{*n}$. We also designate a a fixed element of $\cM_{* n}$ as the \textit{preferred parameter vector}, say $\bftheta_{0 n}$. Depending on the context, the preferred model may relate to a hypothesized model, or the most complex or the most simple model, or relate to the current state of the art, a `gold standard', or be `preferred' by some other predefined criteria; whereas the preferred parameter vector is generally indicative of the data generating process. Note that the preferred model is just one of the candidate models, and its usage will shortly be clear.
+
+\subsection{Transformation to a common platform}
+Suppose $\bfG_{m n} : \bfTheta_{n} \rightarrow \BR^{d_n}$ is a known transformation to map parameters from  model $\cM_n$ to $\BR^{d_n}$. While the candidate models may be very diverse and may relate to different physical realities, theories or hypotheses, computational or data analytic choices, the Euclidean space $\BR^{d_{n}}$ is a common ground where all models may be compared. We use the notation $\bfG_{*n}$ for the transformation of the preferred model. In principle, each $\bfG_{mn}$ can also be designed to map to some proper subset $\cG_n$ of $\BR^{d_{n}}$. However, in such cases we would have to address technical issues relating to topological, measure-theoretic and geometric or algebraic properties of $\cG_n$ while studying theoretical results, which may be considered avoidable  since the statistician gets to choose the maps $\bfG_{ m n}$. Consequently, we assume that the co-domain of each map $\bfG_{ m n}$ is $\BR^{d_{n}}$ in this paper, and avoid unnecessary mathematical complications.
+
+The choice of $\bfG_{m n}$ may depend on the purpose for building the scientific model, and the way we interpret the model. This transformation 
+allows us to consider  the {\it science case} where the actual parameter values and their interpretation is subject to scrutiny, or {\it use cases}  like prediction and classification problems. 
+ %These may involve randomness also, as 
+% illustrated below.
+
+\begin{Example}[Example~\ref{Example:Tree} continued]
+%\bredbf Convert these to proper examples \eredbf
+In Example~\ref{Example:Tree} consider the three types of models:
+%
+\begin{enumerate}
+\item Linear regression model: $Y_i = X_{i1} \beta_1 + X_{i2} \beta_2 + \epsilon_i, \epsilon_i \sim N(0, \sigma^2) $ with $\sigma>0$ for $i = 1, \ldots , n$;
+\item Semiparametric regression model: $Y_i = X_{i1} \beta_1 + g (X_{i2} ) + \epsilon_i$, for an unknown function $g$;
+\item Semiparametric single index model: $Y_i = h( X_{i1} \beta_1 + X_{i2} \beta_2 ) + \epsilon_i $ for some unknown function $h$.
+\end{enumerate}
+%
+If we consider only the linear regression model and are interested in the estimated linear effects on the covariates, any candidate model $\cM_n$ shall correspond to $\cS_n \subseteq \{ 1,2 \}$ and $\bfc_n \in \BR^{2 - |\cS_n|}$. Consequently an identity transformation for all models is enough to put them in a comparable platform. However, when all three types of models above are considered together, comparing and choosing between them becomes tricky. While it is certainly possible consider all modelling methods as special cases of a general model:  $Y_i = h( X_{i1} \beta_1 + g( X_{i2} ) ) + \epsilon_i $ in presence of suitable technical conditions, restrict $h(.)$ in (3) and $g(.)$ in (2) as linear combinations of elements in some $B$-spline basis, and represent a model as a collection of elements in the space of the combined set of spline basis coefficients: it makes their interpretation less intuitive. A more interpretable platform in this scenario can be the predicted value of responses, and one can simply take as $\bfG_{mn}$ the vector of fitted values obtained in each method.
+\end{Example}
+
+%For prediction problems as in Example~\ref{Example:Iris} and 
+%Example~\ref{Example:Monsoon}, the models may result in a function on the feature 
+%space, which we can denote by $C_{m n}(x)$. The evaluation map may be a 
+%{\it prediction of the label}, thus it can be simply 
+%$\bfG_{ m n} (x) = sign \bigl( C_{m n}(x) \bigr)$. The evaluation map may be more complex, 
+%and involve a Bernoulli trial with probability dependent on $C_{m n}(x)$.
+
+%
+%Note that we allow in our framework, and often use 
+%in practice the identity map $\bfG_{n} (x) = x$.  When the different models $\cS_{n}$ 
+%identify different probability measures, then $\bfG_{n} (\xi)$ may denote  a random 
+%variate drawn from the probability measure indexed by $\xi$. 
+% 
+
+We now define an important concept for use in the rest of this paper. Each candidate model corresponds to a subspace of the full parameter space $\bfTheta_{n}$. For any given model $\cM_n$, entries of its corresponding subspace $\bfTheta_{m n}$ are specified by elements from $\bfTheta_j$ for indices $j \in \cS_n$, and entries from $\bfc_n$ when $j \notin \cS_n$. Consequently, we define their versions in the transformed space $\cbG_n$:
+%
+\begin{eqnarray*}
+\cbG_{m n} &:=& \{ \bfG_{mn} (\bftheta (\cM_n)): \bftheta (\cM_n) \in \bfTheta_{m n} \}\\
+\cbG_{*n} &:=& \{ \bfG_{*n} (\bftheta (\cM_{*n})): \bftheta (\cM_{*n}) \in \bfTheta_{*n} \}
+\end{eqnarray*}
+%
+In this framework,
+%
+\begin{Definition}
+For $\bfg \in \BR^{d_n}$ and $\cG_n' \subseteq \BR^{d_n}$, we define the following:
+%
+$$ d( \bfg, \cG_n') := \inf_{ \bfg' \in \cG_n'} \| \bfg - \bfg' \| $$
+%
+where $\|.\|$ is the Euclidean norm. Then
+
+\noindent\textbf{(a)} For two sequences of models, say $\{ \cM_{1n} \}$ and $\{ \cM_{2n} \}$, we say \textit{$\{ \cM_{1n} \}$ is nested within $\{ \cM_{2n} \}$} if, for all sequences $\{ \bfg_{1n} : \bfg_{1n} \in \cG_{1n} \} $ we have
+%
+\begin{align}\label{eq:NestedModelDef}
+\lim_{n \raro \infty} d( \bfg_{1n}, \cG_{2n} ) = 0
+\end{align}
+%
+
+\noindent\textbf{(b)} A sequence of models $\{ \cM_n \}$ is called {\it adequate} if the model $\cM_{0 n}$ corresponding to the singleton set $\bfTheta_{0 n} = \{ \bftheta_{0 n} \}$, i.e. when $\cS_{0 n} = \emptyset$ and $\bfc_{0 n} = \bftheta_{0 n}$, is nested within $\cM_n$.
+
+\noindent\textbf{(c) }A model that is not adequate is an \textit{inadequate} model.
+\end{Definition}
+%
+
+This notion of adequacy of a model depends on the choice of the preferred parameter vector, as well as the transformation maps $\bfG_{ m n}$. The preferred model is always adequate, as is $\cM_{0 n}$, so the set of adequate models is non-empty by construction. Since the notion of parsimony is important in this context, we define the {\textit{minimal adequate}} model as the adequate model that has the smallest number of parameters estimated from the data. Our framework ensures that there is always a minimal adequate model ($\cM_{0 n}$), though in general, its uniqueness is not guaranteed.
+
+In classical model selection problems, as in linear regression where a subset of covariates $\bfX_{s}$ is used in fitting the expression $Y = \bfX_{s} \bfbeta_{s} + \epsilon$, this concept of model adequacy captures standard notions of model `correctness'. Given a full-rank covariate matrix $\bfX \in \BR^{k_n \times p}$, candidate models are fully specified by the set $\cS \in \{ 1, \ldots, p \}$ of non-zero indices in $\bfbeta$, and for obvious choices of $\{ \bfG_{ m n} \}$, the condition for model adequacy reduces to $ \BE Y - \bfX_s \bfbeta_{s} = 0$. Thus the concept of the minimal adequate model merges with that of a `true model' used in many studies.
+
+We elicit the above broader definition to capture the limiting cases that arise in such situations. For instance, in the above example consider $p=2$ and the triangular data generating model to be $Y_{ni} = X_{1i} \beta_{01} + X_{2i} \delta_n + \epsilon$ for some $\beta_{01} \in \BR, \delta_n = o(1)$ and $i = 1, \ldots, k_n$. In our framework, given that the model with all covariates is the preferred model, the sequence of models $\cM_n$ so that $\bfTheta_{m n} = \{ (\beta_1, 0)^T: \beta_1 \in \BR \}$ shall be considered an adequate model. Such models frequently arise from prior choices in bayesian variable selection techniques (e.g. \cite{NarisettyHe14,RockovaGeorge16}).
+
+\subsection{Method of estimation}
+Since some or all the parameter values are unknown in a typical scientific problem, they have to be {\it estimated} from empirical observations. Suppose at stage $n$, the empirical data we have at hand is denoted by the set $\cB_n = \{ B_{n1}, \ldots, B_{nk_n} \}$, where we do not restrict either the dimension of any of the $A_{ni}$'s, or declare any properties or restrictions on them. In particular, each $B_{ni}$ may be infinite dimensional element, or a finite dimensional vector. The size of $\cB_n$, which we call the {\it sample size} and denote by $k_{n}$ is assumed to be a non-decreasing sequence of integers that tends to infinity as $n \rightarrow \infty$.
+
+We consider here a known triangular array of functions, say $\Psi_{m n i} (\cdot)$, for which the following equation has a unique minimizer in $\bfTheta_{mn}$:
+%
+\begin{align}
+\Psi_{m n} (\bftheta) = \BE \sum_{i = 1}^{k_{n}} \Psi_{m n i}  \bigl( \bftheta, B_{ni} \bigr)
+\label{eq:Psisn}
+\end{align}
+%
+for any candidate model $\cM_n$. Suppose this minimizer is $\bftheta_{m n}$. We borrow the terminology {\textit{energy function}} from optimization and other literature to denote such functions. They functions have also been called \textit{contrast functions}, (see \cite{Pfanzagl69, MichelPfanzagl71, BoseChatterjee03}). The estimator $\hat{\bftheta}_{m n}$ of $\bftheta_{m n}$ is obtained as a minimizer of the sample analog of the above, i.e.
+%
+\begin{align}
+\hat{\bftheta}_{m n} = \argmin_{\bftheta \in \bfTheta_{m n}} \sum_{i = 1}^{k_{n}} \Psi_{m n i}  \bigl( \bftheta, B_{ni} \bigr)
+\label{eq:Psisnhat}
+\end{align}
+%
+The {\it preferred model estimate}, say $\hat\bftheta_{*n}$ is described in an identical way. Thus
+%
+\begin{align}
+\hat{\bftheta}_{*n} = \argmin_{\bftheta \in \bfTheta_{*n}} \sum_{i = 1}^{k_{n}} \Psi_{*ni}  \bigl( \bftheta, B_{ni} \bigr)
+\label{eq:Psistarnhat}
+\end{align}
+%
+where $\Psi_{*ni} (\cdot)$ are a known triangular array of functions.
+
+Naturally, only the unknown elements of the generic model vector $\bftheta$, say $\bftheta (\cS_n)$, and their sample equivalents are relevant for the above minimization problems. Hence for ease of exposition we shall assume that $\Psi_{m n i}( \bftheta, . ) \equiv \Psi_{s n i}( \bftheta (\cS_n),.)$ for $i = 1, \ldots, k_n$, i.e. the estimating functionals depend and operate only on the index sets to be estimated. 
+
+We designate the subvector of $\bftheta_{m n}$ at indices $\cS_n$ by $\bftheta_{s n}$, and assume the following very general conditions on this estimation process:
+
+\vspace{1em}
+\noindent\textbf{(S0)} For inadequate models, the model corresponding to the singleton set $\{ \bftheta_{m n} \} \subseteq \bfTheta_n$ is inadequate.
+
+\noindent\textbf{(S1)} Define the Hilbert space 
+$\ell_{2} = \{ \{x_{n}, n = 1, 2, \ldots \}: x_{n} \in \BR, \sum_{n \geq 1} x_{n}^{2} <\infty \}$, and embed $\BR^{ p_{s n}}$ in it as and when necessary, as the first $p_{s n} = | \cS_n |$ elements of $\ell_{2}$. Denote by $[\bftheta]$ the probability distribution of the random variable $\bftheta$. Then for any candidate model $\cM_n$ there exists a tight sequence of probability measures $\BT_{s n}$ on $\ell_2$ with weak limit $\BT_{s,\infty} \in \tilde \ell_2$, which is the set of probability measures on $\ell_2$, and positive real numbers $a_{s n} \asymp a_{* n}$ such that
+
+\noindent\textbf{(a)} For all $n$, $\left[ a_{s n} \left( \hat \bftheta_{s n} - \bftheta_{s n} \right)  \right]
+$ is the distribution of the marginal of $\BT_{s n}$ under the first $p_{s n}$ coordinates;
+
+\noindent\textbf{(b)} For the preferred model solution $\bftheta_{* n}$, $\| a_{* n} (\bfG_{* n} - \bfG_{0 n}) \| \raro 0$ as $n \raro \infty$.
+%\textbf{do something for inadequate models to fix proof of theorem \ref{Theorem:ThmRightWrong}}
+\vspace{1em}
+
+
+Because of the definition of inadequate models, we need (S0) to ensure that the sequence of solutions for inadequate models do not actually end up converging to the preferred model vector $\bftheta_{0 n}$. We need (S1) to prove the population-level results in the next section, covering potentially biased estimation methods with bias going to 0 as $n$ grows. A few technical conditions will eventually get added to this in \ref{section:BootSection} to establish consistency results of the resampling scheme used.

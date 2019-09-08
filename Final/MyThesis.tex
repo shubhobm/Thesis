@@ -1,0 +1,152 @@
+\documentclass{umnStatThesis}
+%\documentclass{umnStatThesis}
+\usepackage{mycommands1,color,caption,hyperref,amsmath,amssymb,amsthm,mathabx}
+%\usepackage[pdftex]{graphicx}
+\usepackage{subfigure,epsfig}
+\usepackage{outlines}
+%\usepackage{quotchap}
+
+% use type-1 fonts
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+%\usepackage{times}
+\pdfminorversion=4              % tell pdflatex to generate PDF in version 1.4
+%\usepackage{ae,aecompl}
+
+\author{Subhabrata Majumdar}
+\adviser{Snigdhansu Chatterjee}
+%\coadviser{Co-Adviser Name Here}
+\title{An Inferential Perspective on Data Depth}
+\month{May}
+\year{2017}
+% Month and Year of Degree Clearance, NOT necessarily when you defended
+
+\begin{document}
+
+\newtheorem{Theorem}{Theorem}[section]
+\newtheorem{Lemma}[Theorem]{Lemma}
+\newtheorem{Corollary}[Theorem]{Corollary}
+\newtheorem{Proposition}[Theorem]{Proposition}
+\newtheorem{Conjecture}[Theorem]{Conjecture}
+\theoremstyle{definition} \newtheorem{Definition}[Theorem]{Definition}
+\theoremstyle{definition} \newtheorem{Example}[Theorem]{Example}
+
+%\makesignaturepage % required
+\maketitlepage % required
+%\makecopyrightpage % recommended, required if registering copyright
+
+%% Copyright page
+\begin{prepage}
+
+\begin{minipage}{.7\textwidth}
+\vspace{2em}
+\begin{flushleft}
+{\it
+Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things.}
+\end{flushleft}
+
+\begin{flushright}
+- Issac Newton \hspace{3em}
+\end{flushright}
+
+\begin{flushleft}
+{\it
+Simplicity is the final achievement. After one has played a vast quantity of notes and more notes, it is simplicity that emerges as the crowning reward of art.}
+\end{flushleft}
+
+\begin{flushright}
+- Fr\'ed\'eric Chopin
+\end{flushright}
+\end{minipage}
+
+
+\vspace*{\fill}
+\copyright\ Subhabrata Majumdar 2017
+\end{prepage}
+
+\frontmatter
+
+\begin{acknowledgementspage} % optional
+\input{Acknowledgement}
+\end{acknowledgementspage}
+
+\begin{dedicationpage} % optional
+\input{Dedication}
+\end{dedicationpage}
+
+\begin{abstract} % optional
+Data depth provides a plausible extension of robust univariate quantities like ranks, order statistics and quantiles in multivariate setup. Although depth has gained visibility and has seen many applications in recent years, especially in classification problems for multivariate and functional data, its generalizability and utility in achieving traditional parametric inferential goals is largely unexplored. In this thesis we develop several approaches to address this. In particular, firstly we define an evaluation map function that is more general than data depth, and establish several results in a parametric modelling context using a broad definition of a statistical model. A fast algorithm for covariate selection using data depths as evaluation functions arises as a special case of this. We demonstrate applications of this framework on data from diverse fields: namely climate science, medical imaging and behavioral genetics. Secondly we propose a multivariate rank transformation using data depth and use them for robust inference in location and scale problems in elliptical distributions. Thirdly, we lay out a depth-based regularization framework in multi-response regression, and derive a new method of nonconvex penalized sparse regression in the multitask situation. Across the thesis, several simulation studies and real data examples demonstrate the effectiveness of the methods developed here.
+\end{abstract}
+
+\tableofcontents % required
+% required if you have any tables:
+\cleardoublepage
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+% required if you have any figures:
+\cleardoublepage
+\addcontentsline{toc}{chapter}{List of Figures} 
+\listoffigures
+% Thanks to Lisa Lendway for noticing that the list of tables and figures needed to added to the table of contents.
+
+\addcontentsline{toc}{chapter}{List of Notations} 
+\input{Chapter-notation}
+
+\mainmatter
+
+%% Introduction chapter
+\input{Chapter1}
+\numberwithin{equation}{section}
+
+%% e-values chapter
+\chapter{Generalized Model Discovery using Statistical Evaluation Maps}\label{chapter:Chapter-evalue}
+\label{chapter:evalue-chapter}
+%
+\input{Chapter-evalue/Introduction_02_05_17_1}
+\input{Chapter-evalue/Frame_of_models}
+\input{Chapter-evalue/StatisticalEvaluationMaps_and_evalues}
+\input{Chapter-evalue/ResamplingSection}
+\input{Chapter-evalue/FastVariableSelection}
+\input{Chapter-evalue/Simulation}
+\input{Chapter-evalue/CaveatsConclusion}
+\input{Chapter-evalue/Proofs}
+%
+%%% Application of e-values
+\chapter{Applications of the Evaluation Maps Framework}
+\label{chapter:appli-chapter}
+%
+\input{Chapter-appli/IndianMonsoon}
+\input{Chapter-appli/fmri-section}
+\input{Chapter-appli/TwinStudies}
+
+%% Chapter 2: Signed peripherality
+\chapter{Signed Peripherality Functions in Multivariate Analysis}
+\label{chapter:scatter-chapter}
+%
+\input{./Chapter-scatter/Chapter-scatter_LocationSection}
+\input{./Chapter-scatter/Chapter-scatter_dcmSection}
+\input{./Chapter-scatter/Chapter-scatter_sdrSection}
+\input{./Chapter-scatter/Chapter-scatter_fpcaSection}
+\input{./Chapter-scatter/Chapter-scatter_Conclusion}
+\input{./Chapter-scatter/Chapter-scatter_Appendix}
+
+%% Depth-based multitask regression
+\chapter{Nonconvex Penalized Regression using Depth-based Penalty}
+\label{chapter:regression-chapter}
+%
+\input{Chapter-regression/Introduction}
+\input{Chapter-regression/Motivation}
+\input{Chapter-regression/Estimator}
+\input{Chapter-regression/Orthogonal}
+\input{Chapter-regression/Simulation}
+\input{Chapter-regression/RealData}
+\input{Chapter-regression/suppl}
+
+\chapter{Future Work}
+\input{FutureWork}
+% References don't have to be double spaced either
+%\setstretch{1.2}
+\bibliographystyle{apalike}
+\bibliography{introbib,MSbib,climate,fmribib,snpbib,scatterbib,regbib}
+
+\end{document}

@@ -1,0 +1,175 @@
+\section{Proofs}
+\label{section:regression-sec8}
+
+\begin{proof}[Proof of theorem \ref{Thm:OracleThm}]
+
+We shall prove a small lemma before going into the actual proof.
+
+\begin{Lemma}\label{Lemma:OracleThmLemma}
+For matrices $\bfK \in \mathbb R^{l \times k}, \bfL \in \mathbb R^{l \times m}, \bfM \in \mathbb R^{m \times k}$,
+%
+$$
+\Tr (\bfK^T \bfL \bfM) = {\ve}^T (\bfK) (\bfI_k \otimes \bfL ) \ve (\bfM)
+$$
+%
+\end{Lemma}
+
+\begin{proof}[Proof of lemma \ref{Lemma:OracleThmLemma}]
+From the property of Kronecker products, $(\bfI_k \otimes \bfL) \ve(\bfM) = \ve (\bfL\bfM)$. The lemma follows since $\Tr (\bfK^T \bfL \bfM) = \ve^T (\bfK) \ve(\bfL\bfM)$.
+\end{proof}
+
+Now, suppose $\bfB = \bfB_0 + \bfU/\sqrt n$, for some $\bfU \in \mathbb R^{p \times q}$, so that our objective function takes the form
+%
+\begin{eqnarray}\label{eqn:OracleThmEqn1}
+T_n (\bfU) &=& \Tr \left[ \left( \bfY - \bfX\bfB_0 - \frac{1}{\sqrt n}\bfX\bfU \right)^T \left( \bfY - \bfX\bfB_0 - \frac{1}{\sqrt n}\bfX\bfU \right)\right] \notag\\
+&& + \lambda_n \sum_{j=1}^p p'_F ( r_j^*) \left\| \bfb_{0j} + \frac{\bfu_j}{\sqrt n} \right\|_2 \notag\\
+\Rightarrow T_n (\bfU) - T_n ({\bf 0}_{p \times q}) &=& \Tr \left[ \frac{1}{n} \bfU^T \bfX^T \bfX \bfU - \frac{2}{\sqrt n} \bfE^T \bfX\bfU\right] \notag\\
+&& + \frac{\lambda_n}{\sqrt n} \sum_{j=1}^p p'_F ( r_j^*) \left( \| \sqrt n\bfb_{0j} + \bfu_j \|_2 - \| \sqrt n\bfb_{0j} \|_2 \right)  \notag\\
+&=& \Tr (\bfV_1 + \bfV_2) + V_3
+\end{eqnarray}
+
+Since $\bfX^T\bfX/n \rightarrow \bfC$ by assumption, we have $\Tr(\bfV_1) \rightarrow \ve^T (\bfU)(\bfI_q \otimes \bfC) \ve(\bfU)$ using lemma \ref{Lemma:OracleThmLemma}. Using the lemma we also get
+%
+$$
+\Tr(\bfV_2) = \frac{2}{\sqrt n} {\ve}^T(\bfE) (\bfI_q \otimes \bfX) \ve (\bfU)
+$$
+%
+Now $\ve(\bfE) \sim \mathcal N_{nq} ({\bf 0}_n, \bfSigma \otimes \bfI_q)$, so that $(\bfI_q \otimes \bfX^T) \ve(\bfE)/\sqrt n \leadsto \bfW \equiv \mathcal N_{pq} ({\bf 0}_{pq}, \bfSigma \otimes \bfC)$ using properties of Kronecker products and Slutsky's theorem.
+
+Let us look at $V_3$ now. Denote by $V_{3j}$ the $j$-th summand of $V_3$. Now there are two scenarios. Firstly, when $\bfb_{0j} \neq {\bf 0}_q$, we have $p'_F ( r_j^*) \stackrel{P}{\rightarrow} p'_F ( r_{0j})$. Since $\lambda_n / \sqrt n \rightarrow 0$, this implies $V_{3j} \stackrel{P}{\rightarrow} 0$ for any fixed $\bfu_j$. Secondly, when $\bfb_{0j} = {\bf 0}_q$, we have
+%
+$$
+V_{3j} = \lambda_n n^{(s-1)/2}. (\sqrt n r^*_j )^{-s}.\frac{ p'_F ( r_j^*) \| \bfu_j \|_2 }{ (r^*_j) ^{-s}}
+$$
+%
+We now have $\bfb^*_j = O_p(1/\sqrt n)$, and also each term of the gradient vector is $O ((r^*_j)^{-s})$ by assumption. Thus $V_{3j} = O_P( \lambda_n n^{(s-1)/2} \| \bfu_j \|_2)$. By assumption, $\lambda_n n^{(s-1)/2} \rightarrow \infty$ as $n \rightarrow \infty$, so $V_{3j} \stackrel{P}{\rightarrow} \infty$ unless $\bfu_j = {\bf 0}_q$, in which case $V_{3j} = 0$.
+
+Accumulating all the terms and putting them into \ref{eqn:OracleThmEqn1} we see that
+%
+\begin{equation}
+T_n(\bfU) - T_n({\bf 0}_{p \times q}) \leadsto
+\begin{cases}
+\ve^T (\bfU_1) [ (\bfI_q \otimes \bfC_{11}) \ve(\bfU_1) - 2 \bfW_1 ] & \text{if } \bfU_0 = {\bf 0}_{(p-p_1)q}\\
+\infty & \text{otherwise}
+\end{cases}
+\end{equation}
+where rows of $\bfU$ are partitioned into $\bfU_1$ and $\bfU_0$ according to the zero and non-zero rows of $\bfB_0$, respectively, and the random variable $\bfW$ is partitioned into $\bfW_1$ and $\bfW_0$ according to zero and non-zero \textit{elements} of $\ve (\bfB_0)$. Applying epiconvergence results of \cite{Geyer94} and \cite{KnightFu00} we now have
+%
+\begin{eqnarray}
+\ve(\hat\bfU_{1n}) &\leadsto & (\bfI_q \otimes \bfC_{11}^{-1}) \bfW_1\label{eqn:OracleThmProofEqn2}\\
+\ve(\hat\bfU_{0n}) &\leadsto & {\bf 0}_{(p-p_1)q}\label{eqn:OracleThmProofEqn3}
+\end{eqnarray}
+%
+where $\hat\bfU_n = (\hat\bfU_{1n}^T, \hat\bfU_{0n}^T)^T := \argmin_\bfU T_n (\bfU)$.
+
+The second part of the theorem, i.e. asymptotic normality of $\sqrt n (\ve (\hat \bfB_{1n}) - \ve(\hat\bfB_{1n})) = \hat\bfU_{1n}$ follows directly from \ref{eqn:OracleThmProofEqn2}. It is now sufficient to show that $P( \hat\bfb_j^{(1)} \neq {\bf 0}_q | \bfb_{0j} = {\bf 0}_q) \rightarrow 0$ to prove the oracle consistency part. For this notice that KKT conditions of the optimization problem for the one-step estimate indicate
+%
+\begin{equation}
+2 \bfx_j^T (\bfY - \bfX \hat\bfB^{(1)}) = - \lambda_n p'_F (r_j^*) \frac{\bfb_j^{(1)}}{r_j^{(1)}} \quad\Rightarrow\quad \frac{2 \bfx_j^T (\bfY - \bfX \hat\bfB^{(1)})}{\sqrt n} = - \frac{\lambda_n p'_F (r_j^*)}{\sqrt n}. \frac{\bfb_j^{(1)}}{r_j^{(1)}}
+\end{equation}
+%
+for any $1 \leq j \leq p$ such that $\hat\bfb_j^{(1)} \neq {\bf 0}_q$. Since $p'_F(r_j^*) = D^-( (r_j^*)^{-s}) = O_P ( \| (\bfb_{0j} + 1/\sqrt n \|^{-s})$ and $\lambda_n n^{(s-1)/2} \rightarrow \infty$, the right hand side goes to $-\infty$ in probability if $\bfb_{0j} = {\bf 0}_q$. As for the left-hand side, it can be written as
+%
+$$ \frac{2 \bfx_j^T (\bfY - \bfX \hat\bfB^{(1)})}{\sqrt n} = \frac{2 \bfx_j^T \bfX .\sqrt n (\bfB_0 - \hat\bfB^{(1)})}{n} + \frac{2 \bfx_j^T \bfE}{\sqrt n} = \frac{2 \bfx_j^T \bfX \hat\bfU_n}{n} + \frac{2 \bfx_j^T \bfE}{\sqrt n}
+$$
+%
+Our previous derivations show that vectorized versions of $\hat\bfU_n$ and $\bfE$ have asymptotic and exact multivariate normal distributions, respectively. Hence
+%
+$$
+\BP \left[ \hat\bfb_j^{(1)} \neq {\bf 0}_q | \bfb_{0j} = {\bf 0}_q \right] \leq P \left[ 2 \bfx_j^T (\bfY - \bfX \hat\bfB^{(1)} ) = - \lambda_n p'_F (r_j^*) \frac{\bfb_j^{(1)}}{r_j^{(1)}} \right] \rightarrow 0
+$$
+\end{proof}
+
+\begin{proof}[Proof of theorem \ref{Thm:RowSupportThm}]
+See the proof of corollary 2 of \cite{ObozinskiEtal11}in Appendix A therein. Our proof follows the same steps, only replacing $\bfSigma_{SS}$ with $\bfSigma \otimes \bfC_{11}$.
+
+\end{proof}
+
+\begin{proof}[Proof of Lemma \ref{thm:minimaxThm}]
+We broadly proceed in a similar fashion as the proof of Theorem 3 in \cite{Zou06}. As a first step, we decompose the mean squared error:
+%
+\begin{eqnarray*}
+E[ \hat\theta(F,\lambda) - \theta]^2 &=& E[ \hat\theta(F,\lambda) - z]^2 + E(z - \theta)^2 + 2 E [\hat\theta(F,\lambda) (z-\theta)] - 2E [z(z-\theta)]\\
+&=& E[ \hat\theta(F,\lambda) - z]^2 + E \left[ \frac{d\hat\theta(F,\lambda)}{dz}\right] - 1
+\end{eqnarray*}
+%
+by applying Stein's lemma \citep{Stein81}. We now use Theorem 1 of \cite{AntoniadisFan01} to approximate $\hat\theta(F,\lambda)$ in terms of $y$ only. By part 2 of the theorem,
+%
+\begin{equation}
+\hat\theta(F,\lambda) = \begin{cases}
+0 \quad & \text{if } |z| \leq \lambda p_0(F)\\
+z - \text{sign}(z). \lambda D^-_1(\hat\theta(F,\lambda), F) & \text{if }|z| > \lambda p_0(F)
+\end{cases}
+\end{equation}
+%
+Moreover, applying part 5 of the theorem,
+%
+\begin{equation}
+\hat\theta(F,\lambda) = z - \text{sign}(z).\lambda D^-_1(z, F) + o(D^-_1(z, F))
+\end{equation}
+%
+for $|z| > \lambda p_0(F)$. Thus we get
+%
+\begin{equation}
+[ \hat\theta(F,\lambda) - z]^2 = \begin{cases}
+z^2 & \text{if } |z| \leq \lambda p_0(F)\\
+\lambda^2 D^-_1(z,F)^2 + k_1(|z|) & \text{if } |z| > \lambda p_0(F)
+\end{cases}
+\end{equation}
+%
+and
+%
+\begin{equation}
+\frac{d\hat\theta(F,\lambda)}{dz} = \begin{cases}
+0 & \text{if } |z| \leq \lambda p_0(F)\\
+1 +  \lambda D^-_2(z,F) + k_1'(|z|) & \text{if } |z| > \lambda p_0(F)
+\end{cases}
+\end{equation}
+%
+where $k_1(|z|) = o(|z|)$, and $D^-_2(z,F) = d^2D^-(z,F)/dz^2$. Thus
+%
+\begin{eqnarray}\label{eqn:MinimaxProofEqn1}
+E [ \hat\theta(F,\lambda) - \theta]^2 &=& E [z^2 \BI_{|z| \leq \lambda p_0(F)}] + E \left[ \left(\lambda^2 D^-_1(|z|, F)^2 + 2 \lambda D^-_2(|z|,F) + 2 + \right.\right. \notag\\
+&& \left.\left. k_1(|z|) + k_1'(|z|) \right) \BI_{|z| > \lambda p_0(F)} \right] - 1
+\end{eqnarray}
+%
+Now
+%
+\begin{eqnarray*}
+k_1(|z|) &=& \lambda^2 \left[ D^-_1(z,F)^2 - D^-_1(\hat\theta(F,\lambda), F)^2 \right] \quad \leq \quad \lambda^2 c_1^2, \text{ and}\\
+| k_1'(|z|) | &=& \lambda \left| D^-_2(z,F) - \frac{d D^-_1(\hat\theta(F,\lambda), F)}{dz} \right| \quad \leq \quad 2\lambda c_2
+\end{eqnarray*}
+%
+Substituting these in \ref{eqn:MinimaxProofEqn1} above we get
+%
+\begin{eqnarray}\label{eqn:MinimaxProofEqn2}
+E [ \hat\theta(F,\lambda) - \theta]^2 & \leq & \lambda^2 p_0(F)^2 P [|z| \leq \lambda p_0(F)] + E \left[ \left(\lambda^2 f^2(|z|) + 2 \lambda D^-_2(z, F) \right) BI_{|z| > \lambda p_0(F)} \right] \notag\\
+&& + \lambda^2 c_1^2 + 2\lambda c_2 + 1 \notag\\
+& \leq & 2\lambda^2 c_1^2 + 4 \lambda c_2 + 1 \notag\\
+& \leq & 4\lambda^2 c_1^2 + 8 \lambda c_2 + 1
+\end{eqnarray}
+%
+
+Adding and subtracting $z^2 \BI_{|z| > \lambda p_0(F)}$ to the first and second summands of \ref{eqn:MinimaxProofEqn1} above, we also have
+%
+\begin{eqnarray}
+E [ \hat\theta(F,\lambda) - \theta]^2 &=& Ez^2 + E \left[ \left(\lambda^2 D^-_1(z,F)^2 + 2 \lambda D^-_2(z,F) + 2 - y^2 + \lambda^2 c_1^2 \right.\right. \notag\\
+& & \left.\left. + 2\lambda c_2 \right) \BI_{|z| > \lambda p_0(F)} \right] - 1\notag\\
+& \leq & (2 \lambda^2 c_1^2 + 4 \lambda c_2) P [ |z| > \lambda p_0(F) ] + \theta^2
+\end{eqnarray}
+%
+Following \cite{Zou06}, $P[|z| > \lambda p_0(F)] \leq 2q (\lambda p_0(F)) + 2\theta^2$, with $q(x) = \exp[-x^2/2]/(\sqrt{2\pi} x)$. Thus
+%
+\begin{eqnarray}
+E [ \hat\theta(F,\lambda) - \theta]^2 &\leq & 2 (2 \lambda^2 c_1^2 + 4 \lambda c_2) [q (\lambda p_0(F)) + \theta^2] + \theta^2\notag\\
+& \leq & (4\lambda^2 c_1^2 + 8 \lambda c_2 + 1)[q (\lambda p_0(F)) + \theta^2] 
+\end{eqnarray}
+%
+Combining this with \ref{eqn:MinimaxProofEqn2} we get
+%
+\begin{equation}
+E [ \hat\theta(F,\lambda) - \theta]^2 \leq [ 4(\lambda c_1 + 1)^2 - 3][q (\lambda p_0(F)) + \min(\theta^2,1)] 
+\end{equation}
+%
+assuming without loss of generality that $c_1 \geq c_2$. Since $R(\text{ideal}) = \min(\theta^2,1)$ and $q(x) \leq (\sqrt{2\pi} x)^{-1} < 1/x$, we have the needed.
+\end{proof}

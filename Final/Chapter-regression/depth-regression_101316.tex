@@ -1,0 +1,98 @@
+\documentclass[fleqn,12pt]{article}
+\usepackage{mycommands,amssymb,amsmath,amsthm,color,pagesize,outlines,cite,subfigure}
+\usepackage[small]{caption}
+\usepackage[pdftex]{epsfig}
+%\usepackage{mathtools}
+
+\usepackage[round]{natbib}
+
+% for algorithm
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithm}
+
+%\addtolength{\evensidemargin}{-.5in}
+%\addtolength{\oddsidemargin}{-.5in}
+%\addtolength{\textwidth}{0.9in}
+%\addtolength{\textheight}{0.9in}
+%\addtolength{\topmargin}{-.4in}
+
+% measurements for 1 inch margin
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\usepackage{hyperref} % for linking references 
+\usepackage{setspace}
+\usepackage{stackrel}
+\usepackage{flafter} % section title after figure
+\doublespacing
+
+%% Appendix theorem counter
+\usepackage{chngcntr}
+\usepackage{apptools}
+\AtAppendix{\counterwithin{Theorem}{section}}
+
+%\DeclareMathOperator*{\vec}{vec}
+\DeclareMathOperator*{\diag}{diag}
+\DeclareMathOperator*{\Tr}{Tr}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\ve}{\text{vec}}
+\DeclareMathOperator*{\Th}{\text{th}}
+
+% If your paper is accepted, change the options for the package
+% aistats2017 as follows:
+%
+%\usepackage[accepted]{aistats2017}
+%
+% This option will print headings for the title of your paper and
+% headings for the authors names, plus a copyright note at the end of
+% the first column of the first page.
+
+
+\begin{document}
+
+\newtheorem{Theorem}{Theorem}[section]
+\newtheorem{Lemma}[Theorem]{Lemma}
+\newtheorem{Corollary}[Theorem]{Corollary}
+\newtheorem{Proposition}[Theorem]{Proposition}
+\newtheorem{Conjecture}[Theorem]{Conjecture}
+\theoremstyle{definition} \newtheorem{Definition}[Theorem]{Definition}
+
+\title{Nonconvex penalized regression using depth-based penalty functions: multitask learning and support union recovery in high dimensions}
+\date{}
+\author{Subhabrata Majumdar, Snigdhansu Chatterjee}
+\maketitle
+
+\input{Abstract}
+
+\vspace{.5cm}
+
+\textbf{Keywords:} multivariate regression, nonconvex penalties, data depth, sparse regression, high-dimensional data
+
+\newpage
+
+\input{Introduction}
+
+\input{Preliminaries}
+
+\input{Estimator}
+
+\input{Orthogonal}
+
+\input{Simulation}
+
+\input{RealData}
+
+\newpage
+\input{suppl}
+
+\bibliographystyle{biometrics}
+\bibliography{depth-regression_101316}
+
+\clearpage
+\input{Figs_and_tables}
+
+\end{document}

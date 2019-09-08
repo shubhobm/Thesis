@@ -1,0 +1,256 @@
+\section{Introduction}
+
+%%%%% These issues need to be addressed.
+%\begin{enumerate}
+%\item State somewhere that all parameters are real-valued vectors, so what we 
+%are doing involves real analysis (and not complex or something more complicated) 
+%in most parts.  [done]
+%
+%\item State the reason for taking triangular sequences. [done]
+%
+% \item State prominently that we are doing asymptotics on $p_{ s n}$, $d _{n}$.
+%[done]
+%
+%\item Standardize notation $|a|$ for denoting Euclidean norm. 
+%
+%%\item Do we let models converge in some fashion? Work on this? [stated as future work]
+%
+%\item Notational inconsistencies: We are using $\cS_{n *}$ and 
+%$\cS_{n}$, with ${\vectheta}_{* n}$ and ${\vectheta}_{s n}$ and 
+%$D_{s n}$. So, shouldn't this be $\cS_{* n}$? [done]
+%
+%\item Notational inconsistencies: ${\vectheta}_{s n}$ and 
+%$\widetilde{\vectheta}_{s n}$ needs to be resolved. [done]
+%
+% \item Analyze the tree data and choose a model. Put it in the intro section example.
+%  Don't use a separate section for it.
+%\end{enumerate}
+
+
+
+In a typical statistical or data science  exercise, both \textit{data} and a \textit{statistical model} are involved. While there is often little or no ambiguity about data, there can be many alternatives about how to analyze such data, and how to interpret the results. This broadly constitute the realm of statistical 
+models. In this chapter, we interpret the term \textit{statistical model} very broadly. We recognize that various possible transformations of the data, different model fitting algorithms, practical safeguards put in place to ensure robustness and sensitivity balance in the results, different methods of data analysis, different statistical paradigms of interpretation of results, as all equally deserving to be considered as crucial components of a statistical model.
+%Consequently, in this chapter, the definition of a {\textit{statistical model}} is very 
+%broad, and many such models may explain features of the data  equally well to all intents 
+%and purposes. 
+The example below illustrates this idea. 
+
+\begin{Example}[Tree data]\label{Example:Tree}
+
+Consider the data contained in \verb#data(trees)# in the statistical software {\tt R}. There are 31 observations on girth, height and volume. Observed data for these variables are $(X_{1i}, X_{2i}, Y_{i})$ respectively, for for $i =1, \ldots, n$.
+%A linear regression seems a good fit, and 
+%a Box-Cox model may be used. It has a set of proposed parameter values in 
+%the {\tt R} documentation, and is also used as an example of the {\tt boxcox} function 
+%inside {\tt MASS}. I think this is a great example since $n = 31$ and $p \approx 3-5$ is 
+%quite manageable. 
+We denote $p =2$ for the two explanatory variables $X_{1}$ and $X_{2}$, used to explain the properties of the response variable $Y$.
+
+Define the Box-Cox transformation \citep{BoxCox64} on the response variable  as $C(y, \lambda) = \log(y) \BI_{\lambda = 0} + y^{\lambda}\BI_{\lambda \ne 0}  $. We assume that $Y_{i}$'s  in the data are related to the other variables according to the statistical relation 
+%
+\begin{align}\label{eq:TreeModel}
+C(Y_{i}, \lambda) = \beta_{0} + \beta \log(X_{1i}) +  \beta \log(X_{2i}) + e_{i}
+\end{align}
+%
+Here $\{ e_{i} \}$ is a sequence of random variables, and we  assume that $\BE e_{i} = 0$ and $\BE e_{i}^{2} = \sigma_{i}^{2} < \infty$. The parameters in this system are $\bftheta_n = (\lambda, \beta_{0}, \beta_{1}, \beta_{2}, \sigma_{1}^{2}, \ldots, \sigma_{n}^{2}) \in \BR^{p_{n}}$ where  $p_{n} = n + 4$.
+\end{Example}
+
+Even in this rather simple framework, we can imagine several {\textit{statistical models}} as being 
+{\textit{per se}} equally interesting or important. These can include ($i$) the Gauss-Markov linear regression model with $\lambda =0$, ($ii$) linear regression with any other fixed, non-random $\lambda$, ($iii$) a model where $\lambda$ is estimated form data but then a linear regression model used for the rest of the analysis ignoring the randomness in the estimated $\lambda$, ($iv$) using a fixed $\lambda$ value like 
+0 or 1, then using {\textit{ordinary least squares}} (OLS) method to estimate regression parameters, followed by inference based on the residual bootstrap (see \cite{Efron79,EfronTibshiraniBook93,ShaoTuBook95}), ($v$) using robustness-driven $M$-estimation techniques for simultaneous estimation of 
+$ (\lambda, \beta_{0}, \beta_{1}, \beta_{2})$, followed by a {\textit {wild bootstrap}} resampling scheme for statistical inference \citep{wu1986,Mammen93}, which provides robustness against heteroscedasticity.
+
+We submit that these are all plausible models, important from one or more considerations. Some like ($iii$) reflect tradition, others like ($v$) reflect desirable caution coupled with modern computational power. The above list of possible models is far from exhaustive (e.g. in ($iv$) each alternative resampling scheme may be called a separate model), but serves to illustrate the fact that statistical models arise in most of the standard procedures of data analysis, be it from classical Statistics, robustness considerations, Bayesian paradigm, risk management perspective, Occam's razor, or combinations thereof. Such models typically differ from each other in many ways, and not just in the number of covariates, or number of parameters to estimate. Often, as in the case of the heteroscedastic model coupled with resampling-based inference above, a very classical approach towards modeling
+or model selection, or a selection based only on a superficial reading of parsimony, can lead to leaving out greatly versatile models on both robustness and efficiency counts. In this chapter, we address this problem of elicitation of suitable models for analyzing data in a very general framework. We consider candidate models that need not be nested, or philosophically or otherwise compatible with each other. 
+ 
+%A handful fo such models 
+%are briefly described below.
+%
+%\begin{description}
+%\item {\bf Gauss-Markov linear regression model:} Assume that $\lambda = 1$, and 
+%the $e_{i}$'s are independent $N (0, \sigma^{2})$ random variables, where 
+%$N(\mu, \sigma^{2})$ denotes the Gaussian probability measure with mean $\mu$ and 
+%variance $\sigma^{2}$. Here, $\lambda$ is fixed and the $\sigma_{i}^{2}$'s are 
+%restricted to be all equal to a common value $\sigma^{2}$, and the unknown parameters 
+%are $\widetilde{\vectheta} = (\beta_{0}, \beta_{1}, \beta_{2}, \sigma^{2})$. We declare 
+%that unknown parameters will be estimated using the Gaussian likelihood corresponding 
+%to this model. 
+
+%\item {\bf Gauss-Markov linear model after fixed transformation:} 
+%Assume that $\lambda = 0$, and 
+%the $e_{i}$'s are independent $N (0, \sigma^{2})$ random variables. 
+%Each alternative fixed and known value of $\lambda$ that may be 
+%used corresponds to a separate model.
+
+%\item {\bf Gauss-Markov linear model after adaptive transformation:} 
+%Suppose the value of $\lambda$ is unknown and is estimated from the data, and 
+%\eqref{eq:TreeModel} is assumed to hold with the estimated $\lambda$, where
+%the $e_{i}$'s are independent $N (0, \sigma^{2})$ random variables. We declare 
+%that the unknown parameters $(\beta_{0}, \beta_{1}, \beta_{2}, \sigma^{2})$ 
+%will be estimated using the Gaussian likelihood that results from treating the estimated 
+%value of $\lambda$ as a known fixed constant. 
+
+%\item {\bf Least squares homoscedastic regression model:} 
+%We fix $\lambda = 1$, and assume that the $e_{i}$'s are independent with mean zero 
+%and common variance $\sigma^{2}$, but do {\it not} assume that they are Gaussian
+%random variables. We declare that the regression coefficients will be estimated by the 
+%{\it ordinary least squares} (OLS) principle, that is, by minimizing 
+%\ban
+%\sum_{i =1}^{n} 
+%\bigl( C(Y_{i}, \lambda) 
+%- \beta_{0} - \beta \log(X_{i 1}) - \beta \log(X_{i 2}) \bigr)^{2}.
+%\ean
+%The variance $\sigma^{2}$ will be estimated using residuals from this OLS fit.
+%While this will result in the same estimates of 
+%$(\beta_{0}, \beta_{1}, \beta_{2}, \sigma^{2})$ as that of the standard Gauss-Markov 
+%model, we need additional statements on how statistical inference will be conducted once 
+%the parameter estimates are obtained. For example, we may use different resampling schemes
+%like the residual or paired bootstrap for inference here 
+%\cite{ref:Efron_AoS791, ref:EfronTibshirani_Book93, ref:ShaoTu_Book95}.
+
+%\item {\bf $M$-estimation regression model with adaptive transformation:} 
+%We assume that the $e_{i}$'s are independent with mean zero 
+%and have finite variance $\sigma_{i}^{2}$'s. We propose estimation of $\lambda$, 
+%and a $M$-estimation scheme based on robustness or other considerations for 
+%the regression co-efficients $\beta_{0}, \beta_{1}, \beta_{2}$. We do not 
+%propose to estimate the $\sigma_{i}$'s at all. We propose to use the 
+%{\textit {wild bootstrap}} resampling scheme for statistical inference
+% \cite{ref:Wu_AoS861261, ref:Mammen_AoS93255}, which provides 
+%robustness against heteroscedasticity.
+%
+%\item Nonparametric additive regression.
+
+%\item {\bf $M$-estimation regression model with adaptive transformation 
+%and multiple hypotheses:} 
+%We consider the above framework, and add several hypotheses that may be of scientific 
+%or practical importance. Each such hypothesis results in a fork in the model pathway, 
+%thus if there are $k$ hypotheses which may be either true or false, 
+%there are $2^{k}$ resulting models. The hypotheses in this example may be 
+%($i$) $\lambda = 0$, ($ii$) $\beta_{2} = 0$, ($iii$) $\beta_{1} = 2$, and combinations 
+%thereof.
+%
+%\item {\bf Bayesian  Gauss-Markov linear model:} 
+%Assume that the $e_{i}$'s are independent $N (0, \sigma^{2})$ random variables.
+%We assign prior measures, which may or may not be probability measures, on the 
+%parameters 
+%$\widetilde{\vectheta} = (\lambda, \beta_{0}, \beta_{1}, \beta_{2}, \sigma^{2})$, 
+%and conduct a Bayesian statistical analysis. Each choice of prior measure corresponds to 
+%a separate model. Each choice of a decision theoretic metric to obtain point estimators 
+%correspond to a different model. Various hypotheses create more models here. 
+
+
+%\end{description}
+
+%In each of the above model in this list, we may assume that parameters like the 
+%regression coefficients may be dependent on the data collection process, and as such 
+%dependent on $n$, and thus should be written as $\beta_{n 0}, \beta_{n 1}, \beta_{n 2}$.
+%Even otherwise, we may adopt this more general framework to study the influence of 
+% effect sizes.  
+
+Our primary goal is a clear separation of the candidate models into two groups: those that adequately explain some user-defined characteristics exhibited in the data, which we designate {\textit{adequate models}}, and those that do not (inadequate models). The first subsection in \ref{Section:FrameOfModels} contains notations and a technical definition of model adequacy, as well as a generic description of a baseline model, which we call the \textit{preferred model}. This may be the most complex candidate model (e.g. the model with all covariates in regression), a model in popular or current use, a hypothesized model, or a model with known parsimony or computational advantage. As we shall see, this formulation of statistical models is broader than the traditional definition of correct or wrong models in model selection literature (e.g. \cite{shao93,shao96}). Each candidate model has its own set of unknown parameters, which are estimated using a model-specific optimization framework. The next subsection outlines this estimation method. Following this,  all model parameter estimates are mapped to a common Euclidean reference frame $\BR^{d_n}, d_n \in \BN$ through user-defined transformation functions for ease of comparison between models.
+%This is followed by a separate sub-section detailing the principle of mapping the different models into the common platform $\BR^{d_{n}}$.
+
+We focus on this transformed model space $\BR^{d_{n}}$, and propose using a function called the {\textit{evaluation map}} in \ref{Section:EvaluationMap}, which compares each candidate model against the preferred model. An evaluation map typically compares a point in the parameter space of any candidate model with the distribution of estimated parameters in the preferred model, and data depth functions are special cases of functions that may act as an evaluation map. After this we introduce a quantity called the $e$-value, which we define as a non-negative summary statistic for the evaluation map distribution corresponding to a candidate model. The model $e$-value is a measure of how well a candidate model explains the interesting features of the data, which is based on a user-specified function% that can be high-dimensional in nature
+. Under very general theoretical conditions we show that population $e$-values for theoretical models asymptotically tends to zero, while for adequate models they tend to the $e$-value of the preferred model. Thus we allow the possibility that none of the candidate models, including the preferred model, adequately explain the properties of the data at hand. In such cases, only the preferred model will have a high score. Our proposal thus includes the provision for triggering a re-evaluation of models and data based on scientific caution, when only the preferred model achieves a significantly non-zero score.
+
+%This is followed by two section of theoretical results regarding implementation of the $e$-values method.
+We adopt a fairly general resampling-based procedure to approximate the distribution of evaluation maps for a candidate model, and in \ref{section:BootSection} establish consistency of the resampling procedure adopted in this chapter, when one or more models are considered simultaneously. Following this we show that under certain conditions on the resampling schemes, population $e$-values for both adequate and inadequate models can be consistently recovered. 
+%One of the main advantages of the procedure we propose in this chapter is that the distribution of parameter estimators is consistently approximated using the resampling techniques we propose.
+Thus, we formulate a unified system where resampling elicits both the $e$-value of a model, along with the joint sampling distribution of all its parameter estimators. This allows for automatic inference and prediction with any model.
+
+Additionally, in \ref{Section:EvaluationMap} and \ref{section:BootSection} we allow several quantities, like 
+number of parameters in each candidate model or the number of characteristics of interest from the data on which the evaluation map is computed, to tend to infinity with sample size. This {\textit{dimension asymptotics}} approach allows any candidate model to have increasing parameter dimensionality with sample size, which imitates the reality of the scientific discovery process where additional data is often used in 
+conjunction with more fine-tuned or insightful models. Similarly, allowing the number of characteristics used for comparing models to grow with the sample size reflects the scientific process. Throughout these sections, for theoretical purposes we adopt a framework involving a triangular array of models and parameters, where various parameter values and dimensions and even estimation and model evaluation procedures are allowed to change with sample size. This is partially for the same reason of being in tune with the reality of scientific discovery process, but also for additional theoretical advantages that such a framework offers, and for the purpose of being inclusive of techniques like local asymptotics, uniform convergence and several others that will form part of our future work.
+
+Our proposal thus far involves four choices: that of ($a$) a preferred model, ($b$) a map from the parameter space to $\BR^{d_{n}}$ for each candidate model, ($c$) an evaluation map, which is a function defined on $\BR^{d_{n}}$ and probability distributions on it to compare each model to the preferred model, ($d$) a 
+resampling strategy. In \ref{Section:FastMS} we demonstrate how all of these come together in tackling the traditional model selection problem of identifying necessary covariates in a regression-like setup. In such problems, there is a maximum number of parameters $p_{n}$ to consider, and various candidate models consider subsets of a common set of $p_{n}$ parameters. The candidate models can be arranged in a lattice, with the supremum being the {\textit{least parsimonious}} or complete model that involves all $p_{n}$ parameters. There are $2^{p_{n}}$ such models, and a full evaluation of all such models is an NP-Hard problem \citep{Natarajan95}. For this reason various algorithms to reduce computations by evaluating far fewer models \citep{Schwarz78,KonishiKitagawa96}, as well as sparsity-based approaches \citep{Tibshirani96,FanLi01,Zou06} have been proposed, which compromise optimality and other properties of the model selection procedure.
+
+%The results from this section establish the paradigm of {\textit{joint evaluation of models and inference within each model}} advocated in this chapter.
+
+%propose a suitably parallel computable, two-component resampling-based technique, 
+%to obtain a non-negative summary statistic from the evaluation map, that we call the 
+%{\textit{e-value}} of any candidate model. 
+%The {\textit{e-value}} of inadequate models asymptotically tend to zero, 
+%while the {\textit{e-values}} for adequate 
+%models remain significantly higher than zero, or may even tend to infinity depending on 
+%the choice of the evaluation map. 
+% Thus, there is  scope of evaluating models 
+%based on domain-knowledge preference, potential risks of various kinds in its usage, 
+%or standard statistical measures of skill. 
+%
+%In a typical scenario, some models will obtain higher {\textit{e-values}}
+%than the preferred model, while other models will obtain lower {\textit{e-values}}, 
+%with models that are not competitive obtaining significantly lower scores. 
+
+
+%Naturally, the traditional model selection problems of identifying necessary 
+%covariates in linear regression or choosing the lag-order in autoregression, are special 
+%cases of our framework.  However, owing to the computational challenge 
+%involved, especially in older generations and paradigms of computing, 
+
+In this context, we use data depths as evaluation functions, allowing us to establish a preference ordering among the adequate models. Subsequently we are able to propose a very fast algorithm which has the following simple and generic steps:
+%
+\begin{enumerate}
+\item Start from the model with all covariates, i.e. the full model and compute its $e$-value using resampling;
+\item Take the marginal models by dropping each covariate, compute their corresponding $e$-values;
+\item Collect covariates that cause a decrease in $e$-value compared to the full model.
+\end{enumerate}
+%
+As evident from the above steps, this recipe only requires computation of the full model. Coupled with the fact that a fast and parallelizable generalized bootstrap procedure \citep{ChatterjeeBose05} based on Monte-Carlo simulation can be used as the resampling method of choice, we end up with an extremely fast covariate selection method. This procedure is able to tackle with ease tricky modelling situations like linear mixed models and robust regression, and also provides asymptotic model selection consistency owing to the machinery developed in \ref{Section:EvaluationMap} and \ref{section:BootSection}.
+%We do necessarily advocate selecting the most parsimonious model that fits the data irrespective of other considerations, and urge caution and evaluation of domain scientific principles and purpose before selecting any model.
+
+%We establish that in this classical problem  
+%that the adequate models have {\textit{e-values}} that are decreasing in 
+%in order of complexity, with the {\textit{e-values}} of inadequate models considerably 
+%below those of the adequate models..
+%Thus, selecting the statistical model with the highest score will achieve the goal of 
+%obtaining the most parsimonious adequate model, and our results establish that 
+%the probability that this selection will indeed be the most parsimonious adequate 
+%model tends to one with sample size.  We do necessarily advocate such a selection, 
+%and urge caution and evaluation 
+%of domain scientific principles and purpose before selecting one or models.
+
+%We remark briefly on the issue of {\textit{ uniform consistency}} and related results
+%in the context of model elicitation, whereby the properties of data-driven
+%model selection techniques are studied typically under the scenario where
+% different models have parameters in close proximity of each other. Some curious 
+% results relating to this issue and other 
+% places, where one underlying theme has been that different kinds of asymptotic 
+% optimality are not obtainable simultaneously using a unified algorithm. 
+
+%In Section~\ref{Section:FrameOfModels} we present details of the above steps. 
+%A separate sub-section describes the principle of using evaluation maps. We deliberately avoid presenting 
+%technical conditions in Section~\ref{Section:FrameOfModels}, so that a clear idea can 
+%be formed about the methodology proposed in this chapter. 
+%
+%We then present in Section~\ref{Section:ModelSelection} the discussion on how the 
+%above four methodological elements are brought together to compute the 
+%{\textit{e-value}} of any model, including the preferred model.  Our model selection 
+%strategies are based on these {\textit{e-values}}; broadly speaking, models with 
+%higher {\textit{e-values}}  are better. 
+%The traditional task for model selection is covariate elicitation. For instance, 
+%in Example~\ref{Example:Tree} above models ($i$) an ($ii$), one may use model selection 
+%to discover whether the intercept term, tree girth or height are relevant for explaining 
+%tree volume data. In such contexts, in Section~\ref{Section:FastMS} we present 
+%the fast and parallel model selection (FPMS) algorithm. 
+%
+%This is followed by two sections on theoretical results. In 
+%Section~\ref{Section:ResamplingAsymptotics} we establish consistency of 
+%the resampling procedure adopted in this chapter,  when one or more models are 
+%considered simultaneously. The results from this section establish the paradigm 
+%of {\textit{joint evaluation of models and inference within each model}} advocated 
+%in this chapter. In Section~\ref{Section:MSAsymptotics}, we establish that the 
+%{\textit{e-values}} separate the adequate and inadequate models into two groups, 
+%and that the FPMS algorithm and variants of that organize the adequate models in 
+%increasing order of parsimony with probability tending to one. 
+
+In \ref{Section:Simulation} we present two illustrative examples on how our fast algorithm is implemented, and its relative performance in covariate selection problems. One of the examples in this section involves random effects, to illustrate the breadth of applicability of the proposed methodology. Finally, in \ref{Section:Conclusion} we discuss the scope and implications of this framework, future research plans, caveats and end with some concluding comments. Regarding real data applications of the $e$-values procedure, we have performed substantial amounts of them in diverse modelling situations: this we are going to defer to \ref{chapter:appli-chapter}.
+
+Before proceeding to the next section we state some necessary notations. For any function $\bfh$ of the parameters in any model, we will often simplify notations by using 
+%
+\begin{align*}
+\bfh & \equiv \bfh_{ s n}  \equiv \bfh \left( {\bftheta}_{ s n} \right), \\
+\widehat{\bfh} & \equiv \widehat{\bfh}_{ s n} \equiv \bfh \left( \widehat{\bftheta}_{ s n}  \right), \\
+\widehat{\bfh}_{r} & \equiv \widehat{\bfh}_{r s n} \equiv \bfh \left( \widehat{\bftheta}_{r s n}  \right).
+\end{align*}
+%%
+The  notation $a_{n} \asymp b_{n}$ implies that $a_{n} = O (b_{n})$ as well as $b_{n} = O (a_{n})$. The notation $\bfR$, typically with various subscripts like $\bfR_{n}, \bfR_{ s n}, \bfR_{ r s n}$ and so, are used as generic for remainder terms, which contribute asymptotically negligible terms in our results. While we include all necessary algebraic details, often the tedious algebra behind moment calculations and probabilistic bound computations is omitted to contain this chapter to a reasonable length and preserve clarity. However, our technical conditions are always comprehensive and explicit, and such algebraic computations can be easily carried out without much intellectual effort. In designing the technical conditions for the theoretical properties in this chapter, we have striven for simplicity and not on minimal requirements. Thus, the various assumptions made in this chapter are often sufficient conditions, rather than necessary ones, for the theoretical results.

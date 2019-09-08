@@ -1,0 +1,26 @@
+% Conclusion
+
+\section{Characterization of depth in general normed spaces}
+As mentioned in the beginning of this thesis, a normed space and a probability measure in it are the only requirements to motivate the definition of a depth-like quantity. For example consider the Wasserstein metric on a Radon space $(M,d)$, i.e. a metric space for which every probability measure defined on its borel subsets is inner regular. For any two measures $\mu$ and $\nu$ that values in this space and have finite $p$-th moment for some $p \in \BN$, the $p$-th Wasserstein distance is defined as:
+%
+\begin{align}\label{eqn:WpEqn}
+W_p (\mu, \nu) = \left[ \inf_{ G \in \mathbb G (\mu, \nu)} \int_{M \times M} d(x, y)^p dG(x,y) \right]^{1/p}
+\end{align}
+%
+where $\mathbb G (\mu, \nu)$ is the collection of all `couplings' of the measures $\mu$ and $\nu$: a coupling being a probability measure in $M \times M$ with $\mu$ and $\nu$ at its corresponding marginals.
+
+Now just consider $\mu = \delta_{ x_0}$ i.e. the degenerate distribution at some $x_0 \in M$. In that case the infimum in \ref{eqn:WpEqn} shall be taken over all possible \textit{conditional couplings} of $\nu$ and $x_0$, i.e. random vectors in $M \times M$ such that $x_0$ in the first part can come from any distribution, but is fixed at $x_0$, while the marginal in second part is $\nu$. It is easy to show that
+%
+$$
+W_p ( \delta_{ x_0}, \nu) = \left[ \int d(x_0, x)^p d\nu (x) \right]^{1/p}
+$$
+%
+Here we can look at the quantity $W_p (\delta_{ x_0}, \nu)$ as a generalized outlyingness function.
+
+Similar formulations are possible for other distributional distance measures as well. We plan to investigate this idea in future. Some relevant theoretical machinery for this is possibly available in \cite{LeskelaVihola15} and \cite{DedeckerMichel11}.
+
+\section{Future of $e$-values}
+In \ref{chapter:evalue-chapter} we only discuss a very specialized implementation of the $e$-values, in statistical model selection. As seen in \ref{sec:TwinSection} of \ref{chapter:appli-chapter}, using other functionals of the evaluation map distribution can give more refined inference that can be tweaked to suit the need for the data-analytic task in hand and inference objectives of the practitioner. We plan to investigate this in future. We know that the concept of using tail probabilities that yields favorable results in \ref{sec:TwinSection} works in practice, but need to formalize this concept, as well as study in detail the contrasting tail behaviors of adequate and inadequate models. Specific implementations of the variable selection technique are also of interest, for example in robust regression through the usage of robust bootstrap \citep{SBVanAelst08, SBZamar02}, or even as a measure of variable importance in machine learning methods like random forest or boosting.
+
+\section{Others}
+Reiterating from the conclusions of \ref{chapter:scatter-chapter}, the scope of application for the inverse depth-based rank transformation needs to be investigated. A low-hanging fruit in this respect can be its application in functional data. The generic regularization structure presented in \ref{chapter:regression-chapter}, i.e. \ref{eqn:eqn02} therein, is very interesting. The choice of the reference distribution $F$ represents an initial belief on the correlation structure of responses, and can easily be interpreted as a prior distribution. A study of the methods and modelling algorithms that can possibly arise from such a formulation of bayesian multitask penalized regression is something we want to pursue in future.

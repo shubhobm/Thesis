@@ -1,0 +1,35 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Depth is a scalar measure of how much inside a point is with respect to a data cloud: 500 points from ${\cal {N}}_2 ((0,0)^T, \diag (2,1))$\relax }}{2}{figure.caption.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Empirical probabilities of selecting the correct model through moon bootstrap for several levels of sparsity: The $e$-values method- blue solid, AIC backward deletion- red dotted, AIC all subset- red solid, BIC backward deletion- black dotted, BIC all subset- black solid\relax }}{44}{figure.caption.7}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Empirical probabilities of selecting the correct model through gamma bootstrap for several levels of sparsity: The $e$-values method- blue solid, AIC backward deletion- red dotted, AIC all subset- red solid, BIC backward deletion- black dotted, BIC all subset- black solid\relax }}{45}{figure.caption.8}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Empirical probabilities of selecting the correct model through wild bootstrap for several levels of sparsity: The $e$-values method- blue solid, AIC backward deletion- red dotted, AIC all subset- red solid, BIC backward deletion- black dotted, BIC all subset- black solid\relax }}{46}{figure.caption.9}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Comparing full model rolling predictions with reduced models: (a) Bias across years, (b) MSE across years, (c) density plots for 2012, (d) stationwise residuals for 2012\relax }}{68}{figure.caption.13}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces (Top) Plot of significant $p$-values at 95\% confidence level at the specified cross-sections; (bottom) a smoothed surface obtained from the $p$-values clearly shows high spatial dependence in right optic nerve, auditory nerves, auditory cortex and left visual cortex areas\relax }}{73}{figure.caption.14}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Density plots for $\mathaccentV {hat}05E{\mathbb {D}}(\tau )$ and $\mathaccentV {hat}05E{\mathbb {D}}_{-j}(\tau )$ for all $j$ in simulation setup, with signal parameter $h=5$ and bootstrap standard deviations $\tau = 0.2, 0.4, 1, 5$\relax }}{81}{figure.caption.15}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Density plots for $\mathaccentV {hat}05E{\mathbb {D}}(\tau )$ and $\mathaccentV {hat}05E{\mathbb {D}}_{-j}(\tau )$ for all $j$ in simulation setup, with signal parameter $h=0.05$ and bootstrap standard deviations $\tau = 0.2, 0.4, 1, 5$\relax }}{82}{figure.caption.16}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Plot of $e$-values for genes analyzed: (a) GABRA2, (b) ADH1 to ADH7, (c) SLC6A3\relax }}{91}{figure.caption.26}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Plot of $e$-values for genes analyzed: (d) SLC6A4, (e) OPRM1, (f) CYP2E1\relax }}{92}{figure.caption.27}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Plot of $e$-values for genes analyzed: (g) DRD2, (h) ALDH2, (i) COMT\relax }}{93}{figure.caption.28}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces (Left) 1000 points randomly drawn from $\mathcal N_2\left ((0,0)^T, \left (\begin {smallmatrix} 5 & -4 -4 & 5 \end {smallmatrix}\right )\right ) $ and (Right) their multivariate ranks based on halfspace depth\relax }}{107}{figure.caption.39}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Plot of the norm of influence function for first eigenvector of (a) sample covariance matrix, (b) SCM, (c) Tyler's scatter matrix and DCMs for (d) Halfspace depth, (e) Mahalanobis depth, (f) Projection depth for a bivariate normal distribution with ${\boldsymbol {\mu }}= {\bf 0}, {\boldsymbol {\Sigma }}= \diag (2,1)$\relax }}{116}{figure.caption.41}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Plot of the norm of influence function for first eigenvector of (a) sample covariance matrix, (b) SCM, (c) Tyler's scatter matrix and DCMs for (d) Halfspace depth, (e) Mahalanobis depth, (f) Projection depth for a bivariate normal distribution with ${\boldsymbol {\mu }}= {\bf 0}, \Sigma = \diag (2,1)$\relax }}{126}{figure.caption.48}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Actual sample curves, their spline approximations and diagnostic plots respectively for El-Ni\~no (a,c,e) and Octane (b,d,f) datasets\relax }}{130}{figure.caption.49}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{130}{figure.caption.49}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{130}{figure.caption.49}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{130}{figure.caption.49}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{130}{figure.caption.49}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{130}{figure.caption.49}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{130}{figure.caption.49}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces (a) Comparison of L1 and SCAD \citep {FanLi01} penalty functions with univariate halfspace depth: inverting the depth function helps obtain the nonconvex shape of the penalty function in the inverse depth; (b) Univariate thresholding rule for the LARN estimate assuming halfspace depth and max definition of inverse depth(see \ref {sec:regression-sec4})\relax }}{147}{figure.caption.52}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{147}{figure.caption.52}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{147}{figure.caption.52}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Mean squared testing errors for all three methods in different $(p,q)$ settings\relax }}{159}{figure.caption.53}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{159}{figure.caption.53}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{159}{figure.caption.53}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{159}{figure.caption.53}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Estimated effects of different pathway genes on the activity of genes in Mevalonate and Non-mevalonate pathways (left and right of vertical line) in \textit {A. thaliana}\relax }}{161}{figure.caption.56}
+\addvspace {10\p@ }

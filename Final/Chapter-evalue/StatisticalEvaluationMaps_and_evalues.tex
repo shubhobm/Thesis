@@ -1,0 +1,152 @@
+%%%%%%% See the previous version for a more general 
+%%%%%%%% framework. We are restricting things a bit in this version to 
+%%%%%% be more meaningful and easier in our context, but we
+%%%%%% may need to go back to the earlier framework for other cases. 
+
+
+\section{Statistical evaluation maps and $e$-values}
+\label{Section:EvaluationMap}
+
+%Thus, so far our proposal involves two major selections: that of assigning one of the 
+%candidate models as a {\it preferred model}, and for each model that of selection of 
+%the function $G_{s n}$. 
+
+\subsection{A general evaluation map}
+We now introduce another function, the {\textit{statistical evaluation function}}:
+%
+$$
+E_{n} : \BR^{ d_{n}} \times \tilde \BR^{ d_{n}} \rightarrow [0, \infty)
+$$
+%
+which takes as arguments a point from $\BR^{ d_{n}}$ and a probability measure from $\tilde \BR^{ d_{n}}$, and maps that pair into a non-negative real number. Roughly, the quantity $E_{n} (\bfy, [\bfY])$ is a measure of where exactly the point $\bfy$ sits with respect to the distribution of the random variable $\bfY \in \BR^{ d_{n}}$.
+
+The exact nature of the evaluation function, which will make this rough notion precise, depends on the context. We shall discuss this in detail shortly. Good examples of evaluation functions are probabilities of sets like $A_{\delta} = \{ x : |x| < \delta \}$ under $N( 0, \sigma^2)$ distribution for $\sigma>0$, unimodal probability density functions that uniformly decrease away from the mode in any direction, and various \textit{data depth} functions. In fact, depths offer a very rich collection of relevant functions: although their properties are somewhat more restrictive than those our evaluation map requires initially. While we later use halfspace depth \citep{tukey75} as our choice of evaluation map in model selection, for the majority of our theoretical analysis we do not restrict the evaluation maps to be only depth functions in order to avoid some of technical assumptions on traditional depth functions that are not required in our context until \ref{Section:FastMS}.
+
+%A prominent example is the evaluation of how close is $y$ to a 
+%location paramater like the median of $Y$, which may be measured in terms of a 
+%{\textit {data-depth}} function. \bredbf references needed here. 
+%Also need one example where the {\textit{e-value}} is not a depth function.
+%\eredbf
+
+
+%In the rest of this paper, 
+%we use the notations $|a|$ to denote the Euclidean norm of a vector $a$, 
+%$a^{T}$ to denote the transpose of the (vector or matrix) $a$. All vectors are 
+%column vectors in this paper. The notation $\lambda (A)$ is used to denote 
+%a generic eigenvalue of a real, symmetric matrix $A$, and similarly 
+%$\lambda_{max} (A)$ and $\lambda_{min} (A)$ are respectively used to denote the 
+%maximum and minimum eigenvalue of $A$. When $A$ and $B$ are 
+%square matrices of identical dimensions, the notation $B < A$ implies that 
+%the matrix $A - B$ is positive definite. We use the notation $\BI_{d}$ for the 
+%$d \times d$ identity matrix for any positive integer $d$. 
+%The notation $\cI_{\cA}$ is the indicator function of statement $\cA$, that is, 
+%it takes the value 1 if $\cA$ is true and zero otherwise. 
+%We will occasionally 
+%drop either or both the suffixes ${}_{s n}$ in several places for notational simplicity, 
+%but present enough clarifying details so that there is no source of confusion. 
+% The notation $C$, with or without subscripts and in both upper and lower case, 
+%will be used as generic for constants, without any implication that such constants 
+%are identical in all instances they occur. The notation $\rightarrow$ and $\Rightarrow$ 
+%denote convergence in probability and convergence in distribution. 
+
+\subsection{The $e$-value of models}
+We now associate with each model $\cM_{n}$ a functional of the evaluation map $E_n$: which we call the $e$-value. An example of $e$-value is the mean evaluation map function: 
+%
+\begin{equation}
+e_n(\cM_n) = \BE  E_n \left(  \hat{\bfG}_{ m n}, [\hat{\bfG}_{*n}] \right)
+\label{eq:Dsn}
+\end{equation}
+%
+which we concentrate on for the rest of the paper. However, any other functional of $E_n ( \hat{\bfG}_{ m n}, [\hat{\bfG}_{*n}] )$ may also be used here, and a large proportion of our theoretical discussion in the rest of the paper is applicable to any smooth functional of the distribution of $E_n ( \hat{\bfG}_{ m n}, [\hat{\bfG}_{*n}] )$. Furthermore, the distribution of $E_n ( \hat{\bfG}_{m n}, [\hat{\bfG}_{*n}] )$ is itself informative, and has an important role to play in the study of uniform convergence. We defer all this discussion and analysis to future research.
+
+\vspace{1em}
+\textbf{Remark.} From a hypothesis testing perespective, $e$-values generalize the concept of $p$-values. Consider the problem of finding out the right tail probability with respect to a null distribution, say $[ T_{0n}]$, for a test statistic $\hat T_{m n}$. Here we can designate the model corresponding to the null hypothesis as the preferred model, take the smooth transformation as $\bfG_{m n} \equiv \hat T_{m n}$ and given the evaluation map $E_n (\hat T_n, [T_{0n}]) = \BI_{ \hat T_n > T_{0n} }$ the $e$-value is calculated as $P( \hat T_n > T_{0n})$. A higher $e$-value (or $p$-value) indicates a high degree of similarity between the null and alternate model, or in other words the alternate model is `adequate' for the null model. However, in terms of usefulness the inadequate models will be the useful ones in this context.
+\vspace{1em}
+
+There are two random quantities involved in the expression of $e( \cM_n )$ above, namely $\hat{\bfG}_{ m n}$ and $\hat{\bfG}_{ * n}$. Typically, the distribution of either of these random quantities are not known, and have to be elicited from data. We shall use resampling methods for this purpose, the details of which will be outlined in later sections.
+% {\colrbf mention bayesian interpretation?}
+%Also, note from the expression of $e( \cM_n )$ above that we {\textit {do not}} require the joint distribution of these random variables, but only their marginals. However, our methodology outlined below is adequate to obtain joint distributions of unknown parameters from several  models simultaneously.
+
+\subsection{Model adequacy and $e$-values}
+We now present our first result on the model elicitation process, which as claimed earlier, separates the inadequate models from the adequate ones.
+
+For this, we first assume two conditions on the transformation $\bfG_{m n}$. Note that the $j$-th element of the function $\bfG_{m n}$, denoted by $G_{m n j} (\cdot) \equiv G_{j} (\cdot)$, is a map from a subset of $\BR^{p_{n}}$ to $\BR$, for $j = 1, \ldots, d_{n}$. Here we assume that
+
+\vspace{1em}
+\noindent\textbf{(G1)} $d_n = o( \min_{\cS_n} \{ a_{s n}, a_{* n} \} )$;
+
+\noindent\textbf{(G2)} 
+The functions $G_{j} (\cdot)$ are smooth functions in a neighborhood of $\bftheta_{ m n} \equiv \bftheta$. 
+Specifically, there exists a $\delta > 0$ such that for 
+$ \bfx = \bftheta + \bft$ with $\| \bft \| < \delta$, we have the following expansion
+%
+\begin{align}
+G_{j} (\bfx) = G_{j} (\bftheta) + \bfG_{1 j}^{T} (\bftheta) \bft 
++ 2^{-1} \bft^{T} \bfR_{j} (\bftheta + c \bft) \bft
+\end{align}
+%
+for some $c \in (0, 1)$. We assume that there is a positive definite matrix $\bfM_{j}$ such that 
+\begin{align}
+\sup_{\bft: \| t \| < \delta} \bfR_{j} (\bftheta + c \bft) < \bfM_{j}; \quad \lambda_{max} (\bfM_{j}) < \infty
+\end{align}
+\vspace{1em}
+%%% Need a condition on \lambdamax of M_{j}
+%%%% Need |T_{ r n|^{4} \infty
+%%%%% Suppose B_{n} = min_{s} b_{ sn}. 
+%%%% d_{n} = o(B_{n}). 
+
+Also, the technical conditions assumed on the sequence of evaluation maps are as follows: 
+
+\vspace{1em}
+\noindent\textbf{(E1)}
+Each $E_n$ is invariant to location and scale transformations, i.e. for any $a \in \BR, \bfb \in \BR^{d_n}$ and random variable $\BG$ having distribution $\BG \in \tilde \BR^{d_n}$,
+%
+\begin{align}
+E_n (\bfx, \BG) = E_n ( a\bfx + \bfb, [ a \bfG + \bfb ])
+\end{align}
+%
+\noindent\textbf{(E2)}
+Each $E_n$ is Lipschitz continuous in the first argument, i.e. there exists an $\alpha_n > 0$, possibly depending on the measure $\BG \in \tilde \cG_n$ such that
+%
+\begin{align}
+| E_n (\bfx, \BG) - E_n ( \bfy, \BG ) | < \| \bfx - \bfy \|^{ \alpha_n }
+\end{align}
+
+%\noindent\textbf{(E3)} {\colrbf is this really needed here?}
+%For any $\BG \in \tilde{\cG}_{n}$, we have that
+%\begin{align}
+%\lim_{ | \bfx| \raro \infty } E_{n} (\bfx, \BG) = 0. 
+%\end{align}
+
+\noindent\textbf{(E3)}
+Suppose $\{ \BY_{n} \}$ is a tight sequence of probability measures on $\ell_{2}$, with weak limit $\BY_{\infty}$. Further assume that $\bfY_{n} \in \BR^{d_{n}}$ is a random variable that follows the marginal distribution of the first $d_{n}$ co-ordinates under $\BY_{n}$. Also suppose $E_{\infty} : \ell_{2} \times \tilde{\ell}_{2} \raro [0, \infty)$ be a map such that $\BE E_\infty (\bfy, \BY_\infty ) < \infty$, and when restricted to the first $d_{n}$ co-ordinates, $E_{\infty}$ matches 
+$E_{n}$. Then we assume that
+%
+\begin{align}
+\lim_{n \raro \infty} \BE E_n (\bfY_n, [\bfY_n]) = \BE E_\infty (\bfy, \BY_\infty )
+\end{align}
+
+\noindent\textbf{(E4)}
+Now suppose that $\bfZ_{n} \in \BR^{d_{n}}$ is another sequence of random variables. Then, if $\| \bfZ_{n} \| \stackrel{P}{\rightarrow} \infty$, we assume the following condition as $n \raro \infty$:
+%
+\begin{align} 
+ E_{n}  ( \bfZ_{n}, [\bfY_{n}]  ) \stackrel{P}{\raro} 0 
+\end{align}
+
+Clearly, these properties are not mutually exclusive, and some may be derived from others, but we present these together for ease of verification. Additionally some properties like Lipschitz continuity and (E4) are simply for technical convenience, while we only require the condition (E3) that is weaker than uniform convergence.
+
+We are now at a stage to present our population-level result that forms the foundation of all the following analysis.
+
+\begin{Theorem}\label{Theorem:ThmRightWrong}
+Consider a sequence of evaluation functions $E_n$ satisfying properties (E1)-(E4). Then as $n \rightarrow \infty$:
+
+\begin{enumerate}
+\item For the preferred model $\cM_{* n}$, $e_n ( \cM_{* n}) \raro e_\infty < \infty$;
+
+\item When $\cM_n$ is an adequate model, $\left| e_n \left( \cM_n \right) - e_n \left( \cM_{* n} \right) \right| \raro 0$;
+
+\item When $\cM_n$ is an inadequate model, $e_n (\cM_n) \raro 0$.
+\end{enumerate}
+\end{Theorem}
+
+This result ensures that for large enough $n$, it is possible to find some threshold $\epsilon_n \leq e_n (\cM_{* n})$ such that all inadequate models have $e$-values less than the threshold, while $e$-values for all adequate models fall above it. The choice of $\epsilon_n$, of course, depends on several factors like the evaluation map, estimation technique used and sample size: some cases of which we shall pursue later (\ref{Section:FastMS} and \ref{sec:TwinSection}).

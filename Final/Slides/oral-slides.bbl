@@ -1,0 +1,75 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bondell et~al.(2010)Bondell, Krishna, and
+  Ghosh]{BondellKrishnaGhosh10}
+H.~D. Bondell, A.~Krishna, and S.~K. Ghosh.
+\newblock Joint variable selection for fixed and random effects in linear
+  mixed-effects models.
+\newblock \emph{Biometrics}, 66:\penalty0 1069--1077, 2010.
+
+\bibitem[Chatterjee and Bose(2005)]{ChatterjeeBose05}
+S.~Chatterjee and A.~Bose.
+\newblock Generalized bootstrap for estimating equations.
+\newblock \emph{Ann. Statist.}, 33:\penalty0 414--436, 2005.
+
+\bibitem[Fan and Li(2012)]{FanLi12}
+Y.~Fan and R.~Li.
+\newblock Variable selection in linear mixed effect models.
+\newblock \emph{Ann. Statist.}, 40\penalty0 (4):\penalty0 2043--2068, 2012.
+
+\bibitem[Irons(2012)]{IronsThesis12}
+D.~E. Irons.
+\newblock \emph{Characterizing specific genetic and environmental influences on
+  alcohol use}.
+\newblock PhD thesis, University of Minnesota, sep 2012.
+
+\bibitem[Liu(1990)]{liu90}
+R.Y. Liu.
+\newblock On a notion of data depth based on random simplices.
+\newblock \emph{Ann. Statist.}, 18:\penalty0 405--414, 1990.
+
+\bibitem[Locantore et~al.(1999)Locantore, Marron, Simpson, Tripoli, Zhang, and
+  Cohen]{locantore99}
+N.~Locantore, J.S. Marron, D.G. Simpson, N.~Tripoli, J.T. Zhang, and K.L.
+  Cohen.
+\newblock Robost principal components of functional data.
+\newblock \emph{TEST}, 8:\penalty0 1--73, 1999.
+
+\bibitem[Peng and Lu(2012)]{PengLu12}
+H.~Peng and Y.~Lu.
+\newblock Model selection in linear mixed effect models.
+\newblock \emph{J. Multivariate Anal.}, 109:\penalty0 109--129, 2012.
+
+\bibitem[Tukey(1975)]{tukey75}
+J.W. Tukey.
+\newblock Mathematics and picturing data.
+\newblock In R.D. James, editor, \emph{Proceedings of the International
+  Congress on Mathematics}, volume~2, pages 523--531, 1975.
+
+\bibitem[Wakeman and Henson(2015)]{WakemanHenson15}
+D.~G. Wakeman and R.~N. Henson.
+\newblock A multi-subject, multi-modal human neuroimaging dataset.
+\newblock \emph{Scientif. Data}, 2:\penalty0 article 15001, 2015.
+\newblock DOI: 10.1038/sdata.2015.1.
+
+\bibitem[Zou and Li(2008)]{ZouLi08}
+H.~Zou and R.~Li.
+\newblock One-step sparse estimates in nonconcave penalized likelihood models.
+\newblock \emph{Ann. Statist.}, 36:\penalty0 1509--1533, 2008.
+
+\bibitem[Zuo(2003)]{zuo03}
+Y.~Zuo.
+\newblock Projection-based depth functions and associated medians.
+\newblock \emph{Ann. Statist.}, 31:\penalty0 1460--1490, 2003.
+
+\bibitem[Zuo and Serfling(2000)]{zuo00}
+Y.~Zuo and R.~Serfling.
+\newblock General notions of statistical depth functions.
+\newblock \emph{Ann. Statist.}, 28-2:\penalty0 461--482, 2000.
+
+\end{thebibliography}

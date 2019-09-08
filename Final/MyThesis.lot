@@ -1,0 +1,21 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison between our method and that proposed by \cite {PengLu12} through average false positive percentage, false negative percentage and model size\relax }}{48}{table.caption.10}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Comparison of our method and three sparsity-based methods of mixed effect model selection through accuracy of selecting correct fixed effects\relax }}{49}{table.caption.11}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Ordered values of $\mathaccentV {hat}05Ee_n ({\cal {S}}_{-j})$ after dropping the $j$-th variable from the full model in the Indian summer precipitation data\relax }}{67}{table.caption.12}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Average True Positive (TP) and True Negative (TN) proportions over 1000 replications for all three methods\relax }}{87}{table.caption.23}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Average Relaxed True Positive (TPR) and Relaxed True Negative (TNR) proportions over 1000 replications for all three methods\relax }}{87}{table.caption.24}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Table of analyzed genes and detected SNPs in them. Positive/ negative sign indicates type of association found.\relax }}{90}{table.caption.25}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Table of $ARE({\boldsymbol {\mu }}_w; {\boldsymbol {\mu }}_s)$ for different spherical distributions\relax }}{103}{table.caption.37}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Table of empirical powers of level-0.05 tests for the Chen and Qin (CQ), WPL and $C_{n,w}$ statistics\relax }}{105}{table.caption.38}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Table of AREs of the ADCM for different choices of $p$ and data-generating distributions, and two choices of depth functions\relax }}{119}{table.caption.43}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Finite sample efficiencies of several scatter matrices: $p=2$, $t_v$ is $t$-distribution with $v$ degrees of freedom, ${\cal {N}}_p$ is $p$-variate normal\relax }}{122}{table.caption.44}
+\contentsline {table}{\numberline {4.5}{\ignorespaces Finite sample efficiencies of several scatter matrices: $p=2$, $t_v$ is $t$-distribution with $v$ degrees of freedom, ${\cal {N}}_p$ is $p$-variate normal\relax }}{123}{table.caption.45}
+\contentsline {table}{\numberline {4.6}{\ignorespaces Finite sample efficiencies of several scatter matrices: $p=2$, $t_v$ is $t$-distribution with $v$ degrees of freedom, ${\cal {N}}_p$ is $p$-variate normal\relax }}{124}{table.caption.46}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Average true positive and true negative (TP/TN) rates for 3 methods, for $n=50$ and AR1 covariance structure\relax }}{160}{table.caption.54}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Total runtimes in seconds for SGL and LARN algorithms for the three simulation settings\relax }}{160}{table.caption.55}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Top 10 gene-pathway connections in {\it A. thaliana} data found by LARN\relax }}{162}{table.caption.57}
+\addvspace {10\p@ }

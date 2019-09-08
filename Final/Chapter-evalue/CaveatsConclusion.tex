@@ -1,0 +1,30 @@
+\section{Discussion and conclusion}
+\label{Section:Conclusion}
+
+In the above sections we present an expansive framework and principle, where the definition of a statistical model is very broad, and estimation procedures and resampling algorithms very general. In such a scenario, we propose a scheme of simultaneous model selection and resampling-based inference, using the newly defined $e$-value. An extremely fast algorithm, based on using data depth as evaluation function, obtains consistent true model selection  through fitting a single model. Simulation results show that the procedure performs better than traditional methods in two illustrative examples. Last but not least we provide a number of theoretical results for characterization of our method in both pupulation and sample setting.
+
+While the above framework is extremely open-ended, multiple details require cautious approach and more detailed studies. The choice of the resampling algorithm, and the method of choosing the tuning parameter $\tau_{n}$ associated with it should be subject to further scrutiny. Our results suggest excellent {\textit{asymptotic}} properties that seem to be borne out in our simulation experiments, but finite-sample performance of our procedure needs further study. We have remarked earlier that uniform convergence, local asymptotics and detailed asymptotic studies are needed to understand the workings of our proposal more thoroughly. The current framework includes {\textit{dimension asymptotics}} where the parameter dimensions are allowed to grow with the sample size, but we do not include extremely  high-dimensional parameters in our study. The sensitivity of the results to the choice  of the evaluation maps, and the way $E_{n} (\bfy, [\bfY])$ is summarized to obtain the $e$-value deserve further attention. A further, perhaps philosophical, issue to look into is the sensitivity of the results to the choice of the preferred model. While in practice this may not matter much, the choice of the preferred model reflects a choice of paradigms and scientific principles.
+
+In recent times, there is a growing concern about statistical inference after the implementation of a model selection step. Discussions and several interesting results relating to this matter may be found in  \cite{Yang05, LeebPotscher05, ChangEtal14, TibshiraniEtal15, Tibshiranietal16} and several references therein. The general principle discussed in this chapter advocates obtaining consistent resampling-based distributions of the estimators of {\textit{all}} parameters from {\textit{all}} candidate models. Thus in our framework, statistical inference is not the usual two-step procedure where the first step involves selection of a model, and the second  step of actual inference somehow adjusts for the uncertainties of the first step. Our proposal is one of a {\textit{joint selection and inference}} procedure, where the consistent resampling-based approximations of the sampling distributions of any collection of models are simultaneously used for inference, as well as establishing an $e$-value of a model, which may be used to preferentially treat a subset of models. 
+
+A study of the research on post model selection inference reveals that some of the issues there may be addressed using {\textit{uniform convergence}} and related ideas. Based on the concepts and tools presented in this chapter, we have the ingredients at hand to conduct such studies.
+%% on uniform convergence 
+% and have already obtained some results on the conditions under which the proposed 
+% {\textit{e-value}}-based procedures achieve multiple targets of optimal inference. 
+%% on when and how such uniform consistency results may be obtained. 
+% However, 
+%We postpone discussion and presentation of such results to a future chapter. This is primarily because that arm of study involves several other technical steps, which will greatly increase the length of this manuscript and defeat 
+% any attempt at clarity or conciseness. 
+% 
+Additionally, current studies essentially conclude that the goal of identifying the true data-generating model with probability tending to one, under the assumption that it is already one of the candidate models. This is not immediately compatible with several other goals of optimal statistical inference. Note that the problem of identification of one of the candidate models as a `true model' has not been a goal of this chapter, although our theoretical and numeric results establish that such identification is achieved easily if such a situation were to arise. We also note that traditional `true statistical model' considered in some related literature typically do not consider the domain scientific knowledge or background, and are solely based on a limited version of parsimony. Keeping this in mind, we plan to investigate the application of $e$-values to achieve multiple targets of optimal inference.
+
+%
+%What will make this fail? 
+%
+%\begin{enumerate}
+%\item Bootstrap (or other distribution approximation method) not being good enough.
+%
+%\item Infinite dimensional parameters. 
+%
+%\item No clear choice of what should eb a preferred model: ie, should we model the mean or the median type basic issues.
+%\end{enumerate}

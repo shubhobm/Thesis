@@ -1,0 +1,81 @@
+\BOOKMARK [0][-]{chapter*.1}{List of Tables}{}% 1
+\BOOKMARK [0][-]{chapter*.2}{List of Figures}{}% 2
+\BOOKMARK [0][-]{chapter*.3}{List of Notations}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
+\BOOKMARK [1][-]{section.1.1}{Background}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.2}{Definition and examples}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.3}{Why is depth not a thing yet?}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.4}{Summary of work}{chapter.1}% 8
+\BOOKMARK [0][-]{chapter.2}{Generalized Model Discovery using Statistical Evaluation Maps}{}% 9
+\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{The general framework}{chapter.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.1}{The frame of models}{section.2.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.2}{Transformation to a common platform}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.3}{Method of estimation}{section.2.2}% 14
+\BOOKMARK [1][-]{section.2.3}{Statistical evaluation maps and e-values}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.3.1}{A general evaluation map}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.2}{The e-value of models}{section.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.3.3}{Model adequacy and e-values}{section.2.3}% 18
+\BOOKMARK [1][-]{section.2.4}{Estimation of e-values through resampling}{chapter.2}% 19
+\BOOKMARK [2][-]{subsection.2.4.1}{Smooth estimating functional models}{section.2.4}% 20
+\BOOKMARK [2][-]{subsection.2.4.2}{Bootstrap estimation of e-values}{section.2.4}% 21
+\BOOKMARK [1][-]{section.2.5}{Fast variable selection using data depth}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.5.1}{A plugin parameter estimate}{section.2.5}% 23
+\BOOKMARK [2][-]{subsection.2.5.2}{Simplifications}{section.2.5}% 24
+\BOOKMARK [2][-]{subsection.2.5.3}{Derivation of the algorithm}{section.2.5}% 25
+\BOOKMARK [2][-]{subsection.2.5.4}{Bootstrap implementation}{section.2.5}% 26
+\BOOKMARK [1][-]{section.2.6}{Simulation studies}{chapter.2}% 27
+\BOOKMARK [2][-]{subsection.2.6.1}{Selecting covariates in linear regression}{section.2.6}% 28
+\BOOKMARK [2][-]{subsection.2.6.2}{Model selection in the presence of random effects}{section.2.6}% 29
+\BOOKMARK [1][-]{section.2.7}{Discussion and conclusion}{chapter.2}% 30
+\BOOKMARK [1][-]{section.2.8}{Proofs}{chapter.2}% 31
+\BOOKMARK [0][-]{chapter.3}{Applications of the Evaluation Maps Framework}{}% 32
+\BOOKMARK [1][-]{section.3.1}{Identifying Driving Factors Behind Indian Monsoon Precipitation}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.2}{Spatio-temporal Dependence Analysis in fMRI data}{chapter.3}% 34
+\BOOKMARK [2][-]{subsection.3.2.1}{Temporal model}{section.3.2}% 35
+\BOOKMARK [2][-]{subsection.3.2.2}{Spatial model}{section.3.2}% 36
+\BOOKMARK [1][-]{section.3.3}{Selection of Important Single Nucleotide Polymorphisms behind behavioral traits from Familial Genome Wide Association Studies data}{chapter.3}% 37
+\BOOKMARK [2][-]{subsection.3.3.1}{Motivation}{section.3.3}% 38
+\BOOKMARK [2][-]{subsection.3.3.2}{The MCTFR data}{section.3.3}% 39
+\BOOKMARK [2][-]{subsection.3.3.3}{Statistical model}{section.3.3}% 40
+\BOOKMARK [2][-]{subsection.3.3.4}{A conditional e-value}{section.3.3}% 41
+\BOOKMARK [2][-]{subsection.3.3.5}{Simulation}{section.3.3}% 42
+\BOOKMARK [2][-]{subsection.3.3.6}{Analysis of the Minnesota Twin Studies data}{section.3.3}% 43
+\BOOKMARK [2][-]{subsection.3.3.7}{Future work: incorporating group selection for GWAS}{section.3.3}% 44
+\BOOKMARK [0][-]{chapter.4}{Signed Peripherality Functions in Multivariate Analysis}{}% 45
+\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.2}{The robust location problem}{chapter.4}% 47
+\BOOKMARK [2][-]{subsection.4.2.1}{The weighted spatial median}{section.4.2}% 48
+\BOOKMARK [2][-]{subsection.4.2.2}{A high-dimensional test of location}{section.4.2}% 49
+\BOOKMARK [1][-]{section.4.3}{Depth-based rank covariance matrix}{chapter.4}% 50
+\BOOKMARK [2][-]{subsection.4.3.1}{Calculating the sample DCM and ADCM}{section.4.3}% 51
+\BOOKMARK [2][-]{subsection.4.3.2}{Robust PCA using eigenvectors of DCM}{section.4.3}% 52
+\BOOKMARK [1][-]{section.4.4}{Robust PCA and supervised models}{chapter.4}% 53
+\BOOKMARK [1][-]{section.4.5}{Robust inference with functional data}{chapter.4}% 54
+\BOOKMARK [1][-]{section.4.6}{Conclusion}{chapter.4}% 55
+\BOOKMARK [1][-]{section.4.7}{Appendix}{chapter.4}% 56
+\BOOKMARK [2][-]{subsection.4.7.1}{Form of \(F\)}{section.4.7}% 57
+\BOOKMARK [2][-]{subsection.4.7.2}{Asymptotics of eigenvectors and eigenvalues}{section.4.7}% 58
+\BOOKMARK [2][-]{subsection.4.7.3}{Proofs}{section.4.7}% 59
+\BOOKMARK [0][-]{chapter.5}{Nonconvex Penalized Regression using Depth-based Penalty}{}% 60
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 61
+\BOOKMARK [1][-]{section.5.2}{Depth-based regularization}{chapter.5}% 62
+\BOOKMARK [1][-]{section.5.3}{The LARN algorithm}{chapter.5}% 63
+\BOOKMARK [2][-]{subsection.5.3.1}{Formulation}{section.5.3}% 64
+\BOOKMARK [2][-]{subsection.5.3.2}{The one-step estimate and its oracle properties}{section.5.3}% 65
+\BOOKMARK [2][-]{subsection.5.3.3}{Recovering sparsity within a row}{section.5.3}% 66
+\BOOKMARK [2][-]{subsection.5.3.4}{Computation}{section.5.3}% 67
+\BOOKMARK [1][-]{section.5.4}{Orthogonal design and independent responses}{chapter.5}% 68
+\BOOKMARK [2][-]{subsection.5.4.1}{Thresholding rule}{section.5.4}% 69
+\BOOKMARK [2][-]{subsection.5.4.2}{Minimax optimal performance}{section.5.4}% 70
+\BOOKMARK [1][-]{section.5.5}{Simulation results}{chapter.5}% 71
+\BOOKMARK [2][-]{subsection.5.5.1}{Methods and setup}{section.5.5}% 72
+\BOOKMARK [2][-]{subsection.5.5.2}{Evaluation}{section.5.5}% 73
+\BOOKMARK [1][-]{section.5.6}{Real data example}{chapter.5}% 74
+\BOOKMARK [1][-]{section.5.7}{Conclusion}{chapter.5}% 75
+\BOOKMARK [1][-]{section.5.8}{Proofs}{chapter.5}% 76
+\BOOKMARK [0][-]{chapter.6}{Future Work}{}% 77
+\BOOKMARK [1][-]{section.6.1}{Characterization of depth in general normed spaces}{chapter.6}% 78
+\BOOKMARK [1][-]{section.6.2}{Future of e-values}{chapter.6}% 79
+\BOOKMARK [1][-]{section.6.3}{Others}{chapter.6}% 80
+\BOOKMARK [0][-]{chapter*.58}{References}{}% 81

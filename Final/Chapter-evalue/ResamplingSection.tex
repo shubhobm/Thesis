@@ -1,0 +1,312 @@
+\section{Estimation of $e$-values through resampling}
+\label{section:BootSection}
+
+In this section we shall use a resampling scheme to estimate the distributions corresponding to the smooth functionals of candidate model parameters we consider, i.e. $\hat \bfG_{m n}$, and discuss consistency of the resulting procedure in estimating model $e$-values through imposing certain necessary conditions on the resampling scheme used.
+
+A special case of the family of resampling methods that we use in this chapter is the $m$-out-of-$n$ bootstrap, which we abbreviate as {\textit{moon bootstrap}}. There are numerous problems where the moon-bootstrap provides consistent approximation to the distribution of statistics of interest (e.g. \cite{shao96, ChatterjeeBose05}). Since all such cases are too numerous to list and review of resampling consistency is not central to this chapter, we only demonstrate the properties of our resampling procedure in some interesting frameworks.
+
+Recall that in \ref{eq:Psisnhat} and \ref{eq:Psistarnhat} we obtain the estimator $\hat{\bftheta}_{m n}$ by {min}imizing the \textit{energy functional} or \textit{estimating functional} $\hat{\Psi}_{s n} (\bftheta)= \sum_{i = 1}^{k_{n}} \Psi_{s n i}  \left( \bftheta, B_{ni} \right)$. The parameter $\bftheta_{m n}$ is the unique minimizer of the expectation of the above over all $\bftheta \in \bfTheta_{m n}$. In this section, we occasionally drop the subscript ${}_{s}$ and ${}_{*}$ when there is no scope for confusion for notational simplicity, since the developments presented in the rest of this section are applicable to any model. We often drop the second argument from estimating functionals, thus for example $ \Psi_{n i}  ( \bftheta) \equiv  \Psi_{s n i}  \left( \bftheta, B_{ni} \right)$. Any other notational simplifications in various contexts of this section will be presented as related contexts arise.
+
+%We assume that the parameters $\bftheta_{n}$ and their estimators 
+%have a bijective map to  a subset of an Euclidean space, consequently we treat them 
+%as vectors of reals. This is a very natural assumption, since essentially all statistical 
+%estimation and inference is done on real Euclidean space. With little or no 
+%modifications, many parts of the developments below extend to general metric 
+%spaces or to infinite-dimensional vector spaces, though we do not explore such 
+%generalizations here. We assume in particular, that a distance metric exists on 
+%any parameter space under consideration, and we use the notation 
+%$d (x, y)$ to denote the distance between two elements $x$ and $y$ on such space.
+%\bredbf modify paragraph to read better. \eredbf
+
+\subsection{Smooth estimating functional models}
+
+We shall consider the case is where the functions $\Psi_{s n i}  \left( \cdot, \cdot \right)$ is smooth in the first argument, which covers a vast number of models routinely considered in statistics. 
+ 
+% \bredbf Make a proper assumption theorem-proof statement out of this
+% \eredbf
+
+In a neighborhood of $\bftheta_{s n}$, which is the solution of $\Psi_{sn} = \sum_i \Psi_{sni}$, we assume that the functions $\Psi_{s n i}$ are thrice continuously differentiable in the first argument, with the successive derivatives being denoted by $\Psi_{k s n i}$, $k = 0, 1, 2$. That is, there exists a $\delta > 0$ such that for any $\bftheta = \bftheta_{s n} + \bft$ satisfying $ \| \bft \| < \delta$ we have
+%
+\begin{align} 
+{\frac {d}{ d \bftheta}} \Psi_{sn i} (\bftheta) = \Psi_{0 s n i} (\bftheta) \in \BR^{p_{s n}} 
+\end{align} 
+%
+where $p_{s n} = | \cS_n |$. For the $a^\text{th}$ element of $\Psi_{0 s n i} (\bftheta), a = 1, \ldots p_{ s n}$, denoted by $\Psi_{0 s n i (a)} (\bftheta)$, we have
+%  
+\begin{align}
+\Psi_{0 s n i (a)} (\bftheta) & = \Psi_{0 s n i (a)} (\bftheta_{s n}) 
+	+ \Psi_{1 s n i (a)} (\bftheta_{s n}) t 
+		+ 2^{-1}  \bft^{T} \Psi_{2 s n i (a)} (\bftheta_{s n} + c \bft) \bft
+\end{align}
+%
+for some $ c \in (0, 1)$ possibly depending on $a$. We assume that for each $\cS_n$ and $n$, there is a sequence of $\sigma$-fields $\cF_{ s n 1} \subset \cF_{ s n 2} \ldots \cF_{ s n k_{n} }$ such that 
+$\{ \sum_{i = 1}^{j}  \Psi_{0 s n i } (\bftheta_{s n}), \cF_{ s n j} \}$ is a martingale.  
+
+Also, let the spectral decomposition of the matrix 
+%
+$\bfGamma_{0 s n} =  \sum_{i = 1}^{k_{n}} 
+ \BE \Psi_{0 s n i} (\bftheta_{s n}) \Psi_{0 s n i}^{T} (\bftheta_{s n}) 
+$ 
+%
+be given by
+%
+\begin{align} 
+\bfGamma_{0 s n}  = \bfP_{0 s n} \bfLambda_{0 s n} \bfP^{T}_{0 s n} 
+\end{align}
+%
+where $\bfP_{0 s n} \in \BR^{ p_{ s  n}} \times \BR^{p_{ s  n}}$ is an orthogonal matrix
+whose columns contain the eigenvectors, 
+and $\bfLambda_{0 s n}$ is a diagonal matrix contining the eigenvalues of 
+$\bfGamma_{0 s n}$. We assume that $\bfGamma_{0 s n}$ is positive 
+definite, that is, all the diagonal entries of $\bfLambda_{0 s n}$ are positive numbers.
+We assume that there is a constant $\delta_{0 s } > 0$ such that 
+$\lambda_{{min}} (\bfGamma_{0 s n}) > \delta_{ 0 s n}$ for all sufficiently large $n$.
+The matrices $\bfLambda_{0 s n}^{c}$ for various real numbers $c$ are defined in 
+the obvious way, that is, these are diagonal matrices where the $j$-th diagonal 
+entry is raised to the power $c$. 
+
+Let $\bfGamma_{1 s n i} (\bftheta_{ s n}) $ be the $p_{s n} \times p_{s n}$ 
+matrix whose $a$-th row is $\BE \Psi_{1 s n i (a)} (\bftheta_{s n})$; we assume this 
+expectation exists. Define 
+\begin{align} 
+\bfGamma_{1 s n} (\bftheta_{ s n})  = \sum_{ i =1}^{ k_{n}}
+\bfGamma_{1 s n i} (\bftheta_{ s n})
+\end{align}
+We assume that 
+$\bfGamma_{1 s n}   \equiv \bfGamma_{1 s n} (\bftheta_{ s n}) $ is nonsingular  
+for each $\cM_n$ and $n$. Suppose the singular value decomposition 
+of $\bfGamma_{1 s n}$ is given by 
+\begin{align} 
+\bfGamma_{1 s n}  =  \bfP_{1 s n} \bfLambda_{1 s n} \bfQ^{T}_{1 s n} 
+ \end{align}
+where $\bfP_{1 s n},  \bfQ_{1 s n}  \in \BR^{ p_{ s  n}} \times \BR^{p_{ s  n}}$ 
+are orthogonal matrices, and $\bfLambda_{1 s n}$ is a diagonal  matrix. We assume that the diagonal entries of $\bfLambda_{1 s n}$ are all positive, which implies that in the parameter space the energy functional $\Psi_{ s n}$ actually achieves a minimal value at $\bftheta_{s n}$, the solution of the optimization problem. We define the matrices $\bfLambda_{1 s n}^{c}$ for various real numbers $c$ as diagonal matrices 
+where the $j$-th diagonal entry is raised to the power $c$. Correspondingly, we 
+define $\bfGamma_{1 s n}^{c} =   \bfP_{1 s n} \bfLambda_{1 s n}^{c} \bfQ^{T}_{1 s n}$, and assume that there is a constant $\delta_{1 s n} > 0$ such that $\lambda_{{min}} (\bfGamma_{1 s n}^{T} \bfGamma_{1 s n}) > \delta_{1 s n}$ for all sufficiently large $n$.
+
+We now define the matrix
+%
+\begin{align} 
+\bfA_{ s n} := 
+ \bfGamma_{0 s n}^{-1/2} \bfGamma_{1 s n}. 
+%\bfP_{0 s n} \bfLambda_{0 s n}^{-1/2} \bfP^{T}_{0 s n} \bfGamma_{1 s n} 
+\end{align}
+%
+and assume the following conditions: 
+%
+
+\vspace{1em}
+\noindent\textbf{(S2)}
+The minimum eigenvalue of $\bfA^{T}_{s n} \bfA_{s n}$ tends to infinity. Specifically, for the sequence $a_{s n} \uparrow \infty$ from condition (S1), we have
+% 
+\begin{align} 
+\lambda_{{\min}} \left( \bfGamma_{1 s n} \bfGamma_{0 s n}^{-1}  \bfGamma_{1 s n}^{T} \right)
+\asymp a_{s n}^{2} 
+\end{align}
+
+\noindent\textbf{(S3)} Also there exists a sequence $\tau_{s n} \uparrow \infty, \tau_{s n}^{-1} = O(1)$ as $n \raro \infty$ such that 
+\begin{equation}
+%\trace \bfGamma_{1 s n}^{-1} \bfGamma_{0 s n} \bfGamma_{1 s n}^{-T} 
+%= O (p_{s n} n^{-1} ) (?????)
+%\label{eq:Trace1} \\
+\lambda_{\max} \left( \bfGamma_{1 s n}^{-1} \bfGamma_{0 s n}^{2} \bfGamma_{1 s n}^{-1T} \right)
+%= o (p_{s n}^{-1})
+= o (\tau_{s n}^{-2})
+\label{eq:Trace} 
+\end{equation} 
+as $n \raro \infty$ for any $\cS_n$, and
+
+%The trace 
+%\begin{equation}
+%%\trace \bfGamma_{1 s n}^{-1} \bfGamma_{0 s n} \bfGamma_{1 s n}^{-T} 
+%%= O (p_{s n} n^{-1} ) (?????)
+%%\label{eq:Trace1} \\
+%\trace \bfGamma_{1 s n}^{-1} \bfGamma_{0 s n}^{2} \bfGamma_{1 s n}^{-T} 
+%= O (p_{s n})
+%\label{eq:Trace} 
+%\end{equation} 
+%as $n \raro \infty$ for any $s$.
+
+%The matrix
+%\begin{align} 
+%\bfGamma_{m n} = 
+%\sum_{i = 1} \BE  \Psi_{2 s n i} (\bftheta_{m n}, Y_{n i} )
+%\end{align}
+%is positive definite for each $s$ and $n$.  
+%
+\begin{equation} 
+\BE  \left\| \bfA_{ s n}^{-1} 
+ \left( \sum_{i = 1}^{ k_{n}} \Psi_{1 s n i} - \bfGamma_{1 s n } \right) 
+ \bfA_{ s n}^{-1} \right\|_{F}^{2} = o (p_{s n} \tau_{s n}^{-2})
+ \label{eq:FrobSq}
+ \end{equation}
+where $\|\bfA\|_{F}$ denotes the Frobenium norm of matrix $\bfA$. 
+ 
+% The matrix 
+% \begin{align} 
+%\sum_{i = 1}^{n} 
+% \BE \Psi_{1 s n i} (\bftheta_{m n}, Y_{n i} ) \Psi_{1 s n i}^{T} (\bftheta_{m n}, Y_{n i} ) 
+%\end{align}
+%is positive definite for each $s$ and $n$.  
+
+\noindent\textbf{(S4)}
+For the symmetric matrix $\Psi_{2 s n i (a)} (\bftheta)$ and for some $\delta_{0} > 0$, there exists a symmetric matrix $\bfM_{2 s n i (a)}$ such that
+%
+\begin{align} 
+\sup_{ \| \bftheta - \bftheta_{m n} \bf| < \delta_{0}} 
+ \Psi_{2 s n i (a)} (\bftheta) < \bfM_{2 s n i (a)}, 
+\end{align}
+%
+satisfying 
+%
+\begin{equation}
+\sum_{a = 1}^{ p_{s n}} \sum_{i = 1}^{ k_{n}} 
+ \BE \lambda_{max}^{2} \left( \bfM_{2 s n i (a)} \right) = o \left( a_{s n}^{6}  n^{-1} p_{s n}  \tau_{s n}^{-2} \right)
+  \label{eq:2ndMomentBound}
+\end{equation}
+%
+For any vector $\bfc \in \BR^{ p_{s n}}$ with $\|\bfc\| = 1$, define  $\bfZ_{m n i} = - \bfc^{T} \bfGamma_{0 s n}^{-1/2} \Psi_{0 s n i}$ for $i =1, \ldots k_{n}$.  We assume that
+%
+ \begin{equation} 
+ \sum_{i =1}^{k_{n}} \bfZ_{s n i}^{2} \stackrel{P}{\raro} 1, 
+ \text{ and } 
+ \BE \left[ \max_{i} | \bfZ_{s n i} | \right] \raro 0. 
+ \label{eq:CLTConditions}
+\end{equation}
+%
+ %There exists a sequence of reals $\{ a_{m n} \uparrow \infty \} $ such that 
+% \begin{align} 
+%a_{m n}   \lambda \Biggl(
+% \bfGamma_{m n}^{-1} 
+% \left( \sum_{i = 1}^{n} 
+% \BE \Psi_{1 s n i} (\bftheta_{m n} ) \Psi_{1 s n i}^{T} (\bftheta_{m n} )
+% \right) \left( \bfGamma_{m n}^{-1} \right)^{T}
+%\Bigg) \in (C^{-1}, C) 
+%\text{ for some } C > 0. 
+%\end{align}
+%
+%\item {\sc Assumption 4}
+%
+% \bredbf Need o more assumptions from the proof.
+% \eredbf  
+%
+from hereon using $\Psi_{ k s n i} \equiv \Psi_{k s n i} ({\bftheta}_{s n})$, for $k = 0, 1, 2$. 
+
+\vspace{1em}
+We now consider an array of resampling weights $\BW_{r s n i}$, which for any $n$ may be collected together in the vector $\bfW_{r s n} = ( \BW_{r s n 1}, \ldots,  \BW_{r s n k_{n}})^{T} \in \BR^{k_{n}}$. We assume that this is an exchangeable array of  non-negative random variables,  independent of the data. The index $r$ denotes that these are related to the resampling procedure. The actual implementation of the resampling procedure is carried out by generating independent copies $ \{ \bfW_{1 s n}, \ldots, \bfW_{R s n} \}$ for some sufficiently large integer $R$, and using them in a Monte Carlo procedure, where for any $r = 1, \ldots, R$, we minimize
+%
+\begin{equation}\label{eq:ResamplingMinimization}
+\sum_{i =1}^{k_{n}} \BW_{r s n i} \Psi_{m n i}  \left( \theta, B_{ni} \right)
+\end{equation}
+%
+to obtain the resampling version of the estimator $\hat{\bftheta}_{r s n} \in \BR^{p_{s n}}$. This is the \textit{generalized bootstrap} \citep{ChatterjeeBose05}.
+
+We assume that for each $i = 1, \ldots, k_{n}$, $\BE \BW_{r s n i} = \mu_{s n}$ and $\BV \BW_{r s n i} = \tau_{s n}^{2}$, and write the centered and scaled resampling weights as
+\begin{align} 
+ W_{r s n i} = \tau_{s n}^{-1} \left( \BW_{r s n i}  - \mu_{s n} \right), 
+ \end{align} 
+ thus 
+ $\BW_{r s n i}  = \mu_{s n} +  \tau_{s n} W_{r s n i}$. 
+Since $\BW_{r s n i} \geq 0$ almost surely and is non-degenerate, we have $\mu_{s n} > 0$, and assume that 
+$\mu_{s n} + \tau_{s n}^{2} = O (\tau_{s n}^{2})$. Our analysis below suggests that the properties of the resampling procedure depend only on the \textit{coefficient of variation} ratio $\tau_{s n}/ \mu_{s n}$, so without loss of generality we can set $\mu_{s n} = 1$ for all $s$ and $n$. 
+
+We assume the following conditions on the resampling weights as $n \raro \infty$:
+\begin{eqnarray}
+\BE \BW_{r s n 1}  & = \mu_{s n}, 
+\label{eq:ResamplingWeightMean}\\
+\BV \BW_{r s n 1}  & = \tau_{s n}^{2} \uparrow \infty, 
+\label{eq:ResamplingWeightVariance}\\
+\tau_{s n}^{2} 
+%& = o ( \{min} ( a_{m n}^{2}, k_{n})), 
+& = o ( a_{s n}^{2}), 
+\label{eq:TauSqCondition}\\
+\BE W_{r s n 1} W_{r s n 2} & = O (k_{n}^{-1}), 
+\label{eq:c11} \\
+\BE W_{r s n 1}^{2} W_{r s n 2}^{2} & \raro 1, 
+\label{eq:c22} \\
+\BE W_{r s n 1}^{4} & < \infty. 
+\label{eq:c22}
+\end{eqnarray}
+ 
+
+\begin{Example}[The $m$-out-of-$n$ (moon) bootstrap]\label{example:BootExample1}
+In our framework, the \textit{moon}-bootstrap is identified with
+$\cW_{r s n}$ having a Multinomial distribution with parameters $m$ and probabilities 
+$k_{n}^{-1}(1, \ldots, 1) \in \BR^{k_{n}}$, by a factor of $k_{n}/m$.  Thus we have 
+$\BE \BW_{r s n 1} = \mu_{s n} = (m^{-1} k_{n}) (m/k_{n}) = 1$, and 
+$\BV \BW_{r s n 1} = \tau_{s n}^{2} = (m^{-1} k_{n})^{2} (m k_{n}^{-1} (1 - k_{n}^{-1}) 
+= O( m^{-1} k_{n})$. In typical applications of the \textit{moon}-bootstrap, as  in its 
+application in this chapter, we require that $m \raro \infty$ and $m/k_{n} \raro 0$ as 
+$n \raro \infty$. Thus we have $\tau_{s n}^{2}  \raro \infty$ as $n \raro \infty$, thus 
+the \textit{scale} factor of the resampling weights $\BW_{r s n i}$ tend to 
+infinity with $n$. We use the term \textit{scale-enhanced} resampling for schemes like the
+\textit{moon}-bootstrap where the variance of (properly centered) resampling weights 
+tends to infinity with $n$.
+\end{Example}
+
+
+\begin{Example}[The scale-enhanced Bayesian bootstrap]\label{example:BootExample2}
+A version of Bayesian bootstrap may be constructed by choosing 
+$\BW_{r s n i}$ to be independent and identically distributed Gamma random variables, 
+with mean $\mu_{s n} = 1$ and variance $\tau_{s n}^{2}  \raro \infty$ 
+as $n \raro \infty$. The functionality of this resampling scheme and Bayesian 
+interpretation remain similar to the standard Bayesian bootstrap, however some 
+convenient properties like conjugacy are lost.
+\end{Example}
+
+
+\begin{Theorem}\label{Theorem:ResamplingConsistency_Smooth}
+Assume conditions (S0)-(S5) and that $p_{s n}^{2} k_{n}^{-1} \raro 0$ as $n \raro \infty$. Additionally, assume that the resampling weights $\BW_{r s n i}$   are exchangeable random variables satisfying the conditions \ref{eq:ResamplingWeightMean}-\ref{eq:c22}.  Define $\hat \bfB_{s n} := \tau_{s n}^{-1} \hat \bfGamma^{1/2}_{0 s n} \hat \bfGamma^{-1}_{1 s n}$, where $\hat \bfGamma_{0 s n}$ and $\hat \bfGamma_{1 s n}$ are sample equivalents of $\bfGamma_{0 s n}$ and $\bfGamma_{1 s n}$, respectively.
+%Additionally, assume that 
+%the resampling weights $\BW_{r s n i}$ are independently and identically distributed with 
+%mean 1 and variance $\tau_{n}^{2} \raro \infty$ as $n \raro \infty$. Define the sequence 
+%$b_{ m n} = a_{ s n} \tau_{n}^{-1}$. 
+%Then $b_{ m n} (\hat{\bftheta}_{ r s n} - \hat{\bftheta}_{ m n})$ 
+%and $a_{ s n} (\hat{\bftheta}_{ m n} - {\bftheta}_{ m n})$  converge to the same 
+%limiting distribution almost surely as $n \raro \infty$.
+Then $\bfA_{ s n} (\hat{\bftheta}_{s n} - {\bftheta}_{s n})$ converges weakly to the 
+standard Normal distribution in $p_{s n}$ dimension, and conditional on the data, $\hat{\bfB}_{ s n} (\hat{\bftheta}_{r s n} - \hat{\bftheta}_{s n})$ also converges weakly to the same distribution in probability. 
+\end{Theorem}
+
+%The above theorem establishes the consistence of our resampling procedure. Details of 
+%the proof will be added later. We note that the above theorem is only the first step 
+%is a series of similar theorems that covers the moon-bootstrap, and several other cases of 
+%interest. We will include details in later versions of this manuscript.
+
+\subsection{Bootstrap estimation of $e$-values}
+
+%{\colrbf state simplifying assumption that $\bfA_{m n}$ is a diagonal matrix, define $b_{m n}$ }
+
+We now consider the sample equivalent of the $e$-value and prove that it consistently estimates the population $e$-value for certain resampling schemes. We use a resampling scheme satisfying conditions in the previous subsection, and two independent bootstrap samples, indexed by ${}_{r .}$ and ${}_{r_1 .}$, from the preferred model. We use the first set of samples to generate coefficient vectors $\hat \bftheta_{r m n}$ corresponding to the model $\cM_n$:
+%
+\begin{align}\label{eqn:bootEstEqn}
+ \hat{\theta}_{r m n j} = \left\{ \begin{array}{ll}
+ \text{ Unknown} \ \hat{\theta}_{r s n j} & \text{ for } 
+ 			j \in \cS_{n}; \\
+ \text{ Known} \  c_{nj} & \text{ for } j \notin \cS_{n}.
+\end{array}
+\right.
+\end{align}
+%
+and the second set of samples to get bootstrap approximation of $[\hat \bfG_{* n}]$. Given that $\bfG_{m n} ( \hat \bftheta_{r m n} ) \equiv \hat \bfG_{r m n}$ and $\bfG_{* n} ( \hat \bftheta_{r_1 * n} ) \equiv \hat \bfG_{r_1 * n}$, we define the sample $e$-value as
+%
+\begin{align}
+\hat e( \cM_n ) := \BE_r E_n ( \hat \bfG_{r m n}, [ \hat \bfG_{r_1 * n} ] )
+\end{align}
+%
+The expectation above is taken on the first set of bootstrap samples.
+
+\begin{Theorem}
+\label{Theorem:ModelScore}
+Consider a resampling scheme satisfying technical conditions in the previous subsection, and an evaluation map $E_n$ satisfying the assumptions (E1)-(E4). Define $b_{s n} = a_{s n} / \tau_{s n}$, and assume that (a) $b_{s n} \asymp b_{* n}$, (b) $d_n = o( \min_{\cS_n} (\{ b_{s n}, b_{* n} \})$. Then as $n \raro \infty$,
+
+\begin{enumerate}
+\item For any adequate model $\cM_n$ we have $| \hat e_n (\cM_n ) - \hat e_n (\cM_{* n} ) | \stackrel{P_n}{\raro} o_P (1)$;
+
+\item For any inadequate model $\cM_n$ we have $\hat e_n (\cM_n ) \stackrel{P_n}{\raro} o_P (1)$. 
+\end{enumerate}
+%
+where $s_n \stackrel{P_n}{\raro} t_n $ means $s_n$ converges in probability to $t_n$ conditional on the data.
+\end{Theorem}
+
+Proving the above theorem requires largely similar arguments used in the proof of its population counterpart, i.e. theorem \ref{Theorem:ThmRightWrong}. Interestingly, as shown in the proof, we do not actually require $\tau_n$ to go to infinity to achieve convergence for adequate models: only $b_{s n} \raro \infty$ is good enough. The slower rate is only required to separate out $e$-value estimates of inadequate models from those of the adequate models. In practice when dealing with $\sqrt n$-consistent estimators (i.e. $a_{s n} = a_{* n} = \sqrt n$ for all $\cM_n$, this would mean choosing the variance parameter $\tau_{s n}^2 = \tau_n^2$ of the resampling weight distribution $\BW_{s n} \equiv \BW_n$ such that $\tau_n^2 \raro \infty$ and $\tau_n^2/n \raro 0$ as $n \raro \infty$.The bootstrap model selection criterion by \cite{shao96} had used the same specification of bootstrap weights to obtain a criterion that achieves asymptotic model selection consistency: albeit in a very specific setup compared to our formulation. Also, numerous examples exist in model selection literature of using similar quantities explicitly as a penalty term in model selection criteria \citep{Schwarz78,KonishiKitagawa96} or the loss function \citep{Zou06}. %{\colrbf better language / mention in short here and elaborate in discussion?}

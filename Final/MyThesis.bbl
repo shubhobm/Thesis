@@ -1,0 +1,913 @@
+\begin{thebibliography}{}
+
+\bibitem[Adragni and Cook, 2009]{AdragniCook09}
+Adragni, K.~P. and Cook, R.~D. (2009).
+\newblock Sufficient dimension reduction and prediction in regression.
+\newblock {\em Phil. Trans. R. Soc. A}, 367:4385--4405.
+
+\bibitem[Akaike, 1970]{Akaike70}
+Akaike, H. (1970).
+\newblock Statistical predictor identification.
+\newblock {\em Ann. Inst. Statist. Math.}, 22:203--217.
+
+\bibitem[Anderson, 2003]{anderson}
+Anderson, T. (3rd ed. 2003).
+\newblock {\em An {I}ntroduction to {M}ultivariate {S}tatistical {A}nalysis}.
+\newblock Wiley, Hoboken, NJ.
+
+\bibitem[Antoniadis and Fan, 2001]{AntoniadisFan01}
+Antoniadis, A. and Fan, J. (2001).
+\newblock {The Adaptive Lasso and Its Oracle Properties}.
+\newblock {\em J. Amer. Statist. Assoc.}, 96:939--967.
+
+\bibitem[Aulchenko et~al., 2007]{AulchenkoEtal07}
+Aulchenko, Y.~S., Koning, D. J.~D., and Haley, C. (2007).
+\newblock {Genome-wide rapid association using mixed model and regression: a
+  fast and simple method for genome-wide pedigree-based quantitative trait loci
+  association analysis}.
+\newblock {\em Nat. Genet.}, 177:577--585.
+
+\bibitem[Bakin, 1999]{BakinThesis99}
+Bakin, S. (1999).
+\newblock {\em Adaptive regression and model selection in data mining
+  problems}.
+\newblock PhD thesis, Australian National University, Canberra.
+
+\bibitem[Boente and Salibian-Barrera, 2015]{BoenteBarrera15}
+Boente, G. and Salibian-Barrera, M. (2015).
+\newblock {S-Estimators for Functional Principal Component Analysis}.
+\newblock {\em J. Amer. Statist. Assoc.}, 110:1100--1111.
+
+\bibitem[Bogdan et~al., 2011]{BogdanEtal11}
+Bogdan, M., Chakrabarti, A., Frommelet, F., and Ghosh, J.~K. (2011).
+\newblock {Asymptotic Bayes-optimality under sparsity of some multiple testing
+  procedures}.
+\newblock {\em Ann. Statist.}, 39:1551--1579.
+
+\bibitem[Bondell et~al., 2010]{BondellKrishnaGhosh10}
+Bondell, H.~D., Krishna, A., and Ghosh, S.~K. (2010).
+\newblock Joint variable selection for fixed and random effects in linear
+  mixed-effects models.
+\newblock {\em Biometrics}, 66:1069--1077.
+
+\bibitem[Bose and Chatterjee, 2003]{BoseChatterjee03}
+Bose, A. and Chatterjee, S. (2003).
+\newblock {Generalized bootstrap for estimators of minimizers of convex
+  functions}.
+\newblock {\em J. Statist. Plan. Inf.}, 117:225--239.
+
+\bibitem[Box and Cox, 1964]{BoxCox64}
+Box, G. E.~P. and Cox, D.~R. (1964).
+\newblock {An analysis of transformations}.
+\newblock {\em J. R. Statist. Soc. B}, 26:211--252.
+
+\bibitem[Brown, 1983]{brown83}
+Brown, B. (1983).
+\newblock Statistical {U}se of the {S}patial {M}edian.
+\newblock {\em J. R. Statist. Soc. B}, 45:25--30.
+
+\bibitem[Buhlmann and {van de Geer}, 2011]{BuhlmannBook}
+Buhlmann, P. and {van de Geer}, S. (2011).
+\newblock {\em {Statistics for High-Dimensional Data. Methods, Theory and
+  Applications}}.
+\newblock Springer.
+
+\bibitem[Calhoun et~al., 2010]{CalhounEtal10}
+Calhoun, V.~D., Adali, T., and Mcginty, V.~B. (2010).
+\newblock {fMRI activation in a visual-perception task: network of areas
+  detected using the general linear model and independent components analysis}.
+\newblock {\em Neuroimage}, 14:1080--1088.
+
+\bibitem[Chakraborty and Chaudhuri, 1996]{ChakrabortyChaudhuri96}
+Chakraborty, B. and Chaudhuri, P. (1996).
+\newblock {On a Transformation and Re-Transformation Technique for Constructing
+  an Affine Equivariant Multivariate Median}.
+\newblock {\em Proc. Amer. Math. Soc.}, 124:2539--2547.
+\newblock doi: 10.1017/S1461145713001296.
+
+\bibitem[Chakraborty et~al., 1998]{ChakrabortyChaudhuriOja98}
+Chakraborty, B., Chaudhuri, P., and Oja, H. (1998).
+\newblock {Operating Transformation Retransformation Spatial Median and Angle
+  Test}.
+\newblock {\em Stat. Sinica}, 8:767--784.
+\newblock doi: 10.1017/S1461145713001296.
+
+\bibitem[Chang et~al., 2014]{ChangEtal14}
+Chang, C.-H., Huang, H.-C., and Ing, C.-K. (2014).
+\newblock {Asymptotic theory of generalized information criterion for
+  geostatistical regression model selection}.
+\newblock {\em Ann. Statist.}, 42:2441--2468.
+
+\bibitem[Chatterjee and Bose, 2005]{ChatterjeeBose05}
+Chatterjee, S. and Bose, A. (2005).
+\newblock Generalized bootstrap for estimating equations.
+\newblock {\em Ann. Statist.}, 33:414--436.
+
+\bibitem[Chaudhuri, 1996]{Chaudhuri96}
+Chaudhuri, P. (1996).
+\newblock On a geometric notion of quantiles for multivariate data.
+\newblock {\em J. Amer. Statist. Assoc.}, 91:862--872.
+
+\bibitem[Chen and Qin, 2010]{ChenQin10}
+Chen, S.~X. and Qin, Y.~L. (2010).
+\newblock {A Two-sample Test for High-dimensional Data with Application to
+  Gene-Set Testing}.
+\newblock {\em Ann. Statist.}, 38:808--835.
+
+\bibitem[Chen and Abecasis, 2007]{ChenAbecasis07}
+Chen, W.~M. and Abecasis, G. (2007).
+\newblock {Family-based association tests for genome-wide association scans}.
+\newblock {\em Am. J. Hum. Genet.}, 81:913--926.
+
+\bibitem[Chen et~al., 2012]{ChenEtal12}
+Chen, X., He, J., Lawrence, R., and Carbonell, J.~G. (2012).
+\newblock {Adaptive Multi-task Sparse Learning with an Application to fMRI
+  Study}.
+\newblock In {\em {Proceedings of the 2012 SIAM International Conference on
+  Data Mining}}, volume~12.
+\newblock DOI: http://dx.doi.org/10.1137/1.9781611972825.19.
+
+\bibitem[Chernozhukov et~al., 2017]{Chernozhukov17}
+Chernozhukov, V., Galichon, A., Hallin, M., and Henry, M. (2017).
+\newblock {Monge–Kantorovich depth, quantiles, ranks and signs}.
+\newblock {\em Ann. Statist.}, 45:223--256.
+
+\bibitem[Claeskens and Hjort, 2008]{ClaeskensHjort08Book}
+Claeskens, G. and Hjort, N.~L. (2008).
+\newblock {\em {Model Selection and Model Averaging}}.
+\newblock Cambridge Series in Statistical and Probabilistic Mathematics.
+  Cambridge University Press, first edition.
+
+\bibitem[Cook et~al., 2010]{Cook10}
+Cook, R.~D., Li, B., and Chiaromonte, F. (2010).
+\newblock Envelope models for parsimonious and efficient multivariate linear
+  regression.
+\newblock {\em Biometrika}, 20:927--1010.
+
+\bibitem[Coombes, 2016]{CoombesThesis16}
+Coombes, B.~J. (2016).
+\newblock {\em Tests for detection of rare variants and gene-environment
+  interaction in cohort and twin family studies}.
+\newblock PhD thesis, University of Minnesota.
+
+\bibitem[Croux and Haesbroeck, 2000]{croux00}
+Croux, C. and Haesbroeck, G. (2000).
+\newblock Principal component analysis based on robust estimators of the
+  covariance or correlation matrix: influence functions and efficiencies.
+\newblock {\em Biometrika}, 87:603--618.
+
+\bibitem[Cui et~al., 2012]{CuiEtal12}
+Cui, W.~Y., Seneviratne, C., Gu, J., and Li, M.~D. (2012).
+\newblock {Genetics of GABAergic signaling in nicotine and alcohol dependence}.
+\newblock {\em Hum. Genet.}, 131:843--855.
+\newblock doi: 10.1007/s00439-011-1108-4.
+
+\bibitem[De~Neve et~al., 2013]{DeNeveEtal13}
+De~Neve, J.-E., Mikhaylov, S., Dawes, C.~T., et~al. (2013).
+\newblock {Born to Lead? A Twin Design and Genetic Association Study of
+  Leadership Role Occupancy}.
+\newblock {\em Leadersh Q}, 24:45--60.
+
+\bibitem[Dedecker and Michel, 2011]{DedeckerMichel11}
+Dedecker, J. and Michel, B. (2011).
+\newblock {Deconvolution for the Wasserstein metric and geometric inference}.
+\newblock {\em Electron. J. Statist.}, 5:1394–--1423.
+
+\bibitem[Dietz and Chatterjee, 2014]{Dietz2014}
+Dietz, L.~R. and Chatterjee, S. (2014).
+\newblock Logit-normal mixed model for {I}ndian monsoon precipitation.
+\newblock {\em Nonlin. Processes Geophys.}, 21:939--953.
+
+\bibitem[Dietz and Chatterjee, 2015]{Dietz2015Chapter}
+Dietz, L.~R. and Chatterjee, S. (2015).
+\newblock {Investigation of Precipitation Thresholds in the Indian Monsoon
+  Using Logit-Normal Mixed Models}.
+\newblock In Lakshmanan, V., Gilleland, E., McGovern, A., and Tingley, M.,
+  editors, {\em Machine Learning and Data Mining Approaches to Climate
+  Science}, pages 239--246. Springer.
+
+\bibitem[Disch et~al., 1998]{Disch98}
+Disch, A., Hemmerlin, A., Bach, T.~J., and Rohmer, M. (1998).
+\newblock {Mevalonate-derived isopentenyl diphosphate is the biosynthetic
+  precursor of ubiquinone prenyl side chain in tobacco BY-2 cells}.
+\newblock {\em J. Exp. Bot.}, 331:615--621.
+
+\bibitem[Donoho and Johnstone, 1994]{DonohoJohnstone94}
+Donoho, D. and Johnstone, I. (1994).
+\newblock {Ideal Spatial Adaptation via Wavelet Shrinkages}.
+\newblock {\em Biometrika}, 81:425--455.
+
+\bibitem[Dumbgen, 1992]{Dumbgen92}
+Dumbgen, L. (1992).
+\newblock Limit theorems for the simplicial depth.
+\newblock {\em Statist. Probab. Lett.}, 14:119--128.
+
+\bibitem[D\"{u}rre et~al., 2014]{durre14}
+D\"{u}rre, A., Vogel, D., and Tyler, D. (2014).
+\newblock The spatial sign covariance matrix with unknown location.
+\newblock {\em J. Multivariate Anal.}, 130:107--117.
+
+\bibitem[Dutta and Ghosh, 2012]{dutta12}
+Dutta, S. and Ghosh, A. (2012).
+\newblock On robust classification using projection depth.
+\newblock {\em Ann. Inst. Stat. Math.}, 64-3:657--676.
+
+\bibitem[Dyckerhoff and Mozharovskyi, 2016]{Dyckerhoff16}
+Dyckerhoff, R. and Mozharovskyi, P. (2016).
+\newblock {Exact computation of the halfspace depth}.
+\newblock {\em Comput. Statist. Data Anal.}, 98:19–--30.
+
+\bibitem[Efron, 1979]{Efron79}
+Efron, B. (1979).
+\newblock {Bootstrap Methods: Another Look at the Jackknife}.
+\newblock {\em Ann. Statist.}, 1:1--26.
+
+\bibitem[Efron and Tibshirani, 1993]{EfronTibshiraniBook93}
+Efron, B. and Tibshirani, R.~J. (1993).
+\newblock {\em {An Introduction to the Bootstrap}}.
+\newblock Chapman \& Hall/CRC Monographs on Statistics \& Applied Probability.
+  Springer Science, first edition.
+
+\bibitem[El~Karoui, 2009]{ElKaroui09}
+El~Karoui, N. (2009).
+\newblock {Concentration of Measure and Spectra of Random Matrices: with
+  Applications to Correlation Matrices, Elliptical Distributions and Beyond}.
+\newblock {\em Ann. Applied Probab.}, 19:2362--2405.
+
+\bibitem[Eloyan et~al., 2014]{EloyanEtal14}
+Eloyan, A., Li, S., Muschelli, J., et~al. (2014).
+\newblock {Analytic programming with FMRI data: a quick-start guide for
+  statisticians using R}.
+\newblock {\em PLoS One}, 9:e89470.
+\newblock doi: 10.1371/journal.pone.0089470.
+
+\bibitem[Esbensen et~al., 1994]{esbensen94}
+Esbensen, K.~H., Sch\"{o}nkopf, S., and Midtgaard, T. (1994).
+\newblock {\em Multivariate {A}nalysis in {P}ractice}.
+\newblock CAMO, Trondheim, Germany.
+
+\bibitem[Fan and Chen, 1999]{FanChen99}
+Fan, J. and Chen, J. (1999).
+\newblock {One-Step Local Quasi-Likelihood Estimation}.
+\newblock {\em J. R. Statist. Soc. B}, 61:927--943.
+
+\bibitem[Fan and Li, 2001]{FanLi01}
+Fan, J. and Li, R. (2001).
+\newblock {Variable Selection via Nonconcave Penalized Likelihood and its
+  Oracle Properties}.
+\newblock {\em J. Amer. Statist. Assoc.}, 96:1348--1360.
+
+\bibitem[Fan and Li, 2012]{FanLi12}
+Fan, Y. and Li, R. (2012).
+\newblock Variable selection in linear mixed effect models.
+\newblock {\em Ann. Statist.}, 40(4):2043--–2068.
+
+\bibitem[Fang et~al., 1990]{FangEtal90}
+Fang, K.~T., .Kotz, S., and Ng, K.~W. (1990).
+\newblock {\em Symmetric multivariate and related distributions}.
+\newblock Monographs on Statistics and Applied Probability 36. Chapman and Hall
+  Ltd., London, United Kingdom.
+
+\bibitem[Frebort et~al., 2011]{FrebortEtal11}
+Frebort, I., Kowalska, M., Huska, T., Frebortova, J., and Galuszka, P. (2011).
+\newblock {Evolution of cytokinin biosynthesis and degradation}.
+\newblock {\em J. Exp. Bot.}, 62:2431--2452.
+
+\bibitem[Frommelet et~al., 2012]{FrommeletEtal12}
+Frommelet, F., Ruhaltinger, F., Twar\'og, P., and Bogdan, M. (2012).
+\newblock {Modified versions of Bayesian Information Criterion for genome-wide
+  association studies}.
+\newblock {\em Comput. Stat. Data Anal.}, 56:1038--1051.
+
+\bibitem[Gelernter et~al., 2014]{GelernterEtal14}
+Gelernter, J., Kranzler, H.~R., Sherva, R., Almasy, L., et~al. (2014).
+\newblock {Genome-wide association study of alcohol dependence: significant
+  findings in African- and European-Americans including novel risk loci}.
+\newblock {\em Mol. Psychiatry}, 19:41--49.
+\newblock doi:10.1038/mp.2013.145.
+
+\bibitem[Geyer, 1994]{Geyer94}
+Geyer, C. (1994).
+\newblock {On the Asymptotics of Constrained M-Estimation}.
+\newblock {\em Ann. Statist.}, 22:1993--2010.
+
+\bibitem[Ghosh and Chaudhuri, 2005]{ghosh05}
+Ghosh, A. and Chaudhuri, P. (2005).
+\newblock On {M}aximum {D}epth and {R}elated {C}lassifiers.
+\newblock {\em Scand. J. Statist.}, 32:327--350.
+
+\bibitem[Ghosh et~al., 2016]{GhoshEtal16}
+Ghosh, S., Vittal, H., Sharma, T., et~al. (2016).
+\newblock {Indian Summer Monsoon Rainfall: Implications of Contrasting Trends
+  in the Spatial Variability of Means and Extremes}.
+\newblock {\em PLoS ONE}, 11:e0158670.
+\newblock https://doi.org/10.1371/journal.pone.0158670.
+
+\bibitem[Gosswami, 2005]{Goswami05}
+Gosswami, B.~N. (2005).
+\newblock {\em {The Global Monsoon System: Research and Forecast}}, chapter
+  {The Asian Monsoon: Interdecadal Variability}.
+\newblock World Scientific.
+
+\bibitem[Gross, 1967]{Gross67}
+Gross, L. (1967).
+\newblock {Potential theory on Hilbert space}`.
+\newblock {\em J. Funct. Analysis}, 1:123--181.
+
+\bibitem[Haldane, 1948]{haldane48}
+Haldane, J. (1948).
+\newblock Note on the {M}edian of a {M}ultivariate {D}istribution.
+\newblock {\em Biometrika}, 35:414--415.
+
+\bibitem[Hallin and Paindaveine, 2002]{HallinPaindaveine02}
+Hallin, M. and Paindaveine, D. (2002).
+\newblock {Optimal tests for multivariate location based on interdirections and
+  pseudo-Mahalanobis ranks}.
+\newblock {\em Ann. Statist.}, 30:1103--1133.
+
+\bibitem[Hampel et~al., 1986]{HampelBook86}
+Hampel, F.~R., Ronchetti, E.~M., Rousseeuw, P.~J., and Staehl, W.~A. (1986).
+\newblock {\em {Robust Statistics: The Approach Based on Influence Functions}}.
+\newblock Wiley.
+
+\bibitem[Hicks et~al., 2011]{HicksEtal11}
+Hicks, B.~M., Schalet, B.~D., Malone, S., Iacono, W.~G., and McGue, M. (2011).
+\newblock {Psychometric and Genetic Architecture of Substance Use Disorder and
+  Behavioral Disinhibition Measures for Gene Association Studies}.
+\newblock {\em Behav Genet.}, 41:459--475.
+\newblock doi:10.1007/s10519-010-9417-2.
+
+\bibitem[Huber, 1981]{HuberBook81}
+Huber, P.~J. (1981).
+\newblock {\em Robust Statistics}.
+\newblock Wiley series in probability and mathematical statistics. Wiley.
+
+\bibitem[Hubert et~al., 2005]{hubert05}
+Hubert, M., Rousseeuw, P.~J., and Branden, K.~V. (2005).
+\newblock {ROBPCA}: {A} {N}ew {A}pproach to {R}obust {P}rincipal {C}omponent
+  {A}nalysis.
+\newblock {\em Technometrics}, 47-1:64--79.
+
+\bibitem[Iacono et~al., 1999]{IaconoEtal99}
+Iacono, W.~G., Carlson, S.~R., Taylor, J., Elkins, I.~J., and McGue, M. (1999).
+\newblock {Behavioral disinhibition and the development of substance use
+  disorders: Findings from the Minnesota Twin Family Study}.
+\newblock {\em Dev. Psychopathol.}, 11:869--900.
+
+\bibitem[Irons, 2012]{IronsThesis12}
+Irons, D.~E. (2012).
+\newblock {\em Characterizing specific genetic and environmental influences on
+  alcohol use}.
+\newblock PhD thesis, University of Minnesota.
+
+\bibitem[Jiang et~al., 2008]{JiangEtal08}
+Jiang, J., Rao, S., Gu, Z., and Nguyen, T. (2008).
+\newblock Fence methods for mixed model selection.
+\newblock {\em Ann. Statist.}, 36:1669--1692.
+
+\bibitem[Jornsten, 2004]{jornsten04}
+Jornsten, R. (2004).
+\newblock Clustering and classification based on the $l_1$ depth.
+\newblock {\em J. Multivariate Anal.}, 90-1:67--89.
+
+\bibitem[Karpyak et~al., 2010]{KarpyakEtal10}
+Karpyak, V.~M., Biernacka, J.~M., Weg, M.~W., et~al. (2010).
+\newblock {Interaction of SLC6A4 and DRD2 polymorphisms is associated with a
+  history of delirium tremens}.
+\newblock {\em Addict. Biol.}, 15:23--34.
+\newblock doi: 10.1111/j.1369-1600.2009.00183.x.
+
+\bibitem[Ke, 2012]{Ke12}
+Ke, X. (2012).
+\newblock {Presence of multiple independent effects in risk loci of common
+  complex human diseases}.
+\newblock {\em Am. J. Hum. Genet.}, 91:185--192.
+
+\bibitem[Keyes et~al., 2009]{KeyesEtal09}
+Keyes, M.~A., Malone, S.~M., Elkins, I.~J., Legrand, L., McGue, M., and Iacono,
+  W.~G. (2009).
+\newblock {The Enrichment Study of the Minnesota Twin Family Study: Increasing
+  the yield of twin families at high risk for externalizing psychopathology}.
+\newblock {\em Twin Res. Hum. Genet.}, 12:489--501.
+
+\bibitem[Kirschen et~al., 2010]{Kirschen10}
+Kirschen, M.~P., Chen, S.~H., and Desmond, J.~E. (2010).
+\newblock {Modality specific cerebro-cerebellar activations in verbal working
+  memory: an fMRI study}.
+\newblock {\em Behav. Neurol.}, 23:51--63.
+
+\bibitem[Knight and Fu, 2000]{KnightFu00}
+Knight, K. and Fu, W. (2000).
+\newblock {Asymptotics for Lasso-Type Estimators}.
+\newblock {\em Ann. Statist.}, 28:1356--1378.
+
+\bibitem[Knutti et~al., 2010]{KnuttiEtal10}
+Knutti, R., Furrer, R., Tebaldi, C., et~al. (2010).
+\newblock {Challenges in Combining Projections from Multiple Climate Models}.
+\newblock {\em J. Clim.}, 23:2739--2758.
+
+\bibitem[Konishi and Kitagawa, 1996]{KonishiKitagawa96}
+Konishi, S. and Kitagawa, G. (1996).
+\newblock Generalised information criteria in model selection.
+\newblock {\em Biometrika}, 83:875--890.
+
+\bibitem[Krishnamurthy et~al., 2009]{Krishnamurthy09}
+Krishnamurthy, C. K.~B., Lall, U., and Kwon, H.-H. (2009).
+\newblock {Changing Frequency and Intensity of Rainfall Extremes over India
+  from 1951 to 2003}.
+\newblock {\em J. Clim.}, 22:4737--4746.
+
+\bibitem[Krishnamurthy and {Kinter III}, 2003]{KrishChapter}
+Krishnamurthy, V. and {Kinter III}, J.~L. (2003).
+\newblock {The Indian Monsoon and its Relation to Global Climate Variability}.
+\newblock In Rodo, X. and Comin, F.~A., editors, {\em Global Climate: Current
+  Research and Uncertainties in the Climate System}. Springer.
+
+\bibitem[Lamparter et~al., 2016]{LamparterEtal16}
+Lamparter, D., Marbach, D., Rueedi, R., et~al. (2016).
+\newblock {Fast and Rigorous Computation of Gene and Pathway Scores from
+  SNP-Based Summary Statistics}.
+\newblock {\em PLoS Comput. Biol.}, 12:e1004714.
+\newblock doi:10.1371/journal.pcbi.1004714.
+
+\bibitem[Leeb and Potscher, 2005]{LeebPotscher05}
+Leeb, H. and Potscher, B.~M. (2005).
+\newblock {Model Selection and Inference: Facts and Fiction}.
+\newblock {\em Econometric Theory}, 21:21--59.
+
+\bibitem[{Leskel\"{a}} and Vihola, 2015]{LeskelaVihola15}
+{Leskel\"{a}}, L. and Vihola, M. (2015).
+\newblock {Conditional convex orders and measurable martingale couplings}.
+\newblock arXiv:1404.0999.
+
+\bibitem[Li et~al., 2012]{LiZhongZhu12}
+Li, R., Zhong, W., and Zhu, L. (2012).
+\newblock {Feature Screening via Distance Correlation Learning}.
+\newblock {\em J. Amer. Statist. Assoc.}, 107:1129--1139.
+
+\bibitem[Li et~al., 2011]{LiEtal11}
+Li, X., Basu, S., Miller, M.~B., Iacono, W.~G., and McGue, M. (2011).
+\newblock {A Rapid Generalized Least Squares Model for a Genome-Wide
+  Quantitative Trait Association Analysis in Families}.
+\newblock {\em Hum. Hered.}, 71:67--82.
+\newblock doi:10.1159/000324839.
+
+\bibitem[Li et~al., 2015]{LiNanZhu15}
+Li, Y., Nan, B., and Zhu, J. (2015).
+\newblock {Multivariate Sparse Group Lasso for the Multivariate Multiple Linear
+  Regression with an Arbitrary Group Structure}.
+\newblock {\em Biometrics}, 71:354--363.
+
+\bibitem[Lind et~al., 2012]{LindEtal12}
+Lind, P.~A., Macgregor, S., Heath, A.~C., and Madden, P. A.~F. (2012).
+\newblock {Association between {\it in vivo} alcohol metabolism and genetic
+  variation in pathways that metabolize the carbon skeleton of ethanol and NADH
+  reoxidation in the Alcohol Challenge Twin Study}.
+\newblock {\em Alcohol Clin. Exp. Res.}, 36:2074--2085.
+\newblock doi:10.1111/j.1530-0277.2012.01829.x.
+
+\bibitem[Liu, 1990]{liu90}
+Liu, R. (1990).
+\newblock On a notion of data depth based on random simplices.
+\newblock {\em Ann. Statist.}, 18:405--414.
+
+\bibitem[Liu et~al., 1999]{LiuPareliusSingh99}
+Liu, R., Parelius, J., and Singh, K. (1999).
+\newblock Multivariate analysis by data depth: {D}escriptive statistics,
+  graphics and inference (with discussion).
+\newblock {\em Ann. Statist.}, 27:783--858.
+
+\bibitem[Liu and Singh, 1997]{LiuSingh97}
+Liu, R.~Y. and Singh, K. (1997).
+\newblock {Notions of Limiting P Values Based on Data Depth and Bootstrap}.
+\newblock {\em J. Amer. Statist. Assoc.}, 92(437):266--277.
+
+\bibitem[Locantore et~al., 1999]{LocantoreEtal99}
+Locantore, N., Marron, J., Simpson, D., Tripoli, N., Zhang, J., and Cohen, K.
+  (1999).
+\newblock Robust principal components of functional data.
+\newblock {\em TEST}, 8:1--73.
+
+\bibitem[Loh and Wainwright, 2015]{LohWainwright15}
+Loh, P.-L. and Wainwright, M.~J. (2015).
+\newblock {Regularized $M$-estimators with Nonconvexity: Statistical and
+  Algorithmic Theory for Local Optima}.
+\newblock {\em J. Mach. Learn. Res.}, 16:559--616.
+
+\bibitem[Magyar and Tyler, 2014]{magyar14}
+Magyar, A. and Tyler, D. (2014).
+\newblock The asymptotic inadmissibility of the spatial sign covariance matrix
+  for elliptically symmetric distributions.
+\newblock {\em Biometrika}, 101:673--688.
+
+\bibitem[Mammen, 1993]{Mammen93}
+Mammen, E. (1993).
+\newblock {Bootstrap and Wild Bootstrap for High Dimensional Linear Models}.
+\newblock {\em Ann. Statist.}, 21(1):255--285.
+
+\bibitem[Manolio et~al., 2009]{ManolioEtal09}
+Manolio, T.~A., Collins, F.~S., Cox, N.~J., et~al. (2009).
+\newblock {Finding the missing heritability of complex diseases}.
+\newblock {\em Nature}, 461:747--753.
+
+\bibitem[McGue et~al., 2007]{McGueEtal07}
+McGue, M., Keyes, M., Sharma, A., Elkins, I.~J., Legrand, L.~N., Johnson, W.,
+  and Iacono, W.~G. (2007).
+\newblock {The environments of adopted and non-adopted youth: Evidence on range
+  restriction from the Sibling Interaction and Behavior Study (SIBS)}.
+\newblock {\em Behav. Genet.}, 37:449--462.
+
+\bibitem[McGue et~al., 2013]{McGueEtal13}
+McGue, M., Zhang, Y., Miller, M.~B., et~al. (2013).
+\newblock {A Genome-Wide Association Study of Behavioral Disinhibition}.
+\newblock {\em Behav Genet.}, 43.
+\newblock doi:10.1007/s10519-013-9606-x.
+
+\bibitem[Miao and Ben-Israel, 1992]{miao92}
+Miao, J. and Ben-Israel, A. (1992).
+\newblock On principal angles between subspaces in $\mathbb{R}^n$.
+\newblock {\em Lin. Algeb. Applic.}, 171:81--98.
+
+\bibitem[Michel and Pfanzagl, 1971]{MichelPfanzagl71}
+Michel, R. and Pfanzagl, J. (1971).
+\newblock {The accuracy of the normal approximation for minimum contrast
+  estimates}.
+\newblock {\em Z. Wahrsch Verw. Gebiete}, 18:73--84.
+
+\bibitem[Miller et~al., 2012]{MillerEtal12}
+Miller, M.~B., Basu, S., Cunningham, J., et~al. (2012).
+\newblock {The Minnesota Center for Twin and Family Research Genome-Wide
+  Association Study}.
+\newblock {\em Twin Res Hum Genet.}, 15:767--774.
+\newblock doi:10.1017/thg.2012.62.
+
+\bibitem[Minsker, 2015]{Minsker15}
+Minsker, S. (2015).
+\newblock {Geometric median and robust estimation in Banach spaces}.
+\newblock {\em Bernoulli}, 21:2308–--2335.
+
+\bibitem[Mizera, 2002]{Mizera02}
+Mizera, I. (2002).
+\newblock {On Depth and Deep Points: A Calculus}.
+\newblock {\em Ann. Statist.}, 30:1681–--1736.
+
+\bibitem[Moon et~al., 2012]{MoonWangHa12}
+Moon, J.-Y., Wang, B., and Ha, K.~J. (2012).
+\newblock {Teleconnections associated with Northern Hemisphere summer monsoon
+  intraseasonal oscillation}.
+\newblock {\em Clim. Dyn.}, 40(11):2761--2774.
+
+\bibitem[Mosler, 2013]{MoslerChapter13}
+Mosler, K. (2013).
+\newblock Depth statistics.
+\newblock In Becker, C., Fried, R., and Kuhnt, S., editors, {\em Robustness and
+  Complex Data Structures}, pages 17--34. Springer Berlin Heidelberg.
+
+\bibitem[M\"{o}tt\"{o}nen and Oja, 1995]{MottonenOja95}
+M\"{o}tt\"{o}nen, J. and Oja, H. (1995).
+\newblock Multivariate spatial sign and rank methods.
+\newblock {\em J. Nonparametric Stat.}
+
+\bibitem[Narisetty and He, 2014]{NarisettyHe14}
+Narisetty, N.~N. and He, X. (2014).
+\newblock {Bayesian variable selection with shrinking and diffusing priors}.
+\newblock {\em Ann. Statist.}, 42:789--817.
+
+\bibitem[Narisetty and Nair, 2016]{NarisettyNair16}
+Narisetty, N.~N. and Nair, V.~N. (2016).
+\newblock {Extremal Depth for Functional Data and Applications}.
+\newblock {\em J. Amer. Statist. Assoc.}, 111:1705--1714.
+
+\bibitem[Natarajan, 1995]{Natarajan95}
+Natarajan, B.~K. (1995).
+\newblock {Sparse Approximate Solutions to Linear Systems}.
+\newblock {\em Siam. J. Comput.}, 24:227--234.
+
+\bibitem[Neghaban and Wainwright, 2011]{NeghabanWainwright11}
+Neghaban, S. and Wainwright, M.~J. (2011).
+\newblock {Simultaneous support recovery in high dimensions: Benefits and
+  perils of block $l_1/l_\infty$-regularization}.
+\newblock {\em IEEE Trans. Inf. Theory}, 57:3841--3863.
+\newblock doi: 10.1017/S1461145713001296.
+
+\bibitem[Neghaban et~al., 2009]{NeghabanEtal09}
+Neghaban, S.~N., Yu, B., Wainwright, M.~J., and Ravikumar, P. (2009).
+\newblock {A unified framework for high-dimensional analysis of $M$-estimators
+  with decomposable regularizers}.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  1348--1356.
+
+\bibitem[Obozinski et~al., 2011]{ObozinskiEtal11}
+Obozinski, G., Wainwright, M.~J., and Jordan, M.~I. (2011).
+\newblock {Support Union Recovery in High-dimensional Multivariate Regression}.
+\newblock {\em Ann. Statist.}, 39:1--47.
+
+\bibitem[Oja, 1983]{oja83}
+Oja, H. (1983).
+\newblock Descriptive {S}tatistics for {M}ultivariate {D}istributions.
+\newblock {\em Statist. and Prob. Lett.}, 1:327--332.
+
+\bibitem[Oja, 2010]{OjaBook10}
+Oja, H. (2010).
+\newblock {\em {Multivariate Nonparametric Methods with R: An Approach Based on
+  Spatial Signs and Ranks}}.
+\newblock {Lecture Notes in Statistics}. Springer.
+
+\bibitem[Ollilia et~al., 2003]{ollilia03}
+Ollilia, E., Oja, H., and Croux, C. (2003).
+\newblock The affine equivariant sign covariance matrix: asymptotic behavior
+  and efficiencies.
+\newblock {\em J. Multivariate Anal.}, 87:328--355.
+
+\bibitem[Paindaveine and bever, 2013]{PaindaveineJASA2013}
+Paindaveine, D. and bever, G.~V. (2013).
+\newblock {From Depth to Local Depth: A Focus on Centrality}.
+\newblock {\em J. Amer. Statist. Assoc.}, 108:1105--1119.
+
+\bibitem[Peng, 2016]{PengThesis}
+Peng, B. (2016).
+\newblock {\em {Methodologies and Algorithms on Some Non-convex Penalized
+  Models for Ultra High Dimensional Data}}.
+\newblock PhD thesis, University of Minnesota Twin Cities.
+
+\bibitem[Peng and Lu, 2012]{PengLu12}
+Peng, H. and Lu, Y. (2012).
+\newblock Model selection in linear mixed effect models.
+\newblock {\em J. Multivariate Anal.}, 109:109--129.
+
+\bibitem[Pfanzagl, 1969]{Pfanzagl69}
+Pfanzagl, J. (1969).
+\newblock {On the measurability and consistency of minimum contrast estimates}.
+\newblock {\em Metrika}, 14:249--272.
+
+\bibitem[Puri and Sen, 1971]{PuriSenBook}
+Puri, M.~L. and Sen, P.~K. (1971).
+\newblock {\em {Nonparametric Methods in Multivariate Analysis}}.
+\newblock Wiley, New York, NY.
+
+\bibitem[Rosenbloom et~al., 2015]{UCSCdata}
+Rosenbloom, K.~R., Armstrong, J., Barber, G.~P., et~al. (2015).
+\newblock {The UCSC Genome Browser database: 2015 update}.
+\newblock {\em Nucleic Acids Res.}, 43:D670--81.
+\newblock doi:10.1007/s10519-010-9417-2.
+
+\bibitem[Rothman et~al., 2010]{RothmanEtal10}
+Rothman, A.~J., Levina, E., and Zhu, J. (2010).
+\newblock {Sparse Multivariate Regression With Covariance Estimation}.
+\newblock {\em J. Comp. Graph. Stat.}, 19:947--962.
+
+\bibitem[Ro\u{c}kov\`a and George, 2016]{RockovaGeorge16}
+Ro\u{c}kov\`a, V. and George, E.~I. (2016).
+\newblock {The Spike-and-Slab LASSO}.
+\newblock {\em J. Amer. Statist. Assoc.}, 0:0--0.
+\newblock http://dx.doi.org/10.1080/01621459.2016.1260469.
+
+\bibitem[Rousseeuw and Hubert, 1999]{RousseeuwHubert99}
+Rousseeuw, P. and Hubert, M. (1999).
+\newblock {Regression Depth}.
+\newblock {\em {J. Amer. Statist. Assoc}}, 94:388–--402.
+
+\bibitem[Salibian-Barrera and {Van Aelst}, 2008]{SBVanAelst08}
+Salibian-Barrera, M. and {Van Aelst}, S. (2008).
+\newblock Robust model selection using fast and robust bootstrap.
+\newblock {\em Comp. Statist. Data Anal.}, 52:5121--5135.
+
+\bibitem[Salibian-Barrera and Zamar, 2002]{SBZamar02}
+Salibian-Barrera, M. and Zamar, R.~H. (2002).
+\newblock Bootstrapping robust estimates of regression.
+\newblock {\em Ann. Statist.}, 20(2):556--582.
+
+\bibitem[Schwarz, 1978]{Schwarz78}
+Schwarz, G. (1978).
+\newblock Estimating the dimension of a model.
+\newblock {\em Ann. Statist.}, 6:461--464.
+
+\bibitem[Segal, 1958]{Segal58}
+Segal, I.~E. (1958).
+\newblock {Distributions in Hilbert space and canonical systems of operators}.
+\newblock {\em Trans. Amer. Math. Soc.}, 88:12--41.
+
+\bibitem[Serfling, 2006]{serfling2006}
+Serfling, R. (2006).
+\newblock Depth {F}unctions in {N}onparametric {M}ultivariate {I}nference.
+\newblock In {\em DIMACS {S}eries in {D}iscrete {M}athematics and {T}heoretical
+  {C}omputer {S}cience}, volume~72, pages 1--16.
+
+\bibitem[Sguera et~al., 2014]{sguera14}
+Sguera, C., Galeano, P., and Lillo, R. (2014).
+\newblock Spatial depth-based classification for functional data.
+\newblock {\em TEST}, 23-4:725--750.
+
+\bibitem[Sguera et~al., 2016]{Sguera16}
+Sguera, C., Galeano, P., and Lillo, R.~E. (2016).
+\newblock {Functional outlier detection by a local depth with application to
+  NOx levels}.
+\newblock {\em Stoch. Envir. Res. and Risk Assess.}, 30:1115–--1130.
+
+\bibitem[Shao, 1993]{shao93}
+Shao, J. (1993).
+\newblock Linear model selection by cross validation.
+\newblock {\em J. Amer. Statist. Assoc.}, 88:484--494.
+
+\bibitem[Shao, 1996]{shao96}
+Shao, J. (1996).
+\newblock Bootstrap model selection.
+\newblock {\em J. Amer. Statist. Assoc.}, 91:655--665.
+
+\bibitem[Shao and Tu, 1995]{ShaoTuBook95}
+Shao, J. and Tu, D. (1995).
+\newblock {\em {The Jackknife and Bootstrap}}.
+\newblock Springer.
+
+\bibitem[Simon et~al., 2013]{SimonEtal13}
+Simon, N., Friedman, J., Hastie, T., and Tibshirani, R. (2013).
+\newblock {A Sparse-Group Lasso}.
+\newblock {\em J. Comp. Graph. Stat.}, 22:231--245.
+
+\bibitem[Sirki\"{a} et~al., 2007]{sirkia07}
+Sirki\"{a}, S., Taskinen, S., and Oja, H. (2007).
+\newblock Symmetrised {M}-estimators of scatter.
+\newblock {\em J. Multivariate Anal.}, 98:1611--1629.
+
+\bibitem[Stein, 1981]{Stein81}
+Stein, C. (1981).
+\newblock {Estimation of the Mean of a Multivariate Normal Distribution}.
+\newblock {\em Ann. Statist.}, 9:1135--1151.
+
+\bibitem[Taskinen et~al., 2012]{taskinen12}
+Taskinen, S., Koch, I., and Oja, H. (2012).
+\newblock Robustifying principal component analysis with spatial sign vectors.
+\newblock {\em Statist. and Prob. Lett.}, 82:765--774.
+
+\bibitem[Tibshirani, 1996]{Tibshirani96}
+Tibshirani, R. (1996).
+\newblock Regression shrinkage and selection via the lasso.
+\newblock {\em J. R. Statist. Soc. B}, 58(267--288).
+
+\bibitem[Tibshirani et~al., 2015]{TibshiraniEtal15}
+Tibshirani, R.~J., Rinaldo, A., Tibshirani, R., and Wasserman, L. (2015).
+\newblock {Uniform asymptotic inference and the bootstrap after model
+  selection}.
+\newblock {Preprint. Available at \url{arXiv:1506.06266}}.
+
+\bibitem[Tibshirani et~al., 2016]{Tibshiranietal16}
+Tibshirani, R.~J., Taylor, J., Lockhart, R., and Tibshirani, R. (2016).
+\newblock {Exact Post-Selection Inference for Sequential Regression
+  Procedures}.
+\newblock {\em J. Amer. Statist. Assoc.}, 111:600--620.
+
+\bibitem[Trenberth, 2011]{Trenberth11}
+Trenberth, K.~E. (2011).
+\newblock {Changes in precipitation with climate change}.
+\newblock {\em Clim. Res.}, 47:123--138.
+
+\bibitem[Trenberth et~al., 2003]{TrenberthEtal03}
+Trenberth, K.~E., Dai, A., Rasmussen, R.~M., and Parsons, D.~B. (2003).
+\newblock {The changing character of precipitation}.
+\newblock {\em Bull. Am. Meteorol. Soc.,}, 84:1205–--1217.
+\newblock http://dx.doi.org/10.1175/BAMS-84-9-1205.
+
+\bibitem[Tukey, 1975]{tukey75}
+Tukey, J. (1975).
+\newblock Mathematics and picturing data.
+\newblock In James, R., editor, {\em Proceedings of the International Congress
+  on Mathematics}, volume~2, pages 523--531.
+
+\bibitem[Tyler, 1987]{tyler87}
+Tyler, D. (1987).
+\newblock A distribution-free {M}-estimator of multivariate scatter.
+\newblock {\em Ann. Statist.}, 15:234--251.
+
+\bibitem[Vardi and Zhang, 2000]{VardiZhang00}
+Vardi, Y. and Zhang, C.-H. (2000).
+\newblock The multivariate $l_{1}$-median and associated data depth.
+\newblock {\em Proc. Natl. Acad. Sci.}, 97-4:1423--1426.
+
+\bibitem[Visscher et~al., 2012]{VisscherEtal12}
+Visscher, P.~M., Brown, M.~A., McCarthy, M.~I., and Yang, J. (2012).
+\newblock {Five Years of GWAS Discovery}.
+\newblock {\em Amer. J. Hum. Genet.}, 90:7--24.
+\newblock doi: 10.1016/j.ajhg.2011.11.029.
+
+\bibitem[Voisey et~al., 2011]{VoiseyEtal11}
+Voisey, J., Swagell, C.~D., Hughes, I.~P., et~al. (2011).
+\newblock {A novel SNP in COMT is associated with alcohol dependence but not
+  opiate or nicotine dependence: a case control study}.
+\newblock {\em Behav. Brain Funct.}, 7(51).
+\newblock doi: 10.1186/1744-9081-7-51.
+
+\bibitem[Wakeman and Henson, 2015]{WakemanHenson15}
+Wakeman, D.~G. and Henson, R.~N. (2015).
+\newblock {A multi-subject, multi-modal human neuroimaging dataset}.
+\newblock {\em Scientif. Data}, 2:article 15001.
+\newblock DOI: 10.1038/sdata.2015.1.
+
+\bibitem[Wang et~al., 2005]{WangEtal05}
+Wang, B., Ding, Q., Fu, X., et~al. (2005).
+\newblock {Fundamental challenge in simulation and prediction of summermonsoon
+  rainfall}.
+\newblock {\em Geophys. Res. Lett.}, 32:L15711.
+\newblock doi:10.1029/2005GL022734.
+
+\bibitem[Wang et~al., 2013]{WangKimLi13}
+Wang, L., Kim, Y., and Li, R. (2013).
+\newblock {Calibrating Nonconvex Penalized Regression in Ultra-high Dimension}.
+\newblock {\em Ann. Statist.}, 41:2505--2536.
+
+\bibitem[Wang et~al., 2015]{WangPengLi15}
+Wang, L., Peng, B., and Li, R. (2015).
+\newblock {A High-Dimensional Nonparametric Multivariate Test for Mean Vector}.
+\newblock {\em J. Amer. Statist. Assoc.}, 110:1658--1669.
+
+\bibitem[Wang et~al., 2014]{WangEtal14}
+Wang, T.~Y., Lee, S.~Y., Chen, S.~L., et~al. (2014).
+\newblock {Gender-specific association of the SLC6A4 and DRD2 gene variants in
+  bipolar disorder}.
+\newblock {\em Int. J. Neuropsychopharmacol.}, 17:211--222.
+\newblock doi: 10.1017/S1461145713001296.
+
+\bibitem[Westfall and Young, 1993]{WestfallYoungBook93}
+Westfall, P.~H. and Young, S.~S. (1993).
+\newblock {\em {Resampling-Based Multiple Testing: Examples and Methods for
+  $p$-Value Adjustment}}.
+\newblock Wiley; New York.
+
+\bibitem[Wille~et al, 2004]{WilleEtal04}
+Wille~et al, A. (2004).
+\newblock {Sparse graphical Gaussian modeling of the isoprenoid gene network in
+  {\it Arabidopsis thaliana}}.
+\newblock {\em Genome Biol.}, 5:R92.
+
+\bibitem[Wu, 1986]{wu1986}
+Wu, C. F.~J. (1986).
+\newblock Jackknife, bootstrap and other resampling methods in regression
+  analysis.
+\newblock {\em Ann. Statist.}, 14(4):1261--1295.
+
+\bibitem[Xu et~al., 2015]{XuEtal15}
+Xu, K., Kranzler, H.~R., Sherva, R., Sartor, C.~E., et~al. (2015).
+\newblock {Genomewide Association Study for Maximum Number of Alcoholic Drinks
+  in European Americans and African Americans}.
+\newblock {\em Alcohol Clin. Exp. Res.}, 39:1137--1147.
+\newblock doi: 10.1111/acer.12751.
+
+\bibitem[Yang et~al., 2012]{YangEtal12}
+Yang, J., Ferreira, T., Morris, A.~P., et~al. (2012).
+\newblock {Conditional and joint multiple-SNP analysis of GWAS summary
+  statistics identifies additional variants influencing complex traits}.
+\newblock {\em Nat. Genet.}, 44:369--375 S361–S363.
+
+\bibitem[Yang, 2005]{Yang05}
+Yang, Y. (2005).
+\newblock {Can The Strengths of AIC and BIC Be Shared?}
+\newblock {\em Biometrika}, 92:937--950.
+
+\bibitem[Yang and Zou, 2015]{YangZou15}
+Yang, Y. and Zou, H. (2015).
+\newblock {A fast unified algorithm for solving group-lasso penalize learning
+  problems}.
+\newblock {\em Statist. and Comput.}, 25:1129--1141.
+
+\bibitem[Zhang, 2010]{CHZhang10}
+Zhang, C.~H. (2010).
+\newblock {Nearly Unbiased Variable Selection under Minimax Concave Penalty}.
+\newblock {\em Ann. Statist.}, 38:894--942.
+
+\bibitem[Zhang et~al., 2014]{ZhangEtal14}
+Zhang, H., Shi, J., Liang, F., et~al. (2014).
+\newblock {A fast multilocus test with adaptive SNP selection for large-scale
+  genetic-association studies}.
+\newblock {\em Eur. J. Hum. Genet.}, 22:696--701.
+
+\bibitem[Zou, 2006]{Zou06}
+Zou, H. (2006).
+\newblock {The Adaptive Lasso and Its Oracle Properties}.
+\newblock {\em J. Amer. Statist. Assoc.}, 101:1418--1429.
+
+\bibitem[Zou and Li, 2008]{ZouLi08}
+Zou, H. and Li, R. (2008).
+\newblock One-step sparse estimates in nonconcave penalized likelihood models.
+\newblock {\em Ann. Statist.}, 36:1509--1533.
+
+\bibitem[Zuo, 2003]{zuo03}
+Zuo, Y. (2003).
+\newblock Projection-based depth functions and associated medians.
+\newblock {\em Ann. Statist.}, 31:1460--1490.
+
+\bibitem[Zuo and Cui, 2005]{ZuoCui05}
+Zuo, Y. and Cui, M. (2005).
+\newblock Depth weighted scatter estimators.
+\newblock {\em Ann. Statist.}, 33-1:381--413.
+
+\bibitem[Zuo et~al., 2004]{ZuoCuiHe04}
+Zuo, Y., Cui, M., and He, X. (2004).
+\newblock On the {S}taehl-{D}onoho estimator and depth-weighted means of
+  multivariate data.
+\newblock {\em Ann. Statist.}, 32-1:167--188.
+
+\bibitem[Zuo and Serfling, 2000]{zuo00}
+Zuo, Y. and Serfling, R. (2000).
+\newblock General notions of statistical depth functions.
+\newblock {\em Ann. Statist.}, 28-2:461--482.
+
+\end{thebibliography}

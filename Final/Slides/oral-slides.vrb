@@ -1,0 +1,79 @@
+\frametitle{Implementation: a fast variable selection `algorithm'}
+
+\begin{minipage}[b]{.6\textwidth}
+
+Linear regression: $Y = \bfX \bfbeta + \epsilon$. Assume that there is a true parameter vector $\bfbeta_0$, with non-zero index set $\cS_0$.
+
+\vspace{1em}
+
+%\begin{enumerate}
+%\item Calculate $e$-value for full model: $\hat e_{n, full}$;
+%\item Drop a predictor, calculate $e$-value for the reduced model: $\hat e_{n, -j}$;
+%\item Repeat for all $p$ predictors;
+%\item Collect predictors dropping which causes the $e$-value to decrease:
+%%
+%$$
+%\hat \cS_0 = \{ \hat e_{n, -j} < \hat e_{n, full} \}
+%$$
+%%
+%Then $\BP( \hat \cS_0 = \cS_0) \stackrel{P}{\raro} 1$.
+%\end{enumerate}
+
+\begin{enumerate}
+\item Get $\hat \bfbeta$. Obtain its bootstrap distribution: $[\hat \bfbeta]$;
+
+\item Replace the $j$-th coefficient with 0, name it $\hat \bfbeta_{-j}$. Do the same for its bootstrap distribution, say $[\hat \bfbeta_{-j}]$. Repeat for all $j$;
+
+\item $e$-value of $j$-th covariate = mean depth of $\hat \bfbeta_{-j}$ with respect to $[ \hat \bfbeta]$, i.e. $\BE D( \hat \bfbeta_{-j}, [ \hat \bfbeta])$;
+
+\item Select covariates with $e$-value less than mean depth of full model:
+%
+$$
+\hat \cS_0 = \left\{ j: \BE D( \hat \bfbeta_{-j}, [ \hat \bfbeta]) < \BE D( \hat \bfbeta, [ \hat \bfbeta]) \right\}
+$$
+%
+\end{enumerate}
+
+Then $\BP (\hat \cS_0 = \cS_0 ) \raro 1$ as $n \raro \infty$.
+
+\end{minipage}
+\hspace{1.5em}
+%
+\tikzstyle{mybox} = [draw=black, fill=none, thick,
+rectangle, rounded corners, inner sep=.5em, inner ysep=.5em,font=\scriptsize,text width=.25\textwidth]
+\begin{tikzpicture}
+\node [mybox](box){%
+%
+\begin{minipage}{1\textwidth}
+	\begin{Verbatim}[commandchars=\\\{\}]
+   DroppedVar        Cn
+\textbf{1         - x2 0.2356008}
+\textbf{2         - x3 0.2428004}
+\textbf{3         - x4 0.2448785}
+\textbf{4         - x1 0.2473548}
+\textbf{5         - x5 0.2486610}
+\textbf{6       - x20 0.2503475}
+7     <none> 0.2505000
+8          - x9 0.2522873
+9        - x21 0.2538186
+10      - x22 0.2547132
+11      - x14 0.2548410
+12      - x17 0.2554293
+13      - x13 0.2559990
+14      - x10 0.2564211
+15      - x24 0.2566334
+16      - x19 0.2568725
+17      - x25 0.2573902
+18        - x8 0.2578656
+19      - x16 0.2588032
+20      - x12 0.2590218
+21        - x6 0.2595048
+22      - x23 0.2598039
+23      - x15 0.2605307
+24      - x11 0.2606763
+25      - x18 0.2610460
+26        - x7 0.2613168
+	\end{Verbatim}
+\end{minipage}
+};
+\end{tikzpicture}

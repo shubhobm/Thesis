@@ -1,0 +1,1886 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.9)  5 MAR 2018 11:30
+entering extended mode
+**./MyThesis.tex
+(MyThesis.tex
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+(umnStatThesis.cls
+Document Class: umnStatThesis 2008/08/05 v1.0 University of Minnesota School of
+ Statistics Doctoral Thesis
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\base\book.cls"
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\base\bk12.clo"
+File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2016/06/28 v2.15d AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks15
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count100
+\Gm@cntv=\count101
+\c@Gm@tempcnt=\count102
+\Gm@bindingoffset=\dimen112
+\Gm@wd@mp=\dimen113
+\Gm@odd@mp=\dimen114
+\Gm@even@mp=\dimen115
+\Gm@layoutwidth=\dimen116
+\Gm@layoutheight=\dimen117
+\Gm@layouthoffset=\dimen118
+\Gm@layoutvoffset=\dimen119
+\Gm@dimlist=\toks20
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\geometry\geometry.cfg"))
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\setspace\setspace.sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\natbib\natbib.sty"
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip46
+\bibsep=\skip47
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count103
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\fancyhdr\fancyhdr.sty"
+Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
+\fancy@headwidth=\skip48
+\f@ncyO@elh=\skip49
+\f@ncyO@erh=\skip50
+\f@ncyO@olh=\skip51
+\f@ncyO@orh=\skip52
+\f@ncyO@elf=\skip53
+\f@ncyO@erf=\skip54
+\f@ncyO@olf=\skip55
+\f@ncyO@orf=\skip56
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\tools\varioref.sty"
+Package: varioref 2016/02/16 v1.5c package for extended references (FMi)
+\c@vrcnt=\count104
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\placeins\placeins.sty"
+Package: placeins 2005/04/18  v 2.2
+))
+(mycommands1.sty) ("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\graphics\color.sty
+"
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+ ("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count105
+))
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\caption\caption.sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\caption\caption3.sty"
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen120
+\captionmargin@=\dimen121
+\captionwidth=\dimen122
+\caption@tempdima=\dimen123
+\caption@indent=\dimen124
+\caption@parindent=\dimen125
+\caption@hangindent=\dimen126
+)
+\c@ContinuedFloat=\count106
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen127
+\Hy@linkcounter=\count107
+\Hy@pagecounter=\count108
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count109
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4486.
+Package hyperref Info: Link nesting OFF on input line 4491.
+Package hyperref Info: Hyper index ON on input line 4494.
+Package hyperref Info: Plain pages OFF on input line 4501.
+Package hyperref Info: Backreferencing OFF on input line 4506.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4735.
+\c@Hy@tempcnt=\count110
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5088.
+\XeTeXLinkMargin=\dimen128
+\Fld@menulength=\count111
+\Field@Width=\dimen129
+\Fld@charsize=\dimen130
+Package hyperref Info: Hyper figures OFF on input line 6342.
+Package hyperref Info: Link nesting OFF on input line 6347.
+Package hyperref Info: Hyper index ON on input line 6350.
+Package hyperref Info: backreferencing OFF on input line 6357.
+Package hyperref Info: Link coloring OFF on input line 6362.
+Package hyperref Info: Link coloring with OCG OFF on input line 6367.
+Package hyperref Info: PDF/A mode OFF on input line 6372.
+LaTeX Info: Redefining \ref on input line 6412.
+LaTeX Info: Redefining \pageref on input line 6416.
+\Hy@abspage=\count112
+\c@Item=\count113
+\c@Hfootnote=\count114
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
+\Fld@listcount=\count115
+\c@bookmark@seq@number=\count116
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip57
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip58
+\thm@postskip=\skip59
+\thm@headsep=\skip60
+\dth@everypar=\toks26
+LaTeX Info: Redefining \textsquare on input line 418.
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\mathabx\mathabx.sty"
+Package: mathabx 2003/07/29 v0.0 Non-standard LaTeX package mathabx
+\symmatha=\mathgroup6
+\symmathb=\mathgroup7
+\symmathx=\mathgroup8
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\generic\mathabx\mathabx.dcl"
+LaTeX Font Info:    Redeclaring math symbol \cdotp on input line 25.
+LaTeX Font Info:    Redeclaring math symbol \times on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \div on input line 34.
+LaTeX Font Info:    Redeclaring math symbol \cdot on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \circ on input line 36.
+LaTeX Font Info:    Redeclaring math symbol \ast on input line 38.
+LaTeX Font Info:    Redeclaring math symbol \pm on input line 41.
+LaTeX Font Info:    Redeclaring math symbol \mp on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \ltimes on input line 43.
+LaTeX Font Info:    Redeclaring math symbol \rtimes on input line 44.
+LaTeX Font Info:    Redeclaring math symbol \diamond on input line 45.
+LaTeX Font Info:    Redeclaring math symbol \bullet on input line 46.
+LaTeX Font Info:    Redeclaring math symbol \star on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \amalg on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \dotplus on input line 58.
+LaTeX Font Info:    Redeclaring math symbol \square on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \divideontimes on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \bigstar on input line 75.
+LaTeX Font Info:    Redeclaring math symbol \equiv on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \sim on input line 84.
+LaTeX Font Info:    Redeclaring math symbol \approx on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \simeq on input line 86.
+LaTeX Font Info:    Redeclaring math symbol \asymp on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \nsim on input line 97.
+LaTeX Font Info:    Redeclaring math symbol \ncong on input line 100.
+LaTeX Font Info:    Redeclaring math symbol \risingdotseq on input line 118.
+LaTeX Font Info:    Redeclaring math symbol \fallingdotseq on input line 119.
+LaTeX Font Info:    Redeclaring math symbol \circeq on input line 125.
+LaTeX Font Info:    Redeclaring math symbol \eqcirc on input line 126.
+LaTeX Font Info:    Redeclaring math symbol \triangleq on input line 127.
+LaTeX Font Info:    Redeclaring math symbol \neg on input line 134.
+LaTeX Font Info:    Redeclaring math symbol \ll on input line 136.
+LaTeX Font Info:    Redeclaring math symbol \gg on input line 137.
+LaTeX Font Info:    Redeclaring math symbol \vdash on input line 139.
+LaTeX Font Info:    Redeclaring math symbol \dashv on input line 140.
+LaTeX Font Info:    Redeclaring math symbol \nvdash on input line 141.
+LaTeX Font Info:    Redeclaring math symbol \vDash on input line 143.
+LaTeX Font Info:    Redeclaring math symbol \nvDash on input line 145.
+LaTeX Font Info:    Redeclaring math symbol \Vdash on input line 147.
+LaTeX Font Info:    Redeclaring math symbol \nVdash on input line 149.
+LaTeX Font Info:    Redeclaring math symbol \flat on input line 158.
+LaTeX Font Info:    Redeclaring math symbol \natural on input line 159.
+LaTeX Font Info:    Redeclaring math symbol \sharp on input line 160.
+LaTeX Font Info:    Redeclaring math symbol \infty on input line 161.
+LaTeX Font Info:    Redeclaring math symbol \propto on input line 162.
+LaTeX Font Info:    Redeclaring math symbol \dagger on input line 163.
+LaTeX Font Info:    Redeclaring math symbol \ddagger on input line 164.
+LaTeX Font Info:    Redeclaring math symbol \between on input line 170.
+LaTeX Font Info:    Redeclaring math symbol \smile on input line 171.
+LaTeX Font Info:    Redeclaring math symbol \frown on input line 172.
+LaTeX Font Info:    Redeclaring math symbol \leftthreetimes on input line 174.
+LaTeX Font Info:    Redeclaring math symbol \rightthreetimes on input line 175.
+
+LaTeX Font Info:    Redeclaring math symbol \pitchfork on input line 176.
+LaTeX Font Info:    Redeclaring math symbol \nVDash on input line 182.
+LaTeX Font Info:    Redeclaring math symbol \Vvdash on input line 184.
+LaTeX Font Info:    Redeclaring math symbol \therefore on input line 189.
+LaTeX Font Info:    Redeclaring math symbol \because on input line 190.
+LaTeX Font Info:    Redeclaring math symbol \measuredangle on input line 202.
+LaTeX Font Info:    Redeclaring math symbol \sphericalangle on input line 203.
+LaTeX Font Info:    Redeclaring math symbol \setminus on input line 218.
+LaTeX Font Info:    Redeclaring math symbol \mid on input line 222.
+LaTeX Font Info:    Redeclaring math symbol \forall on input line 279.
+LaTeX Font Info:    Redeclaring math symbol \complement on input line 280.
+LaTeX Font Info:    Redeclaring math symbol \partial on input line 281.
+LaTeX Font Info:    Redeclaring math symbol \exists on input line 284.
+LaTeX Font Info:    Redeclaring math symbol \nexists on input line 285.
+LaTeX Font Info:    Redeclaring math symbol \Finv on input line 286.
+LaTeX Font Info:    Redeclaring math symbol \Game on input line 287.
+LaTeX Font Info:    Redeclaring math symbol \emptyset on input line 288.
+LaTeX Font Info:    Redeclaring math symbol \top on input line 290.
+LaTeX Font Info:    Redeclaring math symbol \bot on input line 291.
+LaTeX Font Info:    Redeclaring math symbol \perp on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \curlywedge on input line 296.
+LaTeX Font Info:    Redeclaring math symbol \curlyvee on input line 297.
+LaTeX Font Info:    Redeclaring math symbol \in on input line 299.
+LaTeX Font Info:    Redeclaring math symbol \owns on input line 300.
+LaTeX Font Info:    Redeclaring math symbol \cap on input line 312.
+LaTeX Font Info:    Redeclaring math symbol \cup on input line 313.
+LaTeX Font Info:    Redeclaring math symbol \uplus on input line 314.
+LaTeX Font Info:    Redeclaring math symbol \sqcap on input line 315.
+LaTeX Font Info:    Redeclaring math symbol \sqcup on input line 316.
+LaTeX Font Info:    Redeclaring math symbol \wedge on input line 318.
+LaTeX Font Info:    Redeclaring math symbol \vee on input line 320.
+LaTeX Font Info:    Redeclaring math symbol \barwedge on input line 327.
+LaTeX Font Info:    Redeclaring math symbol \veebar on input line 328.
+LaTeX Font Info:    Redeclaring math symbol \doublebarwedge on input line 329.
+LaTeX Font Info:    Redeclaring math symbol \doublecap on input line 331.
+LaTeX Font Info:    Redeclaring math symbol \doublecup on input line 333.
+LaTeX Font Info:    Redeclaring math symbol \subset on input line 344.
+LaTeX Font Info:    Redeclaring math symbol \supset on input line 345.
+LaTeX Font Info:    Redeclaring math symbol \subseteq on input line 348.
+LaTeX Font Info:    Redeclaring math symbol \supseteq on input line 349.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteq on input line 350.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteq on input line 351.
+LaTeX Font Info:    Redeclaring math symbol \subsetneq on input line 352.
+LaTeX Font Info:    Redeclaring math symbol \supsetneq on input line 353.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneq on input line 354.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneq on input line 355.
+LaTeX Font Info:    Redeclaring math symbol \subseteqq on input line 357.
+LaTeX Font Info:    Redeclaring math symbol \supseteqq on input line 358.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteqq on input line 359.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteqq on input line 360.
+LaTeX Font Info:    Redeclaring math symbol \subsetneqq on input line 361.
+LaTeX Font Info:    Redeclaring math symbol \supsetneqq on input line 362.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneqq on input line 363.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneqq on input line 364.
+LaTeX Font Info:    Redeclaring math symbol \Subset on input line 366.
+LaTeX Font Info:    Redeclaring math symbol \Supset on input line 367.
+LaTeX Font Info:    Redeclaring math symbol \sqsubseteq on input line 380.
+LaTeX Font Info:    Redeclaring math symbol \sqsupseteq on input line 381.
+LaTeX Font Info:    Redeclaring math symbol \triangleleft on input line 407.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleleft on input line 408.
+
+LaTeX Font Info:    Redeclaring math symbol \triangleright on input line 409.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleright on input line 410
+.
+LaTeX Font Info:    Redeclaring math symbol \ntriangleleft on input line 411.
+LaTeX Font Info:    Redeclaring math symbol \ntriangleright on input line 412.
+LaTeX Font Info:    Redeclaring math symbol \trianglelefteq on input line 413.
+LaTeX Font Info:    Redeclaring math symbol \trianglerighteq on input line 414.
+
+LaTeX Font Info:    Redeclaring math symbol \ntrianglelefteq on input line 415.
+
+LaTeX Font Info:    Redeclaring math symbol \ntrianglerighteq on input line 416
+.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangledown on input line 42
+7.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 42
+8.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 4
+29.
+LaTeX Font Info:    Redeclaring math symbol \nless on input line 437.
+LaTeX Font Info:    Redeclaring math symbol \ngtr on input line 438.
+LaTeX Font Info:    Redeclaring math symbol \leq on input line 439.
+LaTeX Font Info:    Redeclaring math symbol \geq on input line 441.
+LaTeX Font Info:    Redeclaring math symbol \nleq on input line 443.
+LaTeX Font Info:    Redeclaring math symbol \ngeq on input line 445.
+LaTeX Font Info:    Redeclaring math symbol \lneq on input line 451.
+LaTeX Font Info:    Redeclaring math symbol \gneq on input line 452.
+LaTeX Font Info:    Redeclaring math symbol \leqq on input line 453.
+LaTeX Font Info:    Redeclaring math symbol \geqq on input line 454.
+LaTeX Font Info:    Redeclaring math symbol \nleqq on input line 455.
+LaTeX Font Info:    Redeclaring math symbol \ngeqq on input line 456.
+LaTeX Font Info:    Redeclaring math symbol \lneqq on input line 457.
+LaTeX Font Info:    Redeclaring math symbol \gneqq on input line 458.
+LaTeX Font Info:    Redeclaring math symbol \lvertneqq on input line 459.
+LaTeX Font Info:    Redeclaring math symbol \gvertneqq on input line 460.
+LaTeX Font Info:    Redeclaring math symbol \eqslantless on input line 461.
+LaTeX Font Info:    Redeclaring math symbol \eqslantgtr on input line 462.
+LaTeX Font Info:    Redeclaring math symbol \lessgtr on input line 465.
+LaTeX Font Info:    Redeclaring math symbol \gtrless on input line 466.
+LaTeX Font Info:    Redeclaring math symbol \lesseqgtr on input line 467.
+LaTeX Font Info:    Redeclaring math symbol \gtreqless on input line 468.
+LaTeX Font Info:    Redeclaring math symbol \lesseqqgtr on input line 469.
+LaTeX Font Info:    Redeclaring math symbol \gtreqqless on input line 470.
+LaTeX Font Info:    Redeclaring math symbol \lesssim on input line 472.
+LaTeX Font Info:    Redeclaring math symbol \gtrsim on input line 473.
+LaTeX Font Info:    Redeclaring math symbol \lnsim on input line 476.
+LaTeX Font Info:    Redeclaring math symbol \gnsim on input line 477.
+LaTeX Font Info:    Redeclaring math symbol \lessapprox on input line 478.
+LaTeX Font Info:    Redeclaring math symbol \gtrapprox on input line 479.
+LaTeX Font Info:    Redeclaring math symbol \lnapprox on input line 482.
+LaTeX Font Info:    Redeclaring math symbol \gnapprox on input line 483.
+LaTeX Font Info:    Redeclaring math symbol \lessdot on input line 485.
+LaTeX Font Info:    Redeclaring math symbol \gtrdot on input line 486.
+LaTeX Font Info:    Redeclaring math symbol \lll on input line 488.
+LaTeX Font Info:    Redeclaring math symbol \ggg on input line 489.
+LaTeX Font Info:    Redeclaring math symbol \prec on input line 498.
+LaTeX Font Info:    Redeclaring math symbol \succ on input line 499.
+LaTeX Font Info:    Redeclaring math symbol \nprec on input line 500.
+LaTeX Font Info:    Redeclaring math symbol \nsucc on input line 501.
+LaTeX Font Info:    Redeclaring math symbol \preccurlyeq on input line 502.
+LaTeX Font Info:    Redeclaring math symbol \succcurlyeq on input line 503.
+LaTeX Font Info:    Redeclaring math symbol \preceq on input line 506.
+LaTeX Font Info:    Redeclaring math symbol \succeq on input line 507.
+LaTeX Font Info:    Redeclaring math symbol \npreceq on input line 508.
+LaTeX Font Info:    Redeclaring math symbol \nsucceq on input line 509.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqprec on input line 512.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqsucc on input line 513.
+LaTeX Font Info:    Redeclaring math symbol \precsim on input line 517.
+LaTeX Font Info:    Redeclaring math symbol \succsim on input line 518.
+LaTeX Font Info:    Redeclaring math symbol \precnsim on input line 521.
+LaTeX Font Info:    Redeclaring math symbol \succnsim on input line 522.
+LaTeX Font Info:    Redeclaring math symbol \precapprox on input line 523.
+LaTeX Font Info:    Redeclaring math symbol \succapprox on input line 524.
+LaTeX Font Info:    Redeclaring math symbol \precnapprox on input line 527.
+LaTeX Font Info:    Redeclaring math symbol \succnapprox on input line 528.
+LaTeX Font Info:    Redeclaring math symbol \leftarrow on input line 540.
+LaTeX Font Info:    Redeclaring math symbol \rightarrow on input line 542.
+LaTeX Font Info:    Redeclaring math symbol \nwarrow on input line 546.
+LaTeX Font Info:    Redeclaring math symbol \nearrow on input line 547.
+LaTeX Font Info:    Redeclaring math symbol \swarrow on input line 548.
+LaTeX Font Info:    Redeclaring math symbol \searrow on input line 549.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrow on input line 550.
+LaTeX Font Info:    Redeclaring math symbol \nleftarrow on input line 552.
+LaTeX Font Info:    Redeclaring math symbol \nrightarrow on input line 553.
+LaTeX Font Info:    Redeclaring math symbol \nleftrightarrow on input line 554.
+
+LaTeX Font Info:    Redeclaring math symbol \mapstochar on input line 557.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoonup on input line 560.
+LaTeX Font Info:    Redeclaring math symbol \rightharpoonup on input line 561.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoondown on input line 562.
+
+LaTeX Font Info:    Redeclaring math symbol \rightharpoondown on input line 563
+.
+LaTeX Font Info:    Redeclaring math symbol \upharpoonleft on input line 564.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonleft on input line 565.
+
+LaTeX Font Info:    Redeclaring math symbol \upharpoonright on input line 566.
+LaTeX Font Info:    Redeclaring math symbol \restriction on input line 567.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonright on input line 568
+.
+LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 56
+9.
+LaTeX Font Info:    Redeclaring math symbol \Leftarrow on input line 575.
+LaTeX Font Info:    Redeclaring math symbol \Rightarrow on input line 576.
+LaTeX Font Info:    Redeclaring math symbol \Leftrightarrow on input line 579.
+LaTeX Font Info:    Redeclaring math symbol \nLeftarrow on input line 581.
+LaTeX Font Info:    Redeclaring math symbol \nRightarrow on input line 582.
+LaTeX Font Info:    Redeclaring math symbol \nLeftrightarrow on input line 583.
+
+LaTeX Font Info:    Redeclaring math symbol \leftleftarrows on input line 593.
+LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 594
+.
+LaTeX Font Info:    Redeclaring math symbol \upuparrows on input line 595.
+LaTeX Font Info:    Redeclaring math symbol \downdownarrows on input line 596.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrows on input line 597.
+
+LaTeX Font Info:    Redeclaring math symbol \rightleftarrows on input line 598.
+
+LaTeX Font Info:    Redeclaring math symbol \rhook on input line 612.
+LaTeX Font Info:    Redeclaring math symbol \lhook on input line 613.
+LaTeX Font Info:    Redeclaring math symbol \diagup on input line 614.
+LaTeX Font Info:    Redeclaring math symbol \diagdown on input line 615.
+LaTeX Font Info:    Redeclaring math symbol \Lsh on input line 617.
+LaTeX Font Info:    Redeclaring math symbol \Rsh on input line 619.
+LaTeX Font Info:    Redeclaring math symbol \looparrowleft on input line 624.
+LaTeX Font Info:    Redeclaring math symbol \looparrowright on input line 626.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowleft on input line 631.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowright on input line 633.
+
+LaTeX Font Info:    Redeclaring math symbol \circlearrowleft on input line 641.
+
+LaTeX Font Info:    Redeclaring math symbol \circlearrowright on input line 642
+.
+LaTeX Font Info:    Redeclaring math symbol \rightsquigarrow on input line 645.
+
+LaTeX Font Info:    Redeclaring math symbol \leftrightsquigarrow on input line 
+646.
+LaTeX Font Info:    Redeclaring math symbol \oplus on input line 658.
+LaTeX Font Info:    Redeclaring math symbol \ominus on input line 659.
+LaTeX Font Info:    Redeclaring math symbol \otimes on input line 661.
+LaTeX Font Info:    Redeclaring math symbol \odot on input line 663.
+LaTeX Font Info:    Redeclaring math symbol \oslash on input line 675.
+LaTeX Font Info:    Redeclaring math symbol \boxplus on input line 683.
+LaTeX Font Info:    Redeclaring math symbol \boxminus on input line 684.
+LaTeX Font Info:    Redeclaring math symbol \boxtimes on input line 686.
+LaTeX Font Info:    Redeclaring math symbol \boxdot on input line 688.
+\mayacnter=\count117
+\mayacnta=\count118
+\mayacntb=\count119
+\mayacntc=\count120
+\mayawidth=\dimen131
+LaTeX Font Info:    Redeclaring math symbol \intop on input line 753.
+LaTeX Font Info:    Redeclaring math symbol \ointop on input line 760.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 842.
+LaTeX Info: Redefining \{ on input line 846.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 848.
+LaTeX Info: Redefining \} on input line 852.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 858.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 859.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 863.
+LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 865.
+LaTeX Font Info:    Redeclaring math delimiter \uparrow on input line 868.
+LaTeX Font Info:    Redeclaring math delimiter \downarrow on input line 869.
+LaTeX Font Info:    Redeclaring math delimiter \updownarrow on input line 870.
+LaTeX Font Info:    Redeclaring math delimiter \Uparrow on input line 871.
+LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 872.
+LaTeX Font Info:    Redeclaring math delimiter \Updownarrow on input line 873.
+LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 880.
+LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 881.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 882.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 883.
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 884.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 885.
+LaTeX Font Info:    Redeclaring math symbol \braceld on input line 903.
+LaTeX Font Info:    Redeclaring math symbol \bracerd on input line 905.
+LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 907.
+LaTeX Font Info:    Redeclaring math symbol \braceru on input line 909.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 944.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 946.
+))
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\subfigure\subfigure.sty"
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip61
+\subfigcapskip=\skip62
+\subfigcaptopadj=\dimen132
+\subfigbottomskip=\skip63
+\subfigcapmargin=\dimen133
+\subfiglabelskip=\skip64
+\c@subfigure=\count121
+\c@lofdepth=\count122
+\c@subtable=\count123
+\c@lotdepth=\count124
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\subfigure\subfigure.cfg")
+\subfig@top=\skip65
+\subfig@bottom=\skip66
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\graphics\graphics.sty"
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+)
+\Gin@req@height=\dimen134
+\Gin@req@width=\dimen135
+)
+\epsfxsize=\dimen136
+\epsfysize=\dimen137
+)
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\outlines\outlines.sty"
+Package: outlines 2012/1/23 1.1 Ch. Pecheur
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+))
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\base\fontenc.sty"
+Package: fontenc 2016/06/19 v1.99m Standard LaTeX package
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\base\t1enc.def"
+File: t1enc.def 2016/06/19 v1.99m Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\lm\lmodern.sty"
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (MyThesis.aux
+
+LaTeX Warning: Label `eq:c22' multiply defined.
+
+)
+\openout1 = `MyThesis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 24.
+ ("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\lm\t1lmr.fd"
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(108.405pt, 433.62pt, 72.27pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43pt, 72.27pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=433.62pt
+* \textheight=585.5562pt
+* \oddsidemargin=36.13501pt
+* \evensidemargin=36.13501pt
+* \topmargin=0.0pt
+* \headheight=15.0pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=47.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count125
+\scratchdimen=\dimen138
+\scratchbox=\box28
+\nofMPsegments=\count126
+\nofMParguments=\count127
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count128
+\MPscratchDim=\dimen139
+\MPnumerator=\count129
+\makeMPintoPDFobject=\count130
+\everyMPtoPDFconversion=\toks28
+) ("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: subfigure package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\AtBeginShipoutBox=\box29
+Package hyperref Info: Link coloring OFF on input line 24.
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\hyperref\nameref.sty"
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count131
+LaTeX Info: Redefining \Ref on input line 515.
+)
+LaTeX Info: Redefining \ref on input line 24.
+LaTeX Info: Redefining \pageref on input line 24.
+LaTeX Info: Redefining \nameref on input line 24.
+
+(MyThesis.out) (MyThesis.out)
+\@outlinefile=\write3
+\openout3 = `MyThesis.out'.
+
+LaTeX Info: Redefining \Ref on input line 24.
+\c@Theorem=\count132
+ [1
+
+
+
+{C:/Users/Subho/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 60.
+ ("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\lm\ot1lmr.fd"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 60.
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\lm\omllmm.fd"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 60.
+
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\lm\omslmsy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 60.
+
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\lm\omxlmex.fd"
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 60.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 60.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 60.
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 64.
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\lm\omslmr.fd"
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 64.
+ [2
+
+
+
+
+]
+(Acknowledgement.tex [1
+
+
+
+
+
+
+]) [2] (Dedication.tex) [3
+
+
+
+
+] [4
+
+
+
+
+] (MyThesis.toc [5
+
+
+
+
+]
+[6] [7])
+\tf@toc=\write4
+\openout4 = `MyThesis.toc'.
+
+ [8] (MyThesis.lot [9
+
+
+
+
+])
+\tf@lot=\write5
+\openout5 = `MyThesis.lot'.
+
+ [10] (MyThesis.lof [11
+
+
+
+
+] [12])
+\tf@lof=\write6
+\openout6 = `MyThesis.lof'.
+
+
+(Chapter-notation.tex [13]
+Overfull \hbox (19.13515pt too wide) in paragraph at lines 6--18
+ [][] 
+ []
+
+) [14
+
+
+] (Chapter1.tex
+Chapter 1.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.9 
+     [1
+
+
+
+
+]
+<Chapter-regression/depthplot_cropped.pdf, id=658, 350.30875pt x 230.8625pt>
+File: Chapter-regression/depthplot_cropped.pdf Graphic file (type pdf)
+
+<use Chapter-regression/depthplot_cropped.pdf>
+Package pdftex.def Info: Chapter-regression/depthplot_cropped.pdf used on input
+ line 15.
+(pdftex.def)             Requested size: 199.16928pt x 131.25833pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.25 \noindent
+              \textbf{(P2)} \textit{Maximality at center}: $D(\bftheta, F) =...
+[2 <./Chapter-regression/depthplot_cropped.pdf>] [3] [4] [5] [6]) [7]
+Chapter 2.
+(Chapter-evalue/Introduction_02_05_17_1.tex
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 40.
+
+("D:\Study\LaTeX\MikTeX 2.9.6161\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [8
+
+
+] [9] [10] [11]
+[12] [13]) (Chapter-evalue/Frame_of_models.tex [14] [15] [16] [17] [18]
+[19] [20]) (Chapter-evalue/StatisticalEvaluationMaps_and_evalues.tex
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <17.28> on input line 7.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 7.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 7.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 7.
+
+[21]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 52.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 52.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 52.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 52.
+
+[22]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 70.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 70.
+
+[23] [24] [25]) (Chapter-evalue/ResamplingSection.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+[26]
+Overfull \hbox (0.50781pt too wide) in paragraph at lines 32--36
+\T1/lmr/m/n/12 where $\OML/lmm/m/it/12 p[] \U/matha/m/n/12  |\OMS/lmsy/m/n/12 
+S[]\U/matha/m/n/12 |$\T1/lmr/m/n/12 . For the $\OML/lmm/m/it/12 a[]$ \T1/lmr/m/
+n/12 el-e-ment of $\OT1/lmr/m/n/12 	[]\U/matha/m/n/12 p[]q\OML/lmm/m/it/12 ; a 
+\U/matha/m/n/12  \OT1/lmr/m/n/12 1\OML/lmm/m/it/12 ; [] p[]$\T1/lmr/m/n/12 , d
+e-noted by $\OT1/lmr/m/n/12 	[]\U/matha/m/n/12 p[]q$\T1/lmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (10.25555pt too wide) in paragraph at lines 45--53
+[]\T1/lmr/m/n/12 Also, let the spec-tral de-com-po-si-tion of the ma-trix $[][]
+ \U/matha/m/n/12  [][] \U/msb/m/n/12 E\OT1/lmr/m/n/12 	[]\U/matha/m/n/12 p[][]
+q\OT1/lmr/m/n/12 	[]\U/matha/m/n/12 p[][]q$
+ []
+
+[27] [28] [29] [30] [31]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 276.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 276.
+
+[32]) (Chapter-evalue/FastVariableSelection.tex [33] [34] [35] [36] [37]
+[38] [39] [40] [41]) (Chapter-evalue/Simulation.tex [42]
+<Chapter-evalue/simplotmoon2.pdf, id=1104, 289.08pt x 289.08pt>
+File: Chapter-evalue/simplotmoon2.pdf Graphic file (type pdf)
+
+<use Chapter-evalue/simplotmoon2.pdf>
+Package pdftex.def Info: Chapter-evalue/simplotmoon2.pdf used on input line 20.
+
+(pdftex.def)             Requested size: 138.76157pt x 138.76123pt.
+
+<Chapter-evalue/simplotmoon4.pdf, id=1105, 289.08pt x 289.08pt>
+File: Chapter-evalue/simplotmoon4.pdf Graphic file (type pdf)
+
+<use Chapter-evalue/simplotmoon4.pdf>
+Package pdftex.def Info: Chapter-evalue/simplotmoon4.pdf used on input line 22.
+
+(pdftex.def)             Requested size: 138.76157pt x 138.76123pt.
+
+<Chapter-evalue/simplotmoon6.pdf, id=1106, 289.08pt x 289.08pt>
+File: Chapter-evalue/simplotmoon6.pdf Graphic file (type pdf)
+
+<use Chapter-evalue/simplotmoon6.pdf>
+Package pdftex.def Info: Chapter-evalue/simplotmoon6.pdf used on input line 24.
+
+(pdftex.def)             Requested size: 138.76157pt x 138.76123pt.
+
+<Chapter-evalue/simplotmoon8.pdf, id=1107, 289.08pt x 289.08pt>
+File: Chapter-evalue/simplotmoon8.pdf Graphic file (type pdf)
+
+<use Chapter-evalue/simplotmoon8.pdf>
+Package pdftex.def Info: Chapter-evalue/simplotmoon8.pdf used on input line 26.
+
+(pdftex.def)             Requested size: 138.76157pt x 138.76123pt.
+
+<Chapter-evalue/simplot_gamma2.pdf, id=1108, 289.08pt x 289.08pt>
+File: Chapter-evalue/simplot_gamma2.pdf Graphic file (type pdf)
+
+<use Chapter-evalue/simplot_gamma2.pdf>
+Package pdftex.def Info: Chapter-evalue/simplot_gamma2.pdf used on input line 4
+0.
+(pdftex.def)             Requested size: 138.76157pt x 138.76123pt.
+
+<Chapter-evalue/simplot_gamma4.pdf, id=1109, 289.08pt x 289.08pt>
+File: Chapter-evalue/simplot_gamma4.pdf Graphic file (type pdf)
+
+<use Chapter-evalue/simplot_gamma4.pdf>
+Package pdftex.def Info: Chapter-evalue/simplot_gamma4.pdf used on input line 4
+2.
+(pdftex.def)             Requested size: 138.76157pt x 138.76123pt.
+
+<Chapter-evalue/simplot_gamma6.pdf, id=1110, 289.08pt x 289.08pt>
+File: Chapter-evalue/simplot_gamma6.pdf Graphic file (type pdf)
+
+<use Chapter-evalue/simplot_gamma6.pdf>
+Package pdftex.def Info: Chapter-evalue/simplot_gamma6.pdf used on input line 4
+4.
+(pdftex.def)             Requested size: 138.76157pt x 138.76123pt.
+
+<Chapter-evalue/simplot_gamma8.pdf, id=1111, 289.08pt x 289.08pt>
+File: Chapter-evalue/simplot_gamma8.pdf Graphic file (type pdf)
+
+<use Chapter-evalue/simplot_gamma8.pdf>
+Package pdftex.def Info: Chapter-evalue/simplot_gamma8.pdf used on input line 4
+6.
+(pdftex.def)             Requested size: 138.76157pt x 138.76123pt.
+
+<Chapter-evalue/simplot2.pdf, id=1112, 289.08pt x 289.08pt>
+File: Chapter-evalue/simplot2.pdf Graphic file (type pdf)
+
+<use Chapter-evalue/simplot2.pdf>
+Package pdftex.def Info: Chapter-evalue/simplot2.pdf used on input line 60.
+(pdftex.def)             Requested size: 138.76157pt x 138.76123pt.
+
+<Chapter-evalue/simplot4.pdf, id=1113, 289.08pt x 289.08pt>
+File: Chapter-evalue/simplot4.pdf Graphic file (type pdf)
+
+<use Chapter-evalue/simplot4.pdf>
+Package pdftex.def Info: Chapter-evalue/simplot4.pdf used on input line 62.
+(pdftex.def)             Requested size: 138.76157pt x 138.76123pt.
+
+<Chapter-evalue/simplot6.pdf, id=1114, 289.08pt x 289.08pt>
+File: Chapter-evalue/simplot6.pdf Graphic file (type pdf)
+
+<use Chapter-evalue/simplot6.pdf>
+Package pdftex.def Info: Chapter-evalue/simplot6.pdf used on input line 64.
+(pdftex.def)             Requested size: 138.76157pt x 138.76123pt.
+
+<Chapter-evalue/simplot8.pdf, id=1115, 289.08pt x 289.08pt>
+File: Chapter-evalue/simplot8.pdf Graphic file (type pdf)
+
+<use Chapter-evalue/simplot8.pdf>
+Package pdftex.def Info: Chapter-evalue/simplot8.pdf used on input line 66.
+(pdftex.def)             Requested size: 138.76157pt x 138.76123pt.
+ [43] [44 <./Chapter-evalue/simplotmoon2.pdf> <./Chapter-evalue/simplotmoon4.pd
+f> <./Chapter-evalue/simplotmoon6.pdf> <./Chapter-evalue/simplotmoon8.pdf>] [45
+ <./Chapter-evalue/simplot_gamma2.pdf> <./Chapter-evalue/simplot_gamma4.pdf> <.
+/Chapter-evalue/simplot_gamma6.pdf> <./Chapter-evalue/simplot_gamma8.pdf>] [46 
+<./Chapter-evalue/simplot2.pdf> <./Chapter-evalue/simplot4.pdf> <./Chapter-eval
+ue/simplot6.pdf> <./Chapter-evalue/simplot8.pdf>] [47]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 114.
+) (Chapter-evalue/CaveatsConclusion.tex [48] [49] [50])
+(Chapter-evalue/Proofs.tex [51] [52]
+Overfull \hbox (1.36072pt too wide) in paragraph at lines 74--74
+[] 
+ []
+
+[53] [54] [55]
+Overfull \hbox (36.44688pt too wide) in paragraph at lines 275--275
+[] 
+ []
+
+[56]
+Overfull \hbox (8.05191pt too wide) in paragraph at lines 322--322
+[] 
+ []
+
+[57]
+Overfull \hbox (14.28574pt too wide) in paragraph at lines 348--348
+[] 
+ []
+
+[58] [59]
+Overfull \hbox (9.39073pt too wide) in paragraph at lines 444--444
+[] 
+ []
+
+[60] [61] [62] [63]) [64]
+Chapter 3.
+(Chapter-appli/IndianMonsoon.tex
+Overfull \hbox (10.9292pt too wide) in paragraph at lines 30--30
+[]\T1/lmr/bx/n/17.28 Identifying Driv-ing Fac-tors Be-hind In-dian Mon-
+ []
+
+[65
+
+
+]
+Overfull \hbox (10.28064pt too wide) in paragraph at lines 46--47
+\T1/lmr/m/n/12 Pa-cific (WP), East Pacific-North Pa-cific (EPNP), Pa-cific/Nort
+h Amer-i-can (PNA),
+ []
+
+
+<Chapter-appli/rolling_predbias_full_vs_reduced_gamma.pdf, id=1418, 361.35pt x 
+361.35pt>
+File: Chapter-appli/rolling_predbias_full_vs_reduced_gamma.pdf Graphic file (ty
+pe pdf)
+ <use Chapter-appli/rolling_predbias_full_vs_reduced_gamma.pdf>
+Package pdftex.def Info: Chapter-appli/rolling_predbias_full_vs_reduced_gamma.p
+df used on input line 107.
+(pdftex.def)             Requested size: 138.76157pt x 138.75902pt.
+
+<Chapter-appli/rolling_predMSE_full_vs_reduced_gamma.pdf, id=1419, 361.35pt x 3
+61.35pt>
+File: Chapter-appli/rolling_predMSE_full_vs_reduced_gamma.pdf Graphic file (typ
+e pdf)
+ <use Chapter-appli/rolling_predMSE_full_vs_reduced_gamma.pdf>
+Package pdftex.def Info: Chapter-appli/rolling_predMSE_full_vs_reduced_gamma.pd
+f used on input line 109.
+(pdftex.def)             Requested size: 138.76157pt x 138.75902pt.
+
+<Chapter-appli/rolling_density2012_full_vs_reduced_gamma.pdf, id=1420, 361.35pt
+ x 361.35pt>
+File: Chapter-appli/rolling_density2012_full_vs_reduced_gamma.pdf Graphic file 
+(type pdf)
+ <use Chapter-appli/rolling_density2012_full_vs_reduced_gamma.pdf>
+Package pdftex.def Info: Chapter-appli/rolling_density2012_full_vs_reduced_gamm
+a.pdf used on input line 111.
+(pdftex.def)             Requested size: 138.76157pt x 138.75902pt.
+
+<Chapter-appli/rolling_map2012_full_vs_reduced_gamma.pdf, id=1421, 361.35pt x 3
+61.35pt>
+File: Chapter-appli/rolling_map2012_full_vs_reduced_gamma.pdf Graphic file (typ
+e pdf)
+ <use Chapter-appli/rolling_map2012_full_vs_reduced_gamma.pdf>
+Package pdftex.def Info: Chapter-appli/rolling_map2012_full_vs_reduced_gamma.pd
+f used on input line 113.
+(pdftex.def)             Requested size: 138.76157pt x 138.75902pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (15.0pt): 
+ Make it at least 27.11653pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[66] [67] [68 <./Chapter-appli/rolling_predbias_full_vs_reduced_gamma.pdf> <./C
+hapter-appli/rolling_predMSE_full_vs_reduced_gamma.pdf> <./Chapter-appli/rollin
+g_density2012_full_vs_reduced_gamma.pdf> <./Chapter-appli/rolling_map2012_full_
+vs_reduced_gamma.pdf>]) (Chapter-appli/fmri-section.tex
+Overfull \hbox (1.03862pt too wide) in paragraph at lines 1--1
+[]\T1/lmr/bx/n/17.28 Spatio-temporal De-pen-dence Anal-y-sis in fMRI
+ []
+
+[69] [70] [71] <Chapter-appli/xslice.pdf, id=1492, 325.215pt x 289.08pt>
+File: Chapter-appli/xslice.pdf Graphic file (type pdf)
+
+<use Chapter-appli/xslice.pdf>
+Package pdftex.def Info: Chapter-appli/xslice.pdf used on input line 38.
+(pdftex.def)             Requested size: 138.76157pt x 123.34479pt.
+
+<Chapter-appli/yslice.pdf, id=1493, 325.215pt x 289.08pt>
+File: Chapter-appli/yslice.pdf Graphic file (type pdf)
+
+<use Chapter-appli/yslice.pdf>
+Package pdftex.def Info: Chapter-appli/yslice.pdf used on input line 39.
+(pdftex.def)             Requested size: 138.76157pt x 123.34479pt.
+
+<Chapter-appli/zslice.pdf, id=1494, 289.08pt x 325.215pt>
+File: Chapter-appli/zslice.pdf Graphic file (type pdf)
+
+<use Chapter-appli/zslice.pdf>
+Package pdftex.def Info: Chapter-appli/zslice.pdf used on input line 40.
+(pdftex.def)             Requested size: 138.76157pt x 156.10638pt.
+
+<Chapter-appli/zslice2.pdf, id=1495, 289.08pt x 325.215pt>
+File: Chapter-appli/zslice2.pdf Graphic file (type pdf)
+
+<use Chapter-appli/zslice2.pdf>
+Package pdftex.def Info: Chapter-appli/zslice2.pdf used on input line 41.
+(pdftex.def)             Requested size: 138.76157pt x 156.10638pt.
+
+<Chapter-appli/screenshot.png, id=1496, 511.15968pt x 422.32782pt>
+File: Chapter-appli/screenshot.png Graphic file (type png)
+
+<use Chapter-appli/screenshot.png>
+Package pdftex.def Info: Chapter-appli/screenshot.png used on input line 42.
+(pdftex.def)             Requested size: 216.81pt x 179.12929pt.
+) (Chapter-appli/TwinStudies.tex [72]
+[73 <./Chapter-appli/xslice.pdf> <./Chapter-appli/yslice.pdf> <./Chapter-appli/
+zslice.pdf> <./Chapter-appli/zslice2.pdf> <./Chapter-appli/screenshot.png>]
+
+Package Fancyhdr Warning: \headheight is too small (27.11653pt): 
+ Make it at least 41.61653pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[74] [75] [76]
+Overfull \hbox (37.55843pt too wide) in paragraph at lines 21--22
+[]\T1/lmr/m/n/12 DNA sam-ples col-lected from the sub-jects were an-a-lyzed us-
+ing Il-lu-mi-naâ€™s Human660W-
+ []
+
+[77] [78]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 64.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 64.
+
+[79] <Chapter-appli/plot_h5_tau2.pdf, id=1629, 505.89pt x 289.08pt>
+File: Chapter-appli/plot_h5_tau2.pdf Graphic file (type pdf)
+
+<use Chapter-appli/plot_h5_tau2.pdf>
+Package pdftex.def Info: Chapter-appli/plot_h5_tau2.pdf used on input line 73.
+(pdftex.def)             Requested size: 225.44067pt x 128.82307pt.
+
+<Chapter-appli/plot_h5_tau4.pdf, id=1630, 505.89pt x 289.08pt>
+File: Chapter-appli/plot_h5_tau4.pdf Graphic file (type pdf)
+
+<use Chapter-appli/plot_h5_tau4.pdf>
+Package pdftex.def Info: Chapter-appli/plot_h5_tau4.pdf used on input line 74.
+(pdftex.def)             Requested size: 225.44067pt x 128.82307pt.
+
+<Chapter-appli/plot_h5_tau10.pdf, id=1631, 505.89pt x 289.08pt>
+File: Chapter-appli/plot_h5_tau10.pdf Graphic file (type pdf)
+
+<use Chapter-appli/plot_h5_tau10.pdf>
+Package pdftex.def Info: Chapter-appli/plot_h5_tau10.pdf used on input line 75.
+
+(pdftex.def)             Requested size: 225.44067pt x 128.82307pt.
+
+<Chapter-appli/plot_h5_tau50.pdf, id=1632, 505.89pt x 289.08pt>
+File: Chapter-appli/plot_h5_tau50.pdf Graphic file (type pdf)
+
+<use Chapter-appli/plot_h5_tau50.pdf>
+Package pdftex.def Info: Chapter-appli/plot_h5_tau50.pdf used on input line 76.
+
+(pdftex.def)             Requested size: 225.44067pt x 128.82307pt.
+
+<"Chapter-appli/plot_h0.05_tau2".pdf, id=1633, 505.89pt x 289.08pt>
+File: "Chapter-appli/plot_h0.05_tau2".pdf Graphic file (type pdf)
+
+<use "Chapter-appli/plot_h0.05_tau2".pdf>
+Package pdftex.def Info: "Chapter-appli/plot_h0.05_tau2".pdf used on input line
+ 83.
+(pdftex.def)             Requested size: 225.44067pt x 128.82307pt.
+
+<"Chapter-appli/plot_h0.05_tau4".pdf, id=1634, 505.89pt x 289.08pt>
+File: "Chapter-appli/plot_h0.05_tau4".pdf Graphic file (type pdf)
+
+<use "Chapter-appli/plot_h0.05_tau4".pdf>
+Package pdftex.def Info: "Chapter-appli/plot_h0.05_tau4".pdf used on input line
+ 84.
+(pdftex.def)             Requested size: 225.44067pt x 128.82307pt.
+
+<"Chapter-appli/plot_h0.05_tau10".pdf, id=1635, 505.89pt x 289.08pt>
+File: "Chapter-appli/plot_h0.05_tau10".pdf Graphic file (type pdf)
+
+<use "Chapter-appli/plot_h0.05_tau10".pdf>
+Package pdftex.def Info: "Chapter-appli/plot_h0.05_tau10".pdf used on input lin
+e 85.
+(pdftex.def)             Requested size: 225.44067pt x 128.82307pt.
+
+<"Chapter-appli/plot_h0.05_tau50".pdf, id=1636, 505.89pt x 289.08pt>
+File: "Chapter-appli/plot_h0.05_tau50".pdf Graphic file (type pdf)
+
+<use "Chapter-appli/plot_h0.05_tau50".pdf>
+Package pdftex.def Info: "Chapter-appli/plot_h0.05_tau50".pdf used on input lin
+e 86.
+(pdftex.def)             Requested size: 225.44067pt x 128.82307pt.
+ [80] [81 <./Chapter-appli/plot_h5_tau2.pdf> <./Chapter-appli/plot_h5_tau4.pdf>
+ <./Chapter-appli/plot_h5_tau10.pdf> <./Chapter-appli/plot_h5_tau50.pdf>] [82 <
+./Chapter-appli/plot_h0.05_tau2.pdf> <./Chapter-appli/plot_h0.05_tau4.pdf> <./C
+hapter-appli/plot_h0.05_tau10.pdf> <./Chapter-appli/plot_h0.05_tau50.pdf>] [83]
+ [84] [85] [86] [87] [88]
+Underfull \hbox (badness 2689) in paragraph at lines 281--281
+[]\T1/lmr/m/n/10 rs17027523(-), rs13103626(+), rs10516430(+), rs12503056(+),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
+[]\T1/lmr/m/n/10 rs9371718(-), rs1937600(+), rs9397637(+), rs12662873(-),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
+\T1/lmr/m/n/10 rs1316368(+), rs1937587(-), rs6921403(-), rs1937580(+),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
+\T1/lmr/m/n/10 rs1937645(+), rs1892361(-), rs1937633(+), rs1937631(-),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
+\T1/lmr/m/n/10 rs12527197(-), rs1892360(-), rs1892356(+), rs1937619(-),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
+\T1/lmr/m/n/10 rs1332849(-), rs9371749(+), rs9285539(+), rs9322439(-),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
+\T1/lmr/m/n/10 rs11752884(+), rs4870241(-), rs689219(-), rs9371761(+),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
+\T1/lmr/m/n/10 rs12199858(+), rs9371762(-), rs612450(+), rs9384159(+),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--285
+[]\T1/lmr/m/n/10 rs9419702(-), rs9419624(+), rs7906770(-), rs9419569(+),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--287
+[]\T1/lmr/m/n/10 rs7398343(+), rs7297186(+), rs3803167(+), rs10219736(-),
+ []
+
+[89] <"Chapter-appli/plotGABRA2".pdf, id=1777, 578.16pt x 325.215pt>
+File: "Chapter-appli/plotGABRA2".pdf Graphic file (type pdf)
+
+<use "Chapter-appli/plotGABRA2".pdf>
+Package pdftex.def Info: "Chapter-appli/plotGABRA2".pdf used on input line 301.
+
+(pdftex.def)             Requested size: 254.40001pt x 143.09538pt.
+
+<"Chapter-appli/plotADH".pdf, id=1778, 578.16pt x 325.215pt>
+File: "Chapter-appli/plotADH".pdf Graphic file (type pdf)
+
+<use "Chapter-appli/plotADH".pdf>
+Package pdftex.def Info: "Chapter-appli/plotADH".pdf used on input line 303.
+(pdftex.def)             Requested size: 254.40001pt x 143.09538pt.
+
+<"Chapter-appli/plotSLC6A3".pdf, id=1779, 578.16pt x 325.215pt>
+File: "Chapter-appli/plotSLC6A3".pdf Graphic file (type pdf)
+
+<use "Chapter-appli/plotSLC6A3".pdf>
+Package pdftex.def Info: "Chapter-appli/plotSLC6A3".pdf used on input line 305.
+
+(pdftex.def)             Requested size: 254.40001pt x 143.09538pt.
+
+<"Chapter-appli/plotSLC6A4".pdf, id=1780, 578.16pt x 325.215pt>
+File: "Chapter-appli/plotSLC6A4".pdf Graphic file (type pdf)
+
+<use "Chapter-appli/plotSLC6A4".pdf>
+Package pdftex.def Info: "Chapter-appli/plotSLC6A4".pdf used on input line 319.
+
+(pdftex.def)             Requested size: 254.40001pt x 143.09538pt.
+
+<"Chapter-appli/plotOPRM1".pdf, id=1781, 578.16pt x 325.215pt>
+File: "Chapter-appli/plotOPRM1".pdf Graphic file (type pdf)
+
+<use "Chapter-appli/plotOPRM1".pdf>
+Package pdftex.def Info: "Chapter-appli/plotOPRM1".pdf used on input line 321.
+(pdftex.def)             Requested size: 254.40001pt x 143.09538pt.
+
+<"Chapter-appli/plotCYP2E1".pdf, id=1782, 578.16pt x 325.215pt>
+File: "Chapter-appli/plotCYP2E1".pdf Graphic file (type pdf)
+
+<use "Chapter-appli/plotCYP2E1".pdf>
+Package pdftex.def Info: "Chapter-appli/plotCYP2E1".pdf used on input line 323.
+
+(pdftex.def)             Requested size: 254.40001pt x 143.09538pt.
+
+<"Chapter-appli/plotDRD2".pdf, id=1783, 578.16pt x 325.215pt>
+File: "Chapter-appli/plotDRD2".pdf Graphic file (type pdf)
+
+<use "Chapter-appli/plotDRD2".pdf>
+Package pdftex.def Info: "Chapter-appli/plotDRD2".pdf used on input line 337.
+(pdftex.def)             Requested size: 254.40001pt x 143.09538pt.
+
+<"Chapter-appli/plotALDH2".pdf, id=1784, 578.16pt x 325.215pt>
+File: "Chapter-appli/plotALDH2".pdf Graphic file (type pdf)
+
+<use "Chapter-appli/plotALDH2".pdf>
+Package pdftex.def Info: "Chapter-appli/plotALDH2".pdf used on input line 339.
+(pdftex.def)             Requested size: 254.40001pt x 143.09538pt.
+
+<"Chapter-appli/plotCOMT".pdf, id=1785, 578.16pt x 325.215pt>
+File: "Chapter-appli/plotCOMT".pdf Graphic file (type pdf)
+
+<use "Chapter-appli/plotCOMT".pdf>
+Package pdftex.def Info: "Chapter-appli/plotCOMT".pdf used on input line 341.
+(pdftex.def)             Requested size: 254.40001pt x 143.09538pt.
+ [90] [91 <./Chapter-appli/plotGABRA2.pdf> <./Chapter-appli/plotADH.pdf> <./Cha
+pter-appli/plotSLC6A3.pdf>] [92 <./Chapter-appli/plotSLC6A4.pdf> <./Chapter-app
+li/plotOPRM1.pdf> <./Chapter-appli/plotCYP2E1.pdf>] [93 <./Chapter-appli/plotDR
+D2.pdf> <./Chapter-appli/plotALDH2.pdf> <./Chapter-appli/plotCOMT.pdf>]
+Overfull \hbox (1.70221pt too wide) in paragraph at lines 357--358
+\T1/lmr/m/n/12 co-hol with-drawal symp-toms ([]$\T1/lmtt/m/n/12 https : / / www
+ . snpedia . com / index . php / Rs27072$[]\T1/lmr/m/n/12 ). Two
+ []
+
+[94] [95] [96]) [97]
+Chapter 4.
+(Chapter-scatter/Chapter-scatter_LocationSection.tex [98
+
+
+] [99] [100] [101]
+[102] [103] [104]
+Overfull \hbox (7.94254pt too wide) in paragraph at lines 170--173
+\T1/lmr/m/n/12 when $[] \U/matha/m/n/12  \OML/lmm/m/it/12 k\OT1/lmr/bx/n/12 I[
+]$ \T1/lmr/m/n/12 and $\OML/lmm/m/it/12 f\U/matha/m/n/12 p\OML/lmm/m/it/12 r\U/
+matha/m/n/12 q  \OT1/lmr/m/n/12 1\U/matha/m/n/12 {p\OT1/lmr/m/n/12 1 \U/matha/
+m/n/12   \OML/lmm/m/it/12 r\U/matha/m/n/12 q$\T1/lmr/m/n/12 , this again sim-pl
+i-fies to $\U/msb/m/n/12 E[]\U/matha/m/n/12 p\OML/lmm/m/it/12 f\U/matha/m/n/12 
+p\OML/lmm/m/it/12 r\U/matha/m/n/12 q{\OML/lmm/m/it/12 r\U/matha/m/n/12 q{r\U/ms
+b/m/n/12 E\OML/lmm/m/it/12 f[]\U/matha/m/n/12 p\OML/lmm/m/it/12 r\U/matha/m/n/1
+2 q\OML/lmm/m/it/12 :\U/msb/m/n/12 E[]\U/matha/m/n/12 p\OT1/lmr/m/n/12 1\U/math
+a/m/n/12 {\OML/lmm/m/it/12 r\U/matha/m/n/12 qs$\T1/lmr/m/n/12 .
+ []
+
+) (Chapter-scatter/Chapter-scatter_dcmSection.tex [105] [106]
+<ranks.pdf, id=2056, 505.89pt x 289.08pt>
+File: ranks.pdf Graphic file (type pdf)
+ <use ranks.pdf>
+Package pdftex.def Info: ranks.pdf used on input line 21.
+(pdftex.def)             Requested size: 298.7504pt x 170.71652pt.
+ [107 <./ranks.pdf>]
+[108] [109] [110] [111]
+Overfull \hbox (26.71175pt too wide) in paragraph at lines 154--155
+\T1/lmr/m/n/12 This con-di-tion is easy to ver-ify for our choice of the weight
+s: $\OML/lmm/m/it/12 w\U/matha/m/n/12 p}\OT1/lmr/bx/n/12 z[]\U/matha/m/n/12 }q 
+ []p\OT1/lmr/bx/n/12 z[]\OML/lmm/m/it/12 ; \U/matha/m/n/12 r\OT1/lmr/bx/n/12 Z
+[]\U/matha/m/n/12 sq{}\OT1/lmr/bx/n/12 z[]\U/matha/m/n/12 }$\T1/lmr/m/n/12 .
+ []
+
+[112]
+Overfull \hbox (10.01642pt too wide) in paragraph at lines 179--180
+\T1/lmr/m/n/12 Notice that ow-ing to the uni-form con-ver-gence prop-erty we ca
+n safely re-place $\OML/lmm/m/it/12 D[]\U/matha/m/n/12 p\OT1/lmr/bx/n/12 x[]\OM
+L/lmm/m/it/12 ; \U/matha/m/n/12 r\OT1/lmr/bx/n/12 X\U/matha/m/n/12 sq$
+ []
+
+[113] [114] <IFnorm.png, id=2159, 752.8125pt x 1003.75pt>
+File: IFnorm.png Graphic file (type png)
+ <use IFnorm.png>
+Package pdftex.def Info: IFnorm.png used on input line 226.
+(pdftex.def)             Requested size: 341.43306pt x 455.25195pt.
+
+[115] [116 <./IFnorm.png>] [117]
+Overfull \hbox (10.20738pt too wide) in alignment at lines 257--260
+ [][][] []
+ []
+
+[118] [119]
+Overfull \hbox (4.21649pt too wide) in paragraph at lines 464--465
+[]\T1/lmr/m/n/12 Randomly di-vide the sam-ple in-dices $\U/matha/m/n/12 t\OT1/l
+mr/m/n/12 1\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 2\OML/lmm/m/it/12 ; :::; n\U/math
+a/m/n/12 u$ \T1/lmr/m/n/12 into $\OML/lmm/m/it/12 k$ \T1/lmr/m/n/12 dis-joint g
+roups $\U/matha/m/n/12 t\OML/lmm/m/it/12 G[]; :::; G[]\U/matha/m/n/12 u$
+ []
+
+[120]) (Chapter-scatter/Chapter-scatter_sdrSection.tex [121] [122] [123]
+[124] [125
+
+] <SDRcomparison_noout.pdf, id=2265, 361.35pt x 361.35pt>
+File: SDRcomparison_noout.pdf Graphic file (type pdf)
+
+<use SDRcomparison_noout.pdf>
+Package pdftex.def Info: SDRcomparison_noout.pdf used on input line 24.
+(pdftex.def)             Requested size: 151.76964pt x 151.77147pt.
+
+<SDRcomparison_out.pdf, id=2266, 361.35pt x 361.35pt>
+File: SDRcomparison_out.pdf Graphic file (type pdf)
+
+<use SDRcomparison_out.pdf>
+Package pdftex.def Info: SDRcomparison_out.pdf used on input line 25.
+(pdftex.def)             Requested size: 151.76964pt x 151.77147pt.
+ [126 <./SDRcomparison_noout.pdf> <./SDRcomparison_out.pdf>]) (Chapter-scatter/
+Chapter-scatter_fpcaSection.tex [127] [128]
+<Chapter-scatter/Elnino_functional1.pdf, id=2301, 289.08pt x 289.08pt>
+File: Chapter-scatter/Elnino_functional1.pdf Graphic file (type pdf)
+
+<use Chapter-scatter/Elnino_functional1.pdf>
+Package pdftex.def Info: Chapter-scatter/Elnino_functional1.pdf used on input l
+ine 27.
+(pdftex.def)             Requested size: 151.76964pt x 151.76926pt.
+
+<Chapter-scatter/Octane_functional1.pdf, id=2302, 289.08pt x 289.08pt>
+File: Chapter-scatter/Octane_functional1.pdf Graphic file (type pdf)
+
+<use Chapter-scatter/Octane_functional1.pdf>
+Package pdftex.def Info: Chapter-scatter/Octane_functional1.pdf used on input l
+ine 28.
+(pdftex.def)             Requested size: 151.76964pt x 151.76926pt.
+
+<Chapter-scatter/Elnino_functional2.pdf, id=2303, 289.08pt x 289.08pt>
+File: Chapter-scatter/Elnino_functional2.pdf Graphic file (type pdf)
+
+<use Chapter-scatter/Elnino_functional2.pdf>
+Package pdftex.def Info: Chapter-scatter/Elnino_functional2.pdf used on input l
+ine 30.
+(pdftex.def)             Requested size: 151.76964pt x 151.76926pt.
+
+<Chapter-scatter/Octane_functional2.pdf, id=2304, 289.08pt x 289.08pt>
+File: Chapter-scatter/Octane_functional2.pdf Graphic file (type pdf)
+
+<use Chapter-scatter/Octane_functional2.pdf>
+Package pdftex.def Info: Chapter-scatter/Octane_functional2.pdf used on input l
+ine 31.
+(pdftex.def)             Requested size: 151.76964pt x 151.76926pt.
+
+<Chapter-scatter/Elnino_functional3.pdf, id=2305, 289.08pt x 289.08pt>
+File: Chapter-scatter/Elnino_functional3.pdf Graphic file (type pdf)
+
+<use Chapter-scatter/Elnino_functional3.pdf>
+Package pdftex.def Info: Chapter-scatter/Elnino_functional3.pdf used on input l
+ine 33.
+(pdftex.def)             Requested size: 151.76964pt x 151.76926pt.
+
+<Chapter-scatter/Octane_functional3.pdf, id=2306, 289.08pt x 289.08pt>
+File: Chapter-scatter/Octane_functional3.pdf Graphic file (type pdf)
+
+<use Chapter-scatter/Octane_functional3.pdf>
+Package pdftex.def Info: Chapter-scatter/Octane_functional3.pdf used on input l
+ine 34.
+(pdftex.def)             Requested size: 151.76964pt x 151.76926pt.
+
+
+LaTeX Warning: Float too large for page by 4.75156pt on input line 39.
+
+) (Chapter-scatter/Chapter-scatter_Conclusion.tex [129] [130 <./Chapter-scatter
+/Elnino_functional1.pdf> <./Chapter-scatter/Octane_functional1.pdf> <./Chapter-
+scatter/Elnino_functional2.pdf> <./Chapter-scatter/Octane_functional2.pdf> <./C
+hapter-scatter/Elnino_functional3.pdf> <./Chapter-scatter/Octane_functional3.pd
+f>]) (Chapter-scatter/Chapter-scatter_Appendix.tex
+Overfull \hbox (13.55524pt too wide) in paragraph at lines 5--2
+\T1/lmr/m/n/12 retransformation type tech-niques (e.g. []Chakraborty and Chaud-
+huri[] ([]1996[]); []Chakraborty
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 4.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 4.
+
+[131]
+Overfull \hbox (58.71901pt too wide) in alignment at lines 12--16
+ [][][] []
+ []
+
+
+Overfull \hbox (3.5055pt too wide) detected at line 20
+\U/matha/m/n/12 p\OT1/lmr/bx/n/12 I[] \U/matha/m/n/12   \OT1/lmr/bx/n/12 K[]\U/
+matha/m/n/12 q []   [] [] []p\OT1/lmr/bx/n/12 e[]e[] \U/matha/m/n/12 b \OT1/lmr
+/bx/n/12 e[]e[]\U/matha/m/n/12 q
+ []
+
+[132] [133]
+
+LaTeX Warning: Command \l invalid in math mode on input line 74.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 74.
+
+[134] [135]
+Overfull \hbox (8.07616pt too wide) in paragraph at lines 114--115
+ [][] \T1/lmr/m/n/12 For the on-diagonal el-e-ments of $[]\U/matha/m/n/12 p\OML
+/lmm/m/it/12 F[]\U/matha/m/n/12 q$ \T1/lmr/m/n/12 The-o-rem []4.7.1[] gives us 
+$[][]\OML/lmm/m/it/12 []\U/matha/m/n/12 p\OML/lmm/m/it/12 F[]\U/matha/m/n/12 q
+  [][]p\OML/lmm/m/it/12 F[]\U/matha/m/n/12 q$
+ []
+
+
+Overfull \hbox (11.0796pt too wide) in paragraph at lines 129--130
+\U/msb/m/n/12 E\U/matha/m/n/12 p\OML/lmm/m/it/12 w\U/matha/m/n/12 p\OT1/lmr/bx/
+n/12 Z\U/matha/m/n/12 q\OT1/lmr/bx/n/12 S\U/matha/m/n/12 p\OT1/lmr/bx/n/12 Z\U/
+matha/m/n/12 qq  \U/msb/m/n/12 E\OML/lmm/m/it/12 w\U/matha/m/n/12 p\OT1/lmr/bx
+/n/12 Z\U/matha/m/n/12 q\OML/lmm/m/it/12 :\U/msb/m/n/12 E\OT1/lmr/bx/n/12 S\U/m
+atha/m/n/12 p\OT1/lmr/bx/n/12 Z\U/matha/m/n/12 q$\T1/lmr/m/n/12 . The same kind
+ of de-com-po-si-tion holds for $\U/msb/m/n/12 V\U/matha/m/n/12 p\OML/lmm/m/it/
+12 w\U/matha/m/n/12 p\OT1/lmr/bx/n/12 Z\U/matha/m/n/12 q\OT1/lmr/bx/n/12 S\U/ma
+tha/m/n/12 p\OT1/lmr/bx/n/12 Z\U/matha/m/n/12 qq$\T1/lmr/m/n/12 . 
+ []
+
+[136] [137]
+Overfull \hbox (11.73195pt too wide) in paragraph at lines 184--185
+[][]\T1/lmr/bx/n/12 Lemma 4.7.5. []\T1/lmr/m/it/12 De-fine $\OT1/lmr/bx/n/12 D[
+] \U/matha/m/n/12  \U/msb/m/n/12 E []$\T1/lmr/m/it/12 . Then $\OML/lmm/m/it/12
+ []\U/matha/m/n/12 p\OT1/lmr/bx/n/12 A[]\U/matha/m/n/12 q ¤ \U/msb/m/n/12 E\U/
+matha/m/n/12 p\OML/lmm/m/it/12 w\U/matha/m/n/12 p[]q{}[]}q$
+ []
+
+[138] [139]
+Overfull \hbox (7.4698pt too wide) in alignment at lines 251--254
+ [][][] []
+ []
+
+[140]) [141]
+Chapter 5.
+(Chapter-regression/Introduction.tex [142
+
+
+] [143])
+(Chapter-regression/Motivation.tex [144]) (Chapter-regression/Estimator.tex
+[145] <Chapter-regression/penalties1.pdf, id=2557, 361.35pt x 382.42876pt>
+File: Chapter-regression/penalties1.pdf Graphic file (type pdf)
+
+<use Chapter-regression/penalties1.pdf>
+Package pdftex.def Info: Chapter-regression/penalties1.pdf used on input line 1
+8.
+(pdftex.def)             Requested size: 134.42113pt x 142.26085pt.
+
+<Chapter-regression/threslarn.pdf, id=2558, 361.35pt x 382.42876pt>
+File: Chapter-regression/threslarn.pdf Graphic file (type pdf)
+
+<use Chapter-regression/threslarn.pdf>
+Package pdftex.def Info: Chapter-regression/threslarn.pdf used on input line 19
+.
+(pdftex.def)             Requested size: 134.42113pt x 142.26085pt.
+ [146] [147 <./Chapter-regression/penalties1.pdf> <./Chapter-regression/thresla
+rn.pdf>] [148]
+Overfull \hbox (28.29874pt too wide) in paragraph at lines 75--91
+\T1/lmr/m/n/12 This is easy to see, be-cause $\OML/lmm/m/it/12 Q\U/matha/m/n/12
+ p\OT1/lmr/bx/n/12 B\U/matha/m/n/12 q  \OML/lmm/m/it/12 R\U/matha/m/n/12 p\OT1
+/lmr/bx/n/12 B\U/matha/m/n/12 |\OT1/lmr/bx/n/12 B[]\U/matha/m/n/12 q$ \T1/lmr/m
+/n/12 = $\OML/lmm/m/it/12  [][] []$\T1/lmr/m/n/12 .
+ []
+
+
+Overfull \hbox (5.29497pt too wide) in paragraph at lines 92--93
+[]\T1/lmr/m/n/12 Now no-tice that $\OT1/lmr/bx/n/12 B[] \U/matha/m/n/12  [][] 
+\OML/lmm/m/it/12 R\U/matha/m/n/12 p\OT1/lmr/bx/n/12 B\U/matha/m/n/12 |\OT1/lmr/
+bx/n/12 B[]\U/matha/m/n/12 q$\T1/lmr/m/n/12 . Thus $\OML/lmm/m/it/12 Q\U/matha/
+m/n/12 p\OT1/lmr/bx/n/12 B[]\U/matha/m/n/12 q ¤ \OML/lmm/m/it/12 R\U/matha/m/n/
+12 p\OT1/lmr/bx/n/12 B[]\U/matha/m/n/12 |\OT1/lmr/bx/n/12 B[]\U/matha/m/n/12 q 
+¤
+ []
+
+[149] [150]
+LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 121.
+ [151] [152] [153]) (Chapter-regression/Orthogonal.tex [154]
+Overfull \hbox (0.73422pt too wide) in paragraph at lines 31--33
+[]\T1/lmr/m/n/12 We note here that thresh-old-ing rules due to pre-vi-ously pro
+-posed non-con-vex penalty
+ []
+
+[155] [156]) (Chapter-regression/Simulation.tex
+Overfull \hbox (31.14168pt too wide) in paragraph at lines 8--9
+[][] \OML/lmm/m/it/12 D\U/matha/m/n/12 p\OT1/lmr/bx/n/12 x\OML/lmm/m/it/12 ; F\
+U/matha/m/n/12 q  \OML/lmm/m/it/12 D\U/matha/m/n/12 p\OT1/lmr/bx/n/12 x\OML/lm
+m/m/it/12 ; F\U/matha/m/n/12 q$\T1/lmr/m/n/12 , and con-sider the set of tun-in
+g pa-ram-e-ters $\OML/lmm/m/it/12  \U/matha/m/n/12 P \OT1/lmr/m/n/12 10[]$
+ []
+
+[157] <Chapter-regression/plot1mspe.pdf, id=2718, 361.35pt x 361.35pt>
+File: Chapter-regression/plot1mspe.pdf Graphic file (type pdf)
+
+<use Chapter-regression/plot1mspe.pdf>
+Package pdftex.def Info: Chapter-regression/plot1mspe.pdf used on input line 29
+.
+(pdftex.def)             Requested size: 134.42113pt x 134.41971pt.
+
+<Chapter-regression/plot2mspe.pdf, id=2719, 361.35pt x 361.35pt>
+File: Chapter-regression/plot2mspe.pdf Graphic file (type pdf)
+
+<use Chapter-regression/plot2mspe.pdf>
+Package pdftex.def Info: Chapter-regression/plot2mspe.pdf used on input line 30
+.
+(pdftex.def)             Requested size: 134.42113pt x 134.41971pt.
+
+<Chapter-regression/plot3mspe.pdf, id=2720, 361.35pt x 361.35pt>
+File: Chapter-regression/plot3mspe.pdf Graphic file (type pdf)
+
+<use Chapter-regression/plot3mspe.pdf>
+Package pdftex.def Info: Chapter-regression/plot3mspe.pdf used on input line 31
+.
+(pdftex.def)             Requested size: 134.42113pt x 134.41971pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 43.
+ [158] [159 <./Chapter-regression/plot1mspe.pdf> <./Chapter-regression/plot2msp
+e.pdf> <./Chapter-regression/plot3mspe.pdf>]) (Chapter-regression/RealData.tex
+
+pdfTeX warning: pdflatex (file ./Chapter-regression/cropped_gene_heatmap1.pdf):
+ PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
+<Chapter-regression/cropped_gene_heatmap1.pdf, id=2761, 642.4pt x 395.4775pt>
+File: Chapter-regression/cropped_gene_heatmap1.pdf Graphic file (type pdf)
+
+<use Chapter-regression/cropped_gene_heatmap1.pdf>
+Package pdftex.def Info: Chapter-regression/cropped_gene_heatmap1.pdf used on i
+nput line 7.
+(pdftex.def)             Requested size: 346.89731pt x 213.5607pt.
+ [160]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[161 <./Chapter-regression/cropped_gene_heatmap1.pdf>])
+(Chapter-regression/suppl.tex [162] [163] [164] [165]
+Overfull \hbox (2.20262pt too wide) in alignment at lines 91--94
+ [][][] []
+ []
+
+[166]
+Overfull \hbox (27.14105pt too wide) in alignment at lines 145--150
+ [][][] []
+ []
+
+[167]
+Overfull \hbox (31.51135pt too wide) in paragraph at lines 159--163
+\T1/lmr/m/n/12 Following []Zou[] ([]2006[]), $\OML/lmm/m/it/12 P\U/matha/m/n/12
+ r|\OML/lmm/m/it/12 z\U/matha/m/n/12 | ¡ \OML/lmm/m/it/12 p[]\U/matha/m/n/12 p
+\OML/lmm/m/it/12 F\U/matha/m/n/12 qs ¤ \OT1/lmr/m/n/12 2\OML/lmm/m/it/12 q\U/ma
+tha/m/n/12 p\OML/lmm/m/it/12 p[]\U/matha/m/n/12 p\OML/lmm/m/it/12 F\U/matha/m/
+n/12 qq   \OT1/lmr/m/n/12 2\OML/lmm/m/it/12 []$\T1/lmr/m/n/12 , with $\OML/lmm
+/m/it/12 q\U/matha/m/n/12 p\OML/lmm/m/it/12 x\U/matha/m/n/12 q  []r\OML/lmm/m
+/it/12 x[]\U/matha/m/n/12 {\OT1/lmr/m/n/12 2\U/matha/m/n/12 s{p[]\OML/lmm/m/it/
+12 x\U/matha/m/n/12 q$\T1/lmr/m/n/12 .
+ []
+
+) [168]
+Chapter 6.
+(FutureWork.tex [169
+
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 22.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 22.
+
+) (MyThesis.bbl [170] [171] [172
+
+
+]
+Underfull \hbox (badness 1067) in paragraph at lines 82--87
+[]\T1/lmr/m/n/12 Chakraborty, B. and Chaud-huri, P. (1996).  On a Trans-for-ma-
+tion and Re-
+ []
+
+[173] [174] [175] [176] [177] [178] [179] [180] [181] [182] [183] [184]
+[185] [186] [187])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 152.
+ [188]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 152.
+ (MyThesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 152.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 152.
+Package rerunfilecheck Info: File `MyThesis.out' has not changed.
+(rerunfilecheck)             Checksum: 382D7F44E89951FB0D9FACCED98658FB;6197.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 152.
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 363 ({)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 11235 strings out of 493333
+ 168658 string characters out of 3137901
+ 301528 words of memory out of 3000000
+ 13697 multiletter control sequences out of 15000+200000
+ 151841 words of font info for 133 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 36i,16n,51p,1968b,786s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Subho\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\publi
+c\mathabx\dpi657\matha10.pk>{D:/Study/LaTeX/MikTeX 2.9.6161/fonts/enc/dvips/lm/
+lm-ec.enc} <C:\Users\Subho\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\math
+abx\dpi720\matha12.pk> <C:\Users\Subho\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
+\public\mathabx\dpi720\mathb12.pk>{D:/Study/LaTeX/MikTeX 2.9.6161/fonts/enc/dvi
+ps/lm/lm-mathit.enc}{D:/Study/LaTeX/MikTeX 2.9.6161/fonts/enc/dvips/lm/lm-rm.en
+c} <C:\Users\Subho\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\dpi6
+00\matha10.pk> <C:\Users\Subho\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\
+mathabx\dpi480\mathx10.pk> <C:\Users\Subho\AppData\Local\MiKTeX\2.9\fonts\pk\lj
+four\public\mathabx\dpi600\matha6.pk>{D:/Study/LaTeX/MikTeX 2.9.6161/fonts/enc/
+dvips/lm/lm-mathsy.enc} <C:\Users\Subho\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
+r\public\mathabx\dpi720\mathx10.pk> <C:\Users\Subho\AppData\Local\MiKTeX\2.9\fo
+nts\pk\ljfour\public\mathabx\dpi600\matha8.pk> <C:\Users\Subho\AppData\Local\Mi
+KTeX\2.9\fonts\pk\ljfour\public\mathabx\dpi600\matha12.pk><D:/Study/LaTeX/MikTe
+X 2.9.6161/fonts/type1/public/lm/lmbx12.pfb><D:/Study/LaTeX/MikTeX 2.9.6161/fon
+ts/type1/public/lm/lmbx6.pfb><D:/Study/LaTeX/MikTeX 2.9.6161/fonts/type1/public
+/lm/lmbx8.pfb><D:/Study/LaTeX/MikTeX 2.9.6161/fonts/type1/public/lm/lmbxi10.pfb
+><D:/Study/LaTeX/MikTeX 2.9.6161/fonts/type1/public/lm/lmcsc10.pfb><D:/Study/La
+TeX/MikTeX 2.9.6161/fonts/type1/public/lm/lmmi10.pfb><D:/Study/LaTeX/MikTeX 2.9
+.6161/fonts/type1/public/lm/lmmi12.pfb><D:/Study/LaTeX/MikTeX 2.9.6161/fonts/ty
+pe1/public/lm/lmmi6.pfb><D:/Study/LaTeX/MikTeX 2.9.6161/fonts/type1/public/lm/l
+mmi7.pfb><D:/Study/LaTeX/MikTeX 2.9.6161/fonts/type1/public/lm/lmmi8.pfb><D:/St
+udy/LaTeX/MikTeX 2.9.6161/fonts/type1/public/lm/lmmib10.pfb><D:/Study/LaTeX/Mik
+TeX 2.9.6161/fonts/type1/public/lm/lmr10.pfb><D:/Study/LaTeX/MikTeX 2.9.6161/fo
+nts/type1/public/lm/lmr12.pfb><D:/Study/LaTeX/MikTeX 2.9.6161/fonts/type1/publi
+c/lm/lmr17.pfb><D:/Study/LaTeX/MikTeX 2.9.6161/fonts/type1/public/lm/lmr6.pfb><
+D:/Study/LaTeX/MikTeX 2.9.6161/fonts/type1/public/lm/lmr7.pfb><D:/Study/LaTeX/M
+ikTeX 2.9.6161/fonts/type1/public/lm/lmr8.pfb><D:/Study/LaTeX/MikTeX 2.9.6161/f
+onts/type1/public/lm/lmri12.pfb><D:/Study/LaTeX/MikTeX 2.9.6161/fonts/type1/pub
+lic/lm/lmri8.pfb><D:/Study/LaTeX/MikTeX 2.9.6161/fonts/type1/public/lm/lmsy10.p
+fb><D:/Study/LaTeX/MikTeX 2.9.6161/fonts/type1/public/lm/lmsy8.pfb><D:/Study/La
+TeX/MikTeX 2.9.6161/fonts/type1/public/lm/lmtt12.pfb><D:/Study/LaTeX/MikTeX 2.9
+.6161/fonts/type1/public/amsfonts/symbols/msam10.pfb><D:/Study/LaTeX/MikTeX 2.9
+.6161/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on MyThesis.pdf (204 pages, 3659042 bytes).
+PDF statistics:
+ 3363 PDF objects out of 3580 (max. 8388607)
+ 707 named destinations out of 1000 (max. 500000)
+ 924 words of extra memory for PDF output out of 10000 (max. 10000000)
+

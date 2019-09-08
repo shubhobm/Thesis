@@ -1,0 +1,143 @@
+\documentclass[oneside]{umnStatThesis}
+
+\author{Full Legal Name of Author}
+\adviser{Adviser Name Here}
+%\coadviser{Co-Adviser Name Here}
+\title{Title of Your Fantastic Thesis}
+\month{Month}
+\year{20XX}
+% Month and Year of Degree Clearance, NOT necessarily when you defended
+
+\begin{document}
+
+\makesignaturepage % required
+\maketitlepage % required
+\makecopyrightpage % recommended, required if registering copyright
+
+\frontmatter
+
+\begin{acknowledgementspage} % optional
+I'd like to thank \dots
+\end{acknowledgementspage}
+
+\begin{dedicationpage} % optional
+This dissertation is dedicated to \dots
+\end{dedicationpage}
+\begin{abstract} % optional
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Donec porttitor ligula eu dolor. Maecenas vitae nulla consequat libero cursus venenatis. Nam magna enim, accumsan eu, blandit sed, blandit a, eros.
+\end{abstract}
+
+\tableofcontents % required
+% required if you have any tables:
+\cleardoublepage
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+% required if you have any figures:
+\cleardoublepage
+\addcontentsline{toc}{chapter}{List of Figures} 
+\listoffigures
+% Thanks to Lisa Lendway for noticing that the list of tables and figures needed to added to the table of contents.
+
+\mainmatter
+
+\chapter{Introduction}
+As you've seen, this class includes capabilities for setting up the necessary preamble pages, including the signature page and the title page, and pages for the copyright, acknowledgements, dedication, and abstract.  Table of contents and lists of tables and figures are also included.  Not all of these are required; see the comments in the \verb+tex+ file.
+
+The class also sets the margins, the page numbering, and the line spacing as required by the University.  In my opinion, the page headers also look better than those in the default book class, and headers have been removed from otherwise blank pages.
+It can either print one-sided or two-sided; the University wants it one-sided but in my opinion, two-sided will look better.  It also makes any appendices and the reference section look right.
+
+\chapter[Examples]{Examples of Using this Thesis Class}
+
+This section will show some brief examples of extra features in this class.
+
+First, about citing references.  This class includes the natbib class, which allows you to cite references either with only the year in parenthesis or with the whole reference in parenthesis.  For example, you might say that \citet{Weis:appl:2005} is an excellent reference on regression.  But you might say that scatterplots are an important tool for investigating regression data \citep{Weis:appl:2005}.  Use \verb+\citet+ (cite as text) for the first, and \verb+\citep+ (cite in parentheses) for the second.  Also, to get references already in Bibtex format, you can use the Current Index to Statistics; there's a link on the math library web site.
+
+This class includes a revised example environment; \ref{ex:hi} is an example.
+\begin{example}[Hi!]
+\label{ex:hi}
+Clearly,
+\[a=b,\]
+so never say clearly.
+\end{example}
+You can label examples just like figures; within the example, put the label name, like \verb+\label{ex:hi}+.  Then to reference it, just use \verb+\ref{ex:hi}+.  This class will automatically put the word ``Example'' in front of the number.  For example, \ref{ex:hi} shows that you should avoid using the word clearly.  These abilities are from the ntheorem and varioref packages.
+
+There is also a proof environment if you're doing something more mathematical.  \ref{pr:add} is an example.
+\begin{proof}[Simple]
+\label{pr:add}
+Here's a place where I could write a proof of something.  It will have a box at the end, just like the example did.
+\end{proof}
+
+Figures and tables can be referenced in the same way; to reference \ref{fig:a} simply put \verb+\ref{fig:a}+, where \verb+fig:a+ is the label for the figure.  It will put the word ``Figure'' automatically.  To reference \ref{table:interesting} just put \verb+\ref{table:interesting}+.
+
+This class also include the subfigure package automatically.  It makes it easy to include and refer to subfigures within figures.  For example, \ref{fig:abc} shows the first three letters of the alphabet, where A is shown in \ref{fig:abc:a}.
+
+Finally, a few new math operators are included such as $\Var$, $\Cov$, $\Unif$, $\Poi$, and an independence operator, used like this: $X \indep Y$.
+
+Finally, the graphicx package is included for including graphics.
+
+\section{Compiling this sample thesis}
+To compile this sample thesis, first run \\
+\verb+pdflatex sampleStatThesis+\\
+then run\\
+\verb|bibtex sampleStatThesis|\\
+and then pdflatex twice more.
+
+\section{Fake Latin Text}
+Here is some fake text to pad out the figures so they don't look so funny.  Proin at eros non eros adipiscing mollis. Donec semper turpis sed diam. Sed consequat ligula nec tortor. Integer eget sem. Ut vitae enim eu est vehicula gravida. Morbi ipsum ipsum, porta nec, tempor id, auctor vitae, purus. Pellentesque neque. Nulla luctus erat vitae libero. Integer nec enim. Phasellus aliquam enim et tortor. Quisque aliquet, quam elementum condimentum feugiat, tellus odio consectetuer wisi, vel nonummy sem neque in elit. Curabitur eleifend wisi iaculis ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non velit non ligula laoreet ultrices. Praesent ultricies facilisis nisl. Vivamus luctus elit sit amet mi. Phasellus pellentesque, erat eget elementum volutpat, dolor nisl porta neque, vitae sodales ipsum nibh in ligula. Maecenas mattis pulvinar diam. Curabitur sed leo.
+
+\begin{figure}
+\centering{\Huge A}
+\caption{The letter A.}
+\label{fig:a}
+\end{figure}
+
+
+Nulla facilisi. In vel sem. Morbi id urna in diam dignissim feugiat. Proin molestie tortor eu velit. Aliquam erat volutpat. Nullam ultrices, diam tempus vulputate egestas, eros pede varius leo, sed imperdiet lectus est ornare odio. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin consectetuer velit in dui. Phasellus wisi purus, interdum vitae, rutrum accumsan, viverra in, velit. Sed enim risus, congue non, tristique in, commodo eu, metus. Aenean tortor mi, imperdiet id, gravida eu, posuere eu, felis. Mauris sollicitudin, turpis in hendrerit sodales, lectus ipsum pellentesque ligula, sit amet scelerisque urna nibh ut arcu. Aliquam in lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla placerat aliquam wisi. Mauris viverra odio. Quisque fermentum pulvinar odio. Proin posuere est vitae ligula. Etiam euismod. Cras a eros.
+
+\begin{figure}
+\subfloat[The letter A.]{\Huge AAAAA \label{fig:abc:a}}
+\quad
+\subfloat[The letter B.]{\Huge BBBBB \label{fig:abc:b}}
+\quad
+\subfloat[The letter C.]{\Huge CCCCC \label{fig:abc:c}}
+\caption{The first three letters of the alphabet.}
+\label{fig:abc}
+\end{figure}
+
+
+
+Nunc auctor bibendum eros. Maecenas porta accumsan mauris. Etiam enim enim, elementum sed, bibendum quis, rhoncus non, metus. Fusce neque dolor, adipiscing sed, consectetuer et, lacinia sit amet, quam. Suspendisse wisi quam, consectetuer in, blandit sed, suscipit eu, eros. Etiam ligula enim, tempor ut, blandit nec, mollis eu, lectus. Nam cursus. Vivamus iaculis. Aenean risus purus, pharetra in, blandit quis, gravida a, turpis. Donec nisl. Aenean eget mi. Fusce mattis est id diam. Phasellus faucibus interdum sapien. Duis quis nunc. Sed enim.
+
+Pellentesque vel dui sed orci faucibus iaculis. Suspendisse dictum magna id purus tincidunt rutrum. Nulla congue. Vivamus sit amet lorem posuere dui vulputate ornare. Phasellus mattis sollicitudin ligula. Duis dignissim felis et urna. Integer adipiscing congue metus. Nam pede. Etiam non wisi. Sed accumsan dolor ac augue. Pellentesque eget lectus. Aliquam nec dolor nec tellus ornare venenatis. Nullam blandit placerat sem. Curabitur quis ipsum. Mauris nisl tellus, aliquet eu, suscipit eu, ullamcorper quis, magna. Mauris elementum, pede at sodales vestibulum, nulla tortor congue massa, quis pellentesque odio dui id est. Cras faucibus augue.
+
+\begin{table}
+\centering
+\begin{tabular}{l|rr}
+one & 1 & 2 \\
+two & 3 & 4
+\end{tabular}
+\caption{A not very interesting table.}
+\label{table:interesting}
+\end{table}
+
+
+
+% text in appendices may be single spaced, if desired
+% \setstretch{1} % to single space
+% \setstretch{1.2} % to 1.2 spacing
+\appendix
+
+\chapter{Extra Work}
+
+Donec gravida posuere arcu. Nulla facilisi. Phasellus imperdiet. Vestibulum at metus. Integer euismod. Nullam placerat rhoncus sapien. Ut euismod. Praesent libero. Morbi pellentesque libero sit amet ante. Maecenas tellus. Maecenas erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+\section{More Work}
+
+Cras dictum. Maecenas ut turpis. In vitae erat ac orci dignissim eleifend. Nunc quis justo. Sed vel ipsum in purus tincidunt pharetra. Sed pulvinar, felis id consectetuer malesuada, enim nisl mattis elit, a facilisis tortor nibh quis leo. Sed augue lacus, pretium vitae, molestie eget, rhoncus quis, elit. Donec in augue. Fusce orci wisi, ornare id, mollis vel, lacinia vel, massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+% References don't have to be double spaced either
+%\setstretch{1.2}
+\bibliographystyle{apalike}
+\bibliography{samplecis}
+
+\end{document}

@@ -1,0 +1,493 @@
+\section{Depth-based rank covariance matrix} \label{section:dcmSection}
+
+We shall now focus on scatter functionals of the weighted sign vectors $\bfX_w$ defined in the previous section. For this purpose, given a measure of data depth $D(.,F)$ we take the weights to be any monotonically decreasing transformation on that depth function which takes values in $[0,M]$ for some $M < \infty$. We call this an \textit{inverse depth} function, and denote it by $D^- (\bfx, F)$ for $\bfx \in \BR^p$. With respect to the formulation of \ref{eqn:kappaEqn} this corresponds to an affine invariant peripherality function paired with a nonnegative-valued monotonically \textit{increasing} $\kappa_p$ that is bounded above. Some examples of inverse depth functions include but are not limited to $D^-(\bfx, F) := \max_\bfx D(\bfx, F) - D(\bfx, F)$ and $D^-(\bfx, F) := \exp(-D(\bfx, F))$.
+
+In the analysis that follows, we shall assume the max definition of $D^-(\bfx, F)$ above, i.e. $D^-(\bfx, F) = \max_\bfx D(\bfx, F)$ for ease of representation, although all the analysis go through in exactly the same fashion with other definitions. Also we slightly tweak the notations to make things this section onwards easier to follow.%We denote the underlying distribution of the random variable $\bfX$ by $[ \bfX ]$, i.e. $F \equiv [ \bfX ]$. 
+ Data depth is as much a property of a vector-valued random variable $\bfX \in \mathbb{R}^p$ as it is of the underlying distribution $F \equiv [\bfX]$, so from now on we shall be using $D( \bfx, [\bfX])$ and $D(\bfx, F)$ intermittently to denote the depth of a point $\bfx$. We expand this notation to inverse depths as well (i.e. $D^- (\bfx, [\bfX]) \equiv D^- (\bfx, F)$ etc.).
+
+Now, given the weights $w (\bfx) = D^- (\bfx, [\bfX])$, we can write the transformation of any point $\bfx \in \BR^p$ as:
+%
+\begin{align}
+\tilde \bfx = D^- (\bfx, [\bfX]) \bfS(\bfx - \bfmu)
+\end{align}
+%
+with $\bfS(.)$ being the spatial sign functional. The transformed random variable, say $\tilde \bfX$, can be seen as the multivariate rank corresponding to $\bfX$ (e.g. \cite{serfling2006}). The notion of multivariate ranks goes back to \cite{PuriSenBook}, where they take the vector consisting of marginal univariate ranks as multivariate rank vector. Subsequent definitions of multivariate ranks were proposed by \cite{MottonenOja95,HallinPaindaveine02} and \cite{Chernozhukov17}.
+
+Compared to these previous formulations, our definition of multivariate ranks provides more intuitive representation of the transformation applied on the data. \ref{fig:rankplot} gives an idea of how our rank vector $\tilde \bfX$ is distributed when $\bfX$ has a bivariate normal distribution. Compared to the spatial sign, which are distributed on the surface of $p$-dimensional unit ball centered at $\bfmu$, these spatial ranks have the same direction as original data and reside \textit{inside} the $p$-dimensional ball around $\bfmu$ with a finite radius (the choice of the radius depends on the inverse transformation used: e.g. for the case of max transformation, this radius is $\max_\bfx D( \bfx, [ \bfX ])$). As a result, the rank transformation preserves the shape of the data more effectively.
+
+\begin{figure}
+	\captionsetup{singlelinecheck=off}
+	\centering
+		\includegraphics[height=6cm]{ranks.pdf}
+	\caption{(Left) 1000 points randomly drawn from $\mathcal N_2\left((0,0)^T, \left(\protect\begin{smallmatrix} 5 & -4 \\ -4 & 5 \protect\end{smallmatrix}\right)\right) $ and (Right) their multivariate ranks based on halfspace depth}
+	\label{fig:rankplot}
+\end{figure}
+
+Now consider the spectral decomposition for the covariance matrix of $F$: $\bfSigma = \bfGamma\bfLambda\bfGamma^T$, $\bfGamma$ being orthogonal and $\bfLambda$ diagonal with positive diagonal elements. Also normalize the original random variable as $\bfz = \bfGamma^T\bfLambda^{-1/2} (\bfx - \bfmu)$. In this setup, we can represent the transformed random variable as
+%
+\begin{eqnarray}
+\tilde \bfx &=& \tilde D^- (\bfx, [\bfX]) \bfS(\bfx - \bfmu) \notag \\
+&=& D^-  (\bfGamma\bfLambda^{1/2} \bfz + \bfmu, [\bfGamma\bfLambda^{1/2}\bfZ + \bfmu ]). \bfS(\bfGamma\bfLambda^{1/2} \bfz) \notag \\
+&=& D^-  (\bfz, [\bfZ]) .\bfGamma \bfS(\bfLambda^{1/2}\bfz) \notag \\
+&=& \left[ \bfGamma \bfLambda^{1/2} \frac{\| \bfz \|}{\|\bfLambda^{1/2} \bfz\|} \right]. D^-  (\bfz, [\bfZ]) \bfS(\bfz)
+\label{equation:rankdecomp}
+\end{eqnarray}
+%
+%Because of affine (thus rotational) invariance of a depth function, the depth (htped) value at $\bfz$ does not depend on the direction of $\bfz$, i.e. $\tilde D_{\bfZ}(\bfz)$ and $\bfS(\bfz)$ are independent. Furthermore,
+%$$ Cov \left(\bfS (\bfz), \frac{\| \bfz \|}{\|\bfLambda^{1/2} \bfz\|} \right) = E \left(\bfS (\bfz). \frac{\| \bfz \|}{\|\bfLambda^{1/2} \bfz\|} \right) - E \bfS (\bfz) E \left(\frac{\| \bfz \|}{\|\bfLambda^{1/2} \bfz\|} \right) = E \left( \frac{\bfz}{\|\bfLambda^{1/2} \bfz\|} \right) = \bf0$$
+%both $\bfS (\bfz)$ and $\bfz / \| \bfLambda^{1/2}\bfz \|$ are odd functions of $\bfz$, which has a circularly symmetric distribution, hence each of them has expectation $\bf0$. Consequently, we obtain an expression for the covariance matrix of $\tilde \bfX$:
+
+following affine invariance of $D$ hence $D^-$. Now $D^- ( \bfz, [\bf Z])$ is an even function in $\bfz$ because of affine invariance, as is $\| \bfz \| / \|\bfLambda^{1/2} \bfz \|$. Since $\bfS(\bfz)$ is odd in $\bfz$ for spherically symmetric $\bfz$, it follows that $ \BE \tilde \bfX = {\bf 0}_p$. Consequently we obtain an expression for the covariance matrix of $\tilde \bfX$:
+
+\begin{Theorem} \label{Theorem:covform}
+Let the random variable $\bfX \in \mathbb{R}^p$ follow an elliptical distribution with center $\bfmu$ and covariance matrix $\bfSigma = \bfGamma\bfLambda\bfGamma^T$, its spectral decomposition. Then, given a depth function $D(.)$, the covariance matrix of the transformed random variable $\tilde\bfX$ is
+%
+\begin{align} \label{equation:covformEq1}
+\BV(\tilde \bfX) = \bfGamma \tilde \bfLambda \bfGamma^T,\quad\mbox{with}\quad \tilde \bfLambda = \mathbb E_\bfZ \left[ (D^- ( \bfz, [\bfZ]) )^2 \frac{\bfLambda^{ 1/2 } \bfz \bfz^{T} \bfLambda^{ 1/2 }}{\bfz^T \bfLambda \bfz} \right]
+\end{align}
+%
+where $\bfZ = (Z_1,...,Z_p)^T \sim \cN ({\bf 0}, \bfI_p)$, so that $\tilde \bfLambda$ is a diagonal matrix with diagonal entries
+%
+\begin{align}
+\tilde \lambda_{i} = \BE_\bfZ \left[ \frac{(D^- ( \bfz, [\bfZ]) )^2 \lambda_i z_i^2}{\sum_{j=1}^p \lambda_j z_j^2} \right]
+\end{align}
+%
+\end{Theorem}
+
+We call $\tilde \bfSigma := \BV(\tilde \bfX)$ the Depth Covariance Matrix (DCM).  Notice that the matrix of eigenvectors of the covariance matrix of $\bfX$, i.e. $\bfGamma$, remains unchanged in the transformation $\bfX \mapsto \tilde \bfX$. As a result, the multivariate rank vectors can be used for robust principal component analysis, which we are going to discuss shortly. However, as one can see in the above expression, the diagonal entries of $\tilde \bfLambda$ do not change if a scale change is done on all entries of $\bfLambda$, meaning the $\tilde \bfLambda$ matrices corresponding to $F$ and $cF$ for some $c \neq 0$ will be same. Thus the DCM is not equivariant under affine transformations.
+
+We need to follow the general framework of M-estimation with data-dependent weights in \cite{HuberBook81} to construct an affine equivariant counterpart of the DCM. Specifically, we implicitly define the Affine-equivariant Depth Covariance Matrix (ADCM) as
+%
+\begin{equation} \label{eqn:ADCM}
+\tilde \bfSigma_\ot = \frac{1}{\BV(\tilde Z_1) } \BE \left[ \frac{(D^- (\bfx, [\bfX]))^2 (\bfx - \bfmu) (\bfx - \bfmu)^T}{(\bfx - \bfmu)^T \tilde \bfSigma_\ot ^{-1} (\bfx - \bfmu)} \right]
+\end{equation}
+%
+Its affine equivariance follows from the fact that the weights $D^- (\bfx, [\bfX])$ depend only on the standardized quantities $\bfz$ that come from the underlying spherical distribution $G$. We solve \ref{eqn:ADCM} iteratively by obtaining a sequence of positive definite matrices $\tilde \bfSigma^{(k)}_\ot$ until convergence:
+%
+$$ \tilde \bfSigma^{(k+1)}_\ot = \frac{1}{\BV(\tilde Z_1) } \BE \left[ \frac{(D^- (\bfx, [\bfX]))^2 (\tilde \bfSigma^{(k)}_\ot)^{1/2} (\bfx - \bfmu) (\bfx - \bfmu)^T (\tilde \bfSigma^{(k)}_\ot)^{1/2}}{(\bfx - \bfmu)^T (\tilde \bfSigma^{(k)}_\ot)^{-1} (\bfx - \bfmu)} \right] $$
+%
+
+To ensure existence and uniqueness of this estimator, let us consider the class of scatter estimators $\bfSigma_M$ that are obtained as solutions of the following equation:
+%
+\begin{equation}
+\BE_{ \bfZ_M } \left[ u( \| \bfz_M \| )  \frac{\bfz_M \bfz_M^T}{\| \bfz_M \|^2}  - v( \| \bfz_M \| ) \bfI_p \right] = 0
+\end{equation}
+%
+with $\bfz_M = \bfSigma_M^{-1/2} (\bfx - \bfmu)$. The above equation produces a unique solution under the following assumptions on the scalar-valued functions $u$ and $v$ \citep{HuberBook81}:
+%
+
+\vspace{1em}
+\noindent\textbf{(M1)} The function $u(r)/r^2$ is monotone decreasing, and $u(r)>0$ for $r>0$;
+
+\noindent\textbf{(M2)}  The function $v(r)$ is monotone decreasing, and $v(r)>0$ for $r>0$;
+
+\noindent\textbf{(M3)} Both $u(r)$ and $v(r)$ are bounded and continuous;
+
+\noindent\textbf{(M4)} $u(0) / v(0) < p$;
+
+\noindent\textbf{(M5)} For any hyperplane in the sample space $\mathcal X$, (i) $P(H) = \BE_\bfX \BI_{\bfx \in H} < 1 - p v(\infty) / u(\infty)$ and (ii) $P(H) \leq 1/p$.
+%
+
+\vspace{1em}
+\noindent In our case we take $v(r) = \BV(\tilde Z_1)$, i.e. a constant, thus (M2) and (M3) are trivially satisfied. As for $u$, we notice that most well-known depth functions can be expressed as simple functions of the norm of the standardized random variable. For example, $PD (\bfz, [\bfZ]) = 1 - F_{01} (\| \bfz \|); MhD( \bfz, [\bfZ]) = (1+\| \bfz \|^2)^{-1}; HD (\bfz, [\bfZ]) = (1+\| \bfz \|/ MAD(F_{01}) )^{-1}$ etc., where $F_{01} \equiv \cE(0, 1, g)$, and MAD is median absolute deviation. Thus we can take $u$ as square of the corresponding inverse depth functions:
+% \BV(Z1) breaks into two independent parts: depth and sign. So can check m4 and M5 here itself.
+$$
+u_{PD} (r) = F_{01}^2 (r); \quad u_{MhD}(r)  = \frac{r^4}{(1 + r^2)^2}; \quad u_{HSD}(r)  = \frac{r^2}{(1 + r/MAD(F_{01} ) )^2}
+$$
+%
+%Here $G$ is the probability distribution function corresponding to the density generator $g$.
+
+It is easy to verify that the above choices of $u$ satisfy (M1) and (M3). To check (M4) and (M5), first notice that $\bfZ$ has a spherically symmetric distribution, so that its norm and sign are independent. Since $D (\bfz, [\bfZ])$ depends only on $\| \bfz \|$, we have
+%
+$$
+\BV(\tilde Z_1) = \BV \left( D^- (\bfZ, [\bfZ]) \frac{Z_1}{ \|\bfZ \|} \right) = \BV(D^-(\bfZ, [\bfZ])) \BV(S_1 (\bfZ)) = \frac{1}{p} \BV( D^- (\bfZ, [\bfZ]))
+$$
+%
+as $\BV(\bfS(\bfZ)) = \BV((S_1(\bfZ), S_2(\bfZ), ..., S_p(\bfZ))^T) = \bfI_p/p$. Now for MhD and HD $u(\infty)=1, u(0)=0$, so (M4) and (M5) are immediate. To achieve this for PD, we only need to replace $u_{PD}(r)$ with $u_{PD}^*(r) = F_{01}^2(r) - 1/4$.
+
+\subsection{Calculating the sample DCM and ADCM}
+Let us denote $\BS (\bfx; \bfmu) = \bfS(\bfx - \bfmu) \bfS(\bfx - \bfmu)^T$. Then, given the depth function and known location center $\bfmu$, one can show that the vectorized form of $\sqrt n$-times the sample DCM, i.e. $(1/\sqrt n) \sum_{i=1}^n (D^- (\bfx_i, [\bfX]))^2 \BS(\bfx_i; \bfmu)$  has an asymptotic multivariate normal distribution with mean $\sqrt n. \ve ( \BE[ (D^- (\bfX, [\bfX]))^2 \BS(\bfX; \bfmu)])$ and a certain covariance matrix by straightforward application of the Central Limit Theorem (CLT). But in practice the population depth function $D (\bfx, [\bfX])$ is estimated by the depth function based on the empirical distribution function $[ \BX_n ]$, i.e. by $D (\bfx, [\BX_n])$ (recall from \ref{sec:scatter-sec2-location} that $\BX_n = (\bfX_1, \ldots \bfX_n)^T$). Here we make the following assumption regarding how $D^- (\bfx, [\bfX])$ is approximated by its sample counterpart:
+
+\vspace{1em}
+\noindent\textbf{(P5)} \textit{Uniform convergence}: $\sup_{\bfx \in \mathbb R^p} | D (\bfx, [\BX_n]) - D (\bfx, [\bfX]) | \raro 0$ as $n \raro \infty $.
+\vspace{1em}
+
+The assumption that empirical depths converge uniformly at all points $\bfx$ to their population versions holds under very mild conditions for several well known depth functions: for example projection depth \citep{zuo03} and simplicial depth \citep{Dumbgen92}. One also needs to replace the known location parameter $\bfmu$ by some estimator $\hat\bfmu_n$. Examples of robust estimators of location that are relevant here include the spatial median \citep{haldane48,brown83}, Oja median \citep{oja83}, projection median \citep{zuo03} etc. Now, given $D (., [\BX_n])$ and $\hat \bfmu_n$, to plug them into the sample DCM and still go through with the CLT we need the following result:
+
+\begin{Lemma} \label{Lemma:lemma1}
+Consider a random variable $\bfX \in \mathbb{R}^p$ having a continuous and symmetric distribution with location center $\bfmu$ such that $ \BE \|\bfx - \bfmu \|^{-3/2} < \infty$. Given $n$ random samples from this distribution, suppose $\hat\bfmu_n$ is an estimator of $\bfmu$ so that $\sqrt n (\hat\bfmu_n - \bfmu) = O_P(1) $. Then with the above notations, and given the assumption (D5) we have
+%
+$$ \sqrt n \left[
+\frac{1}{n} \sum_{i=1}^n (D^- (\bfx_i, [\BX_n]))^2 \BS(\bfx_i; \hat\bfmu_n) -
+\frac{1}{n} \sum_{i=1}^n (D^- (\bfx_i, [\bfX]))^2 \BS(\bfx_i; \bfmu) \right]
+\stackrel{P}{\rightarrow} 0 $$
+\end{Lemma}
+
+Following this, we are now in a position to state the result for consistency of the sample DCM:
+
+\begin{Theorem} \label{Theorem:rootn}
+Consider $n$ iid samples from the distribution in Lemma \ref{Lemma:lemma1}. Then, given a depth function $D(., [\bfX])$ and an estimate of center $\hat\bfmu_n$ so that $\sqrt n(\hat \bfmu_n - \bfmu) = O_P(1)$,
+%
+\begin{eqnarray}
+&& \hspace{-4em} \sqrt n \left[ \ve \left\{ \frac{1}{n} \sum_{i=1}^n (D^- (\bfx, [\BX_n]))^2 \BS(\bfx_i; \hat\bfmu_n) \right\} - \BE \left[ vec\left\{ (D^- (\bfx, [\bfX]))^2 \BS(\bfx; \bfmu) \right\} \right] \right] \\\notag
+&& \leadsto \cN_{p^2} ({\bf 0}, \tilde \bfV (F))
+\end{eqnarray}
+%
+with $\tilde \bfV (F) = \BV \left[ \ve \left\{ (D^- (\bfx_i, [\bfX]))^2 \BS(\bfx; \bfmu) \right\} \right]$.
+\end{Theorem}
+
+\noindent This holds for any general non-degenerate $F$. In case $F$ is elliptical, an elaborate form of the covariance matrix $\tilde \bfV_F$ explicitly specifying each of its elements (more directly those of its $\bfGamma^T$-rotated version) can be obtained, which is given in \ref{subsec:appA}. This form is useful when deriving limiting distributions of eigenvectors and eigenvalues of the sample DCM.
+
+In contrast to the DCM, the issue of estimating $\bfmu$ to plug into the ADCM is easily handled by simultaneously solving for the location and scatter functionals ($\bfmu_\ot, \tilde \bfSigma_\ot$):
+%
+\begin{eqnarray}
+\BE \left[ \frac{\tilde \bfSigma_\ot^{-1/2} (\bfx - \bfmu_\ot)}{ \| \tilde \bfSigma_\ot^{-1/2}(\bfx - \bfmu_\ot) \|} \right] &=& {\bf 0}_p \label{eqn:AffineMedian}\\
+\BE \left[ \frac{( D^- (\bfx, [\bfX] ) )^2 \tilde \bfSigma_\ot^{-1/2} (\bfx - \bfmu_\ot) (\bfx - \bfmu_\ot)^T \tilde \bfSigma_\ot^{-1/2}}{(\bfx - \bfmu_\ot)^T \tilde \bfSigma_\ot^{-1} (\bfx - \bfmu_\ot)} \right] &=& \BV(\tilde Z_1) \bfI_p \label{eqn:AffineCov}
+\end{eqnarray}
+%
+In the general framework of \ref{eqn:ADCM}, for any fixed $\bfSigma_M$ there exists a unique and fixed solution of the location problem $\BE_{\bfZ_M} (w(\| \bfz_M \| \bfz_M) = {\bf 0}_p $ under the following condition:
+
+\vspace{1em}
+\noindent\textbf{(M6)} The function $w(r)r$ is monotone increasing for $r>0$.
+
+\vspace{1em}
+\noindent This condition is easy to verify for our choice of the weights: $w(\| \bfz_M \| ) = \tilde D (\bfz_M, [\bfZ_M]) / \| \bfz_M \|$. Consequently, uniqueness of any simultaneous fixed point solution of \ref{eqn:AffineMedian} and \ref{eqn:AffineCov} is guaranteed when $\bfX$ has a symmetric distribution \citep{HuberBook81}.
+
+In practice it is difficult to calculate the scale multiple $\BV(\tilde Z_1)$ analytically for known depth functions and an arbitrary $F$. Hence we instead calculate the standardized version if the ADCM: $\tilde \bfSigma_\ot^* = \tilde \bfSigma_\ot / \BV(\tilde Z_1)$ (so that the determinant equals 1), alongwith $\bfmu_\ot$ using the following iterative algorithm:
+
+\begin{enumerate}
+\item Start from some initial estimates $(\bfmu_\ot^{(0)}, \tilde \bfSigma^{(0)}_\ot)$. Set $t=0$;
+
+\item Calculate the standardized observations $\bfz_i^{(t)} = (\tilde \bfSigma^{(t)}_\ot)^{-1/2} (\bfx_i - \bfmu_\ot^{(t)})$;
+
+\item Update the location estimate:
+%
+$$
+\bfmu_\ot^{(t+1)} = \frac{\sum_{i=1}^n \tilde \bfx_i / \| \bfz_i^{(t)} \| }{\sum_{i=1}^n 1 / \| \bfz_i^{(t)} \|}
+$$
+%
+\item Update the scatter estimate:
+%
+\begin{eqnarray*}
+\tilde \bfSigma_\ot^{*(t+1)} &=& \frac{1}{n} \sum_{i=1}^n \frac{( D^- (\bfx_i, [\BX_n]))^2 (\bfx_i - \bfmu_\ot^{(t+1)})(\bfx_i - \bfmu_\ot^{(t+1)})^T}{\| \bfz_i^{(t)} \|^2}\\
+\tilde \bfSigma_\ot^{*(t+1)} & \leftarrow & \frac{\tilde \bfSigma_\ot^{*(t+1)}}{\text{det} (\tilde \bfSigma_\ot^{*(t+1)})^{1/p}}
+\end{eqnarray*}
+%
+\item Continue until convergence.
+\end{enumerate}
+%
+Notice that owing to the uniform convergence property we can safely replace $D^-(\bfx_i, [\bfX])$ with its sample version and use the iterative algorithm above to obtain a consistent estimate of the of the solution of \ref{eqn:AffineCov}.
+
+\subsection{Robust PCA using eigenvectors of DCM}
+
+We shall now elaborate on using the DCM for robust principal components analysis. From now on we assume that the eigenvalues of $\bfSigma$ are distinct: $\lambda_1 > \lambda_2 > ... > \lambda_p$ to obtain asymptotic distributions of its eigenvectors. In case any of the eigenvalues have multiplicity larger than 1, limiting distributions of the corresponding eigenprojection matrices can be obtained analogous to those of the sign covariance matrix \citep{magyar14}.
+
+\subsubsection{Influence functions}
+We start by deriving the influence functions for eigenvectors of the DCM and ADCM. This will help in demonstrating the robustness of their estimates, as well as deriving their asymptotic efficiencies. Influence functions of the DCM as well as its eigenvectors and eigenvalues, which are essential to understand how much influence a sample point, especially an infinitesimal contamination, has on any functional on the distribution \citep{HampelBook86}. Given any probability distribution $F$, the influence function of any point $\bfx_0$ in the sample space $\mathcal{X}$ for some functional $T(F)$ on the distribution is defined as
+%
+$$ IF(\bfx_0; T,F) = \lim_{\epsilon \rightarrow 0} \frac{1}{\epsilon} (T(F_\epsilon) - T(F)) $$
+%
+where $F_\epsilon$ is $F$ with an additional mass of $\epsilon$ at $\bfx_0$, i.e. $F_\epsilon = (1-\epsilon)F + \epsilon \delta_{\bfx_0}$; $\delta_{\bfx_0}$ being the distribution with point mass at $\bfx_0$. When $T(F) = \BE_F g$ for some $F$-integrable function $g$, $IF(\bfx_0; T,F) = g(\bfx_0) - T(F)$. It now follows that for the DCM,
+%
+$$ IF(\bfx_0; \tilde \bfSigma, F) = ( D^- ( \bfx_0, [\bfX]))^2 \BS(\bfx_0; \bfmu) - \tilde \bfSigma $$
+
+Following \cite{croux00}, we now get the influence function of the $i^\text{th}$ eigenvector of $\tilde \bfSigma$, say $\tilde \bfGamma = (\tilde\bfgamma_{1}, \ldots, \tilde \bfgamma_{p}); i = 1,...,p$:
+%
+\begin{eqnarray}
+IF(\bfx_0; \tilde\bfgamma_{i}, F) &=& \sum_{k=1; k \neq i}^p \frac{1}{\tilde\lambda_{i} - \tilde\lambda_{k}} \left\{ \bfgamma^T_k IF(\bfx_0; \tilde \bfSigma, \bfgamma_i) \right\} \bfgamma_k \notag \\
+&=& \sum_{k=1; k \neq i}^p \frac{1}{\tilde \lambda_{i} - \tilde \lambda_{k}} \left\{ \bfgamma^T_k ( D^-(\bfx_0, [\bfX]))^2 \BS(\bfx_0; \bfmu) \bfgamma_i - \lambda_{i} \bfgamma_k^T \bfgamma_i \right\} \bfgamma_k \notag \\
+&=& \sum_{k=1; k \neq i}^p \frac{\sqrt{\lambda_i \lambda_k} z_{0i} z_{0k}}{ \lambda_{i} - \lambda_{k}}. \frac{ ( D^- (\bfz_0, [\bfZ]))^2 }{ \bfz_0^T \bfLambda \bfz_0} \bfgamma_k
+\end{eqnarray}
+%
+where $\bfGamma^T \bfLambda^{-1/2} (\bfx_0 - \bfmu) = \bfz_0 = (z_{01},...,z_{0p})^T$. Clearly this influence function will be bounded, which indicates good robustness properties of principal components.
+
+For the ADCM, we first notice that the influence function of any affine equivariant estimate of scatter $\bfC$ can be expressed as
+%
+$$
+IF(\bfx_0, \bfC, F) = \alpha_\bfC (\| \bfz_0 \| ) \frac{\bfz_0 \bfz_0^T}{ \bfz_0^T \bfz_0} - \beta_\bfC( \| \bfz_0 \| ) \bfC
+$$
+%
+for scalar valued functions $\alpha_\bfC, \beta_\bfC$ \citep{HampelBook86}. Following this, the influence function of an eigenvector $\bfgamma_{\bfC,i}$ of $\bfC$ is derived:
+%
+$$
+IF(\bfx_0, \bfgamma_{\bfC,i}, F) = \alpha_\bfC(\| \bfz_0 \|) \sum_{k=1, k \neq i}^p \frac{\sqrt {\lambda_i \lambda_k}}{\lambda_i - \lambda_k}. \frac{z_{0i} z_{0k}}{\bfz_0^T \bfz_0} \bfgamma_k
+$$
+%
+When $\bfC=\bfSigma_M$, i.e. the solution to \ref{eqn:ADCM}, then \cite{HuberBook81} shows that
+%
+$$
+\alpha_\bfC (\| \bfz_0 \|) = \frac{p(p+2) u (\| \bfz_0 \|)}{ \BE_G \left[ p u(\| \bfy \| ) + u'(\| \bfy \|) \| \bfy \| \right] }
+$$
+%
+Setting $u( \| \bfz_0 \|) = ( D^- (\bfz_0, [\bfZ]))^2$ ensures that the influence function of eigenvectors of the ADCM is bounded as well as increasing in magnitude with $\| \bfz_0 \|$.
+
+\begin{figure}
+	\centering
+		\includegraphics[width=12cm]{IFnorm.png}
+	\caption{Plot of the norm of influence function for first eigenvector of (a) sample covariance matrix, (b) SCM, (c) Tyler's scatter matrix and DCMs for (d) Halfspace depth, (e) Mahalanobis depth, (f) Projection depth for a bivariate normal distribution with $\bfmu = {\bf 0}, \bfSigma = \diag(2,1)$}
+	\label{fig:IFnorm}
+\end{figure}
+
+In \ref{fig:IFnorm} we consider first eigenvectors of our scatter estimates, as well as two well-known robust estimates of scatter: the Sign Covariance Matrix (SCM) \citep{taskinen12} and Tyler's shape matrix \citep{tyler87}, for the $\mathcal{N}_2((0,0)^T, \diag(2,1))$ and plot norms of these influence functions for different values of $\bfx_0$. Influence function for the $i^\text{th}$ eigenvectors of these two matrices (say $\bfgamma_{S,i}$ and $\bfgamma_{T,i}$, respectively) are as follows:
+%
+\begin{eqnarray*}
+\quad IF(\bfx_0; \bfgamma_{S,i}, F) &=& \sum_{k=1; k \neq i}^p \frac{\sqrt{\lambda_i \lambda_k}}{\lambda_{S,i} - \lambda_{S,k}}. \frac{z_{0i} z_{0k}}{\bfz_0^T \bfLambda \bfz_0} \bfgamma_k, \text{ with } \lambda_{S,i} = \BE_\bfZ \left( \frac{\lambda_i z_i^2}{\sum_{j=1}^p \lambda_j z_j^2} \right) \\
+IF(\bfx_0; \bfgamma_{T,i}, F) &=& (p+2) \sum_{k=1; k \neq i}^p \frac{\sqrt{\lambda_i \lambda_k}}{\lambda_i - \lambda_k}. \frac{z_{0i} z_{0k}}{\bfz_0^T \bfz_0} \bfgamma_k 
+\end{eqnarray*}
+%
+Their corresponding plots demonstrate the `inlier effect', i.e. points close to symmetry center and the center itself having high influence, which results in loss of efficiency. The influence function for the sample covariance matrix is obtained by replacing $(p+2)$ by $\| \bfz_0 \|^2$ in the expression of $IF(\bfx_0; \bfgamma_{T,i}, F)$ above, hence is unbounded and the corresponding eigenvector estimators are not robust. In comparison, all three DCMs considered here have a bounded influence function as well as small values of the influence function at `deep' points.
+
+\subsubsection{Asymptotic and finite-sample efficiencies}
+
+%Unlike affine equivariant estimators of shape, the Asymptotic Relative Efficiency (ARE) of eigenvectors (with respect to any other affine equivariant estimator) can not be simplified as a ratio of two scalar quantities dependent on only the distribution of $\| \bfz \|$ (e.g. \cite{taskinen12,ollilia03}).
+Suppose $\hat \bfV$ is a $\sqrt n$-consistent estimator of a scatter functional $\bfV$. Then the asymptotic variance of its eigenvectors are \citep{anderson}
+%
+\begin{equation} \label{equation:covevEq}
+A\BV(\sqrt n\hat \bfgamma_{v,i}) = \sum_{k=1; k \neq i}^p \frac{\lambda_{v,i} \lambda_{v,k}}{(\lambda_{v,i} - \lambda_{v,k})^2} \bfgamma_{v,k} \bfgamma_{v,k}^T
+\end{equation}
+%
+On the other hand, asymptotic variances of eigenvectors of the DCM can be derived using an approach similar to \cite{taskinen12}:
+%
+\begin{equation} \label{equation:dcmevEq}
+A\BV( \sqrt n\hat \tilde \bfgamma_{i} ) = \sum_{k=1; k \neq i}^p \frac{1}{(\tilde \lambda_k - \tilde \lambda_i)^2} \BE \left[ \frac{(D^- (\bfz, [\bfZ]))^4 \lambda_i \lambda_k z_i^2 z_k^2}{(\bfz^T \Lambda \bfz)^2} \right] \bfgamma_k \bfgamma_k^T
+\end{equation}
+%
+We discuss this in detail in \ref{subsection:appB}. Following the above, we can now derive the asymptotic relative efficiencies of eigenvectors from the sample DCM with respect to the sample covariance matrix:
+%
+\begin{eqnarray*}
+ARE(\hat{ \tilde\bfgamma}_i, \hat\bfgamma_i; F) &=& \frac{\Tr( A\BV(\sqrt n\hat \bfgamma_i))}{\Tr( A\BV(\sqrt n \hat{ \tilde\bfgamma}_i )) }\\
+&=& \left[\sum_{k=1; k \neq i}^p \frac{\lambda_i \lambda_k }{ (\lambda_i - \lambda_k )^2 } \right] \left[ \sum_{k=1; k \neq i}^p \frac{ \lambda_i \lambda_k }{ ( \tilde\lambda_{i} - \tilde\lambda_{k})^2} \BE \left( \frac{ ( D^- (\bfz, [\bfZ]) )^4 z_i^2 z_k^2}{(\bfz^T \bfLambda \bfz)^2} \right) \right]^{-1}
+\end{eqnarray*}
+
+Obtaining ARE of the ADCM is, in comparison to DCM, more straightforward. The asymptotic covariance matrix of an eigenvector of the affine equivariant scatter functional $\bfC$ is given by:
+%
+$$
+A\BV(\sqrt n  \hat\bfgamma_{\bfC,j}) = A\BV(c_{12}, F_0) \sum_{k=1, k \neq i}^p \frac{\lambda_i \lambda_k}{\lambda_i - \lambda_k}. \bfgamma_i \bfgamma_k^T
+$$
+%
+where $A\BV(c_{12}, F_0)$ is the asymptotic variance of an off-diagonal element of $\bfC$ when the underlying distribution is $F_0 \equiv \cE ({\bf 0}_p, \bfI_p, g)$. Following \cite{croux00} this equals
+%
+$$
+A\BV(\bfc_{12}, F_0) = \BE_{F_0} \left[ \alpha_\bfC (\| \bfz \|)^2 (S_1(\bfz)S_2 (\bfz))^2 \right] = \BE_{F_0} \alpha_\bfC (\| \bfz \|)^2 . \BE_{F_0} (S_1(\bfz)S_2 (\bfz))^2 
+$$
+% 
+again using the fact that $\|\bfZ\|$ and $\bfS(\bfZ)$ are independent when $\bfZ \sim F_0$. It now follows that
+%
+\begin{equation}
+ARE (\hat\bfgamma_{\bfC,i}, \hat\bfgamma_{ \bfSigma,i}; F) = \frac{\BE_{F_0} \alpha_{\bfSigma} (\| \bfz \|)^2}{\BE_{F_0} \alpha_\bfC (\| \bfz \|)^2} = \frac{\BE_{F_0} \| \bfz \|^4. \left[ \BE_{F_0} ( p u \| \bfz\| + u'( \| \bfz \|) \| \bfz \| ) \right]^2}{\BE_{F_0} (u(\| \bfz \|))^2}
+\end{equation}
+%
+
+\ref{table:AREtable} considers 6 different elliptic distributions (namely, bivariate $t$ with df = 5, 6, 10, 15, 25 and bivariate normal) and summarizes ARE for first eigenvectors for ADCMs corresponding to projection depth (PD-ACM) and halfspace depth (HD-ACM). Due to difficulty of analytically obtain the AREs, we calculate them using Monte-Carlo simulation of $10^6$ samples and subsequent numerical integration. The ADCM seems to be particularly efficient in lower dimensions for distributions with heavier tails ($t_5$ and $t_6$), while for distributions with lighter tails, the AREs increase with data dimension. At higher values of $p$ the ADCM is almost as efficient as the sample covarnace matrix when the data comes from multivariate normal distribution.
+
+\begin{table}[t]
+\begin{footnotesize}
+\centering
+    \begin{tabular}{c|cccc|cccc}
+    \hline
+    & \multicolumn{4}{c|}{PD-ACM} & \multicolumn{4}{c}{HD-ACM} \\\cline{2-9}
+    Distribution & $p=2$  & $p=5$  & $p=10$ & $p=20$ & $p=2$  & $p=5$  & $p=10$ & $p=20$ \\ \hline
+    $t_5$           & 4.73 & 3.99 & 3.46 & 3.26 & 4.18 & 3.63 & 3.36 & 3.15 \\
+    $t_6$           & 2.97 & 3.28 & 2.49 & 2.36 & 2.59 & 2.45 & 2.37 & 2.32 \\
+    $t_{10}$          & 1.45 & 1.47 & 1.49 & 1.52 & 1.30 & 1.37 & 1.43 & 1.49 \\
+    $t_{15}$          & 1.15 & 1.19 & 1.23 & 1.27 & 1.01 & 1.10 & 1.17 & 1.24 \\
+    $t_{25}$          & 0.97 & 1.02 & 1.07 & 1.11 & 0.85 & 0.94 & 1.02 & 1.08 \\
+    MVN          & 0.77 & 0.84 & 0.89 & 0.93 & 0.68 & 0.77 & 0.84 & 0.91 \\ \hline
+    \end{tabular}
+    \caption{Table of AREs of the ADCM for different choices of $p$ and data-generating distributions, and two choices of depth functions}
+    \label{table:AREtable}
+\end{footnotesize}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{footnotesize}
+    \begin{tabular}{c|cc|ccc|ccc}
+    \hline
+    $t_5, p=2$    & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20                   & 0.80 & 0.83  & 0.95   & 0.95   & 0.89  & 1.00    & 0.96    & 0.89   \\
+    $n$=50                   & 0.86 & 0.90  & 1.25   & 1.10   & 1.21  & 1.32    & 1.13    & 1.25   \\
+    $n$=100                  & 1.02 & 1.04  & 1.58   & 1.20   & 1.54  & 1.67    & 1.24    & 1.63   \\
+    $n$=300                  & 1.24 & 1.28  & 1.81   & 1.36   & 1.82  & 1.93    & 1.44    & 1.95   \\
+    $n$=500                  & 1.25 & 1.29  & 1.80   & 1.33   & 1.84  & 1.91    & 1.39    & 1.97   \\ \hline
+    $t_6, p=2$    & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20                   & 0.77 & 0.79  & 0.92   & 0.92   & 0.86  & 0.96    & 0.92    & 0.85   \\
+    $n$=50                   & 0.76 & 0.78  & 1.11   & 1.00   & 1.08  & 1.17    & 1.03    & 1.13   \\
+    $n$=100                  & 0.78 & 0.79  & 1.27   & 1.06   & 1.33  & 1.35    & 1.11    & 1.41   \\
+    $n$=300                  & 0.88 & 0.91  & 1.29   & 1.09   & 1.35  & 1.38    & 1.15    & 1.45   \\
+    $n$=500                  & 0.93 & 0.96  & 1.37   & 1.13   & 1.40  & 1.44    & 1.19    & 1.48   \\ \hline
+    $t_{10}, p=2$ & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20                   & 0.70 & 0.72  & 0.83   & 0.84   & 0.77  & 0.89    & 0.87    & 0.79   \\
+    $n$=50                   & 0.58 & 0.60  & 0.90   & 0.84   & 0.86  & 0.95    & 0.88    & 0.91   \\
+    $n$=100                  & 0.57 & 0.59  & 0.92   & 0.87   & 0.97  & 0.98    & 0.90    & 1.03   \\
+    $n$=300                  & 0.62 & 0.64  & 0.93   & 0.85   & 0.99  & 0.99    & 0.91    & 1.06   \\
+    $n$=500                  & 0.62 & 0.65  & 0.93   & 0.86   & 1.00  & 1.00    & 0.92    & 1.08   \\ \hline
+    $t_{15}, p=2$ & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20                   & 0.63 & 0.66  & 0.76   & 0.78   & 0.72  & 0.81    & 0.81    & 0.73   \\
+    $n$=50                   & 0.52 & 0.52  & 0.79   & 0.75   & 0.80  & 0.84    & 0.79    & 0.85   \\
+    $n$=100                  & 0.51 & 0.52  & 0.83   & 0.77   & 0.88  & 0.88    & 0.81    & 0.94   \\
+    $n$=300                  & 0.55 & 0.56  & 0.84   & 0.79   & 0.91  & 0.89    & 0.84    & 0.98   \\
+    $n$=500                  & 0.56 & 0.59  & 0.85   & 0.80   & 0.93  & 0.91    & 0.86    & 0.99   \\ \hline
+    $t_{25}, p=2$ & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20                   & 0.63 & 0.65  & 0.77   & 0.79   & 0.74  & 0.80    & 0.81    & 0.74   \\
+    $n$=50                   & 0.49 & 0.50  & 0.73   & 0.71   & 0.76  & 0.78    & 0.75    & 0.80   \\
+    $n$=100                  & 0.45 & 0.46  & 0.73   & 0.69   & 0.81  & 0.78    & 0.73    & 0.87   \\
+    $n$=300                  & 0.51 & 0.52  & 0.78   & 0.75   & 0.87  & 0.83    & 0.79    & 0.94   \\
+    $n$=500                  & 0.53 & 0.55  & 0.79   & 0.75   & 0.87  & 0.84    & 0.80    & 0.94   \\ \hline
+    $\cN_p$, $p=2$                & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20                   & 0.56 & 0.60  & 0.69   & 0.71   & 0.67  & 0.73    & 0.74    & 0.68   \\
+    $n$=50                   & 0.42 & 0.43  & 0.66   & 0.66   & 0.70  & 0.71    & 0.69    & 0.75   \\
+    $n$=100                  & 0.42 & 0.43  & 0.69   & 0.66   & 0.77  & 0.74    & 0.71    & 0.83   \\
+    $n$=300                  & 0.47 & 0.49  & 0.71   & 0.69   & 0.82  & 0.76    & 0.73    & 0.88   \\
+    $n$=500                  & 0.48 & 0.50  & 0.73   & 0.71   & 0.83  & 0.78    & 0.76    & 0.89   \\ \hline
+    \end{tabular}
+\caption{Finite sample efficiencies of several scatter matrices: $p=2$, $t_v$ is $t$-distribution with $v$ degrees of freedom, $\cN_p$ is $p$-variate normal}
+\label{table:FSEtable2}
+\end{footnotesize}
+\end{table}
+%
+\begin{table}[ht]
+\begin{footnotesize}
+   \begin{tabular}{c|cc|ccc|ccc}
+    \hline
+    $t_5, p=3$    & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20             & 0.96 & 0.97  & 1.06   & 1.03   & 0.99  & 1.07    & 1.06    & 0.97   \\
+    $n$=50             & 1.07 & 1.08  & 1.28   & 1.20   & 1.18  & 1.33    & 1.23    & 1.20   \\
+    $n$=100            & 1.12 & 1.15  & 1.49   & 1.31   & 1.40  & 1.57    & 1.38    & 1.48   \\
+    $n$=300            & 1.49 & 1.54  & 2.09   & 1.82   & 2.07  & 2.19    & 1.93    & 2.18   \\
+    $n$=500            & 1.60 & 1.66  & 2.18   & 1.87   & 2.21  & 2.27    & 1.95    & 2.30   \\ \hline
+    $t_6, p=3$    & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20             & 0.90 & 0.92  & 1.00   & 0.99   & 0.95  & 1.02    & 1.01    & 0.94   \\
+    $n$=50             & 0.95 & 0.96  & 1.16   & 1.09   & 1.09  & 1.21    & 1.14    & 1.11   \\
+    $n$=100            & 0.98 & 0.99  & 1.32   & 1.22   & 1.25  & 1.38    & 1.27    & 1.29   \\
+    $n$=300            & 1.10 & 1.14  & 1.57   & 1.40   & 1.58  & 1.62    & 1.47    & 1.64   \\
+    $n$=500            & 1.17 & 1.20  & 1.57   & 1.43   & 1.60  & 1.63    & 1.51    & 1.67   \\ \hline
+    $t_{10}, p=3$ & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20             & 0.87 & 0.88  & 0.95   & 0.94   & 0.90  & 0.97    & 0.98    & 0.89   \\
+    $n$=50             & 0.77 & 0.79  & 0.96   & 0.92   & 0.94  & 0.99    & 0.96    & 0.95   \\
+    $n$=100            & 0.75 & 0.76  & 1.02   & 0.95   & 1.01  & 1.06    & 1.00    & 1.05   \\
+    $n$=300            & 0.73 & 0.75  & 1.03   & 0.98   & 1.10  & 1.08    & 1.03    & 1.15   \\
+    $n$=500            & 0.73 & 0.76  & 1.02   & 0.98   & 1.09  & 1.06    & 1.02    & 1.14   \\ \hline
+    $t_{15}, p=3$ & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20             & 0.84 & 0.86  & 0.92   & 0.92   & 0.89  & 0.94    & 0.94    & 0.87   \\
+    $n$=50             & 0.75 & 0.76  & 0.92   & 0.90   & 0.90  & 0.96    & 0.94    & 0.93   \\
+    $n$=100            & 0.66 & 0.67  & 0.91   & 0.87   & 0.95  & 0.96    & 0.92    & 1.00   \\
+    $n$=300            & 0.61 & 0.64  & 0.90   & 0.87   & 1.00  & 0.93    & 0.91    & 1.04   \\
+    $n$=500            & 0.65 & 0.67  & 0.89   & 0.87   & 0.99  & 0.93    & 0.91    & 1.03   \\ \hline
+    $t_{25}, p=3$ & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20             & 0.78 & 0.79  & 0.87   & 0.89   & 0.87  & 0.89    & 0.92    & 0.86   \\
+    $n$=50             & 0.70 & 0.71  & 0.88   & 0.86   & 0.88  & 0.91    & 0.90    & 0.90   \\
+    $n$=100            & 0.61 & 0.63  & 0.86   & 0.83   & 0.89  & 0.90    & 0.88    & 0.94   \\
+    $n$=300            & 0.58 & 0.59  & 0.83   & 0.80   & 0.92  & 0.87    & 0.85    & 0.98   \\
+    $n$=500            & 0.62 & 0.64  & 0.83   & 0.82   & 0.94  & 0.88    & 0.87    & 0.99   \\ \hline
+    $\cN_p$, $p=3$   & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20             & 0.76 & 0.78  & 0.85   & 0.87   & 0.84  & 0.87    & 0.90    & 0.83   \\
+    $n$=50             & 0.66 & 0.67  & 0.82   & 0.81   & 0.84  & 0.86    & 0.86    & 0.86   \\
+    $n$=100            & 0.56 & 0.58  & 0.77   & 0.75   & 0.83  & 0.82    & 0.79    & 0.87   \\
+    $n$=300            & 0.53 & 0.55  & 0.75   & 0.74   & 0.85  & 0.79    & 0.78    & 0.90   \\
+    $n$=500            & 0.56 & 0.58  & 0.76   & 0.76   & 0.87  & 0.80    & 0.80    & 0.92   \\ \hline
+    \end{tabular}
+\caption{Finite sample efficiencies of several scatter matrices: $p=2$, $t_v$ is $t$-distribution with $v$ degrees of freedom, $\cN_p$ is $p$-variate normal}
+\label{table:FSEtable3}
+\end{footnotesize}
+\end{table}
+%
+\begin{table}[ht]
+\begin{footnotesize}
+    \begin{tabular}{c|cc|ccc|ccc}
+    \hline
+    $t_5, p=4$    & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20             & 1.04 & 1.02  & 1.10   & 1.07   & 1.02  & 1.09    & 1.07    & 0.98   \\
+    $n$=50             & 1.08 & 1.08  & 1.16   & 1.16   & 1.13  & 1.19    & 1.19    & 1.13   \\
+    $n$=100            & 1.31 & 1.31  & 1.42   & 1.38   & 1.36  & 1.46    & 1.44    & 1.36   \\
+    $n$=300            & 1.46 & 1.54  & 1.81   & 1.76   & 1.95  & 1.88    & 1.88    & 1.95   \\
+    $n$=500            & 1.92 & 1.93  & 2.23   & 2.03   & 2.31  & 2.35    & 2.19    & 2.39   \\ \hline
+    $t_6, p=4$    & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20             & 1.00 & 1.05  & 1.03   & 1.05   & 1.00  & 1.04    & 1.04    & 0.95   \\
+    $n$=50             & 1.03 & 1.01  & 1.13   & 1.12   & 1.11  & 1.19    & 1.17    & 1.10   \\
+    $n$=100            & 1.08 & 1.12  & 1.25   & 1.23   & 1.27  & 1.24    & 1.25    & 1.22   \\
+    $n$=300            & 1.34 & 1.36  & 1.64   & 1.52   & 1.60  & 1.67    & 1.61    & 1.68   \\
+    $n$=500            & 1.26 & 1.34  & 1.55   & 1.49   & 1.60  & 1.65    & 1.61    & 1.69   \\ \hline
+    $t_{10}, p=4$ & SCM  & Tyler & HDCM & MHDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20             & 0.90 & 0.89  & 0.95   & 0.98   & 0.98  & 0.96    & 1.01    & 0.95   \\
+    $n$=50             & 0.90 & 0.91  & 1.01   & 0.98   & 0.98  & 1.03    & 1.04    & 0.99   \\
+    $n$=100            & 0.87 & 0.87  & 0.93   & 0.95   & 1.01  & 0.99    & 1.01    & 1.05   \\
+    $n$=300            & 0.87 & 0.87  & 1.09   & 1.09   & 1.17  & 1.14    & 1.16    & 1.23   \\
+    $n$=500            & 0.88 & 0.92  & 1.10   & 1.10   & 1.23  & 1.19    & 1.22    & 1.29   \\ \hline
+    $t_{15}, p=4$ & SCM  & Tyler & HDCM & MhDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20             & 0.92 & 0.90  & 0.94   & 0.94   & 0.96  & 0.95    & 0.97    & 0.89   \\
+    $n$=50             & 0.82 & 0.83  & 0.88   & 0.91   & 0.93  & 0.88    & 0.93    & 0.93   \\
+    $n$=100            & 0.84 & 0.87  & 0.92   & 0.95   & 1.00  & 0.93    & 0.96    & 1.00   \\
+    $n$=300            & 0.73 & 0.75  & 0.96   & 0.99   & 1.10  & 1.00    & 1.06    & 1.12   \\
+    $n$=500            & 0.73 & 0.76  & 0.95   & 0.96   & 1.06  & 0.94    & 0.97    & 1.06   \\ \hline
+    $t_{25}, p=4$ & SCM  & Tyler & HDCM & MhDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20             & 0.89 & 0.92  & 0.92   & 0.92   & 0.90  & 0.96    & 0.95    & 0.89   \\
+    $n$=50             & 0.82 & 0.84  & 0.89   & 0.90   & 0.91  & 0.93    & 0.96    & 0.92   \\
+    $n$=100            & 0.77 & 0.76  & 0.90   & 0.90   & 0.96  & 0.94    & 0.98    & 1.04   \\
+    $n$=300            & 0.73 & 0.77  & 0.93   & 0.91   & 0.98  & 1.00    & 0.98    & 1.03   \\
+    $n$=500            & 0.67 & 0.71  & 0.83   & 0.83   & 0.96  & 0.88    & 0.90    & 1.00   \\ \hline
+    $\cN_p$, $p=4$   & SCM  & Tyler & HDCM & MhDCM & PDCM & HD-wCM & MhD-wCM & PD-wCM \\ \hline
+    $n$=20             & 0.82 & 0.84  & 0.87   & 0.90   & 0.91  & 0.89    & 0.93    & 0.89   \\
+    $n$=50             & 0.80 & 0.81  & 0.87   & 0.88   & 0.88  & 0.88    & 0.92    & 0.88   \\
+    $n$=100            & 0.68 & 0.71  & 0.80   & 0.85   & 0.91  & 0.82    & 0.86    & 0.92   \\
+    $n$=300            & 0.61 & 0.63  & 0.82   & 0.85   & 0.93  & 0.86    & 0.91    & 0.96   \\
+    $n$=500            & 0.60 & 0.64  & 0.77   & 0.80   & 0.90  & 0.82    & 0.86    & 0.96   \\ \hline
+    \end{tabular}
+\caption{Finite sample efficiencies of several scatter matrices: $p=2$, $t_v$ is $t$-distribution with $v$ degrees of freedom, $\cN_p$ is $p$-variate normal}
+\label{table:FSEtable4}
+\end{footnotesize}
+\end{table}
+
+We now obtain finite sample efficiencies of the three DCMs as well as their depth-weighted affine equivariant counterparts by a simulation study, and compare them with the same from the SCM and Tyler's scatter matrix. We consider the same 6 elliptical distributions considered in ARE calculations above, and from every distribution draw 10,000 samples each for sample sizes $n = 20, 50, 100, 300, 500$. All distributions are centered at ${\bf 0}_p$, and have covariance matrix $\bfSigma = \diag(p,p-1,...1)$. We consider 3 choices of $p$: 2, 3 and 4.
+
+We use the concept of principal angles \citep{miao92} to find out error estimates for the first eigenvector of a scatter matrix. In our case, the first eigenvector will be
+%
+$$ \bfgamma_1 = (1,\overbrace{0,...,0}^{p-1})^T $$
+%
+For an estimate of the eigenvector, say $\hat\bfgamma_1$, error in prediction is measured by the smallest angle between the two lines, i.e. $ \cos^{-1} | \hat\bfgamma_1^T \hat\bfgamma_1 | $. A smaller absolute value of this angle is equivalent to better prediction. We repeat this 10000 times and calculate the \textit{Mean Squared Prediction Angle}:
+%
+$$ MSPA(\hat \bfgamma_1) = \frac{1}{10000} \sum_{m=1}^{10000} \left( \cos^{-1} \left|\bfgamma_1^T \hat\bfgamma^{(m)}_1 \right| \right)^2 $$
+%
+Finally, the finite sample efficiency of some eigenvector estimate $\hat\bfgamma_{e,1}$ relative to that obtained from the sample covariance matrix, say $\hat\bfgamma_{\bfSigma,1}$ is obtained as:
+%
+$$
+FSE(\hat\bfgamma_{e,1}, \hat\bfgamma_{\bfSigma,1} ) = \frac{MSPA(\hat\bfgamma_{\bfSigma,1})}{MSPA(\hat\bfgamma_{e,1})}
+$$
+
+\ref{table:FSEtable2}, \ref{table:FSEtable3} and \ref{table:FSEtable4} give these FSE values for $p=2,3,4$, respectively. In general, all the efficiencies increase as the dimension $p$ goes up. DCM-based estimators (columns 3-5 in each table) outperform SCM and Tyler's scatter matrix, and among the 3 depths considered, projection depth seems to give the best results. Its finite sample performances are better than Tyler's and Huber's M-estimators of scatter as well as their symmetrized counterparts (Table 4 in \cite{sirkia07}), and quite close to the affine equivariant spatial sign covariance matrix (Table 2 in \cite{ollilia03}). The depth-weighted iterated versions of these 3 SCMs (columns 6-8 in each table) seem to further better the performance of their corresponding orthogonal equivariant counterparts.
+
+\subsubsection{Robust estimation of eigenvalues, and a plug-in estimator of $\bfSigma$}
+
+As we have seen in theorem \ref{Theorem:covform}, eigenvalues of the DCM are not same as the population eigenvalues, whereas the ADCM only gives back standardized eigenvalues. However, it is possible to robustly estimate the original eigenvalues by working with the individual columns of the robust score matrix. We do this using the following steps:
+
+\begin{enumerate}
+\item Randomly divide the sample indices $\{1,2,...,n\}$ into $k$ disjoint groups $\{G_1,...,G_k \}$ of size $\lfloor n/k \rfloor$ each;
+
+\item Assume the data is centered. Transform the data matrix: $\BS_n = \hat{ \tilde\bfGamma}^T \BX_n$;
+
+\item Calculate coordinate-wise variances for each group of indices $G_j$:
+%
+$$
+\hat\lambda_{i,j} = \frac{1}{|G_j|} \sum_{l \in G_j} (s_{li} - \bar s_{G_j,i})^2; \quad i = 1,...,p; j = 1,...,k
+$$
+where $\bar\bfs_{G_j} = (\bar s_{G_j,1}, ..., \bar s_{G_j,p})^T$ is the vector of column-wise means of $S_{G_j}$, the submatrix of $\BS_n$ with row indices in $G_j$.
+%
+\item Obtain estimates of eigenvalues by taking coordinate-wise medians of these variances:
+%
+$$
+\hat \lambda_i = \text{median} (\hat\lambda_{i,1}, ... , \hat\lambda_{i,k} ); \quad i = 1,...,p
+$$
+%
+\end{enumerate}
+%
+The number of subgroups used to calculate this median-of-small-variances estimator can be determined following \cite{Minsker15}. After this, we construct a consistent plug-in estimator of the population covariance matrix $\bfSigma$:
+
+\begin{Theorem}\label{Thm:pluginSigma}
+Consider the estimates $\hat\lambda_i$ obtained from the above algorithm, and the matrix of eigenvectors $\hat{ \tilde\bfGamma }$ estimated using the sample DCM. Define $\hat\bfSigma = \hat{ \tilde\bfGamma } \hat\bfLambda \hat{ \tilde\bfGamma }; \hat\bfLambda = \text{diag}(\hat\lambda_1, \ldots, \hat\lambda_p)$. Then as $n \raro \infty$,
+%
+$$ \| \hat\bfSigma - \bfSigma \|_F \stackrel{P}{\rightarrow} 0 $$
+%
+$\|.\|_F$ being the Frobenius norm.
+\end{Theorem}
+
+Given that we already have the eigenvector estimates of the DCM, the estimates $\hat \lambda_i$ are easy to compute, and finite-sample error bounds for them can be obtained as a special case of the general results provided in \cite{Minsker15}.

@@ -1,0 +1,556 @@
+\section{Proofs}
+\label{evalues-proofs}
+
+\begin{proof}[Proof of theorem \ref{Theorem:ThmRightWrong}]
+\textit{Part 1} follows directly from assumption (E3).
+
+\textit{Part 2.}
+Assuming now that $\cM_n$ is an adequate model, we again use the location invariance property of $E_n$:
+%
+\begin{align}
+E_n ( \hat\bfG_{mn}, [ \hat\bfG_n]) = E_n \left( \hat\bfG_{mn} - \bfG_{* n}, \left[ \hat\bfG_{* n} - \bfG_{* n} \right] \right)
+\end{align}
+%
+and decompose the first argument
+%
+\begin{align}\label{equation:ThmRightWrongProofPart2Eqn1}
+\hat\bfG_{mn} - \bfG_{* n} = ( \hat\bfG_{mn} - \hat \bfG_{* n} ) + ( \hat \bfG_{* n} - \bfG_{* n} )
+\end{align}
+%
+
+Now we have, for any $\cM_n$,
+%
+$$
+\hat \bftheta_{m n} \equiv \hat\bftheta = \bftheta + a_{n}^{-1} \bfT_{n} \equiv \bftheta_{m n} + a_{s n}^{-1} \bfT_{m n}
+$$
+%
+where $\bfT_{m n}$ is distributed as $\BT_{s n}$ in $\cS_n$ indices and fixed to 0 in other indices. In terms of these, we can write the $j$-th element of $\bfG_{m n}(.) \equiv \bfG(.)$ as
+%
+\begin{align*}
+G_{j}  (\hat{\bftheta}  )
+ = G_{j}  ( {\bftheta}  )
++ a_{n}^{-1} \bfG_{1 j}^{T}  ( {\bftheta}  ) \bfT_{ n} 
++ 2 a_{n}^{-2} \bfT_{ n}^{T} \bfR_{j}   ( \hat{\bftheta}, \bfT_{ n}  ) \bfT_{ n}
+\end{align*}
+%
+Our technical conditions are sufficient to ensure that for any $\bfc \in \BR^{d_n}$ with 
+$\| \bfc \| = 1$
+\begin{align*} 
+\BE \left( \sum_{j =1}^{d_{n}} c_{j} \bfT_{ n}^{T} \bfR_{j}   ( \hat{\bftheta}, \bfT_{ n}  ) \bfT_{ n} \right)^{2} = O (a_{n} d_{n}) 
+\end{align*}
+we omit the details of the algebra here.
+
+Thus we have that $a_n ( \hat\bfG - \bfG ) = \bfG_1^T \bfT_n + \bfR_n$, with $\BE \|\bfR_n^2 \| = o(1)$. Coming back to the first summand of the right-hand side in \ref{equation:ThmRightWrongProofPart2Eqn1} we get
+%
+\begin{align}\label{equation:ThmRightWrongProofPart2Eqn2}
+\hat \bfG_{m n} - \hat \bfG_{* n} = \bfG_{m n} - \bfG_{* n} + O_P(\min \{ a_{s n}, a_{* n} \}^{-1})
+\end{align}
+%
+Since $\cM_n$ is an adequate model, $ \bfG_{m n} - \bfG_{0 n} = o(n)$. Also $ \bfG_{* n} - \bfG_{0 n} = o(n)$. Thus, substituting the above right-hand side in \ref{equation:ThmRightWrongProofPart2Eqn1} we get
+%
+\begin{align}
+\left| E_n \left( \hat\bfG_{mn} - \bfG_{* n}, \left[ \hat\bfG_{* n} - \bfG_{* n} \right] \right) - E_n \left( \hat\bfG_{* n} - \bfG_{* n}, \left[ \hat\bfG_{* n} - \bfG_{* n} \right] \right) \right| \notag\\
+= o_P (\min \{ a_{s n}, a_{* n}, n \})
+\end{align}
+%
+from of Lipschitz continuity of $E_n$. Adding back $\bfG_{* n}$ everywhere and applying (E1) again,
+\begin{align}
+| E_n ( \hat\bfG_{mn}, [ \hat\bfG_{* n} ] ) - E_n ( \hat\bfG_{* n}, [ \hat\bfG_{* n} ] ) | = o_P (\min \{ a_{s n}, a_{* n}, n \})
+\end{align}
+%
+the proof of part 2 is immediate now.
+
+{\it Part 3.} 
+Since the evaluation map $E_n$ is invariant under location and scale transformations, we have
+%
+\begin{align}\label{equation:ThmRightWrongProofEqn1}
+E_n ( \hat\bfG_{mn}, [ \hat\bfG_n]) = E_n \left( a_{* n} (\hat\bfG_{mn} - \bfG_{* n}), \left[ a_{* n} (\hat\bfG_{* n} - \bfG_{* n}) \right] \right)
+\end{align}
+%
+Decomposing the first argument,
+%
+\begin{align}
+a_{* n} (\hat\bfG_{mn} - \bfG_{* n}) = \frac{a_{* n}}{a_{s n}} . a_{s n} (\hat\bfG_{mn} - \bfG_{mn}) + a_{* n} (\bfG_{mn} - \bfG_{0 n}) + a_{* n} (\bfG_{0 n} - \bfG_{* n}) 
+\end{align}
+%
+Since $\cM_n$ is inadequate, given $\delta > 0$ there exists a subsequence indexed by $\{ k_n \}$ such that $\| \bfG_{mk_n} - \bfG_{0 k_n} \| > \delta $. Since $a_{* n} \uparrow \infty$, this implies $a_{* n} \| \bfG_{mn} - \bfG_{0 n} \| \raro \infty$. Finally $ a_{* n} (\hat\bfG_{m n} - \bfG_{m n}) = O_P (1)$ using similar arguments as in proof of part 2 above, $a_{s n} \asymp a_{* n}$, and norm of the third part goes to 0 by part b of assumption (S1). We now get the needed by assumption (E4).
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{Theorem:ResamplingConsistency_Smooth}]
+
+We consider a generic point $\bftheta = \bftheta_{ s n} + \bfA_{ s n}^{-1} \bft$. From the Taylor series expansion, we have
+%
+\begin{align}
+\Psi_{0 s n i (a)} (\bftheta) & = \Psi_{0 s n i (a)} (\bftheta_{s n}) 
+	+ \Psi_{1 s n i (a)} (\bftheta_{s n}) \bfA_{ s n}^{-1} \bft 
++ 2^{-1}  \bft^{T} \bfA_{ s n}^{-1T} \Psi_{2 s n i (a)} (\tilde{\bftheta}_{s n} ) 
+\bfA_{ s n}^{-1} \bft
+\end{align}
+%
+for $a = 1, \ldots, p_{sn}$, and $\tilde{\bftheta}_{s n} = {\bftheta}_{s n}  + c \bfA_{s n}^{-1} \bft$ for some $c \in (0, 1)$.
+
+Recall our convention that for any function $\bfh (\bftheta)$ evaluated at the true parameter value $\bftheta_{ s n}$, we use the notation $\bfh \equiv \bfh (\bftheta_{s n})$. Also define the $p_{ s n}$ dimensional vector 
+$\bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)$ whose $a$-th element is given by 
+\begin{align} 
+\bfR_{ s n (a)} (\tilde{\bftheta}_{s n},  \bft)
+=  \bft^{T} \bfA_{ s n}^{-1T} 
+\sum_{i =1}^{k_{n}} \Psi_{2 s n i (a)} (\tilde{\bftheta}_{s n} ) \bfA_{ s n}^{-1} \bft
+\end{align}
+
+Thus we have 
+\begin{align}
+& p_{s n}^{-1/2} \bfA_{ s n}^{-1} \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} 
+(\bftheta_{ s n} + \bfA_{ s n}^{-1} \bft) \notag\\
+& = p_{s n}^{-1/2} \bfA_{ s n}^{-1} \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i}  
+	+  p_{s n}^{-1/2} \bfA_{ s n}^{-1} \sum_{i = 1}^{ k_{n}} \Psi_{1 s n i} \bfA_{ s n}^{-1} \bft 
++ 2^{-1}  p_{s n}^{-1/2} \bfA_{ s n}^{-1} \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft) \notag\\
+& = p_{s n}^{-1/2} \bfA_{ s n}^{-1} \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i}  
+	+ p_{s n}^{-1/2} \bfA_{ s n}^{-1} \bfGamma_{1 s n } \bfA_{ s n}^{-1} \bft 
+ + p_{s n}^{-1/2} \bfA_{ s n}^{-1} 
+ \bigl( \sum_{i = 1}^{ k_{n}} \Psi_{1 s n i} - \bfGamma_{1 s n } \bigr) 
+ \bfA_{ s n}^{-1} \bft \notag\\
+& \quad + 2^{-1} p_{s n}^{-1/2}  \bfA_{ s n}^{-1} \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)
+\end{align}
+
+Fix $\epsilon > 0$. We first show that there exists a $C_{0} > 0$ such that
+%
+\begin{equation} 
+\BP \Bigl[ 
+\| p_{s n}^{-1/2}  \bfA_{ s n}^{-1}  \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} \| 
+> C_{0} 
+\Bigr] 
+< \epsilon/2.
+\label{eq:Bound1}
+\end{equation}
+For this, we compute 
+\begin{align}
+p_{s n}^{-1} 
+\BE \| \bfA_{ s n}^{-1}  \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} \|^{2} & = p_{s n}^{-1} \BE  \sum_{i, j = 1}^{ k_{n}} \Psi_{0 s n i}^{T} \bfA_{ s n}^{-1T} \bfA_{ s n}^{-1}   \Psi_{0 s n j} \notag\\
+& = p_{s n}^{-1} \Tr \left[ \bfA_{ s n}^{-1T} \bfA_{ s n}^{-1} \right]
+\BE  \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} \Psi_{0 s n i}^{T} \notag\\
+& = p_{s n}^{-1} \Tr \left[ \bfA_{ s n}^{-1T} \bfA_{ s n}^{-1}  \bfGamma_{0 s n} \right] \notag\\
+& = O (1)
+\end{align} 
+from assumption \ref{eq:Trace}. 
+ 
+Now define
+% 
+\begin{align} 
+\bfS_{s n} (\bft) = 
+p_{s n}^{-1/2} \bfA_{ s n}^{-1} \bigl( \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} 
+(\bftheta_{ s n} + \bfA_{ s n}^{-1} \bft) 
+- \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i}  \bigr) 
+- p_{s n}^{-1/2}  \bfGamma_{1 s n }^{-1} \bfGamma_{0 s n } \bft 
+\end{align}
+ %
+We next show that for any $C > 0$, for all sufficiently large $n$, we have
+%
+\begin{equation}\label{eq:Bound2}
+\BE \Bigl[ \sup_{ \| \bft \| \leq C} \| \bfS_{s n} (\bft) \| \Bigr]^{2} = o (1) 
+\end{equation}
+%
+This follows from \ref{eq:FrobSq} and \ref{eq:2ndMomentBound}.
+ 
+Note that
+%
+ \begin{align} 
+ \bfS_{s n} (\bft) = 
+p_{s n}^{-1/2}  \bfA_{ s n}^{-1} 
+ \bigl( \sum_{i = 1}^{ k_{n}} \Psi_{1 s n i} - \bfGamma_{1 s n } \bigr) 
+ \bfA_{ s n}^{-1} \bft
++ 2^{-1} p_{s n}^{-1/2}  \bfA_{ s n}^{-1} \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)
+\end{align}
+%
+Thus
+% 
+\begin{align} 
+& \sup_{ \| \bft \| \leq C} \| \bfS_{s n} (\bft) \| 
+\leq \notag \\
+& p_{s n}^{-1/2} \sup_{ \| \bft \| \leq C} \| 
+ \bfA_{ s n}^{-1} 
+ \bigl( \sum_{i = 1}^{ k_{n}} \Psi_{1 s n i} - \bfGamma_{1 s n } \bigr) 
+ \bfA_{ s n}^{-1} \bft
+\| 
++ 
+2^{-1} p_{s n}^{-1/2} 
+\sup_{ \| \bft \| \leq C} \| 
+ \bfA_{ s n}^{-1} \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)
+\|
+\end{align}
+We consider each of these terms separately. 
+
+For any matrix $\bfM \in \BR^{p \times p}$, we have
+%
+\begin{align} 
+\sup_{ | \bft| \leq C} \| \bfM \bft \| 
+& = \sup_{ \| \bft \| \leq C} 
+\Bigl[ \sum_{i =1}^{p} \bigl( \sum_{j =1}^{p} m_{ i j} t_{j} \bigr)^{2} \Bigr]^{1/2} \notag\\
+& \leq \sup_{ \| \bft \| \leq C} 
+\Bigl[ \sum_{i =1}^{p} \sum_{j =1}^{p} m_{ i j}^{2} 
+\sum_{j =1}^{p} t_{j}^{2} \Bigr]^{1/2} \notag\\
+& = \| \bfM \|_{F} \sup_{ \| \bft \| \leq C} \|\bft \| \notag\\
+& = C \| \bfM \|_{F}
+\end{align}
+%
+Using $\bfM =  \bfA_{ s n}^{-1}  \bigl( \sum_{i = 1}^{ k_{n}} \Psi_{1 s n i} - \bfGamma_{1 s n } \bigr) \bfA_{ s n}^{-1}$ and \ref{eq:FrobSq}, we get one part of the result.
+
+For the other term, we similarly have 
+%
+\begin{align} 
+\Bigl[ \sup_{ \| \bft \| \leq C} \| 
+p_{s n}^{-1/2}  \bfA_{ s n}^{-1} \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)
+\| \Bigr]^{2} & = p_{s n}^{-1} \sup_{ \| \bft \| \leq C} 
+\Bigl[ \|  \bfA_{ s n}^{-1} \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)
+\| \Bigr]^{2} \notag\\
+& \leq p_{s n}^{-1} \lambda_{max}\bigl( \bfA_{ s n}^{-1T} \bfA_{ s n}^{-1}  \bigr)
+\sup_{ \| \bft \| \leq C} \| \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)\|^{2} \notag\\
+& \leq p_{s n}^{-1} \lambda_{max}\bigl( \bfA_{ s n}^{-1} \bfA_{ s n}^{-1T}  \bigr)
+\sup_{ \| \bft \| \leq C} \| \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)\|^{2} \notag\\
+& \leq p_{s n}^{-1} a_{s n}^{-2} 
+\sup_{ \| \bft \| \leq C} \| \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)\|^{2}
+\end{align}
+
+%Now for $\| \bfA_{ s n}^{-1}  \|_{F}$ we have 
+%\begin{align} 
+%\| \bfA_{ s n}^{-1}  \|_{F} & = 
+%\Tr \bigl( \bfA_{ s n}^{-1T} \bfA_{ s n}^{-1} \bigr) \\
+%& =  \Tr \bigl( \bfGamma_{1 s n }^{-1} \bfGamma_{0 s n } \bfGamma_{1 s n }^{-1T} \bigr) \\
+%& \leq    O \Bigl( p_{s n} 
+%\lambda_{max} \bigl( \bfGamma_{1 s n }^{-1} \bfGamma_{0 s n } \bfGamma_{1 s n }^{-1T} \bigr) 
+%\Bigr) \\
+%& \leq    O \bigl( p_{s n} a_{s n}^{-2} \bigr). 
+%\end{align}
+
+Note that 
+\begin{align} 
+\bigl( \sup_{ \| \bft \| \leq C} \| \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)\| \bigr)^{2}
+= 
+\sup_{ \| \bft \| \leq C} \| \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)\|^{2}
+\end{align}
+%
+Now
+%
+\begin{align} 
+\| \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)\|^{2} & = 
+\sum_{a = 1}^{ p_{s n}} 
+\bigl( \bfR_{ s n (a)} (\tilde{\bftheta}_{s n},  \bft) \bigr)^{2} \notag\\
+& = 
+\sum_{a = 1}^{ p_{s n}} 
+\bigl( 
+\bft^{T} \bfA_{ s n}^{-1T} 
+\sum_{i =1}^{k_{n}} \Psi_{2 s n i (a)} (\tilde{\bftheta}_{s n} ) \bfA_{ s n}^{-1} \bft
+\bigr)^{2} \notag\\
+& = 
+\sum_{a = 1}^{ p_{s n}} 
+\sum_{i, j = 1}^{ k_{n}} 
+\bft^{T} \bfA_{ s n}^{-1T} \Psi_{2 s n i (a)} (\tilde{\bftheta}_{s n} ) \bfA_{ s n}^{-1} \bft.
+\bft^{T} \bfA_{ s n}^{-1T} \Psi_{2 s n j (a)} (\tilde{\bftheta}_{s n} ) \bfA_{ s n}^{-1} \bft
+\end{align} 
+%
+Based on this, we have
+%
+\begin{align} 
+\sup_{ \| \bft \| \leq C} \| \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)\|^{2} & = \sup_{ \| \bft \| \leq C} 
+\sum_{a = 1}^{ p_{s n}} 
+\sum_{i, j = 1}^{ k_{n}} 
+\bft^{T} \bfA_{ s n}^{-1T} \Psi_{2 s n i (a)} (\tilde{\bftheta}_{s n} ) \bfA_{ s n}^{-1} \bft.
+\bft^{T} \bfA_{ s n}^{-1T} \Psi_{2 s n j (a)} (\tilde{\bftheta}_{s n} ) \bfA_{ s n}^{-1} \bft
+\notag\\
+& \leq \sup_{ \| \bft \| \leq C} 
+\sum_{a = 1}^{ p_{s n}} 
+\sum_{i, j = 1}^{ k_{n}} 
+\bft^{T} \bfA_{ s n}^{-1T} \bfM_{2 s n i (a)}  \bfA_{ s n}^{-1} \bft.
+\bft^{T} \bfA_{ s n}^{-1T} \bfM_{2 s n j (a)}  \bfA_{ s n}^{-1} \bft
+\notag\\
+& \leq \sup_{ \| \bft \| \leq C} \| \bfA_{ s n}^{-1} \bft \|^{4}
+\sum_{a = 1}^{ p_{s n}} 
+\Bigl(
+\sum_{i = 1}^{ k_{n}} 
+ \lambda_{max} \bigl( \bfM_{2 s n i (a)} \bigr) \Bigr)^{2}
+\notag \\
+& \leq  C^{4} n \lambda_{max}^{2} \bigl( \bfA_{ s n}^{-1T} \bfA_{ s n}^{-1} \bigr)
+\sum_{a = 1}^{ p_{s n}} 
+\sum_{i = 1}^{ k_{n}} 
+ \lambda_{max}^{2} \bigl( \bfM_{2 s n i (a)} \bigr)
+ \end{align} 
+
+Putting all these together, we have 
+%
+\begin{align} 
+\BE \Bigl[ \sup_{ \| \bft \| \leq C} \|
+ p_{s n}^{-1/2}  \bfA_{ s n}^{-1} \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft) \|
+ \Bigr]^{2} & = p_{s n}^{-1}  \BE \Bigl[ \sup_{ \| \bft \| \leq C} 
+  \bfA_{ s n}^{-1} \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)
+ \Bigr]^{2} \notag\\
+& \leq p_{s n}^{-1}  \bfA_{ s n}^{-2}   \BE \Bigl[ \sup_{ \| \bft \| \leq C} 
+  \| \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)\|
+ \Bigr]^{2} \notag\\
+ & = O \bigl( p_{s n}^{-1} a_{s n}^{-2} \bigr)
+ \BE \Bigl[ \sup_{ \| \bft \| \leq C} 
+  \| \bfR_{ s n} (\tilde{\bftheta}_{s n },  \bft)\|
+ \Bigr]^{2} \notag\\
+  & = O \bigl( p_{s n}^{-1} n a_{s n}^{-6} \bigr)
+\sum_{a = 1}^{ p_{s n}} 
+\sum_{i = 1}^{ k_{n}} 
+ \BE \lambda_{max}^{2} \bigl( \bfM_{2 s n i (a)} \bigr) \notag\\
+%  & = O \bigl( p_{s n}^{2} n a_{s n}^{-6} \bigr)
+%\sum_{a = 1}^{ p_{s n}} 
+%\sum_{i = 1}^{ k_{n}} 
+% \BE \lambda_{max}^{2} \bigl( \bfM_{2 s n i (a)} \bigr)\\
+& = o(1)
+\end{align}
+using \ref{eq:2ndMomentBound}. 
+
+Now define
+% 
+\begin{align} 
+\bfS_{s n} (\bft) = 
+p_{s n}^{-1/2} \bfA_{ s n}^{-1} \bigl( \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} 
+(\bftheta_{ s n} + \bfA_{ s n}^{-1} \bft) 
+- \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i}  \bigr) 
+- p_{s n}^{-1/2}  \bfGamma_{1 s n }^{-1} \bfGamma_{0 s n } \bft 
+\end{align}
+%
+hence
+% 
+\begin{align} 
+p_{s n}^{-1/2} \bfA_{ s n}^{-1}  \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} 
+(\bftheta_{ s n} +  p_{s n}^{1/2} \bfA_{ s n}^{-1} \bft) 
+= \bfS_{s n}( \bft ) + 
+p_{s n}^{-1/2} \bfA_{ s n}^{-1}   \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} 
++ \bfA_{ s n}^{-1} \bfGamma_{1 s n } \bfA_{ s n}^{-1} \bft
+\end{align}
+%
+and thus
+%
+\begin{align} 
+& \inf_{ \| \bft \| = C} 
+\Bigl\{ p_{s n}^{-1/2} 
+\bft^{T} \bfGamma_{1 s n } \bfA_{ s n}^{-1}  \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} 
+(\bftheta_{ s n} +  p_{s n}^{1/2} \bfA_{ s n}^{-1} \bft) 
+\Bigr\} \notag\\
+& = 
+ \inf_{ \| \bft \| = C} 
+\Bigl\{ 
+\bft^{T}  \bfGamma_{1 s n } \bfS_{s n}( \bft ) + 
+p_{s n}^{-1/2} \bft^{T}  \bfGamma_{1 s n }  \bfA_{ s n}^{-1}  \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i}  
++ \bft^{T}  \bfGamma_{1 s n } \bfA_{ s n}^{-1} \bfGamma_{1 s n } \bfA_{ s n}^{-1} \bft
+\Bigr\} \notag\\
+& \geq 
+ \inf_{ \| \bft \| = C} \bft^{T}  \bfGamma_{1 s n } \bfS_{s n}( \bft ) 
+ + p_{s n}^{-1/2}  \inf_{ \| \bft \| = C} \bft^{T}  \bfGamma_{1 s n }  \bfA_{ s n}^{-1}  
+ \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i}  
+ + \inf_{ \| \bft \| = C} \bft^{T}  \bfGamma_{1 s n } \bfA_{ s n}^{-1} \bfGamma_{1 s n } \bfA_{ s n}^{-1} \bft
+  \notag\\
+ & \geq  - C  \delta_{1 s}  \sup_{ \| \bft \| = C} \| \bfS_{s n}( \bft ) \|
+- C \delta_{1 s}  p_{s n}^{-1/2}   \| \bfA_{ s n}^{-1}  \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} \| 
++ C^{2}  \delta_{0 s}
+\end{align}
+The last step above utilizes facts like $\bfa^{T} \bfb \geq - \|a\| \|b\|$.  
+
+Consequently, defining $C_{1} = C \delta_{ 0 s}/\delta_{1 s}$, we have 
+\begin{align} 
+& \BP \Bigl[  
+\inf_{ \| \bft \| = C} 
+\Bigl\{ 
+\bft^{T} \bfGamma_{1 s n }  \bfA_{ s n}^{-1}  \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} 
+(\bftheta_{ s n} +  p_{s n}^{1/2} \bfA_{ s n}^{-1} \bft) 
+\Bigr\} < 0 
+\Bigr] \notag\\
+\leq 
+& \BP \Bigl[  
+\sup_{ \| \bft \| = C} \| \bfS_{s n}( \bft ) \| + \| \bfA_{ s n}^{-1}  \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} \| 
+> C_{1} 
+\Bigr] \notag\\
+\leq 
+& \BP \Bigl[  
+\sup_{ \| \bft \| = C} \| \bfS_{s n}( \bft ) \|  > C_{1}/2 \Bigr] 
++ \BP \Bigl[ 
+\| \bfA_{ s n}^{-1}  \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} \| 
+> C_{1}/2 
+\Bigr] \notag\\
+& < \epsilon 
+\end{align}
+for all sufficiently large $n$,  using \ref{eq:Bound1} and \ref{eq:Bound2}. 
+ 
+This implies that with a probability greater than $1 - \epsilon$ there is a root $\bfT_{ s n}$ of the equations $\sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} (\bftheta_{ s n} +  \bfA_{ s n}^{-1} \bft)$  in the ball $\{ \| \bft \| < C \}$, for some $C > 0$ and all sufficiently large $n$. Defining $\hat{\bftheta}_{ s n}  = \bftheta_{ s n} +   \bfA_{ s n}^{-1} \bfT_{s n}$, we obtain the desired result. Issues like dependence on $\epsilon$ and other technical details are handled using standard arguments, see \cite{ChatterjeeBose05} for related arguments.
+
+Since we have
+%
+ \begin{align} 
+ \sup_{\| \bft \| < C} \| \bfS_{s n} (\bft) \| = o_{P} (1) 
+ \end{align} 
+%
+and $\bfT_{s n}$ lies in the set $\| \bft \| < C$, define $- \bfR_{s n} = \bfS_{s n} ( \bfT_{s n}) = o_{P} (1)$. We consequently have 
+ \begin{align} 
+- \bfR_{s n} & =  \bfS_{s n} ( \bfT_{s n})  \notag\\
+& 
+ p_{s n}^{-1/2} \bfA_{ s n}^{-1} \bigl( \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} 
+(\bftheta_{ s n} + \bfA_{ s n}^{-1} \bfT_{s n}) 
+- \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i}  \bigr) 
+- p_{s n}^{-1/2}  \bfGamma_{1 s n }^{-1} \bfGamma_{0 s n }\bfT_{s n} \notag\\
+& 
+ p_{s n}^{-1/2} \bfA_{ s n}^{-1} \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} 
+- p_{s n}^{-1/2}  \bfGamma_{1 s n }^{-1} \bfT_{s n} 
+\end{align}
+Thus, 
+\begin{align} 
+\bfT_{s n} & = 
+-  \bfGamma_{0 s n }^{-1} \bfGamma_{1 s n } 
+\bfA_{ s n}^{-1}  \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} 
++ p^{1/2} \bfGamma_{0 s n }^{-1} \bfGamma_{1 s n } \bfR_{s n} \notag\\
+& = 
+-  \bfGamma_{0 s n }^{-1/2}  \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} 
++ p^{1/2} \bfGamma_{0 s n }^{-1} \bfGamma_{1 s n } \bfR_{s n}
+\end{align}
+
+Note that our conditions imply that for any $\bfc$ with $\| \bfc \| =1$, we have that 
+ $\bfc^T \bfT_{s n}$ has two terms, where 
+ $\BV \bigl( - \bfc^T \bfGamma_{0 s n }^{-1/2}  \sum_{i = 1}^{ k_{n}} \Psi_{0 s n i} 
+ \bigr) = 1$ and 
+ \begin{align} 
+ \BE 
+ \bigl[ p^{1/2} \bfc^T \bfGamma_{0 s n }^{-1} \bfGamma_{1 s n } \bfR_{s n} 
+ \bigr]^{2} = O(1)
+\end{align} 
+using \ref{eq:Trace}. Using \ref{eq:CLTConditions} we also have that for any $\bfc$ with $\| \bfc\| = 1$, $\bfc^T \bfT_{s n} \leadsto N (0, 1)$. 
+
+Define 
+\begin{align} 
+\hat{\bfA}_{s n} = \mu_{s n} \tau_{s n}^{-1} \hat{\bfGamma}_{0 s n}^{1/2}
+\hat{\bfGamma}_{1 s n}^{-1}.
+\end{align}
+
+We now follow steps that are very similar to the above, but for the resampling procedure as implemented in \ref{eq:ResamplingMinimization} to obtain the result. We omit the details. 
+ 
+\end{proof}
+
+\begin{proof}[Proof of theorem \ref{Theorem:ModelScore}]
+\textit{Part 1.}
+Taking a similar approach as in the proof of theorem \ref{Theorem:ThmRightWrong}, we get
+%
+\begin{align*}
+G_{j}  (\hat{\bftheta_r}  )
+& = G_{j}  ( \hat{\bftheta}  )
++ b_{n}^{-1} \bfG_{1 j}^{T}  ( \hat{\bftheta}  ) \bfT_{r n} 
++ 2 b_{n}^{-2} \bfT_{ n}^{T} \bfR_{j}   ( \hat{\bftheta}, \bfT_{r n}  ) \bfT_{r n}, \\
+& = G_{j}  ( \hat{\bftheta}  )
++ b_{n}^{-1} \bfG_{1 j}^{T}  ( {\bftheta}  ) \bfT_{r n} 
++ b_{n}^{-1}  ( \hat{\bfG}_{1 j} - \bfG_{1 j}   )^{T} \bfT_{r n} 
++ 2 b_{n}^{-2} \bfT_{r n}^{T} \bfR_{j}   ( \hat{\bftheta}, \bfT_{r n}  ) \bfT_{n}, \\
+& = G_{j}  ( \hat{\bftheta}  )
++ b_{n}^{-1} \bfG_{1 j}^{T}  ( {\bftheta}  ) \bfT_{r n} 
++ b_{n}^{-1} \bfR_{r n j 1} + b_{n}^{-2} \bfR_{r n j 2}
+\end{align*}
+%
+Our technical conditions are sufficient to ensure that for any $\bfc \in \BR^{d_n}$ with 
+$\| \bfc \| = 1$
+\begin{align*} 
+\BE_r \left( \sum_{j =1}^{d_{n}} c_{j} \bfR_{r n j 1} \right)^{2} 
+= o_P (b_{n}^{-1} d _{n}); \quad \BE_r \left( \sum_{j =1}^{d_{n}} c_{j} \bfR_{r n j 2} \right)^{2} = O_P (b_{n} d_{n}), 
+\end{align*}
+we omit the details of the algebra here. Thus we get $b_{ n} (\hat \bfG_r - \hat \bfG ) = \bfG_1^T \bfT_{r n} + \bfR_{r n} $ with $\BE_r \| \bfR_{r n} \|^2 = o_P(1)$. Hence
+%
+\begin{align}\label{eqn:ModelScoreProofEqn1}
+\hat \bfG_{r m n} - \hat \bfG_{r * n} = \hat \bfG_{m n} - \hat \bfG_{* n} + O_{P_n} ( \min \{ b_{s n}, b_{* n} \}^{-1}) + o_P(1)
+\end{align}
+%
+where $s_n = o_{P_n} (t_n)$ means $s_n / t_n \rightarrow 0$ in probability conditional on the data.
+
+Now following assumption (E1),
+%
+\begin{align}\label{eqn:ModelScoreProofEqn2}
+E_n ( \hat \bfG_{r m n}, [ \hat \bfG_{r_1 * n} ] ) = E_n ( ( \hat \bfG_{r m n} - \hat \bfG_{* n} ), [   \hat \bfG_{r_1 * n} - \hat \bfG_{* n} ] )
+\end{align}
+%
+Expanding first argument of the right-hand side
+%
+\begin{align*}
+\hat \bfG_{r m n} - \hat \bfG_{* n}  & =  ( \hat \bfG_{r m n} - \hat \bfG_{r * n} ) + ( \hat \bfG_{r * n} - \hat \bfG_{* n} )
+\end{align*}
+% \notag\\
+%& = ( \hat \bfG_{r m n} - \hat \bfG_{m n}) - (\hat \bfG_{r_1 * n} - \hat \bfG_{* n} ) \notag\\
+%& \quad + ( \hat \bfG_{m n} - \hat \bfG_{* n}) + ( \hat \bfG_{r_1 * n} - \hat \bfG_{* n} ) \notag\\
+%& = ( \hat \bfG_{r_1 * n} - \hat \bfG_{* n} ) + O_{P_n} ( \min \{ b_{s n}, b_{* n} \} ) + o_{P} ( \min \{ a_{s n}, a_{* n} \} )
+%
+We now apply \ref{eqn:ModelScoreProofEqn1} and then \ref{equation:ThmRightWrongProofPart2Eqn2} to the first summand on the right side. Scalar invariance and lipschitz continuity of the evaluation map $E_n$ implies
+%
+\begin{align*}
+& \left| E_n ( \hat \bfG_{r m n}, [ \hat \bfG_{r_1 * n} ] ) - E_n ( \hat \bfG_{r * n}, [ \hat \bfG_{r_1 * n} ] ) \right| \\
+&= O_{P_n} ( \min \{ b_{s n}, b_{* n} \}^{-1}) + O_{P} ( \min \{ a_{s n}, a_{* n} \}^{-1})
+\end{align*}
+%
+Finally from theorem \ref{Theorem:ResamplingConsistency_Smooth} and assumption (G2), $b_{s n} ( \hat \bfG_{r * n} - \hat \bfG_{* n} )$ and $a_{s n} ( \hat \bfG_{* n} - \bfG_{* n} )$ converge to the same limiting distribution for almost every data sequence; thus
+%
+\begin{align*}
+\BE_r E_n ( \hat \bfG_{r * n}, [ \hat \bfG_{r_1 * n} ]) = \BE E_n ( \hat \bfG_{* n}, [ \hat \bfG_{* n} ]) + o_{P_n}(1)
+\end{align*}
+%
+The proof follows since $\tau_{s n} = o( a_{s n}) \Rightarrow b_{s n} \raro \infty$.
+
+\textit{Part 2.}
+Continuing from \ref{eqn:ModelScoreProofEqn2} and applying scale invariance,
+%
+\begin{align*}
+E_n ( \hat \bfG_{r m n}, [ \hat \bfG_{r_1 * n} ] ) = E_n ( b_{* n} ( \hat \bfG_{r m n} - \hat \bfG_{* n} ), [   b_{* n}  ( \hat \bfG_{r_1 * n} - \hat \bfG_{* n} ) ] )
+\end{align*}
+%
+and then
+%
+\begin{align*}
+b_{* n} ( \hat \bfG_{r m n} - \hat \bfG_{* n} ) & = \frac{ b_{* n} }{ b_{s n}} . b_{s n} ( \hat \bfG_{r m n} - \hat \bfG_{m n} ) + \frac{b_{* n}}{a_{s n}}. a_{s n} ( \hat \bfG_{m n} - \bfG_{m n} )  \notag\\
+& \quad - \frac{b_{* n}}{a_{* n}}. a_{* n} ( \hat \bfG_{* n} - \bfG_{* n} ) + b_{* n} ( \bfG_{m n} - \bfG_{* n} )
+\end{align*}
+
+Since $b_{* n} = a_{* n} / \tau_{* n}, \tau_{* n} = o(a_{* n}), a_{* n} \asymp a_{s n}$, lipschitz continuity of $E_n$ ensures that
+%
+\begin{align*}
+& \BE_r E_n ( b_{* n} ( \hat \bfG_{r m n} - \hat \bfG_{* n} ), [   b_{* n}  ( \hat \bfG_{r_1 * n} - \hat \bfG_{* n} ) ] ) \notag\\
+& = \BE_r E_n \left( \frac{ b_{* n} }{ b_{s n}} . b_{s n} ( \hat \bfG_{r m n} - \hat \bfG_{m n} ) + b_{* n} ( \bfG_{m n} - \bfG_{* n} ), [   b_{* n}  ( \hat \bfG_{r_1 * n} - \hat \bfG_{* n} ) ] \right) \notag\\
+& \qquad + o_P(1)
+\end{align*}
+%
+From theorem \ref{Theorem:ResamplingConsistency_Smooth} and assumption (G2) $b_{s n} ( \hat \bfG_{r m n} - \hat \bfG_{m n} )$ and $a_{s n} ( \hat \bfG_{m n} - \bfG_{m n} )$ converge to the same limiting distribution for almost every data sequence; and $b_{* n} \uparrow \infty$ implies $\| b_{* n} ( \bfG_{m n} - \bfG_{* n}) \| \raro \infty$. Also by assumption $b_{* n} \asymp b_{s n}$. The proof now follows from assumption (E4).
+\end{proof}
+
+\begin{proof}[Proof of theorem \ref{Theorem:ThmRightNested}]
+
+Since we are dealing with a finite sequence of nested models, it is enough to prove that $e_n(\cM_1 ) > e_n(\cM_2 )$ for large enough $n$.
+
+Suppose $\BT_0 = \cE ({\bf 0}_p, \bfI_p, g)$. Affine invariance implies invariant to rotational transformations, and since depth decreases along any ray from the origin, $D( \bftheta, \BT_0)$ is a monotonocally decreasing function of $\bftheta^T \bftheta$ for any $\bftheta \in \BR^p$. Now consider the models $\cM_{10}, \cM_{20}$ that have 0 in all indices outside $\cS_1$ and $\cS_2$, respectively. Take some $\bftheta_{10} \in \bfTheta_{10}$, which is the parameter space corresponding to $\cM_{10}$, and replace its (zero) entries at indices $j \in \cS_2 \setminus \cS_1$ by some non-zero $\bfdelta \in \BR^{p - | \cS_2 \setminus \cS_1 |}$. Denote it by $\bftheta_{1 \bfdelta}$. Then we shall have
+%
+\begin{align*}
+\bftheta_{1 \bfdelta}^T \bftheta_{1 \bfdelta} > \bftheta_{10}^T \bftheta_{10}
+& \quad \Rightarrow \quad
+D( \bftheta_{10}, \BT_0) > D( \bftheta_{1 \bfdelta}, \BT_0)\\
+& \quad \Rightarrow \quad
+\BE_{s1} D( \bftheta_{10}, \BT_0) > \BE_{s1} D( \bftheta_{1 \bfdelta}, \BT_0)
+\end{align*}
+%
+where $\BE_s$ denotes the expectation taken over the marginal of the distributional argument $\BT_0$ at indices $\cS_1$. Notice now that by consitruction $\bftheta_{1 \bfdelta} \in \bfTheta_{20}$, the parameter space corresponding to $\cM_{20}$, and since the above holds for all possible $\bfdelta$, we can take expectation over indices $\cS_2 \setminus \cS_1$ in both sides to obtain $\BE_{s1} D( \bftheta_{10}, \BT_0) > \BE_{s2} D( \bftheta_{20}, \BT_0)$, with $\bftheta_{20}$ denoting a general element in $\bfTheta_{20}$.
+
+Now combining (S1a) and (S1b) we get $a_n \bfV_n^{-1/2} (\hat \bftheta - \bftheta_0 ) \leadsto \BT_0$. Suppose $\BT_n := [ a_n \bfV_n^{-1/2} (\hat \bftheta - \bftheta_0 ) ]$. Now choose a positive $\epsilon < (\BE_{s1} D( \bftheta_{10}, \BT_0) - \BE_{s2} D( \bftheta_{20}, \BT_0))/2$. Then, for large enough $n$ we shall have
+%
+$$
+\left| D( \bftheta_{10}, \BT_n) - D( \bftheta_{10}, \BT_0) \right| < \epsilon
+\quad \Rightarrow \quad
+| \BE_{s1} D( \bftheta_{10}, \BT_n) - \BE_{s1} D( \bftheta_{10}, \BT_0) | < \epsilon
+$$
+%
+following condition (D4). Similarly we have $| \BE_{s2} D( \bftheta_{20}, \BT_n) - \BE_{s2} D( \bftheta_{20}, \BT_0) | < \epsilon $ for the same $n$ for which the above holds. This implies $\BE_{s1} D( \bftheta_{10}, \BT_n) > \BE_{s2} D( \bftheta_{20}, \BT_n)$.
+
+Now apply the affine transformation $\bft (\bftheta) = \bfV_n^{1/2} \bftheta / a_n + \bftheta_0$ to both arguments of the depth function above. This will keep the depths constant following affine invariance, i.e. $D(\bft ( \bftheta_{10}), [\hat \bftheta]) = D( \bftheta_{10}, \BT_n)$ and $D(\bft ( \bftheta_{20}), [\hat \bftheta]) = D( \bftheta_{20}, \BT_n)$. Since this transformation maps $\bfTheta_{10}$ to $\bfTheta_1$, the parameter space corresonding to $\cM_1$, we get $\BE_{s1} D(\bft ( \bftheta_{10}), [\hat \bftheta]) > \BE_{s2} D(\bft ( \bftheta_{20}), [\hat \bftheta])$, i.e. $e_n ( \cM_1 ) > e_n ( \cM_2 )$.
+
+\end{proof}
+
+\begin{proof}[Proof of corollary \ref{Corollary:ZeroModelCorollary}]
+By construction, $\cM_0$ is the unique minimal adequate model in $\mathbb M_{0}$, and should be nested in all other adequate models therein. Hence theorem \ref{Theorem:ThmRightNested} implies $e_n ( \cM_0) > e_n (\cM^c)$ for any adequate model $\cM^c \in \mathbb M_0$ and large enough $n$.
+
+For an inadequate model $\cM^w$, suppose $N(\cM^w)$ is the integer such that $e_{n_1} ( \cM^w) < e_{n_1} (\cM_{*})$ for all $n_1 > N(\cM^w)$. Part 3 of theorem \ref{Theorem:ThmRightWrong} ensures that such an integer exists for every inadequate model. Now define $N = \max_{\cM^w \in \mathbb M_{0}} N(\cM^w)$: we can do this since $\mathbb M_{0}$ has countably finite elements. Thus $e_{n_1} ( \cM_0 )$ is larger than $e$-values of all inadequate models in $\mathbb M_0$.
+\end{proof}
+
+\begin{proof}[Proof of corollary \ref{Corollary:AlgoCorollary}]
+Consider $j \in \cS_{0}$. Then $\bftheta_0 \notin \cS_{-j}$, hence $\cS_{-j}$ is inadequate. By choice of $n_1$, $e$-values of all inadequate models are less than that of $\cS_{*}$, hence $e_{n_1} (\cS_{-j}) < e_{n_1} (\cS_{*})$.
+
+On the other hand, suppose there exists a $j$ such that $e_{n_1} (\cS_{-j}) \leq e_{n_1} (\cS_*)$ but $j \notin \cS_{0}$. Now $j \notin \cS_{0}$ means that $\cS_{-j}$ is an adequate model. Since $\cS_{-j} $ is nested within $ \cS_{*}$ for any $j$, and the full model is always adequate, we have $e_{n_1} (\cS_{-j}) > e_{n_1} (\cS_{*})$ by theorem \ref{Theorem:ThmRightNested}: leading to a contradiction and thus completing the proof.
+\end{proof}

@@ -1,0 +1,197 @@
+\section{The LARN algorithm}
+\label{sec:regression-sec3}
+
+\subsection{Formulation}\label{subsec:subsec31}
+The reference distribution $F$ is pivotal in the estimation problem in \ref{eqn:eqn02}. While we believe that there is scope for a significant amount of theoretical analysis on the implications of different choices of $F$ and its potential connections to Bayesian regularized support union recovery in multitask regression, here we shall work within a simplified setup. Specifically we assume that
+
+\vspace{1em}
+\noindent\textbf{(A1)} The distribution $F$ is spherically symmetric.
+\vspace{1em}
+
+\noindent This is a fair assumption to make from a frequentist perspective, as we do not possess any extra information about the $q$ responses being different from one another. Since $F$ is spherically symmetric, depth at a point $\bfb$ becomes a function of $r = \| \bfb\|_2$ only, due to the affine invariance of $D(.,F)$. In this situation, several depth functions have closed-form expressions: e.g. when $D$ is projection depth and $F$ is a $p$-variate standard normal distribution, $D(\bfb_j, F) = c / (c + \| \bfb_j \|); c = \Phi^{-1}(3/4)$ \citep{zuo03}, while for halfspace depth and any known $F$, $D(\bfb_j, F) = 1 - F_1(\| \bfb_j \|)$, $F_1$ being any univariate marginal of $F$ (immediate from the definition of halfspace depth). Hence, the computational burden of calculating depths for rows of $\bfB$ becomes trivial.
+
+\begin{figure}
+%\captionsetup{justification=centering, font=footnotesize}
+\vspace{-2em}
+\begin{center}
+%\subfigure[]{\epsfxsize=0.31\linewidth \epsfbox{Chapter-regression/depthplot_cropped}}
+\subfigure[]{\epsfxsize=0.31\linewidth \epsfbox{Chapter-regression/penalties1}}
+\subfigure[]{\epsfxsize=0.31\linewidth \epsfbox{Chapter-regression/threslarn}}
+\vspace{-1em}
+\caption{(a) Comparison of L1 and SCAD \citep{FanLi01} penalty functions with univariate halfspace depth: inverting the depth function helps obtain the nonconvex shape of the penalty function in the inverse depth; (b) Univariate thresholding rule for the LARN estimate assuming halfspace depth and max definition of inverse depth(see \ref{sec:regression-sec4})}
+\label{fig:fig1}
+\end{center}
+\end{figure}
+
+Because of the way we define inverse depth functions, the above holds for inverse depth functions $D^-(., F)$ as well. Thus we can write that $D^-(\bfb_j, F) = p_F (r_j)$ for some scalar-valued function $p_F(.)$. Any superscript or subscript in $\bfB$ or $\bfb_j$ will be passed accordingly to $r_j$. At this point we shall make the following technical assumption on $p_F(.)$:
+
+\vspace{1em}
+\noindent\textbf{(A2)} The function $p_F(r)$ is concave in $r$, and continuously differentiable at every $r \neq 0$.
+\vspace{1em}
+
+\noindent In general depth functions are assumed to have convex contours \citep{MoslerChapter13}, which implies quasi-concavity. Nevertheless, several depth functions adhere to concavity owing to their simplified closed forms for spherical distribution (e.g. halfspace depth and projection depth in the last paragraph). Continuous differentiability except at the origin, which is essential for admitting a sparse solution eventually, arises because of the same reason.
+
+Keeping the above setup in mind, we now consider the first-order Taylor series approximation of the overall penalty function:
+%
+\begin{eqnarray}
+\hspace{-1em} P_{\lambda.F} (\bfB) & := & \lambda \sum_{j=1}^p p_F (r_j) \notag\\
+& \simeq & \lambda \sum_{j=1}^p \left[ p_F (r_j^*) + p'_F (r_j^*) ( r_j - r_j^*) \right]\label{eqn:majorizeEqn}
+\end{eqnarray}
+%
+for any $\bfB^*$ close to $\bfB$, and $r_j = \| \bfb_j \|_2, r_j^* = \| \bfb_j^* \|_2; j = 1,2,...,p$.
+
+Thus, given a starting solution $\bfB^*$ close enough to the original coefficient matrix, $P_{\lambda.F} (\bfB)$ is approximated by its conditional counterpart, say $P_{\lambda.F} (\bfB | \bfB^*)$. Following this a penalized maximum likelihood estimate for $\bfB$ can be obtained using the iterative algorithm below:
+%
+\begin{enumerate}
+\item Take as starting value $\bfB^{(0)} = \hat \bfB
+_{\text{LS}} = (\bfX^T \bfX)^- \bfX^T \bfY$, i.e. the least square estimate of $\bfB$, set $k=0$;
+
+\item Calculate the next iterate by solving the penalized likelihood:
+%
+\begin{align}\label{eqn:mapEqn}
+ \hspace{-3em}\bfB^{(k+1)} = \argmin_\bfB \left[ \Tr \left\{ (\bfY - \bfX\bfB^{(k)})^T (\bfY - \bfX\bfB^{(k)})\right\} + \lambda \sum_{j=1}^p  p'_F (r_j^{(k)}) r_j \right]
+\end{align}
+
+\item Continue until convergence.
+\end{enumerate}
+%
+
+Taking $\hat \bfB_{\text{LS}}$ as a starting value ensures that $\| \hat \bfB_{\text{LS}} - \bfB \|_F = O ( n^{-1/2} )$ given the data, hence we get from \ref{eqn:majorizeEqn} that
+%
+$$
+P_{\lambda,F}(\bfB) = P_{\lambda,F} ( \bfB|\hat \bfB_{\text{LS}} ) + \sum_{j=1}^p o( | r_j - \hat r_{j, \text{LS}} |) = P_{\lambda,F}(\bfB| \hat \bfB_{\text{LS}} ) + \sum_{j=1}^p o( n^{-1/2} )
+$$
+%
+for fixed $p$. This algorithm approximates contours of the nonconvex penalty function using gradient planes at successive iterates, and is a multivariate generalization of the local linear approximation algorithm of \cite{ZouLi08}. We call this the \textit{Local Approximation by Row-wise Norm} (LARN) algorithm.
+
+LARN is a majorize-minimize (MM) algorithm where the actual objective function $Q(\bfB)$ is being majorized by $R (\bfB | \bfB^{(k)})$, with
+%
+\begin{align*}
+\hspace{-2em} Q (\bfB) &= \Tr \left\{ (\bfY - \bfX\bfB)^T (\bfY - \bfX\bfB)\right\} + P_{\lambda,F} (\bfB)\\
+\hspace{-2em} R (\bfB | \bfB^{(k)}) &= \Tr \left\{ (\bfY - \bfX\bfB)^T (\bfY - \bfX\bfB)\right\} 
+%\\
+%&
+ + P_{\lambda,F} (\bfB | \bfB^{(k)})
+\end{align*} 
+%
+This is easy to see, because
+%\begin{footnotesize}
+%
+%\begin{align*}
+%&&
+$Q(\bfB) - R(\bfB|\bfB^{(k)})$
+%\\
+% &&
+ = 
+ $\lambda \sum_{j=1}^p \left[ p_F (r_j) - p_F (r_j^*) - p'_F (r_j^*) (r_j - r_j^*) \right]$.
+%\end{align*}
+%
+%\end{footnotesize}
+And since $p_F(.)$ is concave in its argument, we have $p_F (r_j) \leq p_F (r_j^*) + p'_F (r_j^*) (r_j - r_j^*)$. Thus $Q(\bfB^{(k)}) \leq R(\bfB|\bfB^{(k)})$. Also by definition $Q(\bfB) = R(\bfB^{(k)}|\bfB^{(k)})$.
+
+Now notice that $\bfB^{(k+1)} = \argmin_\bfB R(\bfB|\bfB^{(k)})$. Thus $Q(\bfB^{(k+1)}) \leq R(\bfB^{(k+1)}|\bfB^{(k)}) \leq R(\bfB^{(k)}|\bfB^{(k)}) = Q(\bfB^{(k)}) $, i.e. the value of the objective function decreases in each iteration. At this point, we make the following assumption to enforce convergence to a local solution:
+
+\vspace{1em}
+\noindent\textbf{(A3)} $Q(\bfB)=Q(M(\bfB))$ only for stationary points of $Q$, where $M$ is the mapping from $\bfB^{(k)}$ to $\bfB^{(k+1)}$ defined in \ref{eqn:mapEqn}.
+\vspace{1em}
+
+\noindent Since the sequence of penalized losses i.e. $\{ Q(\bfB^{(k)} \}$ is bounded below (by 0) and monotone, it has a limit point, say $\hat\bfB$. Also the mapping $M(.)$ is continuous as $\nabla p_F$ is continuous. Further, we have $Q(\bfB^{(k+1)}) = Q(M(\bfB^{(k)})) \leq Q(\bfB^{(k)})$ which implies $Q(M(\hat\bfB)) = Q(\hat\bfB)$. It follows that $\hat\bfB$ is a local minimizer following assumption (A3).
+
+\vspace{1em}
+\textbf{Remark.} Although the LARN algorithm guarantees convergence to a stationary point, that point may not be a local solution. However, local linear approximation has been found to be effective in approximating nonconvex penalties and obtaining oracle solutions for single-response regression \citep{ZouLi08} and support vector machines \citep{PengThesis}, and our method generalizes this concept for the multitask situation. We plan to elaborate on the presence and influence of saddle points in our scenario, in a future extended version of this work.
+
+\subsection{The one-step estimate and its oracle properties}
+
+Due to the row-wise additive structure of our penalty function, supports of each of the iterates in the LARN algorithm have the same set of singular points as the solution to the original optimization problem, say $\hat\bfB$. Consequently each of these iterates $\hat\bfB^{(k)}$ are capable of producing sparse solutions. In fact, the first iterate itself possesses oracle properties desirable of row-sparse estimates, namely consistent recovery of the non-zero row support of $\bfB$, as well as of the elements in those rows. From our simulations there is little to differentiate between the first-step and multi-step estimates in terms of empirical efficiency. This is in line with the findings of \cite{ZouLi08} and \cite{FanChen99}.
+
+Given an initial solution $\bfB^*$, the first LARN iterate, say $\hat\bfB^{(1)}$, is a solution to the optimization problem: 
+%$\argmin_\bfB R(\bfB|\bfB^*) = $
+%
+\begin{eqnarray}\label{eqn:OneStepEqn}
+\hspace{-2em} \argmin_\bfB R(\bfB|\bfB^*)  &=& \argmin_\bfB \left[ \Tr \left\{ (\bfY - \bfX\bfB)^T (\bfY - \bfX\bfB)\right\} + \lambda \sum_{j=1}^p  p'_F (r_j^{(k)}) r_j \right]
+\end{eqnarray}
+%
+At this point, without loss of generality we assume that the true coefficient matrix $\bfB$ has the following decomposition: $\bfB = (\bfB^T_{1}, {\bf 0})^T, \bfB_1 \in \mathbb R^{p_1 \times q}$. Also denote the vectorized (i.e. stacked-column) version of a matrix $\bfA$ by $\text{vec}(\bfA)$. We are now in a position to to prove oracle properties of the one-step estimator in \ref{eqn:OneStepEqn}, in the sense that the estimator is able to consistently detect zero rows of $\bfB$ as well as estimate its non-zero rows for increasing sample size:
+%
+\begin{Theorem}\label{Thm:OracleThm}
+
+Assume that $\bfX^T \bfX/n \rightarrow \bfC$ for some positive definite matrix $\bfC$, and $ p'_F(r_j^*) = O( (r_j^* )^{-s})$ for $1 \leq j \leq q, 0 < r_j^* < \delta$ and some $s>0, \delta > 0$. Consider now a sequence of tuning parameters $\lambda_n$ such that $\lambda_n / \sqrt n \rightarrow 0$ and $\lambda_n n^{(s-1)/2} \rightarrow \infty$. Then the following holds for the one-step estimate $\hat\bfB^{(1)} = (\hat\bfB^T_{1}, \hat\bfB^T_{0})^T$ (with the component matrix having dimensions $p_1 \times q$ and $p-p_1 \times q$, respectively) as $n \rightarrow \infty$:
+
+\begin{itemize}
+\item $\ve (\hat\bfB_{0}) \rightarrow {\bf 0}_{(p-p_1)q}$ in probability;
+
+\item $\sqrt n (\ve (\hat\bfB_{1}) - \ve (\bfB_{1})) \leadsto \mathcal N_p ( {\bf 0}_{p_1q}, \bfSigma \otimes \bfC_{11}^{-1})$
+\end{itemize}
+%
+where $\bfC_{11}$ is the first $p_1 \times p_1$ block in $\bfC$.
+\end{Theorem}
+
+The assumption on the covariate matrix $\bfX$ is standard, and ensures uniqueness of the asymptotic covariance matrix of our estimator. Note that the restricted eigenvalue condition, which has been used in the literature to establish finite sample error bounds of penalized estimators \citep{NeghabanEtal09} is a stronger version of this. With respect to the general framework of nonconvex penalized $M$-estimation in \cite{LohWainwright15}, our penalty function $p_F(.)$ arising from assumptions (A1) and (A2) satisfies parts (i)-(iv) of Assumption 1 therein, and the conditions of theorem \ref{Thm:OracleThm} adhere to part (v). Also note that the above oracle results depend on the assumption (A1), which simplifies depth as a function of the row-norm. We conjecture that similar oracle properties hold for weaker assumptions. From initial attempts into proving a broader result, we think it requires a more complex approach than the proof of Theorem \ref{Thm:OracleThm}, and plan to work on this in future.
+
+\subsection{Recovering sparsity within a row}
+
+The set of variables with non-zero coefficients for each of the $q$ univariate regressions may not be the same, and hence recovering the non-zero elements \textit{within a row} is of interest as well. It turns out that consistent recovery at this level can be achieved by simply thresholding elements of the non-zero elements in the one-step estimate obtained in the preceding subsection. \cite{ObozinskiEtal11} have shown that a similar approach leads to consistent recovery of within-row supports in multivariate group lasso. The following result formalizes this in our scenario, provided that the non-zero signals in $\bfB$ are large enough:
+
+\begin{Lemma}\label{Thm:RowSupportThm}
+Suppose the conditions of theorem \ref{Thm:OracleThm} hold, and additionally all non-zero components of $\bfB$ have the following lower bound:
+%
+$$
+| b_{jk} | \geq \sqrt{\frac{16 \log (q p_1) }{C_{min} n}}; \quad 1 \leq j \leq p_1, 1 \leq k \leq q
+$$
+%
+where $C_{\min} > 0$ is a lower bound for eigenvalues of $\bfC_1$. Also define by $\hat \cS$ the index set of non-zero rows estimated by the LARN algorithm. Then, for some constants $c, c_0 > 0$, the post-thresdolding estimator $\bfT (\hat\bfB^{(1)})$ defined by:
+%
+$$
+t_{jk} = \begin{cases} 0 & \text{ if } \hat b_{jk}^{(1)} \leq  \sqrt{\frac{8 \log (q|\hat \cS|) }{C_{min} n}}\\
+ \hat b_{jk}^{(1)} & \text{ otherwise }
+\end{cases}
+; \quad j \in \hat \cS, 1 \leq k \leq q
+$$
+%
+has the same set of non-zero supports within rows as $\bfB$ with probability greater than $1 - c_0 \exp( - c q \log p_1)$.
+
+\end{Lemma}
+
+\subsection{Computation}
+When the quantities $\bfB$ and $\bfY - \bfX \bfB$ are replaced with their corresponding vectorized versions, the optimization problem in \ref{eqn:OneStepEqn} reduces to a weighted group lasso \citep{YangZou15} setup, with group norms corresponding to $l^2$ norms of rows of $\bfB$ and inverse depths of corresponding rows of the initial estimate $\bfB^*$ acting as group weights. To solve this problem, we start from the following lemma, which gives necessary and sufficient conditions for the existence of a solution:
+%
+\begin{Lemma}
+Given an initial value $\bfB^*$, a matrix $\bfB \in \mathbb R^{p \times q}$ is a solution to the optimization problem in \ref{eqn:OneStepEqn} if and only if:
+%
+\begin{enumerate}
+\item $ 2 \bfx_j^T (\bfY - \bfX \bfB) + \lambda p'_F (r_j^*) \bfb_j / r_j = {\bf 0}_q$ if $\bfb_j \neq {\bf 0}_q$;
+\item $ \| \bfx_j^T (\bfY - \bfX \bfB) \|_2 \leq \lambda/2 $ if $\bfb_j = {\bf 0}_q$.
+\end{enumerate}
+\end{Lemma}
+%
+This lemma is a modified version of lemma 4.2 in chapter 4 of \cite{BuhlmannBook}, and can be proved in a similar fashion. Following the lemma, we can now use a block coordinate descent algorithm \citep{LiNanZhu15} to iteratively obtain $\hat\bfB^{(1)}$, given an appropriate starting value $\bfB^*$:
+%
+\begin{outline}
+\1 Set $m = 1$ and $\hat\bfB^{(1,0)} = \bfB^*$;
+
+\1 For $j = 1, 2, ..., p$ do:
+\2 If $\| \bfx_j^T (\bfY - \bfX \hat\bfB^{(1,m-1)}) \|_2 \leq (\lambda/2). p'_F ( r_j^* ) $, set $\hat\bfb^{(1,m)}_j = {\bf 0}_q$;
+\2 Else update $\hat\bfb^{(1,m)}_j$ as
+%
+\begin{eqnarray*}
+\hat \bfb^{(1,m)}_j &=& \frac {2 \bfs^{(m-1)}_j} { 2 \| \bfx_j\|_2^2 + \lambda \frac{n p'_F (r_j^*)}{\hat r_j^{(1,m-1)}} 1 _{\hat r_j^{(1,m-1)} > 0}}
+\end{eqnarray*}
+%
+where $\bfs^{(m-1)}_j = \bfx_j^T ( \bfY - \bfX\hat\bfB^{(1,m-1)}_{-j})$; $\hat\bfB^{(1,m-1)}_{-j}$ is the matrix obtained by replacing $j$-th row of $\hat\bfB^{(1,m-1)}$ by zeros.
+
+\1 Set $m \leftarrow m+1$, check for convergence and continue until convergence.
+
+\1 Apply the thresholding from lemma \ref{Thm:RowSupportThm} to recover within-row supports.
+\end{outline}
+The parameter $\lambda$ controls row-sparsity in $\hat \bfB^{(1)}$: a larger or smaller $\lambda$ corresponding to higher number of zero rows in $\hat \bfB^{(1)}$, or an estimate closer to the ordinary least square solution, respectively. Since we use block coordinate descent, rows can drop in or out of the solution path, i.e. zero rows can reappear to be nonzero for a smaller $\lambda$.
+
+Given a fixed $\lambda$, an easy choice of $\bfB^*$ is $\hat \bfB_\text{LS}$, i.e. the least squares estimate. We use $k$-fold cross-validation to choose the optimal $\lambda$. Also notice that in a sample setup the quantity $C_\text{min}$ in lemma \ref{Thm:RowSupportThm} is unknown. For this reason, we choose a best threshold for within-row sparsity through the above cross-validation procedure as well. Even though this means that the cross-validation has to be done over a two-dimensional grid, the thresholding step is actually done \textit{after} estimation. Thus for any fixed $\lambda$, only $k$ models need to be calculated. Given a trained model for some value of $\lambda$ we just cycle through the full range of thresholds to record their corresponding cross-validation errors. Also when optimizing over the range of tuning parameter values, say $\lambda_1 > ... > \lambda_m$, we use warm starts to speed up convergence. Denoting the solution corresponding to any tuning parameter $\lambda$ as $\hat \bfB^{(1)} (\lambda)$, this means starting from the initial value $\bfB_0 = \hat\bfB^{(1)} (\lambda_{k-1})$ to obtain $\hat\bfB^{(1)} (\lambda_k)$, for $k = 2,...,m$.
+
+%In this scenario there are two strategies to select the optimal tuning parameter from a one-dimensional grid. One can either use cross-validation for better predictive accuracy, or a BIC-like criterion for computational frugality:
+%%
+%\begin{eqnarray}
+%\text{BIC}_{p,F}(\lambda) &=& \Tr \left\{ (\bfY - \bfX \hat\bfB^{(1)} (\lambda) )^T (\bfY - \bfX \hat\bfB^{(1)} (\lambda))\right\} \notag\\
+%&& + K_\lambda \log(n) \label{eqn:BICeqn}
+%\end{eqnarray}
+%%
+%where $K_\lambda$ is the number of non-zero elements in $\hat\bfB^{(1)} (\lambda)$.

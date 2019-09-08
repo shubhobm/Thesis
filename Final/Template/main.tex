@@ -1,0 +1,88 @@
+%-------------------- General style -------------------------%
+
+\documentclass[11pt,fullpage,rotate]{report}
+
+
+% also add one of the following lines: 
+%    \renewcommand{\baselinestretch}{1.5} or
+\renewcommand{\baselinestretch}{2}
+% for 1.5 or 2 lines spacing
+
+\usepackage{epsfig}
+% \input{epsfig.sty}
+
+\oddsidemargin 0.6in
+\evensidemargin 0.5in
+\topmargin 0in
+\headheight 0in
+\textheight 8.0in
+\textwidth 5.8in
+\setcounter{secnumdepth}{4}
+
+% ------------------------------------------------------------ 
+% Put your own definitions below
+
+% --------------------------------------------------------
+% use the inlcludeonly command to only compile certain section(s)
+
+% \includeonly{intro,background}
+% \includeonly{simulations,simappendix}
+% \includeonly{background,cmv,cmvappendix}
+% \includeonly{title1,title2,abstract,intro,references}
+
+% -------------------------------------------------------------------- %
+
+\begin{document}
+
+%-------------------------- title and preface ---------------------------%
+\pagestyle{empty}
+\include{title1}
+\newpage
+\include{title2}
+
+\newpage
+\include{copy}   
+
+\newpage
+\pagenumbering{roman}
+\pagestyle{plain}
+\include{ackn}
+\newpage
+\include{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+
+%-------------- Main text -----------------------%
+\newpage
+\pagenumbering{arabic}
+\chapter{Introduction}
+\label{intro}
+\include{intro}
+
+\chapter{Background}
+\label{background}
+\include{background}
+
+% Put all your chapters in the same format
+
+\chapter{Discussion and areas for future work}
+\label{conclusion}
+\include{conclusion}
+
+\chapter{References}
+\label{references}
+\include{references}
+
+\appendix
+\chapter{Simulation results}
+\label{simappendix}
+\include{simappendix}
+
+
+\end{document}
+

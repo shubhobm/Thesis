@@ -1,0 +1,22 @@
+
+\section{Data depth and depth-based regularization}
+\label{sec:sec2}
+
+Given a data cloud or a probability distribution, a depth function is any real-valued function that measures the outlyingness of a point in feature space with respect to the data or its underlying distribution (figure \ref{fig:fig1} panel a). In order to formalize the notion of depth, we consider as data depth any scalar-valued function $D(\bfx, F_\bfX)$ (where $\bfx \in \mathbb R^p$, and the random variable $\bfX$ has distribution $F$) that satisfies the following properties \citep{Liu90}:
+
+\noindent \textbf{(P1) Affine invariance}: $D(A\bfx + \bfb, F_{A\bfX + \bfb}) = D(\bfx, F_\bfX)$ for any $p \times p$ non-singular matrix $A$ and $p \times 1$ vector $\bfb$;
+
+\noindent \textbf{(P2) Maximality at center}: When $F_\bfX$ has center of symmetry $\bftheta$, $D(\bftheta, F_\bfX) = \sup_{\bfx \in \mathbb R^p} D(\bfx, F_\bfX)$. Here the symmetry can be central, angular or halfspace symmetry;
+
+\noindent \textbf{(P3) Monotonicity relative to deepest point}: For any $p \times 1$ vector $\bfx$ and $\alpha \in [0,1]$, $D(\bfx, F_\bfX) \leq D(\bftheta + a(\bfx - \bftheta))$;
+
+\noindent \textbf{(P4) Vanishing at infinity}: As $\| \bfx \| \rightarrow \infty$, $D(\bfx, F_\bfX) \rightarrow 0$.
+
+We incorporate measures of data depth as a row-level penalty function in \ref{eqn:penEqn}. Specifically, we estimate the coefficient matrix $\bfB$ by solving the following constrained optimization problem:
+%
+\begin{eqnarray}
+\hat\bfB &=& \argmin_\bfB \left[ \Tr \{ (\bfY - \bfX\bfB)^T ( \bfY - \bfX\bfB) \} + \right. \notag\\
+&& \left. \lambda_n \sum_{j=1}^p D^-( \bfb_j, F) \right]\label{eqn:eqn02}
+\end{eqnarray}
+%
+where $D^-( \bfx, F)$ is an {\it inverse depth} function that measures the peripherality or outlyingness of the point $\bfx$ with respect to a fixed probability distribution $F$. Given a measure of data depth, any nonnegative-valued monotonically decreasing transformation on that depth function can be taken as a inverse depth function. Some examples include but are not limited to $D^-(\bfx, F) := \max_\bfx D(\bfx, F) - D(\bfx, F)$ and $D^-(\bfx, F) := \exp(-D(\bfx, F))$. This helps us obtain the nonconvex shape for our row-wise penalty function, where the penalty sharply increases for smaller entries inside the row but is bounded above for large values (see figure \ref{fig:fig1} panel b).

@@ -1,0 +1,126 @@
+\section{Simulation results}
+\label{sec:regression-sec5}
+
+\subsection{Methods and setup}
+We use the setup of \cite{RothmanEtal10} for our simulation study to compare the performance of LARN with other relevant methods. Specifically, we use performance metrics calculated after applying the following methods of predictor selection on simulated data for this purpose:
+
+\begin{itemize}
+\item \textit{LARN}: We use halfspace depth as our chosen depth function, take $D^-(\bfx,F) = \max_\bfx D(\bfx,F) - D(\bfx,F)$, and consider the set of tuning parameters $\lambda \in 10^{\{ 100, 99.5, ..., 0.5, 0 \}}$ and use 5-fold cross-validation to get the optimal solution;
+
+\item \textit{Sparse Group Lasso (SGL: \cite{SimonEtal13})}: We adapt this method for single-response regression that uses group-level as well as element-level penalties on the coefficient vector in our scenario by taking $\ve(\bfY)$ as the response vector, $\bfX \otimes \bfI_q$ as the matrix of predictors, and then transforming back the $pq$-length coefficient estimate into a $p \times q$ matrix. Default options in the R package \texttt{SGL} are used while fitting the model;
+
+\item \textit{Group Lasso with thresholding (GL-t)}: This has been proposed by \cite{ObozinskiEtal11}, and performs element-wise thresholding on a row-level group lasso estimator to get final estimate of $\bfB$. It can also be realized as a special case of LARN, with weights of all row-norms set as 1.
+\end{itemize}
+
+We generate rows of the model matrix $\bfX$ as $n=50$ independent draws from $\mathcal{N} ({\bf 0}_p, \bfSigma_X)$, where the positive $\bfSigma_X$ has an AR(1) covariance structure, with its $(i,j)^\text{th}$ element given by $0.7^{|i-j|}$. Rows of the random error matrix are generated as independent draws from $\mathcal{N} ({\bf 0}_q, \bfSigma)$: with $\bfSigma$ also having an AR(1) structure with correlation parameter $\rho \in \{ 0, 0.5, 0.7, 0.9 \}$. Finally, to generate the coefficient matrix $\bfB$, we obtain the three $p \times q$ matrices: $\bfW$, whose elements are independent draws from $N(2,1)$; $\bfK$, which has elements as independent draws from Bernoulli$(0.3)$; and $\bfQ$ whose rows are made all 0 or all 1 according to $p$ independent draws of another Bernoulli random variable with success probability $0.125$. Following this, we multiply individual elements of these matrices (denoted by $(*)$) to obtain a sparse $\bfB$:
+%
+$$
+\bfB = \bfW * \bfK * \bfQ
+$$
+%
+Notice that the two levels of sparsity we consider: entire row and within-row, are imposed by the matrices $\bfQ$ and $\bfK$, respectively.
+
+For a given value of $\rho$, we consider three settings of data dimensions for the simulations: (a) $p=20, q=20$, (b) $p=20, q=60$ and (c) $p=60, q=60$. Finally we replicate the full simulation 100 times for each set of $(p,q,\rho)$.
+
+\begin{figure}
+\vspace{-1em}
+%\captionsetup{justification=centering, font=footnotesize}
+\begin{center}
+\subfigure[]{\epsfxsize=0.31\linewidth \epsfbox{Chapter-regression/plot1mspe}}
+\subfigure[]{\epsfxsize=0.31\linewidth \epsfbox{Chapter-regression/plot2mspe}}
+\subfigure[]{\epsfxsize=0.31\linewidth \epsfbox{Chapter-regression/plot3mspe}}
+
+\caption{Mean squared testing errors for all three methods in different $(p,q)$ settings}
+\label{fig:simplots}
+\end{center}
+\vspace{-.1in}
+\end{figure}
+
+%
+\begin{table}[t]
+\centering
+\begin{small}
+    \begin{tabular}{c|ccc}
+    \hline
+    $\rho$ & GL-t & SGL       & LARN      \\ \hline
+    \multicolumn{4}{l}{ (a) $p=20, q=20$}\\\hline
+    0.9               & 0.77/0.83          & 0.92/0.99 & 0.91/0.92 \\
+    0.7               & 0.81/0.83          & 0.91/0.99 & 0.89/0.93 \\
+    0.5               & 0.78/0.79          & 0.89/0.99 & 0.88/0.92 \\
+    0.0               & 0.85/0.78          & 0.90/0.99 & 0.90/0.91 \\ \hline
+    \multicolumn{4}{l}{ (b) $p=20, q=60$}\\\hline
+    0.9               & 0.90/0.66          & 0.95/0.97 & 0.89/0.92 \\
+    0.7               & 0.91/0.70          & 0.93/0.96 & 0.90/0.92 \\
+    0.5               & 0.80/0.69          & 0.94/0.98 & 0.93/0.92 \\
+    0.0               & 0.85/0.68          & 0.93/0.97 & 0.91/0.92 \\ \hline
+    \multicolumn{4}{l}{ (c) $p=60, q=60$}\\\hline
+    0.9               & 0.57/0.79          & 0.68/0.99 & 0.85/0.93 \\
+    0.7               & 0.50/0.79          & 0.64/0.99 & 0.83/0.93 \\
+    0.5               & 0.54/0.81          & 0.64/0.99 & 0.85/0.93 \\
+    0.0               & 0.58/0.79          & 0.63/0.99 & 0.84/0.93 \\ \hline
+    \end{tabular}
+    \end{small}
+    \caption{Average true positive and true negative (TP/TN) rates for 3 methods, for $n=50$ and AR1 covariance structure}
+    \label{table:simtable2}
+\end{table}
+
+\begin{table}[t]
+\centering
+    \begin{tabular}{c|ccc}
+    \hline
+    Setting & GL-t & SGL    & LARN \\ \hline
+    (a)     & 332 & 490    & 209  \\
+    (b)       & 676 & 52  & 328 \\
+    (c)       & 4994 & 39760 & 3883 \\ \hline
+    \end{tabular}
+    \caption{Total runtimes in seconds for SGL and LARN algorithms for the three simulation settings}
+    \label{table:simtimetable}
+\end{table}
+
+\subsection{Evaluation}
+To summarize the performance of an estimate matrix $\hat\bfB$ we use the following three performance metrics:
+%
+\begin{itemize}
+\item \textit{Mean Squared Testing Error (MSTE)}- Defined as
+%
+$$
+MSTE( \hat \bfB) = \frac{1}{pq} \text{Tr} \left[(\bfY_{test} - \bfX_{test} \hat \bfB)(\bfY_{test} - \bfX_{test} \hat \bfB)^T \right]
+$$
+%
+with $(\bfY_{test}, \bfX_{test})$ generated independently from $(\bfY_{test}, \bfX_{test})$ using the simulation setup above, but using the same true $\bfB$;
+
+\item\textit{True Positive Rate (TP)} - Defined as the proportion of non-zero entries in $\bfB$ detected as non-zero in $\hat\bfB$;
+
+\item\textit{True Negative Rate (TN)} - Defined as the proportion of zero entries in $\bfB$ detected as zero in $\hat\bfB$.
+\end{itemize}
+%
+A desirable estimate shall have low MSTE and high TP and TN proportions.
+
+We summarize TP/TN rates of the three methods in \ref{table:simtable2}, and MSTE performances in \ref{fig:simplots}. All across our method outperforms, GL-t, i.e. its unweighted version. Although its true negative detection is slightly worse than SGL, LARN makes up for that by a far superior signal detection ability (i.e. TP rate) for case (c), which has the highest feature and response space dimensions.
+
+Replications were assigned randomly to any of the 8 threads of an Intel Core i7 3770 3.4 GHz processor-run machine with 8 GB of RAM and run in parallel for each set of values of $(p,q,\rho)$. As seen in table \ref{table:simtimetable}, LARN is the most computationally efficient of the three methods. This advantage becomes widest for case (c). Although SGL uses accelerated generalized gradient descent to speed up computation from block coordinate descent, its advantage is no longer observed in our case since we apply it on $\text{vec}(\bfY)$ and $\bfX \otimes \bfI_q$. Also note that GL-t is an unweighted version of LARN. In spite of that, LARN turns out to be faster than its unweighted counterpart: indicating faster convergence.
+
+%\begin{table}
+%\centering
+%    \begin{tabular}{c|ccc}
+%    \hline
+%    $\rho$ & GL-t & SGL       & LARN      \\ \hline
+%    \multicolumn{4}{l}{$p=20, q=20$}\\\hline
+%    0.9               & 0.62/0.99          & 0.91/0.96 & 0.85/0.89 \\
+%    0.7               & 0.60/0.99          & 0.93/0.96 & 0.85/0.90 \\
+%    0.5               & 0.62/0.99          & 0.93/0.97 & 0.85/0.89 \\
+%    0.0               & 0.62/0.99          & 0.91/0.96 & 0.84/0.89 \\ \hline
+%    \multicolumn{4}{l}{$p=20, q=60$}\\\hline
+%    0.9               & 0.45/0.99          & 0.64/0.98 & 0.82/0.90 \\
+%    0.7               & 0.45/0.99          & 0.66/0.98 & 0.83/0.91 \\
+%    0.5               & 0.44/0.99          & 0.69/0.98 & 0.81/0.91 \\
+%    0.0               & 0.42/0.99          & 0.65/0.98 & 0.81/0.91 \\ \hline
+%    \multicolumn{4}{l}{$p=60, q=60$}\\\hline
+%    0.9               & 0.38/0.99          & 0.69/0.98 & 0.83/0.97 \\
+%    0.7               & 0.39/0.99          & 0.68/0.99 & 0.84/0.97 \\
+%    0.5               & 0.40/0.99          & 0.67/0.99 & 0.85/0.97 \\
+%    0.0               & 0.40/0.99          & 0.70/0.98 & 0.83/0.97 \\ \hline
+%    \end{tabular}
+%    \caption{Average true positive and true negative (TP/TN) rates for 3 methods, assuming $n=50$, AR1 covariance structure, logarithmic row sparsity ($s_2 = (2/\log(2))\log(p)/p$)}
+%    \label{table:simtable1}
+%\end{table}

@@ -1,0 +1,201 @@
+\section{Fast variable selection using data depth}
+\label{Section:FastMS}
+
+The traditional application domain for statistical model selection has been in \textit{covariate selection}: for regression, mixed effect models, time series and other problems. Also, in many instances, the number of parameters does not grow significantly faster than the sample size. In such situations, it is feasible to consider the least parsimonious model as the preferred model. This is routinely done in practice, for example in classical model selection techniques \citep{KonishiKitagawa96, ClaeskensHjort08Book}, and the fence method \citep{JiangEtal08}.
+
+From now on we assume that the least parsimonious model has $p_n = p$ parameters for all $n$, and thus drop ${}_n$ in all subscripts that depend on $p_n$, e.g. in $\cM_n, \bftheta_{mn}, \bfG_{mn}$, as well as ${}_*$ in all subscripts corresponding to the preferred model. Although we still keep the subscript in $e_n$ because it is calculated based on the estimators $\hat \bftheta_m$ that depends on a size $n$-sample. We shall consider as preferred model the least parsimonious model with all covariates estimated from the data, and refer to it as the `full model' from now on. In a typical variable selection problem, all candidate models are sub-models of this model, in the sense that one or more of the parameters are set to zero instead of being estimated from the data. An example is that of linear regression with total $p$ covariates, and different candidate models are obtained by setting subsets of regression coefficients to zero. In such models, obtaining the most parsimonious model that fits the data, for example by using the Bayesian Information Criterion (BIC) \citep{Schwarz78}, a full-scale analysis would require analyzing all $2^{ p}$ possible candidate models. This is an NP-Hard problem \citep{Natarajan95}, and becomes computationally intractible even for moderate data dimensions ($n \simeq 100, p \simeq 50)$. Several {\textit{ad-hoc}} techniques that are in use do not guarantee, in the absence of stringent conditions,  that the probability of selecting the most parsimonious model that fits the data tends to one as sample size increases. In this section we shall devise a fast and scalable algorithm to tackle this problem, i.e. detect variables with non-zero coefficients, through implementing our generic $e$-values framework.
+
+\subsection{A plugin parameter estimate}
+
+We are going fit only the full model in the process of performing covariate selection. We first obtain a consistent estimator $\hat{\bftheta_*} = (\hat{\theta}_{* 1}, \ldots, \hat{\theta}_{ * p})^T$ of the full coefficient vector for this. For a general model $\cM$ specified by the set $\cS = \{ j_{1}, \ldots, j_{ p_{s}}\} \subseteq \{1, 2, \ldots , p \}$ and the vector of potentially non-zero constants $\bfc$, we define the parameter estimates to be
+%
+\begin{align} 
+ \hat{\theta}_{m j} = \left\{ \begin{array}{ll}
+ \text{ Unknown} \ \hat{\theta}_{* j} & \text{ for } 
+ 			j \in \cS; \\
+ \text{ Known} \  c_{j} & \text{ for } j \notin \cS.
+\end{array}
+\right.
+\end{align}
+%
+Thus, we do not fit the  model $\cM$ separately, but simply plug-in estimators from the full model at the indices in $\cS$. Following \ref{eqn:bootEstEqn}, bootstrapped model estimates are obtained as
+%
+\begin{align}
+ \hat{\theta}_{r m j} = \left\{ \begin{array}{ll}
+ \text{ Unknown} \ \hat{\theta}_{r * j} & \text{ for } 
+ 			j \in \cS; \\
+ \text{ Known} \  c_{n} & \text{ for } j \notin \cS
+\end{array}
+\right.
+\end{align}
+
+
+The logic behind this is simple: for a candidate model $\cM$, a joint distribution of the estimator of its parameters, i.e. $[\hat\bftheta_{s}]$, can actually be obtained from the marginal of $[ \hat\bftheta_* ] $ at indices $\cS$. This makes it easy to guarantee that the distribution of parameter estimates for any selected model is consistently approximated through the corresponding sampling distributions by our method. We conjecture that this logic may be applied in the context of several other model selection methods also, but do not pursue that line of study in this paper. 
+
+The above plug-in step has two more major advantages. First, we do not separately analyze each candidate model, and instead use resampling, implying significant computational savings. Second, this approach leads to an easier comparison of any candidate model to the preferred model.
+
+\subsection{Simplifications}
+At this stage we make a few simplifying assumptions that will allow us to obtain specialized results relevant in the context. First of all we assume $\bfG_{m}$ to be the identity function, i.e. $\bfG_{m} (\bftheta ) = \bftheta$ for any $\cM$ and $\bftheta \in \bfTheta$. This vastly simplifies the definition of nested models and model adequacy: we now consider a model $\cM_{1}$ to be nested in $\cM_2$ if $\cS_1 \subseteq \cS_2$ and $\bfc_2$ is a subvector of $\bfc_1$. Also a model $\cM$ is adequate simply if the preferred parameter vector $\bftheta_0 \in \bfTheta( \cM)$.
+
+For the evaluation functions, we take a single map $E: \BR^p \times \tilde \BR^p \raro [0, \infty) $ for all $n$ that satisfies the following properties:
+
+\vspace{1em}
+\noindent\textbf{(D1)}
+The map $E$ is invariant to affine transformations, i.e. for any non-singular matrix $\bfA \in \BR^{p \times p}$, and $\bfb \in \BR^p$ and random variable $\bfG$ having distribution $\BG \in \tilde \BR^p$, the set of probability measures on $\BR^p$,
+%
+\begin{align}
+E (\bfx, \BG) = E ( \bfA \bfx + \bfb, [ \bfA \bfG + \bfb ])
+\end{align}
+%
+\noindent\textbf{(D2)}
+The map $E$ is Lipschitz continuous in the first argument, i.e. there exists an $\alpha > 0$, possibly depending on the measure $\BG \in \tilde \BR^p$ such that for all $\bfx, \bfy \in \BR^p$,
+%
+\begin{align}
+| E (\bfx, \BG) - E ( \bfy, \BG ) | < \| \bfx - \bfy \|^{ \alpha }
+\end{align}
+
+%\noindent\textbf{(E3)} {\colrbf is this really needed here?}
+%For any $\BG \in \tilde{\cG}_{n}$, we have that
+%\begin{align}
+%\lim_{ | \bfx| \raro \infty } E_{n} (\bfx, \BG) = 0. 
+%\end{align}
+
+\noindent\textbf{(D3)}
+Assume that $\bfY_{n} \in \BR^{p}$ is a sequence of random variables converging in distribution to some $\BY \in \tilde \BR^p$. Then $E (\bfy, [\bfY_n])$  converges uniformly to $E (\bfy, \BY) $.
+
+\noindent\textbf{(D4)}
+For any $\BG \in \tilde \BR^p$, $\lim_{\| \bfx \| \raro \infty} E( \bfx, \BG) = 0$.
+
+\noindent\textbf{(D5)}
+For any  $\BG \in \BR^p$ with a point of symmetry $\bfmu (\BG) \in \BR^{p}$, we have for any $ t \in (0, 1)$ and any $\bfx \in  \BR^{p}$ 
+\begin{align}
+E ( \bfx, \BG) < E (\bfmu (\BG)  + t (\bfx - \bfmu (\BG)), \BG)
+< 
+E (\bfmu (\BG), \BG)
+= \sup_{\bfx \in  \BR^{ p}} E ( \bfx, \BG) < \infty
+\end{align}
+%
+That is, the evaluation takes a maximum value at $\bfmu (\BG)$, and is strictly decreasing along any ray connecting $\bfmu (\BG)$ to any point $\bfx \in  \BR^{ p}$.
+
+\vspace{1em}
+The second property is a restatement of (E2) assuming a common evaluation map for all $n$. The first, third and fourth properties are stronger versions of (E1), (E3) and (E4). (D5) will be essential in proving the theoretical results that follow. Also note that (D1), (D3), (D4) and (D5) have traditionally been used for depth functions, and lipschitz continuity and uniform convergence arises implicitly for many implementations of data depth (see \ref{chapter:chapter-intro}). Coupled with the fact that we shall be using depth functions as evaluation maps in numerical sections that follow shortly, from hereon we shall use the notation $D(\bfx, \BG)$ in place of $E(\bfx, \BG)$ for clarity.
+
+We shall assume elliptical asymptotic distributions for full model estimators $\hat \bftheta = \hat \bftheta_*$. Following \cite{FangEtal90}, elliptical distributions can be formally defined using their characteristic function:
+%
+\begin{Definition}
+A $p$-dimensional random vector $\bfX$ is said to elliptically distributed if and only if there exist a vector $\bfmu \in \mathbb R^p$, a positive semi-definite matrix $\bfOmega \equiv \bfSigma^{-1} \in \mathbb R^{p \times p}$ and a function $\phi: \mathbb R_+ \rightarrow \mathbb R$ such that the characteristic function $\bft \mapsto \phi_{\bfX - \bfmu} (\bft)$ of $\bfX - \bfmu$ corresponds to $\bft \mapsto \phi (\bft^T \bfSigma \bft), \bft \in \mathbb R^p$.
+\end{Definition}
+%
+The density function of an elliptically distributed random variable takes the form:
+%
+$$ h(\bfx; \bfmu, \bfSigma) = |\bfOmega|^{1/2} g ((\bfx - \bfmu)^T \bfOmega (\bfx - \bfmu)) $$
+%
+where $g$ is a non-negative scalar-valued density function that is continuous and strictly increasing, and is called the \textit{density generator} of the elliptical distribution. We denote such an elliptical distribution by $\cE (\bfmu, \bfSigma, g)$. For the asymptotic parameter distribution we also assume the following conditions:
+
+\vspace{1em}
+\noindent\textbf{(S1a)} The limiting distribution $\BT$ of the full model estimate, i.e. $a_{n} (\hat \bftheta - \bftheta_0 ), (a_{s n} \equiv a_n)$ is distributed as $\cE ( {\bf 0}_p, \bfV, g)$, for some positive-definite matrix $\bfV$ and density generator function $g$;
+
+\noindent\textbf{(S1b)} For almost every data sequence $\cB$, There exists a sequence of positive definite matrices $\bfV_n$ such that  $\text{plim}_{n \raro \infty} \bfV_n = \bfV$.
+\vspace{1em}
+
+In practice we mostly deal with Gaussian limiting distributions, which naturally satisfy (S1a), while (S1b) is standard for such methods of estimation.
+
+\subsection{Derivation of the algorithm}
+We are now at a stage to present a result that forms the foundation of our fast algorithm.
+
+\begin{Theorem}\label{Theorem:ThmRightNested}
+Consider a depth function $D: \BR^p \times \tilde \BR^p \mapsto [0, \infty) $ satisfying properties (D1)-(D5), and an estimator $\bftheta$ that satisfies (S0), (S1a) and (S1b). Then, given a (finite) sequence of nested correct models, say $\cM_1, \ldots ,\cM_k$ where a model is nested under all the models with higher indices, we shall have
+%
+$$ e_n(\cM_1 ) > \ldots > e_n (\cM_k ) $$
+%
+for large enough $n$.
+\end{Theorem}
+
+%We discuss the idea behind the theorem through the example in fig 1 {\colrbf (pg 10 of old MS) follows}.
+
+%Alongwith theorem \ref{Theorem:ThmRightWrong}, the above theorem gives a clear picture of how adequate and inadequate models behave in this specialized situation. For large enough $n$, all inadequate model $e$-values lie below the full model $e$-value, while those of adequate models approach it from above. However, 
+This above theorem is still rather general in nature, considering a generic nested structure for adequate models in which the constant part of coefficient vector can take any value. To use this framework for statistical model selection, we shall elicit the following result:
+
+\begin{Corollary}\label{Corollary:ZeroModelCorollary}
+Consider the subcollection of candidate models $\mathbb M_{0} = \{ \cM: c_{j}=0 \quad \forall \quad j \notin \cS \}$. Suppose $\cM_{0} \in \mathbb M_0$ is an adequate model such that its associated index set $\cS_{0} = \{ j: \theta_{0j} \neq 0 \}$, i.e. it estimates all non-zero indices in the preferred coefficient vector $\bftheta_0$. Then there exists a positive integer $N$ so that for all $n_1 > N$,
+%
+\begin{align}
+\cM_{0} = \argmax_{ \cM \in \mathbb M_{0}} \left[ e_{n_1} ( \cM ) \right]
+\end{align}
+\end{Corollary}
+
+For  the purpose of statistical model selection, we assume that the data is generated using a `true' vector of parameters, and only a subset of parameters influence the outcome. Here we take our preferred vector of parameters, i.e. $\bftheta_0$ as this true parameter vector. Restricting our attention to the subcollection of models in the above corollary is necessary because of the objective being covariate selection, and the second condition guarantees uniqueness of the minimal adequate model $\cM_{0}$. Also notice that we can now fully specify candidate models by the index set $\cS$, and since we perform all subsequent analysis in this restricted setup, from now on we shall refer the candidate model by $\cS$ instead of $\cM$. This will carry over to corresponding subscripts as well (e.g. $\bftheta_{s}$ in place of $\bftheta_{m}$ etc.). 
+
+At this point the total number of candidate models being considered is $2^{p}$. However, in the $e$-values framework, to determine the minimal adequate model $\cS_{0}$  one does not need to sift through all possible subsets or employ \textit{ad-hoc} search strategies like forward selection/ backward deletion. We show that checking $e$-values at only $p$ marginal models is sufficient for this purpose. In order to do this, we further restrict our attention to those candidate models where only a single parameter set to zero. That is, for such models $p_{s} = p - 1$. This collection of marginal sub-models can be studied in parallel: e.g. computations for these can be done on separate processors or computers.
+
+The following result offers an alternate representation of the minimal adequate model using this much smaller set of models, after which the fast selection algorithm will be immediate.
+
+\begin{Corollary}\label{Corollary:AlgoCorollary}
+Consider the models $\cS_{-j} = \{ 1, \ldots ,p \} \setminus \{ j \}$ for $j = 1, \ldots ,p$. Then for the same conditions and positive integer $N$ as in corollary \ref{Corollary:ZeroModelCorollary} we shall have
+%
+\begin{align}
+\cS_{0} = \lbrace j: e_{n_1} (\cS_{-j}) < e_{n_1} (\cS_{*}) \rbrace
+\end{align}
+%
+for any positive integer $n_1 > N$.
+\end{Corollary}
+
+In short, this happens because dropping an essential predictor makes the model inadequate, which has very small $e$-value for large enough sample size, whereas dropping a non-essential predictor increases the $e$-value: thus simply collecting those predictors that cause decrease in the $e$-value on dropping them from the model suffices for variable selection.
+
+Thus, our fast algorithm for the evaluation of models shall consist of only 3 steps: (a) fit the full model and estimate its $e$-value, (b) replace each covariate by 0 and compute $e$-value of all such reduced models, and (c) collect covariates dropping which causes the $e$-value to go down. A safer version of this recipe can be to keep dropping one covariate at each step until no sub-model achieves a lower $e$-value. In numeric studies we conducted we did not find substantial difference between selecting covariates directly based on whether $e_n (\cS_{-j}) < e_n (\cS_*)$, and this backward deletion method. Also in an empirical data-analytic setup, the performance of our algorithm is dependent on several factors, like sample size, signal-to-noise ratio, the estimation model and the resampling technique used: although we later show that our method in general performs better than the state-of-the-art across multiple modelling situations that take the above into account.
+
+\subsection{Bootstrap implementation}
+A sample version of the above variable selection recipe that incorporates bootstrap to estimate the sampling distributions $[ \hat\bftheta ]$, $[\hat \bftheta_s ]$ is the following:
+
+\begin{enumerate}
+\item Generate two independent set of bootstrap weights, of size $R$ and $R_1$, and obtain the corresponding approximations to the full model sampling distribution, say $[ \hat\bftheta_{r} ]$ and $[ \hat\bftheta_{r_1} ]$;
+
+\item For $j = 1,2,\ldots p$, estimate the $e$-value of $\cS_{-j}$ as
+%
+\begin{align}\label{equation:BootEValue}
+\hat e_n (\cS_{-j}) = \BE_r D( \hat \bftheta_{r,-j}, [ \hat \bftheta_{r_1} ])
+\end{align}
+%
+with $\hat \bftheta_{r,-j}$ obtained from $\hat \bftheta_{r}$ by replacing the $j$-th coordinate with 0;
+
+\item Estimate the set of non-zero covariates as $\hat \cS_{0} = \lbrace j: \hat e_{n} (\cS_{-j}) < \hat e_{n} (\cS_{*}) \}$
+\end{enumerate}
+
+To make the sample $e$-values appropriately mimic the population level quantities, the bootstrap method used must adhere to the guidelines in \ref{section:BootSection}. Subsequently theorem \ref{Theorem:ModelScore} shall ensure asymptotic model selection consistency, i.e. $\BP_n ( \hat \cS_0 = \cS_0 ) \stackrel{P}{\raro} 1$ as $n \raro \infty$, with the probability $\BP_n$ being calculated over the second resampling scheme conditional on the given data.
+
+\begin{Example}[Generalized linear models (GLM)]
+In the GLM setup: $\bfY = g^{-1}( \bfX \bfbeta ) + \bfepsilon; \bfepsilon \sim N(0, \sigma^2 \bfI_p)$ and $g$ being the link function, we can obtain bootstrapped copies of $\hat \bftheta$ using the moon bootstrap (example \ref{example:BootExample1}) or the scale-enhanced Gamma bootstrap (example \ref{example:BootExample2}). For moon bootstrap the resampling sample size $m$ is the variance of the multinomial distribution from which the iid bootstrap weights are drawn; while in the bayesian Gamma bootstrap $\BW_r$ follow a Gamma distribution, so that its scale parameter is the variance. To obtain asymptotic model selection consistency, an intermediate rate of this bootstrap variance $\tau_{s n}^2 \equiv \tau_n^2$ is required as per theorem \ref{Theorem:ModelScore}. We achieve this by taking functions of the sample size as $\tau_n^2$, e.g. $\tau_n^2 = n^\gamma; 0 < \gamma < 1$ or $\tau_n^2 = \log (n)$. For moon bootstrap, this means drawing larger with-replacement samples with increasing $n$, say of size size $m_n$, ensuring that $m_n \raro \infty, m_n / n \raro 0$ as $n \raro \infty$.
+%%
+%$$ \bfY_{b} = X \hat \bfbeta + U_b \hat \bfepsilon $$
+%%
+%with $\hat \bfbeta = (X^T X)^{-1} X^T \bfY$ being the least squares estimate of $\bfbeta$, and resampling weights $U_b = \text{diag}(U_{1b},...,U_{nb})$ independently and identically distributed with mean 0 and variance $\tau_n^2$. Several choices for $\tau_n$ are possible here, for example $\tau_n = \log n$ or $n^\gamma; 0 < \gamma < 1$. Although using a parametric wild bootstrap is not necessary here, and an $m$-out-of-$n$ bootstrap with $m/n \rightarrow \infty$ can certainly be used instead, we use wild bootstrap in our implementations due to its computational advantages.
+%
+%For linear regression, the coefficient obtained corresponding to a set of wild bootstrap weights $\{ u_{1b},...,u_{nb}\}$ is related to the original coefficient estimate $\hat \bfbeta_n$ as:
+%%
+%\begin{equation}
+%\hat \bfbeta_n^b = \hat\bfbeta_n + H_n^{-1} \frac{1}{n} \sum_{i=1}^n u_{ib} \bfx_i (y_i - \bfx_i^T \hat \bfbeta_n)  
+%\end{equation}
+%%
+%with $H_n = X^T X/n$. The second term is the product of the Hessian matrix, i.e. double derivative of the log-likelihood, and randomly weighted version of the score vector $\bfS (\bfbeta) = \sum_{i=1}^n \bfs( y_i, \bfx_i, \hat\bfbeta_n)$: the quantity $\bfs( y_i, \bfx_i, \hat\bfbeta_n) = \bfx_i (y_i - \bfx_i^T \hat \bfbeta_n)$ being the score contribution due to $i^\text{th}$ observation. Analogous to this, \cite{KlineSantos12} defined the \textit{Score Bootstrap} for GLMs, where they obtain the the bootstrapped estimate of GLM coefficients using the same set of random perturbations:
+%%
+%\begin{equation}
+%\hat \bfbeta_{n, \text{GLM}}^b = \hat\bfbeta_{n, \text{GLM}} + \left[ \frac{1}{n}\nabla_\bfbeta \bfs (y_i, \bfx_i, \hat\bfbeta_{n, \text{GLM}}) \right] ^{-1} \frac{1}{n} \sum_{i=1}^n u_{ib} \bfs (y_i, \bfx_i, \hat\bfbeta_{n, \text{GLM}})
+%\end{equation}
+%%
+%
+%Since the quantities $\hat\bfbeta_n, H_n$ and $\bfS (\bfbeta)$ in the above relation need only be calculated once given the data, new wild bootstrap samples of the coefficient estimate can be generated through only Monte-Carlo simulation. This, combined with the fact that we only need two bootstrap samples for a given $\tau_n$ makes the model selection procedure in theorem \ref{Theorem:ConsistentThm} computationally very frugal.
+\end{Example}
+
+\begin{Example}[Linear Mixed models]
+Consider a random intercept-only model:
+%
+$$ \bfY = \bfX \bfbeta + \bfZ \bfgamma + \bfepsilon $$
+%
+There are $m$ independent groups of observations with $k$ observations in each groups, with $\bfZ_{n \times k}$ the within-group random effects design matrix. Also $\bfgamma$ is a $k$-dimensional random effect vector ($k \leq n$), with $\bfgamma \sim \mathcal{N}_k ({\bf 0}_k, \Delta)$, $\Delta$ being positive definite. Here we use the generalized bootstrap scheme of \cite{ChatterjeeBose05}, taking equal resampling weights $w_{r i} \sim \text{Gamma}(1, 1 ) - 1$ inside a group. Given the original estimates $\hat \bfbeta, \hat \sigma^2, \hat \Delta$, and $\tau_n$ satisfying similar conditions as last example, a simple relationship exists between $\hat \bfbeta$ and its bootstrap counterpart $\hat \bfbeta_r$:
+%
+\begin{align}\label{equation:LMMBootEqn}
+\hat \bfbeta_r = \hat \bfbeta + \frac{\tau_n}{\sqrt n} (\bfX^T \hat \bfV^{-1} \bfX)^{-1} \bfW_r \bfX^T \hat \bfV^{-1} (\bfy - \bfX \hat \bfbeta) + \bfR_{r n}
+\end{align}
+%
+with $\BE_r \| \bfR_{r n} \|^2 = o_P(1), \bfW_r = \diag (w_{r 1} \bfI_k, \ldots, w_{r m} \bfI_k)$ and $\hat \bfV = \hat \sigma^2 \bfI_p + \bfZ \hat\Delta \bfZ^T$. This is immediate from theorem 3.2 in \cite{ChatterjeeBose05}. Depending on the structure of the matrix $\Delta$, the calculation of $\hat \bfbeta_r$ repeatedly can be computation-intensive, and the above parametric procedure effectively bypasses it by approximating $\hat \bfbeta_r$ through dropping the last term in \ref{equation:LMMBootEqn} above. Although a similar approach can certainly be used for GLMs as well, computationally they are much more effective here. %{\colrbf is this okay?}
+\end{Example}

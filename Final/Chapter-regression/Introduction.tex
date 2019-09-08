@@ -1,0 +1,34 @@
+\section{Introduction}
+
+Consider the multitask linear regression model:
+%
+$$ \bfY = \bfX \bfB + \bfE $$
+%
+where $\bfY \in \mathbb R^{n\times q}$ is the matrix of responses, and $\bfE$ is $n\times q$ the noise matrix: each row of which is drawn from $\mathcal{N}_q ({\bf 0}_q, \bfSigma)$ for a $q \times q$ positive definite matrix $\bfSigma$. We are interested in sparse estimates of the coefficient matrix $\bfB$ through solving penalized regression problems of the form
+%
+\begin{equation}\label{eqn:penEqn}
+\min_\bfB \Tr \{ (\bfY - \bfX\bfB)^T ( \bfY - \bfX\bfB) \} + P_\lambda(\bfB)
+\end{equation}
+%
+The frequently studied classical linear model may be realized as a special case of this 
+for $q = 1$, where given a size-$n$ sample of random responses $\bfy = (y_1, y_2, ..., y_n)^T$ and $p$-dimensional predictors $\bfX = (\bfx_1, \bfx_2, ...,\bfx_n)^T$, the 
+above model may now be written as:
+%
+$$
+\bfy = \bfX \bfbeta + \bfepsilon; \quad \bfepsilon = (\epsilon_1,...,\epsilon_n)^T \sim \mathcal N_n ({\bf 0}_n, \sigma^2\bfI_p).
+$$
+%
+
+Here the typical objective is to estimate the parameter vector $\bfbeta$ by minimizing $\sum_{i=1}^n \rho ( y_i - \bfx_i^T \bfbeta)$, for some loss function $\rho(.)$. Selecting important variables in this setup is often significant from an inferential and predictive perspective it is generally achieved by obtaining an estimate of $\bfbeta$ that minimizes a linear combination of the loss function and a `penalty' term $P(\bfbeta) = \sum_{j=1}^p p(|\beta_j|)$, instead of only the loss function:
+%
+\begin{equation}\label{eqn:eqn01}
+\hat\bfbeta_n = \argmin_\bfbeta \left[ \sum_{i=1}^n \rho ( y_i - \bfx_i^T \bfbeta) + \lambda_n P(\bfbeta) \right]
+\end{equation}
+%
+where $\lambda_n$ is a tuning parameter depending on sample size. The penalty term is generally a measure of model complexity, providing a control against overfitting. Using a $l_0$ norm as penalty at this point, i.e. $p(z) = \BI_{z \neq 0}$, gives rise to the information criterion-based paradigm of statistical model selection, which goes back to the Akaike Information Criterion (AIC: \cite{Akaike70}). Owing to the intractability of this problem due to an exponentially growing model space, researchers have been exploring the use of functions that are non-differentiable at the origin as $p(.)$. This dates back to the celebrated LASSO \citep{Tibshirani96} which uses $l_1$ norm, adaptive LASSO \citep{Zou06} that reweights the coordinate-wise LASSO penalties based on Ordinary Least Square (OLS) estimate of $\bfbeta$, and \cite{FanLi01,CHZhang10} who used non-convex penalties to limit influence of large entries in the coefficient vector $\bfbeta$, resulting in improved estimation. Further, \cite{ZouLi08} and \cite{WangKimLi13} provided efficient algorithms for computing solutions to the nonconvex penalized problems.
+
+Two immediate extensions of the univariate-response penalized sparse regression paradigm are group-wise penalties and multivariate penalized regression. Applying penalties at variable group level instead of individual variables gives rise to Group LASSO \citep{BakinThesis99}. From an application perspective, this utilizes additional relevant information on the natural grouping of predictors: for example multiple correlated genes, or blockwise wavelet shrinkage \citep{AntoniadisFan01}. On the other hand, for multitask regression, penalizing at the coefficient matrix-level results in better estimation and prediction performance compared to performing $q$ separate LASSO regressions to recover its corresponding columns \citep{RothmanEtal10}.
+
+Compared to sparse single-response regression where the penalty term can be broken down to elementwise penalties, in the multivariate response  scenario we need to consider two levels of sparsity. The first level is recovering the set of predictors having non-zero effects on all the responses, as well as estimating their values. Assuming the coefficient matrix $\bfB \in \mathbb R^{p \times q}$ is made of rows $(\bfb_1,...,\bfb_p)^T$, this means determining the set $\bigcup_k \cS_k$, with $\cS_k := \{ k: b_{jk} \neq 0, j = 1, 2, ..., p \}$.  This is called \textit{support union recovery}, and is more effective in recovering non-zero elements of $\bfB$ compared to the na\"ive approach of performing $q$ separate sparse regularized regressions and combining the results \citep{ObozinskiEtal11}. The second level of sparsity is concerned with recovering non-zero elements \textit{within} the non-zero rows obtained from the first step. Our method addresses both of these issues.
+
+Specifically, we consider the case of performing support union recovery by considering the inverse depth functions introduced in \ref{chapter:scatter-chapter} as row-level regularizers: $P_\lambda(\bfB) = \sum_{j=1}^p \lambda D^- (\bfb_j, F)$ where $F$ is some probability distribution fixed beforehand. \ref{sec:regression-sec2} motivates the use of a general depth-based regularization scheme in the multitask regression setup. From \ref{sec:regression-sec3} onward we choose to concentrate on the scenario when $D^- (\bfb_j, F) = p_{,F} (\|\bfb_j\|_2)$, i.e. the row-level penalty is a potentially nonconvex scalar-valued function of the row-norm. This automatically tempers the effects of large regression coefficients in the case of general  $q$-dimensional response: which is not the case for methods based on $l_1$-norm penalization, e.g. Lasso. We derive asymptotic results ensuring support union recovery, as well as provide an iterative algorithm for calculating the corresponding penalized estimator. We also show that a simple corrective thresholding on elements of the first level row-sparse estimator ensures sparse recovery of within-row elements as well. Additional theoretical results in the orthogonal design case are discussed in \ref{sec:regression-sec4}, and simulation experiments are presented to compare our algorithm with other methods in \ref{sec:regression-sec5}. We present a data application of the algorithm in \ref{sec:regression-sec6}, followed by conclusions. \ref{section:regression-sec8} contains proofs of our theoretical results.

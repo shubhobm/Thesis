@@ -1,0 +1,125 @@
+\section{Orthogonal design and independent responses}
+\label{sec:regression-sec4}
+
+We shed light on the workings of our penalty function by considering the simplified scenario when the predictor matrix $\bfX$ is orthogonal and all responses are independent. Independent responses make minimizing \ref{eqn:eqn02} equivalent to solving of $q$ separate nonconvex penalized regression problems, while orthogonal predictors make the LARN estimate equivalent to a collection of coordinate-wise soft thresholding operators.
+
+\subsection{Thresholding rule}
+
+For the univariate thresholding rule, we are dealing with the simplified penalty function $p_F (|b_{jk}|) = D^- (b_{jk}, F)$, where $D^-$ is a inverse depth function based on the univariate depth function $D$. In this case, depth calculation becomes simplified in exactly the same way as in \ref{subsec:subsec31}, only $|b_{jk}|$ replacing $\|\bfb_j\|$ therein, and $1 \leq k \leq q$.
+
+Following \cite{FanLi01}, a sufficient condition for the minimizer of the penalized least squares loss function
+%
+\begin{equation}\label{eqn:eq1}
+L(\theta; p_\lambda) = \frac{1}{2} (z - \theta)^2 + p_\lambda(|\theta|)
+\end{equation}
+%
+to be unbiased when the true parameter value is large is $p'_\lambda (|\theta|)=0$ for large $\theta$. In our formulation, this holds exactly when $F$ has finite support, and approximately otherwise. A necessary condition for sparsity and continuity of the solution is $\min_{\theta \neq 0} |\theta| + p'_\lambda(|\theta|)>0$. We ensure this by making a small assumption about the derivative of $D^-$ (denoted by $D^-_1)$:
+
+\vspace{1em}
+\noindent\textbf{(A4)} $\lim_{\theta \rightarrow 0+} D^-_1(\theta,F)> 0$.
+\vspace{1em}
+
+Subsequently we get the following thresholding rule as the solution to \ref{eqn:eq1}:
+%
+\begin{eqnarray}\label{eqn:soln_1d}
+\hat\theta(F, \lambda) &=& \text{sign} (z) \left[ |z| - \lambda D^-_1(\theta,F) \right]_+ \notag\\
+& \simeq & \text{sign} (z) \left[ |z| - \lambda D^-_1(z,F) \right]_+
+\end{eqnarray}
+%
+The approximation in the second step is due to \cite{AntoniadisFan01}. A plot of the thresholding function in panel b of \ref{fig:fig1} demonstrates the unbiasedness and continuity  properties of this estimator.
+
+We note here that thresholding rules due to previously proposed nonconvex penalty functions can be obtained as special case of our rule. For example, when we consider halfspace depth as our chosen depth function, and the max definition of inverse depth, i.e. $D^- (\bfb, F) = \max_\bfx D^- (\bfx, F) - D^- (\bfb, F)$, the MCP penalty \citep{CHZhang10} corresponds to $D^-_1(\theta,F) = |\theta| \BI_{ |\theta| < \lambda }$, while for the SCAD penalty \citep{FanLi01}:
+%
+$$
+D^-_1(\theta,F) = \begin{cases} c\lambda & \text{ if } |\theta| < 2 \lambda\\
+\frac{c}{a-2} (a \lambda - |\theta|) & \text{ if } 2\lambda \leq |\theta| < a \lambda\\
+0 & \text{ if } |\theta| > a \lambda
+\end{cases}
+$$
+%
+with $c = 1/(2\lambda^2(a+2))$.
+
+\subsection{Minimax optimal performance}
+
+In the context of estimating the mean parameters $\mu_i$ of independent and identically distributed observations with normal errors: $z_i = \theta_i + v_i, v_i \sim N(0, 1)$, the minimax risk is $2\log n$ times the ideal risk $R(\text{ideal}) = \sum_{i=1}^n \min (\theta_i^2, 1)$ \citep{DonohoJohnstone94}. A major motivation of using lasso-type penalized estimators in linear regression is that they are able to approximately achieve this risk bound for large sample sizes \citep{DonohoJohnstone94, Zou06}. We now show that our thresholding rule in \ref{eqn:soln_1d} also, in fact, replicates this performance.
+
+\begin{Theorem}\label{thm:minimaxThm}
+Suppose the inverse depth function $D^-(.,F)$ is twice continuously differentiable, except at the origin, with first and second derivatives bounded above by $c_1$ and $c_2$ respectively. Then for $\lambda = (\sqrt{.5 \log n}-1)/c_1$, we have
+%
+\begin{eqnarray}
+\hspace{-2em} R ( \hat\theta(F,\lambda)) & \leq & (2 \log n - 3) \notag\\
+&& \left[ R(ideal) + \frac{c_1}{p_0(F) (\sqrt{.5 \log n}-1) } \right]
+\end{eqnarray}
+%
+where $p_0(F) := \lim_{\theta \rightarrow 0+} D^-_1(\theta, F)$.
+\end{Theorem}
+%
+\noindent Following the theorem, we easily see that for large $n$ the minimax risk of $\hat\theta(F,\lambda)$ approximately achieves the $2 \log n$ multiple bound.
+
+The adaptive lasso proposed by \cite{Zou06} guarantees a similar minimax risk bound in the case of single-response regression. This is somewhat expected, given the similar weighted norm structure of the LARN penalty and the adaptive lasso penalty. However, this does \textit{not} hold all weighted norm penalties: for example the SCAD and MCP penalties do not ensure near-minimax optimal performance because of their non-continuity in the second derivative. In this situation, using inverse depth functions that satisfy all the conditions in the theorem (both halfspace depth and projection depth do because of the simplification in \ref{subsec:subsec31}) allows us to go through with the result.
+
+%\subsubsection{Existence of solution and oracle properties}
+%
+%Moving on to the general problem of high-dimensional \textit{single-response} sparse linear regression, we are interested in the following:
+%
+%\begin{itemize}
+%\item Existence of a solution $\hat\bfbeta_n$ of (\ref{eqn:eqn01}), assuming $\rho(x) = x^2$ and $P(\bfbeta) = \sum_{j=1}^p p_F (|\beta_i|)$;
+%
+%\item Oracle properties of the solution, i.e. given that $\bfbeta = (\bfbeta_1^T, {\bf 0}^T)^T$ and $\hat\bfbeta_n = (\hat\bfbeta_{1n}^T, \hat\bfbeta_{2n}^T)^T$ and $n \rightarrow \infty$, whether\\
+%\textbf{(a)} $P[\hat\bfbeta_{2n} = {\bf 0}] \rightarrow 1$ and\\
+%\textbf{(b)} $\sqrt n\Sigma(\bfbeta_1)^{-1/2} (\hat\bfbeta_{1n} - \bfbeta_1) \rightarrow N ({\bf 0}, I_{p_1})$, with $p_1 \leq p$ being the length of $\bfbeta_1$, and $\Sigma(\bfbeta_1)$ is a positive definite matrix that depends on $\bfbeta_1$.
+%\end{itemize}
+%%
+%As derived in \cite{FanLi01}, a sufficient condition for the existence of a solution here is:
+%%
+%\begin{equation}\label{eqn:penaltycondition1}
+%\lim_{n \rightarrow \infty} \max \{ p''_{\lambda_n} ( |\beta_j|): \beta_j \neq 0 \} = 0
+%\end{equation}
+%with the tuning parameter $\lambda = \lambda_n$ being dependent on $n$. To ensure oracle properties, two more assumptions need to be made:
+%%
+%\begin{eqnarray}
+%\liminf_{n \rightarrow \infty} \liminf_{\theta \rightarrow 0+} p'_{\lambda_n} (\theta)/\lambda_n > 0\label{eqn:penaltycondition2}\\
+%\lambda_n \rightarrow 0, \sqrt n \lambda_n \rightarrow \infty \text{ as } n \rightarrow \infty \label{eqn:lambdacondition}
+%\end{eqnarray}
+%%
+%
+%For our purpose we take a sequence of tuning parameters satisfying (\ref{eqn:lambdacondition}), and outlyingness function satisfying the conditions in theorem (\ref{thm:minimaxThm}). Since $D^-_2(x, F) := dO_1(x, F)/dx$ is bounded above, $\lambda_n \rightarrow 0$ and $p''_{\lambda_n} (|\beta_j|) = \lambda_n D^-_2( |\beta_j|, F)$, condition $\ref{eqn:penaltycondition1}$ is satisfied. It is easy to check that condition \ref{eqn:penaltycondition2} is satisfied as well. This means that when $q=1$, the optimization problem in (\ref{eqn:eqn02}) indeed has a solution that satisfies oracle properties. One of the several existing algorithms can be used to calculate this local solution, for example local Quadratic Approximation \citep{FanLi01}, local Linear Approximation \citep{ZouLi08} and the Concave-Convex Procedure \citep{WangKimLi13}.
+%}
+
+%We adopt the `augmented data' approach of \cite{ZouLi08} in a group lasso setup \citep{BuhlmannBook} for computing the vectorized one-step estimate $\hat\bfB^{(1)}$. For this, we first approximate the risk at $\hat\bfB^{(1)}$ by its second order taylor-series approximation around risk at $\hat\bfB^*$:
+%%
+%\begin{eqnarray*}
+%R(\hat\bfB^{(1)}) &\simeq & R(\hat\bfB^*) + \nabla R(\hat\bfB^*)^T \ve( \hat\bfB^{(1)} - \hat\bfB^*) \\
+%&& + \frac{1}{2} {\ve}^T( \hat\bfB^{(1)} - \hat\bfB^*) \nabla^2 R(\hat\bfB^*) \ve( \hat\bfB^{(1)} - \hat\bfB^*)
+%\end{eqnarray*}
+%%
+%and
+%%
+%\begin{equation}\label{eqn:PenLikEqn}
+%\ve (\hat\bfB^{(1)}) = \argmin_\bfB \left[ - \frac{1}{2} {\ve}^T( \bfB - \hat\bfB^*) \nabla^2 R(\hat\bfB^*) \ve( \bfB - \hat\bfB^*) + P_{\lambda,F} (\bfB | \bfB^*) \right]
+%\end{equation}
+%%
+%because the starting point $\bfB^*$ is the OLS solution, thus the maximum likelihood estimate assuming squared-error loss, so that $ \nabla R(\hat\bfB^*) = {\bf 0}$. Notice now that $-\nabla^2 R(\bfB^*) = 
+%(\bfI_q \otimes \bfX^T) \bfD (\bfI_q \otimes \bfX)$, where $\bfD \in \mathbb R^{nq \times nq}$ is a diagonal matrix, made up of $q \times q$ diagonal blocks $\bfD_i, 1 \leq i \leq n$ such that
+%%
+%$$ \bfD_i = \diag(d_{i1}, ..., d_{iq}); \quad d_{ik} = - \left. \frac{d^2 R_i(\bfmu_i)}{d \mu_{ik}^2}\right|_{\bfmu_i = \bfmu^*_i}, k = 1,...,q $$
+%%
+%where $\bfmu_i^{*T}$ is the $i^{\Th}$ row of $\bfX \bfB^*$. Since the penalty function $P_{\lambda,F}(\bfB|\bfB^*)$ is essentially a linear combination of row-wise $l^2$ penalties with weights that are fixed given $\bfB^*$, the penalized problem (\ref{eqn:PenLikEqn}) can be solved by scaling $\bfY$ and $\bfX$ accordingly, applying group lasso on the transformed data, and scaling back the resulting solution. We formally present this in the following algorithm:
+%
+%\begin{enumerate}
+%\item Transform the data $(\bfY, \bfX)$ into $(\bfY^\circ, \bfX^\circ)$:
+%%
+%$$
+%y^\circ_{ik} = \sqrt{d_{ik}} \mu^*_{ik}; \quad x^{\circ (k)}_{ij} = \frac{\sqrt{d_{ik}}}{p_F'(r^*_j)} x_{ij}; \quad 1 \leq i \leq n, 1 \leq j \leq p, 1 \leq k \leq q
+%$$
+%$$ \bfX^\circ = \diag \left( \bfX^{\circ (1)}, ..., \bfX^{\circ (q)} \right) $$
+%%
+%
+%\item Get the group lasso solution $\hat\bfB^{\circ (1)}$ for transformed data:
+%%
+%$$ \hat\bfB^{\circ (1)} = \argmin_\bfB \left[ \| \ve( \bfY^\circ) - \bfX^\circ \ve(\bfB) \|_2^2 + \lambda \sum_{j=1}^q \| \bfb_j \|_2 \right]$$
+%%
+%
+%\item Obtain the one-step LARN estimate $\hat\bfB^{(1)}$ made of rows $\hat \bfb^{(1)}_j = \hat \bfb^{\circ (1)}_j / p_F'(r^*_j)$, $j = 1, ..., q$.
+%
+%\end{enumerate}
